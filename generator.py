@@ -209,7 +209,20 @@ def generate_html_content(news_data):
     
     try:
         response = model.generate_content(prompt)
-        return response.text
+        html_content = response.text
+        
+        # 마크다운 코드 블록 제거
+        html_content = html_content.replace('```html', '').replace('```', '')
+        
+        # 아카이브 드롭다운 삽입
+        archive_dropdown = build_archive_dropdown()
+        if '{{ARCHIVE_DROPDOWN}}' in html_content:
+            html_content = html_content.replace('{{ARCHIVE_DROPDOWN}}', archive_dropdown)
+        else:
+            # 드롭다운이 없으면 body 태그 바로 뒤에 추가
+            html_content = html_content.replace('<body>', f'<body>\n<div class="archive-selector">{archive_dropdown}</div>\n')
+        
+        return html_content
     except Exception as e:
         print(f"⚠️ AI 생성 실패: {e}")
         return generate_fallback_html(news_data)
