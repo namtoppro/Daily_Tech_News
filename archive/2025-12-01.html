@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Tech Insight - 2025-12-01</title>
+<style>
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --highlight-color: #2980b9;
+  --bg-color: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --meta-color: #7f8c8d;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 20px;
+}
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--primary-color);
+  letter-spacing: -1px;
+}
+.header p {
+  font-size: 1.1rem;
+  color: var(--meta-color);
+  margin: 10px 0 0;
+}
+
+/* Archive Selector */
+.archive-selector {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.archive-selector select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  background: white;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: all 0.2s;
+}
+.archive-selector select:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.6em;
+  font-weight: 800;
+  margin: 40px 0 20px;
+  color: var(--primary-color);
+  border-left: 6px solid var(--accent-color);
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* News Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.news-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.news-title {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--highlight-color);
+  line-height: 1.4;
+}
+
+.news-meta {
+  font-size: 0.85em;
+  color: var(--meta-color);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.news-summary {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.news-link {
+  display: inline-block;
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: color 0.2s;
+}
+
+.news-link:hover {
+  color: var(--accent-color);
+}
+
+/* Brief List */
+.brief-list {
+  background: var(--card-bg);
+  padding: 10px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.brief-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 18px 0;
+}
+
+.brief-item:last-child {
+  border-bottom: none;
+}
+
+.brief-title {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.brief-content {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.brief-meta {
+  font-size: 0.8em;
+  color: var(--meta-color);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="archive-selector">
+  
+    <select onchange="if(this.value) location.href='archive/' + this.value">
+        <option value="">📅 과거 기사 보기</option>
+        <option value="2025-12-01.html">2025-12-01</option>
+
+    </select>
+    
+</div>
+
+<div class="header">
+  <h1>🚀 Daily Tech Insight</h1>
+  <p>2025년 12월 01일(월) • 오늘의 주요 IT 트렌드 심층 분석</p>
+</div>
+
+<div class="section-title">🔥 주요 뉴스</div>
+<div class="grid-container">
+
+  <div class="news-card">
+    <div class="news-title">Top announcements of AWS re:Invent 2025</div>
+    <div class="news-meta">[Cloud] AWS News • 2025-12-01 02:17</div>
+    <div class="news-summary">Discover our most impactful innovations across analytics, AI, compute, containers, security, and more throughout the conference week....</div>
+    <a href="https://aws.amazon.com/blogs/aws/top-announcements-of-aws-reinvent-2025/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">Introducing Amazon Route 53 Global Resolver for secure anycast DNS resolution (preview)</div>
+    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:56</div>
+    <div class="news-summary">Simplify hybrid DNS management with a unified service that resolves public and private domains globally through secure, anycast-based resolution while reducing operational overhead and maintaining consistent security controls....</div>
+    <a href="https://aws.amazon.com/blogs/aws/introducing-amazon-route-53-global-resolver-for-secure-anycast-dns-resolution-preview/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">AWS Clean Rooms launches privacy-enhancing synthetic dataset generation for ML model training</div>
+    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
+    <div class="news-summary">Train ML models on sensitive collaborative data by generating synthetic datasets that preserve statistical patterns while protecting individual privacy through configurable noise levels and protection against re-identification....</div>
+    <a href="https://aws.amazon.com/blogs/aws/aws-clean-rooms-launches-privacy-enhancing-synthetic-dataset-generation-for-ml-model-training/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">AWS Partner Central now available in AWS Management Console</div>
+    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
+    <div class="news-summary">Access Partner Central directly through the AWS Console to streamline your journey from customer to Partner—manage solutions, opportunities, and marketplace listings in one unified interface with enterprise-grade security....</div>
+    <a href="https://aws.amazon.com/blogs/aws/aws-partner-central-now-available-in-aws-management-console/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">Introducing AWS Lambda Managed Instances: Serverless simplicity with EC2 flexibility</div>
+    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
+    <div class="news-summary">Run Lambda functions on EC2 compute while maintaining serverless simplicity—enabling access to specialized hardware and cost optimizations through EC2 pricing models, with AWS handling all infrastructure management....</div>
+    <a href="https://aws.amazon.com/blogs/aws/introducing-aws-lambda-managed-instances-serverless-simplicity-with-ec2-flexibility/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">Simplify IAM policy creation with IAM Policy Autopilot, a new open source MCP server for builders</div>
+    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
+    <div class="news-summary">Speed up AWS development with an open source tool that analyzes your code to generate valid IAM policies, providing AI coding assistants with up-to-date AWS service knowledge and reliable permission recommendations....</div>
+    <a href="https://aws.amazon.com/blogs/aws/simplify-iam-policy-creation-with-iam-policy-autopilot-a-new-open-source-mcp-server-for-builders/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">Announcing Amazon EKS Capabilities for workload orchestration and cloud resource management</div>
+    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
+    <div class="news-summary">Streamline Kubernetes development with fully managed platform capabilities that handle workload orchestration and cloud resource management, eliminating infrastructure maintenance while providing enterprise-grade reliability and security....</div>
+    <a href="https://aws.amazon.com/blogs/aws/announcing-amazon-eks-capabilities-for-workload-orchestration-and-cloud-resource-management/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">‘Avatar’ director James Cameron says generative AI is ‘horrifying’</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-11-30 22:53</div>
+    <div class="news-summary">James Cameron’s movies are often at the cutting edge of visual effects technology, but that doesn't make him a fan of generative AI....</div>
+    <a href="https://techcrunch.com/2025/11/30/avatar-director-james-cameron-says-generative-ai-is-horrifying/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">New report examines how David Sacks might profit from Trump administration role</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-11-30 21:39</div>
+    <div class="news-summary">David Sacks’ role as President Donald Trump’s artificial intelligence and crypto czar could work out very well for his investments, according to a new report. However, Sacks fired back, calling the story a "nothing burger."...</div>
+    <a href="https://techcrunch.com/2025/11/30/new-report-examines-how-david-sacks-might-profit-from-trump-administration-role/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">ChatGPT launched three years ago today</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-11-30 20:14</div>
+    <div class="news-summary">It’s no hyperbole to suggest that ChatGPT subsequently transformed the worlds of business and tech....</div>
+    <a href="https://techcrunch.com/2025/11/30/chatgpt-launched-three-years-ago-today/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+</div>
+
+<div class="section-title">📄 기타 소식</div>
+<div class="brief-list">
+
+</div>
+
+</body>
+</html>
