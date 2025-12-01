@@ -1,283 +1,130 @@
+```html
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Tech Insight - 2025-12-01</title>
+<title>2025-12-01 Tech Briefing</title>
 <style>
-:root {
-  --primary-color: #2c3e50;
-  --accent-color: #e74c3c;
-  --highlight-color: #2980b9;
-  --bg-color: #f4f6f8;
-  --card-bg: #ffffff;
-  --text-color: #333333;
-  --meta-color: #7f8c8d;
-}
+  /* 기본 스타일 */
+  body { font-family: 'Pretendard', 'Roboto', 'system-ui', sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f4f6f8; color: #333; line-height: 1.6; }
+  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2c3e50; padding-bottom: 10px; position: relative; }
+  .header h1 { color: #2c3e50; margin-bottom: 5px; font-size: 2.2em; }
+  .header p { color: #555; font-size: 1.1em; }
+  .section-title { font-size: 1.5em; font-weight: bold; margin: 30px 0 15px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 12px; }
+  
+  /* Headline 스타일: 강조, 박스 형태 */
+  .headline-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 25px; border-top: 5px solid #e74c3c; }
+  .headline-title { font-size: 1.8em; margin: 0 0 15px; color: #c0392b; line-height: 1.3; }
+  .headline-card ul { list-style-type: disc; margin-left: 20px; padding-left: 0; color: #555; }
+  .headline-card ul li { margin-bottom: 8px; }
+  
+  /* Major News 스타일: 2열 그리드 */
+  .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px; }
+  .news-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #2980b9; }
+  .news-title { font-size: 1.25em; font-weight: bold; margin-bottom: 10px; color: #2980b9; line-height: 1.4; }
+  
+  /* Brief 스타일: 리스트 형태 */
+  .brief-list { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+  .brief-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+  .brief-item:last-child { border-bottom: none; }
+  .brief-title { font-size: 1.1em; font-weight: bold; margin-bottom: 5px; color: #34495e; }
+  
+  /* 공통 스타일 */
+  .summary { line-height: 1.6; text-align: justify; color: #444; margin-bottom: 15px; }
+  .source { font-size: 0.85em; color: #7f8c8d; margin-top: 10px; text-align: right; font-style: italic; }
+  strong { color: #2c3e50; } /* 중요 키워드 볼드 처리 색상 */
 
-body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  background: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  word-break: keep-all;
-}
-
-/* Header */
-.header {
-  text-align: center;
-  margin-bottom: 40px;
-  border-bottom: 3px solid var(--primary-color);
-  padding-bottom: 20px;
-}
-.header h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  color: var(--primary-color);
-  letter-spacing: -1px;
-}
-.header p {
-  font-size: 1.1rem;
-  color: var(--meta-color);
-  margin: 10px 0 0;
-}
-
-/* Archive Selector */
-.archive-selector {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.archive-selector select {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 2px solid var(--primary-color);
-  background: white;
-  cursor: pointer;
-  font-size: 0.95em;
-  transition: all 0.2s;
-}
-.archive-selector select:hover {
-  background: var(--primary-color);
-  color: white;
-}
-
-/* Section Title */
-.section-title {
-  font-size: 1.6em;
-  font-weight: 800;
-  margin: 40px 0 20px;
-  color: var(--primary-color);
-  border-left: 6px solid var(--accent-color);
-  padding-left: 15px;
-  display: flex;
-  align-items: center;
-}
-
-/* News Grid */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-bottom: 30px;
-}
-
-.news-card {
-  background: var(--card-bg);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-  border: 1px solid #eee;
-  transition: all 0.3s ease;
-}
-
-.news-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-.news-title {
-  font-size: 1.35em;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--highlight-color);
-  line-height: 1.4;
-}
-
-.news-meta {
-  font-size: 0.85em;
-  color: var(--meta-color);
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.news-summary {
-  font-size: 0.95em;
-  color: #555;
-  margin-bottom: 15px;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.news-link {
-  display: inline-block;
-  color: var(--highlight-color);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9em;
-  transition: color 0.2s;
-}
-
-.news-link:hover {
-  color: var(--accent-color);
-}
-
-/* Brief List */
-.brief-list {
-  background: var(--card-bg);
-  padding: 10px 25px;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.brief-item {
-  border-bottom: 1px solid #f0f0f0;
-  padding: 18px 0;
-}
-
-.brief-item:last-child {
-  border-bottom: none;
-}
-
-.brief-title {
-  font-weight: 700;
-  font-size: 1.1em;
-  color: #2c3e50;
-  margin-bottom: 8px;
-}
-
-.brief-content {
-  font-size: 0.9em;
-  color: #666;
-  line-height: 1.6;
-}
-
-.brief-meta {
-  font-size: 0.8em;
-  color: var(--meta-color);
-  margin-top: 5px;
-  font-style: italic;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
+  /* 반응형 디자인 */
+  @media (max-width: 768px) {
+    body { padding: 15px; }
+    .header h1 { font-size: 1.8em; }
+    .header p { font-size: 1em; }
+    .section-title { font-size: 1.3em; margin-top: 25px; }
+    .grid-container { grid-template-columns: 1fr; }
+    .headline-title { font-size: 1.5em; }
+    .news-title { font-size: 1.1em; }
+    .archive-selector { position: static; text-align: center; margin-bottom: 20px; }
   }
-  .header h1 {
-    font-size: 2rem;
-  }
-}
 </style>
 </head>
 <body>
-
-<div class="archive-selector">
-  
-    <select onchange="if(this.value) location.href='archive/' + this.value">
-        <option value="">📅 과거 기사 보기</option>
-        <option value="2025-12-01.html">2025-12-01</option>
-
-    </select>
-    
-</div>
-
-<div class="header">
-  <h1>🚀 Daily Tech Insight</h1>
-  <p>2025년 12월 01일(월) • 오늘의 주요 IT 트렌드 심층 분석</p>
-</div>
-
-<div class="section-title">🔥 주요 뉴스</div>
-<div class="grid-container">
-
-  <div class="news-card">
-    <div class="news-title">Top announcements of AWS re:Invent 2025</div>
-    <div class="news-meta">[Cloud] AWS News • 2025-12-01 02:17</div>
-    <div class="news-summary">Discover our most impactful innovations across analytics, AI, compute, containers, security, and more throughout the conference week....</div>
-    <a href="https://aws.amazon.com/blogs/aws/top-announcements-of-aws-reinvent-2025/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="header">
+    <h1>🚀 Daily Tech Insight</h1>
+    <p>오늘의 주요 IT 트렌드 심층 분석 - 2025년 12월 1일</p>
   </div>
 
-  <div class="news-card">
-    <div class="news-title">Introducing Amazon Route 53 Global Resolver for secure anycast DNS resolution (preview)</div>
-    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:56</div>
-    <div class="news-summary">Simplify hybrid DNS management with a unified service that resolves public and private domains globally through secure, anycast-based resolution while reducing operational overhead and maintaining consistent security controls....</div>
-    <a href="https://aws.amazon.com/blogs/aws/introducing-amazon-route-53-global-resolver-for-secure-anycast-dns-resolution-preview/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="section-title">🚨 HEADLINE NEWS</div>
+  <div class="headline-card">
+    <h2 class="headline-title">AWS re:Invent 2025 주요 발표 요약</h2>
+    <p class="summary">AWS re:Invent 2025 컨퍼런스에서 <strong style="color: #c0392b;">분석(analytics), AI, 컴퓨팅(compute), 컨테이너(containers), 보안(security)</strong> 등 다양한 분야에 걸쳐 핵심적인 혁신 기술들이 대거 공개되었습니다. 이번 발표들은 클라우드 인프라의 효율성을 극대화하고 개발자 경험을 향상시키며, 기업이 데이터 기반의 의사결정을 더욱 쉽게 내릴 수 있도록 돕는 데 중점을 두었습니다. 특히, <strong style="color: #c0392b;">생성형 AI(Generative AI)</strong>와 <strong style="color: #c0392b;">데이터 프라이버시(Data Privacy)</strong> 관련 서비스 강화는 미래 클라우드 환경의 핵심 동력이 될 것으로 전망됩니다. 이러한 혁신은 AWS가 엔터프라이즈 및 스타트업의 디지털 전환을 가속화하는 리더십을 지속적으로 강화하고 있음을 보여줍니다.</p>
+    <ul>
+      <li><strong style="color: #2c3e50;">핵심 분야:</strong> 분석, AI, 컴퓨팅, 컨테이너, 보안 등 광범위한 서비스 업데이트.</li>
+      <li><strong style="color: #2c3e50;">목표:</strong> 클라우드 인프라 효율성 극대화 및 개발자 경험 향상.</li>
+      <li><strong style="color: #2c3e50;">주요 트렌드:</strong> 생성형 AI 및 데이터 프라이버시 기술 강화.</li>
+      <li><strong style="color: #2c3e50;">영향:</strong> 기업의 디지털 전환 가속화 및 AWS 리더십 강화.</li>
+    </ul>
+    <div class="source">[Source: AWS News]</div>
   </div>
 
-  <div class="news-card">
-    <div class="news-title">AWS Clean Rooms launches privacy-enhancing synthetic dataset generation for ML model training</div>
-    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
-    <div class="news-summary">Train ML models on sensitive collaborative data by generating synthetic datasets that preserve statistical patterns while protecting individual privacy through configurable noise levels and protection against re-identification....</div>
-    <a href="https://aws.amazon.com/blogs/aws/aws-clean-rooms-launches-privacy-enhancing-synthetic-dataset-generation-for-ml-model-training/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="headline-card">
+    <h2 class="headline-title">'아바타' 감독 제임스 카메론, "생성형 AI는 '끔찍하다'" 발언</h2>
+    <p class="summary">시각 효과 기술의 선두 주자였던 영화 '아바타'의 감독 제임스 카메론이 <strong style="color: #c0392b;">생성형 AI(Generative AI)</strong>에 대해 "<strong style="color: #c0392b;">끔찍하다(horrifying)</strong>"는 강도 높은 비판을 쏟아냈습니다. 그의 영화들은 항상 최첨단 기술을 활용해 왔음에도 불구하고, 그는 AI가 인간의 창의성을 대체하고 예술적 가치를 훼손할 수 있다는 우려를 표명했습니다. 이러한 발언은 기술 발전의 윤리적 측면과 창작의 본질에 대한 깊은 성찰을 요구하며, <strong style="color: #c0392b;">AI가 예술 및 엔터테인먼트 산업</strong>에 미칠 영향에 대한 광범위한 논의를 촉발할 것으로 보입니다. 기술의 양면성을 재조명하는 계기가 될 것입니다.</p>
+    <ul>
+      <li><strong style="color: #2c3e50;">발언 주체:</strong> '아바타' 감독 제임스 카메론.</li>
+      <li><strong style="color: #2c3e50;">주요 내용:</strong> 생성형 AI에 대해 "끔찍하다"고 비판.</li>
+      <li><strong style="color: #2c3e50;">우려 사항:</strong> 인간 창의성 대체 및 예술적 가치 훼손 가능성.</li>
+      <li><strong style="color: #2c3e50;">영향:</strong> AI의 윤리적 측면 및 창작 본질에 대한 논의 촉발.</li>
+    </ul>
+    <div class="source">[Source: TechCrunch AI]</div>
   </div>
 
-  <div class="news-card">
-    <div class="news-title">AWS Partner Central now available in AWS Management Console</div>
-    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
-    <div class="news-summary">Access Partner Central directly through the AWS Console to streamline your journey from customer to Partner—manage solutions, opportunities, and marketplace listings in one unified interface with enterprise-grade security....</div>
-    <a href="https://aws.amazon.com/blogs/aws/aws-partner-central-now-available-in-aws-management-console/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="section-title">🔥 MAJOR ISSUES</div>
+  <div class="grid-container">
+    <div class="news-card">
+      <h3 class="news-title">안전한 애니캐스트 DNS 해결을 위한 Amazon Route 53 글로벌 리졸버(미리 보기) 출시</h3>
+      <p class="summary">AWS는 <strong style="color: #2980b9;">하이브리드 DNS 관리</strong>를 간소화하는 Amazon Route 53 글로벌 리졸버를 미리 보기(preview)로 선보였습니다. 이 서비스는 안전한 <strong style="color: #2980b9;">애니캐스트 기반(anycast-based) 해결</strong>을 통해 공개 및 프라이빗 도메인(public and private domains)을 전 세계적으로 통합하여 해결하며, 운영 오버헤드를 줄이고 일관된 보안 제어(security controls)를 유지합니다. 이는 기업이 복잡한 네트워크 환경에서 DNS 인프라를 보다 효율적으로 관리하고, 사용자에게 더 빠르고 안정적인 서비스 접속을 제공할 수 있도록 지원합니다.</p>
+      <div class="source">[Source: AWS News]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">AWS 클린 룸, ML 모델 훈련을 위한 프라이버시 강화 합성 데이터셋 생성 기능 출시</h3>
+      <p class="summary">AWS 클린 룸(AWS Clean Rooms)이 <strong style="color: #2980b9;">프라이버시 강화 기술(Privacy-Enhancing Technologies, PETs)</strong>을 활용한 합성 데이터셋(synthetic dataset) 생성 기능을 출시했습니다. 이 기능을 통해 기업은 민감한 협업 데이터를 바탕으로 통계적 패턴을 유지하면서도 개별 프라이버시(individual privacy)를 보호하는 합성 데이터를 생성하여 머신러닝(ML) 모델을 훈련할 수 있습니다. 이는 재식별(re-identification) 방지 및 구성 가능한 노이즈 수준(configurable noise levels) 조정을 통해 데이터 유출 위험 없이 협업적인 <strong style="color: #2980b9;">AI 개발 및 분석</strong>을 가능하게 합니다.</p>
+      <div class="source">[Source: AWS News]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">AWS 람다 관리형 인스턴스 소개: EC2 유연성을 갖춘 서버리스 단순성</h3>
+      <p class="summary">AWS는 <strong style="color: #2980b9;">AWS 람다 관리형 인스턴스(Lambda Managed Instances)</strong>를 도입하여, EC2 컴퓨트(EC2 compute)에서 람다 함수(Lambda functions)를 실행하면서도 서버리스(serverless)의 단순성을 유지할 수 있도록 했습니다. 이 새로운 서비스는 사용자가 <strong style="color: #2980b9;">특수 하드웨어(specialized hardware)</strong>에 접근하고 EC2 요금 모델(EC2 pricing models)을 통한 비용 최적화를 실현할 수 있게 하면서, AWS가 모든 인프라 관리(infrastructure management)를 담당합니다. 이는 개발자들이 더 넓은 범위의 워크로드를 서버리스 방식으로 처리할 수 있게 하여, 운영 부담을 줄이고 혁신에 집중할 수 있도록 돕습니다.</p>
+      <div class="source">[Source: AWS News]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">IAM 정책 자동 조종 장치(Autopilot)로 IAM 정책 생성 간소화: 개발자를 위한 새로운 오픈소스 MCP 서버</h3>
+      <p class="summary">AWS는 개발 속도를 높이기 위해 <strong style="color: #2980b9;">오픈소스 도구인 IAM 정책 자동 조종 장치(IAM Policy Autopilot)</strong>를 공개했습니다. 이 도구는 사용자의 코드를 분석하여 유효한 <strong style="color: #2980b9;">IAM 정책(IAM policies)</strong>을 자동으로 생성함으로써, AI 코딩 어시스턴트(AI coding assistants)에 최신 AWS 서비스 지식과 신뢰할 수 있는 권한 추천을 제공합니다. 이는 복잡한 IAM 정책 작성 과정의 오류를 줄이고 개발자가 보안 정책을 더욱 효율적이고 정확하게 구현할 수 있도록 지원하여, <strong style="color: #2980b9;">AWS 개발 생산성</strong>을 크게 향상시킬 것으로 기대됩니다.</p>
+      <div class="source">[Source: AWS News]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">Amazon EKS, 워크로드 오케스트레이션 및 클라우드 리소스 관리를 위한 새로운 기능 발표</h3>
+      <p class="summary">AWS는 <strong style="color: #2980b9;">Amazon EKS(Elastic Kubernetes Service)</strong>에 워크로드 오케스트레이션(workload orchestration) 및 클라우드 리소스 관리(cloud resource management)를 위한 완전 관리형 플랫폼 기능들을 추가했다고 발표했습니다. 이 기능들을 통해 기업은 인프라 유지 관리 부담 없이 쿠버네티스(Kubernetes) 개발을 간소화하고, 엔터프라이즈급 안정성(enterprise-grade reliability) 및 보안(security)을 확보할 수 있습니다. 이는 개발자들이 핵심 애플리케이션 개발에 집중하고, <strong style="color: #2980b9;">컨테이너화된 워크로드(containerized workloads)</strong>를 더욱 효율적으로 배포하고 관리할 수 있도록 지원합니다.</p>
+      <div class="source">[Source: AWS News]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">ChatGPT, 오늘로 출시 3주년 맞아</h3>
+      <p class="summary"><strong style="color: #2980b9;">ChatGPT</strong>가 오늘(현지시간)로 출시 3주년을 맞이했습니다. 2022년 11월 30일에 처음 공개된 ChatGPT는 비즈니스와 기술 세계에 혁명적인 변화를 가져왔다는 평가를 받습니다. 출시 이후 <strong style="color: #2980b9;">생성형 AI(Generative AI)</strong> 분야의 폭발적인 성장을 이끌며 수많은 기업과 개발자들이 AI 기술을 도입하고 혁신을 추구하는 계기가 되었습니다. 이 획기적인 AI 모델은 <strong style="color: #2980b9;">인간-컴퓨터 상호작용</strong>의 패러다임을 전환시키며, 다양한 산업 분야에서 새로운 가능성을 열었습니다.</p>
+      <div class="source">[Source: TechCrunch AI]</div>
+    </div>
   </div>
 
-  <div class="news-card">
-    <div class="news-title">Introducing AWS Lambda Managed Instances: Serverless simplicity with EC2 flexibility</div>
-    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
-    <div class="news-summary">Run Lambda functions on EC2 compute while maintaining serverless simplicity—enabling access to specialized hardware and cost optimizations through EC2 pricing models, with AWS handling all infrastructure management....</div>
-    <a href="https://aws.amazon.com/blogs/aws/introducing-aws-lambda-managed-instances-serverless-simplicity-with-ec2-flexibility/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="section-title">📄 BRIEF & OTHERS</div>
+  <div class="brief-list">
+    <div class="brief-item">
+      <h3 class="brief-title">AWS 파트너 센트럴, AWS 관리 콘솔에서 이용 가능</h3>
+      <p class="summary">AWS 파트너 센트럴(Partner Central)이 이제 <strong style="color: #34495e;">AWS 관리 콘솔(Management Console)</strong>을 통해 직접 접근 가능해져, 고객에서 파트너로의 여정을 간소화합니다. 이 통합 인터페이스를 통해 솔루션, 기회, 마켓플레이스 목록을 기업급 보안 수준으로 한 곳에서 관리할 수 있습니다.</p>
+      <div class="source">[Source: AWS News]</div>
+    </div>
+    <div class="brief-item">
+      <h3 class="brief-title">새 보고서, 데이비드 삭스의 트럼프 행정부 역할 이윤 가능성 분석</h3>
+      <p class="summary">새로운 보고서에 따르면 도널드 트럼프 대통령의 <strong style="color: #34495e;">인공지능 및 암호화폐 차르(AI and crypto czar)</strong>로 지명된 데이비드 삭스(David Sacks)의 역할이 그의 투자에 큰 이득이 될 수 있다고 분석했습니다. 그러나 삭스는 이 보도를 "아무것도 아닌 이야기(nothing burger)"라고 반박했습니다.</p>
+      <div class="source">[Source: TechCrunch AI]</div>
+    </div>
   </div>
-
-  <div class="news-card">
-    <div class="news-title">Simplify IAM policy creation with IAM Policy Autopilot, a new open source MCP server for builders</div>
-    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
-    <div class="news-summary">Speed up AWS development with an open source tool that analyzes your code to generate valid IAM policies, providing AI coding assistants with up-to-date AWS service knowledge and reliable permission recommendations....</div>
-    <a href="https://aws.amazon.com/blogs/aws/simplify-iam-policy-creation-with-iam-policy-autopilot-a-new-open-source-mcp-server-for-builders/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">Announcing Amazon EKS Capabilities for workload orchestration and cloud resource management</div>
-    <div class="news-meta">[Cloud] AWS News • 2025-12-01 01:55</div>
-    <div class="news-summary">Streamline Kubernetes development with fully managed platform capabilities that handle workload orchestration and cloud resource management, eliminating infrastructure maintenance while providing enterprise-grade reliability and security....</div>
-    <a href="https://aws.amazon.com/blogs/aws/announcing-amazon-eks-capabilities-for-workload-orchestration-and-cloud-resource-management/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">‘Avatar’ director James Cameron says generative AI is ‘horrifying’</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-11-30 22:53</div>
-    <div class="news-summary">James Cameron’s movies are often at the cutting edge of visual effects technology, but that doesn't make him a fan of generative AI....</div>
-    <a href="https://techcrunch.com/2025/11/30/avatar-director-james-cameron-says-generative-ai-is-horrifying/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">New report examines how David Sacks might profit from Trump administration role</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-11-30 21:39</div>
-    <div class="news-summary">David Sacks’ role as President Donald Trump’s artificial intelligence and crypto czar could work out very well for his investments, according to a new report. However, Sacks fired back, calling the story a "nothing burger."...</div>
-    <a href="https://techcrunch.com/2025/11/30/new-report-examines-how-david-sacks-might-profit-from-trump-administration-role/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">ChatGPT launched three years ago today</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-11-30 20:14</div>
-    <div class="news-summary">It’s no hyperbole to suggest that ChatGPT subsequently transformed the worlds of business and tech....</div>
-    <a href="https://techcrunch.com/2025/11/30/chatgpt-launched-three-years-ago-today/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-</div>
-
-<div class="section-title">📄 기타 소식</div>
-<div class="brief-list">
-
-</div>
-
 </body>
 </html>
+```
