@@ -114,7 +114,9 @@ def generate_html_content(news_data):
 
 [Input Data]를 분석하여 심도 있는 내용이 담긴 **단일 HTML 리포트**를 작성하세요.
 
-# Content Processing Rules (핵심: 무손실 요약)
+# Content Processing Rules (핵심: 무손실 요약 + 한글 번역)
+
+0. **한글 번역 필수:** 모든 기사 제목과 내용을 **반드시 한글로 번역**하세요. 영문 기사는 자연스러운 한국어로 완전히 번역하되, 전문 용어는 원어를 괄호 안에 병기할 수 있습니다 (예: 생성형 AI(Generative AI)).
 
 1. **깊이 있는 요약:** 기사를 한 줄로 너무 짧게 줄이지 마세요. 기사의 **'배경, 원인, 결과, 향후 전망'**이 포함되도록 3~5문장으로 서술형 요약을 하세요.
 
@@ -211,6 +213,28 @@ def generate_html_content(news_data):
     except Exception as e:
         print(f"⚠️ AI 생성 실패: {e}")
         return generate_fallback_html(news_data)
+
+
+def translate_to_korean(text, text_type="title"):
+    """영문 텍스트를 한글로 번역"""
+    if not GEMINI_API_KEY:
+        return text  # API 키 없으면 원문 반환
+    
+    try:
+        genai.configure(api_key=GEMINI_API_KEY)
+        model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        
+        if text_type == "title":
+            prompt = f"다음 기사 제목을 자연스러운 한국어로 번역하세요. 번역문만 출력하세요:\n\n{text}"
+        else:
+            prompt = f"다음 기사 요약을 자연스러운 한국어로 번역하세요. 전문 용어는 원어를 괄호에 병기하세요. 번역문만 출력하세요:\n\n{text}"
+        
+        response = model.generate_content(prompt)
+        return response.text.strip()
+    except Exception as e:
+        print(f"  ⚠️ 번역 실패 ({text[:30]}...): {e}")
+        return text  # 번역 실패 시 원문 반환
+
 
 
 def generate_fallback_html(news_data):
@@ -421,13 +445,18 @@ body {{
 <div class="grid-container">
 """
     
-    # 주요 뉴스 (처음 10개를 2열 그리드로)
-    for article in news_data[:10]:
+    # 주요 뉴스 (처음 10개를 2열 그리드로 + 번역)
+    print("🌐 기사 번역 중...")
+    for idx, article in enumerate(news_data[:10], 1):
+        print(f"  [{idx}/10] {article['title'][:50]}...")
+        translated_title = translate_to_korean(article['title'], "title")
+        translated_summary = translate_to_korean(article['summary'][:250], "summary")
+        
         html += f"""
   <div class="news-card">
-    <div class="news-title">{article['title']}</div>
+    <div class="news-title">{translated_title}</div>
     <div class="news-meta">[{article['category']}] {article['source']} • {article['published']}</div>
-    <div class="news-summary">{article['summary'][:250]}...</div>
+    <div class="news-summary">{translated_summary}...</div>
     <a href="{article['link']}" target="_blank" class="news-link">원문 보기 →</a>
   </div>
 """
@@ -439,12 +468,16 @@ body {{
 <div class="brief-list">
 """
     
-    # 나머지 뉴스 (Brief 형태로)
-    for article in news_data[10:20]:
+    # 나머지 뉴스 (Brief 형태로 + 번역)
+    for idx, article in enumerate(news_data[10:20], 11):
+        print(f"  [{idx}/20] {article['title'][:50]}...")
+        translated_title = translate_to_korean(article['title'], "title")
+        translated_summary = translate_to_korean(article['summary'][:150], "summary")
+        
         html += f"""
   <div class="brief-item">
-    <div class="brief-title">{article['title']}</div>
-    <div class="brief-content">{article['summary'][:150]}... <a href="{article['link']}" target="_blank" class="news-link">더보기</a></div>
+    <div class="brief-title">{translated_title}</div>
+    <div class="brief-content">{translated_summary}... <a href="{article['link']}" target="_blank" class="news-link">더보기</a></div>
     <div class="brief-meta">[{article['category']}] {article['source']} • {article['published']}</div>
   </div>
 """
