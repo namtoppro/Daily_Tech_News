@@ -94,7 +94,7 @@ def generate_html_content(news_data):
         return generate_fallback_html(news_data)
     
     genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-2.0-flash-exp')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     # 뉴스 데이터를 텍스트로 변환
     news_text = "\n\n".join([
@@ -222,7 +222,7 @@ def translate_to_korean(text, text_type="title"):
     
     try:
         genai.configure(api_key=GEMINI_API_KEY)
-        model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         
         if text_type == "title":
             prompt = f"다음 기사 제목을 자연스러운 한국어로 번역하세요. 번역문만 출력하세요:\n\n{text}"
