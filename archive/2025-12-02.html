@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025-12-02 Tech Briefing</title>
+<style>
+  /* 여기에 CSS 작성: 모던하고 깔끔한 뉴스 대시보드 스타일 */
+  body { 
+    font-family: Pretendard, Roboto, system-ui, sans-serif; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background: #f4f6f8; 
+    color: #333; 
+    line-height: 1.6; 
+  }
+  .header { 
+    text-align: center; 
+    margin-bottom: 30px; 
+    border-bottom: 3px solid #2c3e50; 
+    padding-bottom: 10px; 
+  }
+  .header h1 { 
+    font-size: 2.5em; 
+    color: #2c3e50; 
+    margin-bottom: 5px; 
+  }
+  .header p { 
+    font-size: 1.1em; 
+    color: #555; 
+  }
+  .section-title { 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    margin: 30px 0 15px; 
+    color: #2c3e50; 
+    border-left: 5px solid #e74c3c; 
+    padding-left: 15px; 
+  }
+ 
+  /* Headline 스타일: 강조, 박스 형태 */
+  .headline-card { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 10px; 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12); 
+    margin-bottom: 25px; 
+    border-top: 6px solid #e74c3c; 
+  }
+  .headline-title { 
+    font-size: 1.9em; 
+    margin: 0 0 15px; 
+    color: #c0392b; 
+    line-height: 1.4; 
+  }
+  .headline-card ul { 
+    list-style-type: disc; 
+    margin-left: 20px; 
+    padding-left: 0; 
+    color: #555; 
+  }
+  .headline-card ul li { 
+    margin-bottom: 8px; 
+    font-size: 0.95em;
+  }
+ 
+  /* Major News 스타일: 2열 그리드 */
+  .grid-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px; 
+    margin-bottom: 25px; 
+  }
+  .news-card { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    border-left: 4px solid #2980b9; 
+  }
+  .news-title { 
+    font-size: 1.3em; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    color: #2980b9; 
+    line-height: 1.4; 
+  }
+  .news-card .summary { 
+    font-size: 0.95em; 
+    color: #444; 
+  }
+ 
+  /* Brief 스타일: 리스트 형태 */
+  .brief-list { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05); 
+  }
+  .brief-item { 
+    border-bottom: 1px solid #eee; 
+    padding: 15px 0; 
+  }
+  .brief-item:last-child { 
+    border-bottom: none; 
+  }
+  .brief-item .brief-title { 
+    font-size: 1.05em; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    color: #34495e; 
+  }
+  .brief-item .summary { 
+    font-size: 0.9em; 
+    color: #555; 
+  }
+ 
+  .source { 
+    font-size: 0.8em; 
+    color: #7f8c8d; 
+    margin-top: 10px; 
+    text-align: right; 
+    font-style: italic; 
+  }
+  .summary { 
+    line-height: 1.6; 
+    text-align: justify; 
+  }
+
+  /* 아카이브 드롭다운 스타일 */
+  .archive-selector { 
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+  }
+  .archive-selector select { 
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    background: #fff; 
+    cursor: pointer; 
+    font-size: 0.9em; 
+    color: #333; 
+  }
+  .archive-selector select:focus { 
+    border-color: #2c3e50; 
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2); 
+  }
+
+  @media (max-width: 768px) { 
+    .grid-container { 
+      grid-template-columns: 1fr; 
+    } 
+    .header h1 { 
+      font-size: 2em; 
+    }
+    .section-title { 
+      font-size: 1.3em; 
+    }
+    .headline-title { 
+      font-size: 1.6em; 
+    }
+    .news-title { 
+      font-size: 1.1em; 
+    }
+    .archive-selector { 
+      position: static; 
+      text-align: center; 
+      margin-bottom: 20px; 
+      left: auto; 
+      right: auto; 
+      width: 100%; 
+    }
+    .archive-selector select { 
+      width: 80%; 
+      max-width: 300px; 
+    }
+    body { 
+      padding: 15px; 
+    }
+  }
+</style>
+</head>
+<body>
+<div class="archive-selector">
+    <select onchange="if(this.value) location.href='archive/' + this.value">
+        <option value="">📅 과거 기사 보기</option>
+        <option value="2025-12-02.html">2025-12-02</option>
+<option value="2025-12-01.html">2025-12-01</option>
+
+    </select>
+    </div>
+
+  <div class="archive-selector">
+    <select>
+      <option value="2025-12-02">2025-12-02</option>
+      <!-- 향후 과거 리포트가 추가될 경우 여기에 옵션 추가 -->
+    </select>
+  </div>
+  
+  <div class="header">
+    <h1>🚀 Daily Tech Insight</h1>
+    <p>오늘의 주요 IT 트렌드 심층 분석 - 2025-12-02</p>
+  </div>
+
+  <div class="section-title">🚨 HEADLINE NEWS</div>
+  <div class="headline-card">
+    <h2 class="headline-title">AWS, 메인프레임 현대화 위한 'AWS Transform'에 AI 기반 리이매진 및 자동 테스트 기능 추가</h2>
+    <div class="summary">
+      <p>수십 년간 기업 IT의 핵심이었던 레거시 메인프레임 애플리케이션의 클라우드 전환은 복잡성과 막대한 시간 소요로 기업들의 큰 숙제였습니다. AWS는 이러한 어려움을 해결하기 위해 **AWS Transform for mainframe** 서비스에 **AI 기반의 '리이매진(Reimagine)' 기능과 자동화된 테스트 기능**을 새롭게 도입했습니다.</p>
+      <p>이 기능은 AI를 활용하여 기존 메인프레임 애플리케이션 코드를 지능적으로 분석하고 클라우드 네이티브 아키텍처로 자동 변환하며, 동시에 복잡한 테스트 프로세스까지 자동으로 생성하고 실행합니다. 이를 통해 기존에는 수년이 걸리던 메인프레임 현대화 프로젝트 기간을 **수개월 단위로 획기적으로 단축**할 수 있게 되어, 기업들은 비용 절감과 함께 더 민첩하게 비즈니스 혁신을 추진할 수 있을 것으로 전망됩니다.</p>
+      <ul>
+        <li>**핵심 기능:** AI 기반 리이매진(Reimagine) 및 자동화된 테스트.</li>
+        <li>**주요 효과:** 메인프레임 현대화 기간을 **수년에서 수개월로 단축**.</li>
+        <li>**기술적 배경:** AI 기반 지능형 분석 및 클라우드 네이티브 코드 자동 변환.</li>
+      </ul>
+    </div>
+    <div class="source">[Source: AWS News]</div>
+  </div>
+
+  <div class="headline-card">
+    <h2 class="headline-title">Apple, Google 및 Microsoft 출신 AI 전문가 Amar Subramanya를 새로운 AI 책임자로 영입</h2>
+    <div class="summary">
+      <p>Apple은 최근 몇 년간 AI 분야에서 경쟁사 대비 뒤처진다는 평가를 받아왔으며, 이러한 상황 속에서 기존 AI 책임자인 존 지아난드레아(John Giannandrea)가 사임했습니다. 이에 Apple은 AI 전략을 대대적으로 강화하고 경쟁 우위를 확보하기 위해 **구글(Google)과 마이크로소프트(Microsoft)에서 핵심 역할을 수행했던 아마르 수브라마냐(Amar Subramanya)를 새로운 AI 책임자**로 선임했습니다.</p>
+      <p>수브라마냐는 구글에서 16년간 근무하며 특히 **제미니 어시스턴트(Gemini Assistant) 엔지니어링을 이끌었던 경험**이 있으며, 마이크로소프트에서도 주요 임원직을 역임했습니다. 이처럼 경쟁사의 AI 기술과 전략에 대한 깊이 있는 이해를 가진 그의 영입은 Apple이 자체 AI 역량을 강화하고, 특히 온디바이스 AI(On-device AI) 등 자사 생태계에 최적화된 혁신적인 AI 제품과 서비스를 선보이는 데 중요한 전환점이 될 것으로 기대됩니다.</p>
+      <ul>
+        <li>**신임 AI 책임자:** 아마르 수브라마냐(Amar Subramanya).</li>
+        <li>**주요 경력:** 구글 제미니 어시스턴트 엔지니어링 리더 (16년), 마이크로소프트 임원.</li>
+        <li>**전망:** Apple의 AI 경쟁력 강화 및 온디바이스 AI 전략 가속화.</li>
+      </ul>
+    </div>
+    <div class="source">[Source: TechCrunch AI]</div>
+  </div>
+
+  <div class="section-title">🔥 MAJOR ISSUES</div>
+  <div class="grid-container">
+    <div class="news-card">
+      <h3 class="news-title">데이터센터 전력 수요, 2035년까지 300% 급증 전망</h3>
+      <div class="summary">
+        <p>AI 기술의 폭발적인 발전과 데이터센터의 지속적인 확산으로 전력 수요가 2035년까지 **거의 300% 가까이 폭증**할 것으로 예측되었습니다. 이는 높은 전기 요금의 원인이자 전력망에 상당한 부담을 줄 것이며, 전력 인프라 개선 및 지속 가능한 에너지 솔루션 마련이 시급함을 시사합니다.</p>
+      </div>
+      <div class="source">[Source: TechCrunch AI]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">AWS Transform Custom: AI 기반 코드 현대화로 기술 부채 해소 가속화</h3>
+      <div class="summary">
+        <p>AWS Transform Custom은 **AI 기반**으로 기업의 고유한 코딩 패턴과 아키텍처를 학습하여 대규모 애플리케이션 현대화를 자동화하는 서비스입니다. 이를 통해 복잡하고 비용이 많이 드는 기술 부채(tech debt)를 효과적으로 해소하고, 코드 변환 및 실행 시간을 **최대 80% 단축**하여 기업이 클라우드 전환과 혁신에 더욱 집중할 수 있도록 지원합니다.</p>
+      </div>
+      <div class="source">[Source: AWS News]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">DeepSeek, GPT-5에 필적하는 강력한 AI 모델을 무료로 공개</h3>
+      <div class="summary">
+        <p>중국 AI 스타트업 DeepSeek이 OpenAI의 GPT-5 및 Google의 제미니(Gemini)와 비견될 만한 성능을 자랑하는 두 가지 새로운 **AI 모델을 무료로 공개**하며 업계에 파장을 일으키고 있습니다. 이는 AI 모델 개발 경쟁이 심화되는 가운데, 특히 오픈소스 AI 분야에서 중국 기업들의 기술력이 크게 부상하고 있음을 명확히 보여주는 중요한 사례로 평가됩니다.</p>
+      </div>
+      <div class="source">[Source: VentureBeat AI]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">Google의 AI 최대 강점: 방대한 사용자 데이터 기반 개인화</h3>
+      <div class="summary">
+        <p>Google은 수십 년간 축적해 온 방대한 사용자 데이터를 기반으로 한 **개인화된 AI 서비스**에서 독보적인 강점을 보유하고 있습니다. 이러한 데이터 우위는 AI가 사용자에게 고유하게 유용할 수 있다는 강력한 이점을 제공하지만, 동시에 개인 정보 보호 문제와 더불어 AI 서비스가 '감시'처럼 느껴질 수 있다는 윤리적 우려도 함께 제기되고 있습니다.</p>
+      </div>
+      <div class="source">[Source: TechCrunch AI]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">Nvidia, Synopsys에 20억 달러 투자로 칩 설계 스택 장악력 강화</h3>
+      <div class="summary">
+        <p>Nvidia가 반도체 칩 설계 소프트웨어 및 부품 제조사 Synopsys에 **20억 달러를 투자**하며 기존 파트너십을 더욱 강화했습니다. 이는 AI 산업 내 '순환 투자(circular deal)'에 대한 회의적인 시각과 잠재적 거품 경고가 고조되는 가운데, Nvidia가 핵심 기술 분야인 칩 설계 스택에 대한 영향력과 통제력을 확대하려는 전략적 움직임으로 풀이됩니다.</p>
+      </div>
+      <div class="source">[Source: TechCrunch AI]</div>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">Amazon AI 챗봇 'Rufus', 블랙 프라이데이 매출 100% 증가 견인</h3>
+      <div class="summary">
+        <p>Amazon의 AI 챗봇 **'루퍼스(Rufus)'가 블랙 프라이데이 기간 동안 미국 내 판매로 이어진 쇼핑 세션을 100% 증가**시키는 놀라운 성과를 기록했습니다. 이는 루퍼스를 사용하지 않은 경우 판매 증가율이 20%에 그쳤다는 점과 대비되며, AI 챗봇이 단순한 고객 지원을 넘어 전자상거래 환경에서 **직접적인 매출 증대 효과**를 가져올 수 있음을 강력하게 입증했습니다.</p>
+      </div>
+      <div class="source">[Source: TechCrunch AI]</div>
+    </div>
+  </div>
+
+  <div class="section-title">📄 BRIEF & OTHERS</div>
+  <div class="brief-list">
+    <div class="brief-item">
+      <h4 class="brief-title">AWS Transform, 풀스택 윈도우 현대화 기능 발표</h4>
+      <div class="summary">AWS Transform이 AI 기반으로 애플리케이션 코드, UI, 데이터베이스, 배포 구성 등 윈도우 애플리케이션 전반을 **최대 5배 빠르게 현대화**하는 기능을 선보였다. <span class="source">[Source: AWS News]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">미국 정부가 최대 주주인 칩 스타트업 xLight의 운명</h4>
+      <div class="summary">칩 스타트업 xLight가 미국 정부를 최대 주주로 맞이하며 **실리콘밸리의 자유지상주의적 정신과 충돌**하는 상황에 직면했다. 이는 정부의 기술 산업 개입에 대한 논쟁을 불러일으킬 것으로 보인다. <span class="source">[Source: TechCrunch AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">Nvidia, 자율주행 연구 위한 새로운 오픈 AI 모델 및 도구 공개</h4>
+      <div class="summary">Nvidia가 NeurIPS에서 디지털 및 물리적 AI를 위한 새로운 추론 월드 모델(reasoning world model)과 기타 도구를 공개하며 **자율주행 연구 분야의 오픈 모델 개발**을 가속화한다. <span class="source">[Source: TechCrunch AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">AWS re:Invent 2025, 주요 발표 실시간 중계</h4>
+      <div class="summary">Amazon Web Services의 연례 컨퍼런스 **re:Invent 2025**가 라스베이거스에서 진행 중이며, 주요 기조연설은 TechCrunch AI를 통해 실시간으로 시청 가능하다. <span class="source">[Source: TechCrunch AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">건설 노동자들, AI 붐으로 인한 데이터센터 건설 호황 수혜</h4>
+      <div class="summary">AI 산업 성장에 따른 **데이터센터 건설 붐**으로 인해 건설 노동자들이 새로운 감독직을 맡는 등 고용 및 수익 증가의 수혜를 입고 있다. <span class="source">[Source: TechCrunch AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">OpenAI, Thrive Holdings 투자로 '순환 거래' 논란 재점화</h4>
+      <div class="summary">OpenAI의 Thrive Holdings 투자가 **투기적 시장 잠재력 기반의 가치 부풀리기**를 초래할 수 있다는 '순환 거래(circular deal)' 논란을 다시 불러일으키고 있으며, 실제 사업 성과가 주목된다. <span class="source">[Source: TechCrunch AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">Black Forest Labs, 3억 달러 투자 유치 및 32.5억 달러 기업 가치 달성</h4>
+      <div class="summary">AI 스타트업 Black Forest Labs가 Salesforce Ventures와 AMP의 공동 주도로 **3억 달러 투자를 유치**하며 **32.5억 달러의 기업 가치**를 인정받았다. <span class="source">[Source: TechCrunch AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">AI의 상태: MIT Technology Review, '경제적 특이점' 도래 가능성 논의</h4>
+      <div class="summary">Financial Times와 MIT Technology Review의 협력 시리즈 'AI의 상태'가 생성형 AI 혁명이 글로벌 경제에 미치는 영향을 다루며 **'경제적 특이점(economic singularity)' 도래 가능성**을 논의한다. <span class="source">[Source: MIT Technology Review AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">Arcee, Apache 2.0 기반 Trinity 모델로 미국 오픈소스 AI 경쟁력 재점화 목표</h4>
+      <div class="summary">Arcee가 Apache 2.0 라이선스 하에 새로운 **트리니티(Trinity) 모델을 출시**하며, 중국이 주도하던 오픈소스 언어 모델 분야에서 **미국의 경쟁력을 재점화**하려 한다. <span class="source">[Source: VentureBeat AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">MIT 파생 Liquid AI, 엔터프라이즈급 소형 모델 훈련 청사진 공개</h4>
+      <div class="summary">MIT 출신들이 설립한 Liquid AI가 기업용 소형 AI 모델 훈련을 위한 청사진을 발표하며, **특정 워크로드에 최적화된 효율적인 AI 솔루션**의 가능성을 제시했다. <span class="source">[Source: VentureBeat AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">OpenAGI, OpenAI 및 Anthropic 능가하는 AI 에이전트 공개 주장</h4>
+      <div class="summary">OpenAGI는 MIT 연구원이 설립한 스타트업으로, OpenAI와 Anthropic의 시스템보다 컴퓨터 제어 능력이 뛰어나며 **비용 효율적인 AI 에이전트**를 공개하며 주목받고 있다. <span class="source">[Source: VentureBeat AI]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">NVIDIA, NeurIPS에서 디지털 및 물리적 AI 위한 오픈 모델 개발 가속화</h4>
+      <div class="summary">NVIDIA는 NeurIPS에서 연구자들을 위해 디지털 및 물리적 AI 분야의 **오픈소스 모델, 데이터셋, 도구 컬렉션**을 확장하며 광범위한 산업 분야에 적용 가능한 AI 발전을 지원한다. <span class="source">[Source: NVIDIA Blog]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">네이버 웹툰, 창작 생태계 보호를 위한 연구 진행</h4>
+      <div class="summary">네이버 웹툰은 창작자의 안정적인 수익과 글로벌 IP(intellectual property) 확장을 위한 노력을 공유하며, 활성화된 웹툰 **창작 생태계 보호를 위한 연구**를 진행 중이다. <span class="source">[Source: Naver D2]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">Iceberg Low-Latency Queries with Materialized Views: 네이버의 실시간 거래 리포트 기술</h4>
+      <div class="summary">네이버는 '실시간 거래 리포트'를 사용자가 다양한 조건으로 **빠르게 조회**할 수 있도록 Iceberg와 Materialized View를 활용한 기술적 여정을 NAVER ENGINEERING DAY 2025 세션을 통해 소개했다. <span class="source">[Source: Naver D2]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">우아한형제들, 배달의민족 시스템 장애 탐지 및 대응 고도화</h4>
+      <div class="summary">배달의민족 운영사인 우아한형제들이 고객 기대에 부응하기 위해 시스템 **장애를 놓치지 않고 빠르게 탐지**하는 고도화된 모니터링 및 대응 시스템을 구축하고 있음을 설명한다. <span class="source">[Source: Woowa Bros]</span></div>
+    </div>
+    <div class="brief-item">
+      <h4 class="brief-title">토스, Next ML Challenge - 광고 클릭 예측(PCTR) 경진대회 출제 후기 공개</h4>
+      <div class="summary">토스는 첫 ML 경진대회 'Next ML Challenge'의 **광고 클릭 예측(PCTR) 문제 출제 비하인드 스토리**와 참가자들의 창의적인 문제 해결 방식을 공유하며 AI 인재 양성에 기여한다. <span class="source">[Source: Toss Tech]</span></div>
+    </div>
+  </div>
+</body>
+</html>
