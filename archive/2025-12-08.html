@@ -1,222 +1,294 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2025-12-08 Tech Briefing</title>
-<style>
-  /* 기본 스타일 */
-  body { 
-    font-family: Pretendard, Roboto, system-ui, sans-serif; 
-    max-width: 1000px; 
-    margin: 0 auto; 
-    padding: 20px; 
-    background: #f4f6f8; 
-    color: #333; 
-    line-height: 1.6;
-  }
-  .header { 
-    text-align: center; 
-    margin-bottom: 30px; 
-    border-bottom: 3px solid #2c3e50; 
-    padding-bottom: 10px; 
-    position: relative; /* 아카이브 셀렉터 위치 지정을 위해 */
-  }
-  .header h1 {
-    color: #2c3e50;
-    margin-bottom: 5px;
-  }
-  .header p {
-    color: #555;
-    font-size: 1.1em;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025-12-08 Tech Briefing</title>
+  <style>
+    /* 기본 스타일 */
+    body {
+      font-family: Pretendard, Roboto, system-ui, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+    }
 
-  /* 섹션 제목 */
-  .section-title { 
-    font-size: 1.5em; 
-    font-weight: bold; 
-    margin: 20px 0 15px; 
-    color: #2c3e50; 
-    border-left: 5px solid #e74c3c; 
-    padding-left: 10px; 
-  }
- 
-  /* Headline 스타일 */
-  .headline-card { 
-    background: white; 
-    padding: 25px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
-    margin-bottom: 25px; 
-    border-top: 5px solid #e74c3c; 
-  }
-  .headline-title { 
-    font-size: 1.8em; 
-    margin: 0 0 15px; 
-    color: #c0392b; 
-    line-height: 1.3;
-  }
-  .headline-summary {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    color: #444;
-    text-align: justify;
-  }
-  .headline-details ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 15px;
-    color: #555;
-  }
-  .headline-details li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
- 
-  /* Major News 스타일 (현재 Input Data가 하나이므로 이 섹션은 비어있음) */
-  .grid-container { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 20px; 
-    margin-bottom: 25px;
-  }
-  .news-card { 
-    background: white; 
-    padding: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    border-left: 4px solid #2980b9;
-  }
-  .news-title { 
-    font-size: 1.25em; 
-    font-weight: bold; 
-    margin-bottom: 10px; 
-    color: #2980b9; 
-    line-height: 1.4;
-  }
-  .news-summary {
-    font-size: 0.95em;
-    color: #666;
-    margin-bottom: 10px;
-    flex-grow: 1; /* 요약 내용이 카드 높이를 채우도록 */
-    text-align: justify;
-  }
- 
-  /* Brief 스타일 (현재 Input Data가 하나이므로 이 섹션은 비어있음) */
-  .brief-list { 
-    background: white; 
-    padding: 20px 25px; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-  .brief-item { 
-    border-bottom: 1px solid #eee; 
-    padding: 15px 0; 
-  }
-  .brief-item:last-child { 
-    border-bottom: none; 
-  }
-  .brief-item h3 {
-    font-size: 1.1em;
-    color: #34495e;
-    margin-top: 0;
-    margin-bottom: 8px;
-  }
-  .brief-item p {
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 5px;
-    text-align: justify;
-  }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #2c3e50;
+      padding-bottom: 10px;
+      position: relative;
+      /* 아카이브 셀렉터 위치 지정을 위해 */
+    }
 
-  /* 공통 요소 */
-  .source { 
-    font-size: 0.85em; 
-    color: #7f8c8d; 
-    margin-top: 15px; 
-    text-align: right; 
-    font-style: italic;
-  }
-  
-  /* 아카이브 드롭다운 스타일 */
-  .archive-selector { 
-    position: absolute; 
-    top: 25px; 
-    right: 20px; 
-  }
-  .archive-selector select { 
-    padding: 8px 12px; 
-    border-radius: 5px; 
-    border: 1px solid #2c3e50; 
-    background: white; 
-    cursor: pointer; 
-    font-size: 0.9em;
-    color: #333;
-    appearance: none; /* 기본 드롭다운 화살표 제거 */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20fill%3D%22%232c3e50%22%20d%3D%22M208.5%2089.4c-4.7-4.7-12.3-4.7-17%200L128%20152.9%2064.5%2089.4c-4.7-4.7-12.3-4.7-17%200s-4.7%2012.3%200%2017l71.5%2071.5c4.7%204.7%2012.3%204.7%2017%200l71.5-71.5c4.7-4.7%204.7-12.3%200-17z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
-    padding-right: 30px; /* 화살표 공간 확보 */
-  }
+    .header h1 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
 
-  /* 반응형 디자인 */
-  @media (max-width: 768px) { 
-    body { padding: 15px; }
-    .header { margin-bottom: 20px; }
-    .header h1 { font-size: 1.8em; }
-    .header p { font-size: 1em; }
-    .section-title { font-size: 1.3em; margin-top: 15px; margin-bottom: 10px; }
-    .headline-card { padding: 20px; margin-bottom: 20px; }
-    .headline-title { font-size: 1.5em; margin-bottom: 10px; }
-    .headline-summary { font-size: 1em; margin-bottom: 15px; }
-    .headline-details ul { padding-left: 20px; }
-    .grid-container { grid-template-columns: 1fr; gap: 15px; margin-bottom: 20px; }
-    .news-card { padding: 18px; }
-    .news-title { font-size: 1.15em; margin-bottom: 8px; }
-    .news-summary { font-size: 0.9em; }
-    .brief-list { padding: 15px 20px; }
-    .brief-item { padding: 12px 0; }
-    .brief-item h3 { font-size: 1em; }
-    .brief-item p { font-size: 0.85em; }
-    .archive-selector { 
-      position: static; 
-      text-align: center; 
-      margin-bottom: 20px; 
-    } 
-  }
-</style>
+    .header p {
+      color: #555;
+      font-size: 1.1em;
+    }
+
+    /* 섹션 제목 */
+    .section-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 20px 0 15px;
+      color: #2c3e50;
+      border-left: 5px solid #e74c3c;
+      padding-left: 10px;
+    }
+
+    /* Headline 스타일 */
+    .headline-card {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      margin-bottom: 25px;
+      border-top: 5px solid #e74c3c;
+    }
+
+    .headline-title {
+      font-size: 1.8em;
+      margin: 0 0 15px;
+      color: #c0392b;
+      line-height: 1.3;
+    }
+
+    .headline-summary {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #444;
+      text-align: justify;
+    }
+
+    .headline-details ul {
+      list-style-type: disc;
+      padding-left: 25px;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .headline-details li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* Major News 스타일 (현재 Input Data가 하나이므로 이 섹션은 비어있음) */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .news-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 4px solid #2980b9;
+    }
+
+    .news-title {
+      font-size: 1.25em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #2980b9;
+      line-height: 1.4;
+    }
+
+    .news-summary {
+      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 10px;
+      flex-grow: 1;
+      /* 요약 내용이 카드 높이를 채우도록 */
+      text-align: justify;
+    }
+
+    /* Brief 스타일 (현재 Input Data가 하나이므로 이 섹션은 비어있음) */
+    .brief-list {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .brief-item {
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+    }
+
+    .brief-item:last-child {
+      border-bottom: none;
+    }
+
+    .brief-item h3 {
+      font-size: 1.1em;
+      color: #34495e;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .brief-item p {
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 5px;
+      text-align: justify;
+    }
+
+    /* 공통 요소 */
+    .source {
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-top: 15px;
+      text-align: right;
+      font-style: italic;
+    }
+
+    /* 아카이브 드롭다운 스타일 */
+    .archive-selector {
+      position: absolute;
+      top: 25px;
+      right: 20px;
+    }
+
+    .archive-selector select {
+      padding: 8px 12px;
+      border-radius: 5px;
+      border: 1px solid #2c3e50;
+      background: white;
+      cursor: pointer;
+      font-size: 0.9em;
+      color: #333;
+      appearance: none;
+      /* 기본 드롭다운 화살표 제거 */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20fill%3D%22%232c3e50%22%20d%3D%22M208.5%2089.4c-4.7-4.7-12.3-4.7-17%200L128%20152.9%2064.5%2089.4c-4.7-4.7-12.3-4.7-17%200s-4.7%2012.3%200%2017l71.5%2071.5c4.7%204.7%2012.3%204.7%2017%200l71.5-71.5c4.7-4.7%204.7-12.3%200-17z%22%2F%3E%3C%2Fsvg%3E');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 12px;
+      padding-right: 30px;
+      /* 화살표 공간 확보 */
+    }
+
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      .header {
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        font-size: 1.8em;
+      }
+
+      .header p {
+        font-size: 1em;
+      }
+
+      .section-title {
+        font-size: 1.3em;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .headline-card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .headline-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .headline-summary {
+        font-size: 1em;
+        margin-bottom: 15px;
+      }
+
+      .headline-details ul {
+        padding-left: 20px;
+      }
+
+      .grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .news-card {
+        padding: 18px;
+      }
+
+      .news-title {
+        font-size: 1.15em;
+        margin-bottom: 8px;
+      }
+
+      .news-summary {
+        font-size: 0.9em;
+      }
+
+      .brief-list {
+        padding: 15px 20px;
+      }
+
+      .brief-item {
+        padding: 12px 0;
+      }
+
+      .brief-item h3 {
+        font-size: 1em;
+      }
+
+      .brief-item p {
+        font-size: 0.85em;
+      }
+
+      .archive-selector {
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
-<body>
-<div class="archive-selector">
-    <select onchange="if(this.value) location.href='archive/' + this.value">
-        <option value="">📅 과거 기사 보기</option>
-        <option value="2025-12-08.html">2025-12-08</option>
-<option value="2025-12-06.html">2025-12-06</option>
-<option value="2025-12-05.html">2025-12-05</option>
-<option value="2025-12-04.html">2025-12-04</option>
-<option value="2025-12-03.html">2025-12-03</option>
-<option value="2025-12-02.html">2025-12-02</option>
-<option value="2025-12-01.html">2025-12-01</option>
 
+<body>
+  <div class="archive-selector">
+    <select onchange="if(this.value) location.href = this.value">
+      <option value="">📅 과거 기사 보기</option>
+      <option value="../index.html">🏠 오늘 뉴스로 이동</option>
+      <option value="2025-12-09.html">2025-12-09</option>
+      <option value="2025-12-08.html" selected>2025-12-08</option>
+      <option value="2025-12-06.html">2025-12-06</option>
+      <option value="2025-12-05.html">2025-12-05</option>
+      <option value="2025-12-04.html">2025-12-04</option>
+      <option value="2025-12-03.html">2025-12-03</option>
+      <option value="2025-12-02.html">2025-12-02</option>
+      <option value="2025-12-01.html">2025-12-01</option>
     </select>
-    </div>
+  </div>
 
   <div class="header">
-    <div class="archive-selector">
-      <select>
-        <option value="">지난 리포트 보기</option>
-        <option value="2025-12-07">2025-12-07</option>
-        <option value="2025-12-06">2025-12-06</option>
-        <option value="2025-12-05">2025-12-05</option>
-      </select>
-    </div>
     <h1>🚀 Daily Tech Insight</h1>
     <p>오늘의 주요 IT 트렌드 심층 분석 - 2025-12-08</p>
   </div>
@@ -225,7 +297,11 @@
   <div class="headline-card">
     <h2 class="headline-title">OpenAI, 광고처럼 보이는 앱 추천 기능 중단 발표</h2>
     <p class="headline-summary">
-      인공지능(AI) 스타트업 OpenAI가 자사의 챗봇 서비스 ChatGPT 내에서 사용자들에게 광고처럼 보였던 **앱 추천 기능**을 중단했다고 발표했습니다. 이번 논란은 일부 사용자들에게 노출된 프로모션 메시지가 마치 광고처럼 비쳐지면서 불거졌으며, 이는 OpenAI의 **수익 모델 다각화**에 대한 시장의 높은 관심 속에 광고 도입 가능성으로 해석되었습니다. OpenAI는 현재 ChatGPT에 어떠한 광고도 게재하고 있지 않으며 관련 테스트도 진행하고 있지 않다고 명확히 선을 그었습니다. 최고 연구 책임자(Chief Research Officer)는 해당 메시지 방식이 사용자들에게 혼란을 주었음을 인정하며 **"미흡했다(fell short)"**고 언급, 향후 사용자 경험과 신뢰를 위한 **투명한 소통**의 중요성을 강조했습니다. 이번 사건은 AI 서비스 내 상업적 요소 도입에 대한 업계의 민감한 시선을 보여주는 사례로 평가됩니다.
+      인공지능(AI) 스타트업 OpenAI가 자사의 챗봇 서비스 ChatGPT 내에서 사용자들에게 광고처럼 보였던 **앱 추천 기능**을 중단했다고 발표했습니다. 이번 논란은 일부 사용자들에게 노출된 프로모션
+      메시지가 마치 광고처럼 비쳐지면서 불거졌으며, 이는 OpenAI의 **수익 모델 다각화**에 대한 시장의 높은 관심 속에 광고 도입 가능성으로 해석되었습니다. OpenAI는 현재 ChatGPT에 어떠한
+      광고도 게재하고 있지 않으며 관련 테스트도 진행하고 있지 않다고 명확히 선을 그었습니다. 최고 연구 책임자(Chief Research Officer)는 해당 메시지 방식이 사용자들에게 혼란을 주었음을
+      인정하며 **"미흡했다(fell short)"**고 언급, 향후 사용자 경험과 신뢰를 위한 **투명한 소통**의 중요성을 강조했습니다. 이번 사건은 AI 서비스 내 상업적 요소 도입에 대한 업계의 민감한
+      시선을 보여주는 사례로 평가됩니다.
     </p>
     <div class="headline-details">
       <ul>
@@ -249,4 +325,5 @@
     <!-- Input Data에 Brief 분류 항목이 없으므로 비어있음 -->
   </div>
 </body>
+
 </html>
