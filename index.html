@@ -4,53 +4,177 @@
 <head>
 <meta charset="UTF-8">
 <title>2025-12-09 Tech Briefing</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  /* 여기에 CSS 작성: 모던하고 깔끔한 뉴스 대시보드 스타일 */
-  body { font-family: 'Pretendard', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f4f6f8; color: #333; line-height: 1.6; }
-  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2c3e50; padding-bottom: 15px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-  .header h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 5px; }
-  .header p { color: #555; font-size: 1.1em; }
+  /* 기본 설정 및 폰트 */
+  body { 
+    font-family: 'Pretendard', 'Roboto', 'system-ui', sans-serif; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background: #f4f6f8; 
+    color: #333; 
+    line-height: 1.6; /* 전체적인 가독성 향상 */
+  }
 
-  .section-title { font-size: 1.5em; font-weight: bold; margin: 30px 0 15px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 10px; }
+  /* 헤더 섹션 */
+  .header { 
+    text-align: center; 
+    margin-bottom: 30px; 
+    border-bottom: 3px solid #2c3e50; 
+    padding-bottom: 10px; 
+    position: relative; 
+  }
+  .header h1 { 
+    font-size: 2.5em; 
+    color: #2c3e50; 
+    margin-bottom: 10px; 
+  }
+  .header p { 
+    font-size: 1.1em; 
+    color: #555; 
+  }
+
+  /* 섹션 타이틀 */
+  .section-title { 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    margin: 30px 0 15px; 
+    color: #2c3e50; 
+    border-left: 5px solid #e74c3c; 
+    padding-left: 10px; 
+  }
  
   /* Headline 스타일: 강조, 박스 형태 */
-  .headline-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 25px; border-top: 5px solid #e74c3c; }
-  .headline-title { font-size: 1.8em; margin: 0 0 15px; color: #c0392b; line-height: 1.3; }
-  .headline-title strong { color: #2c3e50; }
-  .headline-facts { list-style: none; padding-left: 0; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
-  .headline-facts li { margin-bottom: 8px; font-size: 0.95em; color: #444; }
-  .headline-facts li::before { content: "• "; color: #e74c3c; font-weight: bold; margin-right: 5px; }
+  .headline-card { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    margin-bottom: 20px; 
+    border-top: 5px solid #c0392b; /* 강조 색상 */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .headline-title { 
+    font-size: 1.8em; 
+    margin: 0 0 15px; 
+    color: #c0392b; 
+    line-height: 1.3;
+  }
+  .headline-card ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: #555;
+    margin-top: 15px;
+  }
+  .headline-card ul li {
+    margin-bottom: 5px;
+  }
 
   /* Major News 스타일: 2열 그리드 */
-  .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 30px; }
-  .news-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease-in-out; border-left: 4px solid #2980b9; }
-  .news-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.12); }
-  .news-title { font-size: 1.3em; font-weight: bold; margin-bottom: 12px; color: #2980b9; line-height: 1.4; }
-  .news-title strong { color: #34495e; }
+  .grid-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    margin-bottom: 30px;
+  }
+  .news-card { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    border-left: 3px solid #2980b9; /* 액센트 색상 */
+  }
+  .news-title { 
+    font-size: 1.25em; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    color: #2980b9; 
+    line-height: 1.4;
+  }
+  .news-card .summary {
+    font-size: 0.95em;
+    color: #444;
+  }
  
   /* Brief 스타일: 리스트 형태 */
-  .brief-list { background: white; padding: 20px 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-  .brief-item { border-bottom: 1px solid #eee; padding: 15px 0; }
-  .brief-item:last-child { border-bottom: none; }
-  .brief-item-title { font-weight: bold; color: #34495e; margin-bottom: 5px; font-size: 1.1em; }
-  .brief-item-title strong { color: #e74c3c; }
-
-  .source { font-size: 0.85em; color: #7f8c8d; margin-top: 10px; text-align: right; display: block; }
-  .summary { line-height: 1.7; text-align: justify; font-size: 1em; color: #444; }
-  .summary strong { color: #e74c3c; } /* Highlight keywords */
+  .brief-list { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  .brief-item { 
+    border-bottom: 1px solid #eee; 
+    padding: 15px 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .brief-item:last-child { 
+    border-bottom: none; 
+  }
+  .brief-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  .brief-item .summary {
+    font-size: 0.9em;
+    color: #555;
+  }
+ 
+  .source { 
+    font-size: 0.8em; 
+    color: #7f8c8d; 
+    margin-top: 10px; 
+    text-align: right; 
+    font-style: italic;
+  }
+  .summary { 
+    line-height: 1.6; 
+    text-align: justify; 
+    margin-bottom: 10px;
+  }
 
   /* 아카이브 드롭다운 스타일 */
-  .archive-selector { position: absolute; top: 20px; right: 20px; }
-  .archive-selector select { padding: 10px 15px; border-radius: 5px; border: 2px solid #2c3e50; background: white; cursor: pointer; font-size: 1em; color: #333; }
+  .archive-selector { 
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    z-index: 100;
+  }
+  .archive-selector select { 
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    background: white; 
+    cursor: pointer; 
+    font-size: 0.9em;
+    color: #333;
+  }
 
-  @media (max-width: 768px) {
+  /* 반응형 디자인 */
+  @media (max-width: 768px) { 
     body { padding: 15px; }
-    .grid-container { grid-template-columns: 1fr; gap: 20px; }
-    .archive-selector { position: static; text-align: center; margin-bottom: 20px; }
     .header h1 { font-size: 2em; }
-    .headline-title { font-size: 1.6em; }
-    .news-title { font-size: 1.2em; }
-    .section-title { font-size: 1.3em; margin: 25px 0 12px; }
+    .header p { font-size: 1em; }
+    .section-title { font-size: 1.3em; margin: 25px 0 10px; }
+    .headline-title { font-size: 1.5em; }
+    .grid-container { grid-template-columns: 1fr; } 
+    .archive-selector { 
+      position: static; 
+      text-align: center; 
+      margin-bottom: 20px; 
+      margin-top: 10px;
+    }
   }
 </style>
 </head>
@@ -72,9 +196,10 @@
 
   <div class="archive-selector">
     <select>
-      <option value="#">과거 리포트 선택</option>
-      <option value="#">2025-12-08 Tech Briefing</option>
-      <option value="#">2025-12-07 Tech Briefing</option>
+      <option value="#">과거 리포트</option>
+      <option value="#">2025-12-08 리포트</option>
+      <option value="#">2025-12-07 리포트</option>
+      <option value="#">이전 리포트 보기...</option>
     </select>
   </div>
   
@@ -84,114 +209,109 @@
   </div>
 
   <div class="section-title">🚨 HEADLINE NEWS</div>
-
-  <div class="headline-card">
-    <h2 class="headline-title">미 상무부, <strong>엔비디아 H200 칩 對중국 수출 승인</strong>: 美 기술 통제 정책 혼선 우려 증폭</h2>
-    <div class="summary">
-      <p>미국 상무부가 엔비디아의 첨단 AI 칩인 H200의 중국 수출을 승인하며, 미국 의회에서 유사 칩 수출을 금지하는 법안이 발의된 지 얼마 되지 않아 정부 내 정책 일관성에 대한 의문이 제기되고 있습니다. 이는 미-중 기술 패권 경쟁이 심화되는 가운데, 미국 정부가 안보와 경제적 이익 사이에서 복잡한 균형을 모색하고 있음을 보여줍니다. 상무부의 이번 결정은 엔비디아에게 중국 시장 접근성을 유지할 기회를 제공하지만, 동시에 대중국 기술 통제 정책의 모호성을 드러내 향후 의회의 추가적인 법적 대응을 불러올 가능성이 높습니다. 전문가들은 엔비디아의 중국 시장 사업 지속과 더불어, 기술 패권 경쟁의 양상이 더욱 복잡해질 것이며 미국 기업들의 전략적 대응이 중요해질 것으로 전망합니다.</p>
-      <ul class="headline-facts">
-        <li><strong>미국 상무부:</strong> 엔비디아 H200 AI 칩의 對중국 수출 승인 결정.</li>
-        <li><strong>시기:</strong> 미국 의회에서 첨단 AI 칩 수출 금지 법안 발의 직후 발표.</li>
-        <li><strong>영향:</strong> 엔비디아의 중국 시장 사업 지속 가능성 확보 및 미-중 기술 정책의 복잡성 증대.</li>
-        <li><strong>향후 전망:</strong> 미국 정부 내 정책 일관성 논란 가열 및 의회의 추가 대응 가능성.</li>
+  <div class="headline-container">
+    <div class="headline-card">
+      <h2 class="headline-title">미국 상무부, **엔비디아 H200** 칩의 **중국 수출 승인**</h2>
+      <p class="summary">
+        미국 상무부가 최근 **엔비디아(Nvidia)**의 고성능 **H200 AI 칩**의 중국 수출을 승인한 것으로 알려져 논란이 되고 있습니다. 이러한 결정은 미국의 기술 통제 정책과 상반되는 움직임으로, 지난주 의회에서 유사한 칩 수출을 막으려는 법안이 발의된 직후에 나왔습니다. 이는 첨단 기술의 수출 규제와 경제적 이해관계 사이의 복잡한 균형을 보여주며, 향후 **미중 기술 경쟁**의 양상에 중요한 영향을 미칠 것으로 예상됩니다. 이 결정은 단기적으로 엔비디아의 수익에는 긍정적일 수 있으나, 장기적으로 미국의 안보 우려를 심화시키고 대중국 기술 압박 전략의 일관성에 대한 의문을 제기하고 있습니다.
+      </p>
+      <ul>
+        <li>**주요 품목:** 엔비디아 H200 인공지능(AI) 칩</li>
+        <li>**규제 배경:** 미국 의회에서 고성능 AI 칩의 중국 수출을 막으려는 법안 발의 직후 승인</li>
+        <li>**영향:** 미중 기술 패권 경쟁 및 글로벌 반도체 시장에 중대한 파장 예상, 미국의 대중국 기술 전략 재검토 요구 증대</li>
       </ul>
+      <p class="source">[Source: TechCrunch AI]</p>
     </div>
-    <span class="source">[Source: TechCrunch AI]</span>
-  </div>
 
-  <div class="headline-card">
-    <h2 class="headline-title">트럼프, <strong>주(州)별 AI 법안 저지 행정명령 예고</strong>: 초당적 AI 규제 논의에 찬물</h2>
-    <div class="summary">
-      <p>도널드 트럼프 전 대통령이 소셜 미디어를 통해 주(州)별 AI 규제를 막는 **'하나의 규칙(ONE RULE)'** 행정명령을 발표하겠다고 밝히면서, 현재 초당적으로 진행 중인 AI 법안 및 주별 규제 움직임에 대한 정면 대립 구도가 형성되었습니다. 트럼프 전 대통령은 기업들이 50개 주에서 각각 승인을 받아야 하는 상황을 비효율적이며 혁신을 저해하는 요소로 지적하며, AI 기술 개발을 촉진하기 위한 통일된 접근 방식을 주장하고 있습니다. 이러한 발언은 주 정부의 자율성을 침해하고 AI 안전 및 윤리 문제에 대한 지역별 대응을 약화시킬 수 있다는 비판에 직면할 것으로 예상됩니다. 만약 이 행정명령이 발효된다면, 연방 정부와 주 정부 간의 AI 규제 권한을 둘러싼 법적, 정치적 갈등이 심화될 것이며, 이는 미국의 AI 개발 속도와 글로벌 AI 거버넌스 논의에도 상당한 영향을 미칠 것으로 보입니다.</p>
-      <ul class="headline-facts">
-        <li><strong>주요 발언:</strong> "이번 주 '하나의 규칙' 행정명령을 내릴 것."</li>
-        <li><strong>목적:</strong> AI 기술 기업의 주(州)별 규제 부담 완화 및 혁신 촉진.</li>
-        <li><strong>논란:</strong> 연방 정부와 주 정부 간 AI 규제 권한을 둘러싼 갈등 심화 예상.</li>
-        <li><strong>영향:</strong> 미국의 AI 개발 방향 및 글로벌 AI 거버넌스 논의에 중대한 영향.</li>
+    <div class="headline-card">
+      <h2 class="headline-title">트럼프, "**단일 규제**" 행정명령으로 **주(州)별 AI 법률 제정 저지** 예고</h2>
+      <p class="summary">
+        도널드 트럼프 전 대통령이 인공지능(AI) 관련 법규에 대해 '**단일 규제(ONE RULE)**' 행정명령을 발동할 것이라고 밝히며, 주(州)별로 다른 AI 규제 법안 제정을 저지하겠다고 나섰습니다. 이는 초당적인 반대에도 불구하고 추진되는 움직임으로, 기업들이 주마다 다른 50개의 승인을 받아야 하는 부담을 줄여주겠다는 의도입니다. 하지만 AI 기술의 **윤리적, 사회적 문제**에 대한 주(州) 차원의 개입을 제한함으로써 AI 규제 환경에 큰 변화를 가져올 전망입니다. 이러한 조치는 연방 정부의 AI 규제 권한을 강화하고 통일성을 추구하려는 의도로 보이지만, 각 주의 특수성과 다양한 이해관계를 고려하지 않는다는 비판에 직면할 수 있습니다.
+      </p>
+      <ul>
+        <li>**핵심 내용:** 트럼프 전 대통령, 주(州)별 AI 법률 제정 저지 위한 '단일 규제' 행정명령 예고</li>
+        <li>**명분:** 기업의 다중 규제 승인 부담 완화 ("50 Approvals" 불필요), AI 혁신 촉진 주장</li>
+        <li>**논란:** 초당적 반대에도 강행, AI 규제 통일성 및 지방 자치 권한 침해 우려, 장기적인 AI 거버넌스(governance) 혼란 가능성</li>
       </ul>
+      <p class="source">[Source: TechCrunch AI]</p>
     </div>
-    <span class="source">[Source: TechCrunch AI]</span>
   </div>
 
   <div class="section-title">🔥 MAJOR ISSUES</div>
   <div class="grid-container">
     <div class="news-card">
-      <div>
-        <h3 class="news-title">AWS re:Invent 기조연설 요약 및 온디맨드 비디오 공개</h3>
-        <div class="summary">
-          AWS re:Invent 2025 컨퍼런스의 주요 발표 내용과 온디맨드(on-demand) 비디오가 공개되며 행사 후에도 뜨거운 관심을 받고 있습니다. 이번 컨퍼런스에서는 클라우드 컴퓨팅의 새로운 가능성을 제시하는 다양한 서비스와 기능들이 소개되었으며, 특히 **생성형 AI(Generative AI)와 데이터 관리, 보안** 분야의 혁신이 두드러졌습니다. 개발자 및 기업들은 이 새로운 발표들이 비즈니스 과제를 해결하고 새로운 기회를 창출하는 데 어떻게 기여할지 탐색하고 있습니다. 이번 라운드업은 컨퍼런스의 핵심 내용을 다시 한번 정리하여 제공합니다.
-        </div>
-      </div>
-      <span class="source">[Source: AWS News]</span>
+      <h3 class="news-title">**AWS 리인벤트(re:Invent)** 기조연설 요약 및 온디맨드 비디오 공개</h3>
+      <p class="summary">
+        **AWS 리인벤트 2025**가 막을 내린 후, 행사에서 발표된 혁신적인 기술과 서비스들이 다시 한번 주목받고 있습니다. 이번 주간 요약은 리인벤트의 핵심 발표 내용을 재조명하며, 기업들이 새로운 기회를 포착하고 당면 과제를 해결하는 데 어떻게 AWS 서비스를 활용할 수 있을지 심도 있게 다룹니다. 특히 **클라우드(Cloud)** 트렌드를 선도하는 **생성형 AI(Generative AI)**, 서버리스(Serverless) 컴퓨팅(computing) 관련 업데이트가 많아, 기술 혁신을 주도하는 AWS의 비전을 엿볼 수 있습니다. 온디맨드 비디오를 통해 주요 세션을 다시 볼 수 있도록 제공하여, 행사에 참석하지 못한 이들도 최신 클라우드 트렌드를 접할 수 있습니다.
+      </p>
+      <p class="source">[Source: AWS News]</p>
     </div>
 
     <div class="news-card">
-      <div>
-        <h3 class="news-title">OpenAI, 구글 경쟁 심화 속 <strong>기업 고객 8배 성장</strong> 과시</h3>
-        <div class="summary">
-          OpenAI는 내부적으로 구글과의 치열한 경쟁을 '코드 레드(code red)' 상황으로 인식하고 있음에도 불구하고, **ChatGPT 엔터프라이즈** 버전의 사용량이 전년 대비 **8배 증가**했다고 발표하며 기업 시장에서의 성공을 과시했습니다. 기업 사용자들은 ChatGPT를 통해 매일 약 1시간의 업무 시간을 절약하고 있다고 보고했습니다. 하지만 앤트로픽(Anthropic)과 같은 경쟁자들의 부상과 서비스 유지 비용에 대한 의문은 OpenAI의 지속 가능한 성장 모델에 대한 숙제로 남아있습니다.
-        </div>
-      </div>
-      <span class="source">[Source: TechCrunch AI]</span>
+      <h3 class="news-title">구글 위협 '코드 레드' 직후, **OpenAI** 기업 고객 유치 성공 자랑</h3>
+      <p class="summary">
+        **OpenAI**가 내부적으로 **구글(Google)**의 경쟁 위협에 대해 '**코드 레드(Code Red)**'를 발령했음에도 불구하고, 최근 기업 고객 유치에 큰 성공을 거두었다고 발표했습니다. **챗GPT 엔터프라이즈(ChatGPT Enterprise)** 사용량이 전년 대비 **8배 증가**했으며, 사용자들은 하루 평균 1시간의 작업 시간을 절약한다고 보고했습니다. 이는 기업 시장에서의 강력한 입지를 보여주지만, **앤트로픽(Anthropic)** 등 경쟁사들의 추격과 **비용 지속 가능성**에 대한 의문도 함께 제기되고 있어, 향후 시장 경쟁이 더욱 치열해질 것으로 보입니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
     </div>
 
     <div class="news-card">
-      <div>
-        <h3 class="news-title">Anthropic의 <strong>클로드 코드, 슬랙 통합</strong>으로 개발 워크플로우 혁신</h3>
-        <div class="summary">
-          앤트로픽(Anthropic)이 개발자들에게 코딩 작업을 위임할 수 있는 AI 도구인 **'클로드 코드(Claude Code)'를 슬랙(Slack)**에 통합했습니다. 이는 개발자들이 채팅 스레드 내에서 직접 코드를 작성하고 디버깅하며, 워크플로우를 자동화할 수 있게 함으로써 소프트웨어 개발 방식에 큰 변화를 가져올 것으로 기대됩니다. AI가 협업 도구에 깊이 embed(임베드)되는 이러한 추세는 개발 생산성을 혁신하고, 팀 간의 기술적 소통 방식에도 영향을 미칠 전망입니다.
-        </div>
-      </div>
-      <span class="source">[Source: TechCrunch AI / VentureBeat AI]</span>
+      <h3 class="news-title">**앤트로픽(Anthropic)**의 **클로드 코드(Claude Code)**, **슬랙(Slack)**에 통합되어 개발자 워크플로우 혁신 예고</h3>
+      <p class="summary">
+        **앤트로픽(Anthropic)**의 AI 코딩 에이전트인 **클로드 코드(Claude Code)**가 **슬랙(Slack)**에 통합되어 개발자들이 채팅 스레드에서 코딩 작업을 위임할 수 있게 되었습니다. 이 혁신적인 기능은 슬랙 메시지를 이해하고 직접 코드를 작성하며, 개발 **워크플로우(workflow)**에 **인공지능(AI)**을 깊숙이 내재화하는 방향으로 전환점을 맞고 있습니다. 이를 통해 개발 생산성을 크게 향상시키고 소프트웨어(Software) 개발 방식을 재편할 잠재력을 가지고 있으며, 협업 도구의 AI 기능 확장을 가속화할 것으로 기대됩니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI, VentureBeat AI]</p>
     </div>
 
     <div class="news-card">
-      <div>
-        <h3 class="news-title">구글 AI 쇼핑 앱 <strong>'도플(Doppl)', 쇼핑 가능한 발견 피드</strong> 추가</h3>
-        <div class="summary">
-          구글의 AI 기반 가상 피팅 앱 **'도플(Doppl)'**이 새로운 **쇼핑 가능한 발견 피드(shoppable discovery feed)**를 추가하며 기능을 확장했습니다. 이 피드는 사용자에게 맞춤형 상품 추천을 제공하고, 가상으로 옷을 입어본 후 마음에 드는 상품을 즉시 구매할 수 있도록 판매처 링크를 직접 연결합니다. 구글은 이를 통해 사용자들이 새로운 아이템을 더 쉽게 발견하고 쇼핑 경험을 강화할 수 있을 것으로 기대하며, AI가 전자상거래에 미치는 영향력을 확대하고 있습니다.
-        </div>
-      </div>
-      <span class="source">[Source: TechCrunch AI]</span>
-    </div>
-
-    <div class="news-card">
-      <div>
-        <h3 class="news-title">부킹닷컴, <strong>에이전트 전략</strong>으로 추천 정확도 2배 향상</h3>
-        <div class="summary">
-          부킹닷컴(Booking.com)은 자체 개발한 대화형 추천 시스템을 통해 에이전트(agentic) 행동 및 인프라를 일찍이 도입하여 **추천 정확도를 2배 향상**시켰다고 밝혔습니다. 많은 기업들이 에이전트 AI 개념조차 생소할 때부터 모듈화되고 규율 잡힌 접근 방식으로 AI를 활용해 온 것이 성공의 비결입니다. 이러한 선제적인 AI 투자를 통해 부킹닷컴은 사용자 경험을 최적화하고, 여행 추천의 효율성을 극대화하며 시장에서 경쟁 우위를 확보하고 있습니다.
-        </div>
-      </div>
-      <span class="source">[Source: VentureBeat AI]</span>
-    </div>
-
-    <div class="news-card">
-      <div>
-        <h3 class="news-title">2030년 <strong>AI의 미래</strong>: 파이낸셜 타임즈와 MIT 테크놀로지 리뷰 보고서</h3>
-        <div class="summary">
-          파이낸셜 타임즈(Financial Times)와 MIT 테크놀로지 리뷰(MIT Technology Review)의 협력 프로젝트인 'AI의 현황(The State of AI)' 시리즈가 **2030년 AI가 세상을 어떻게 변화시킬지**에 대한 비전을 제시하는 최종 보고서를 발표했습니다. 이 보고서는 생성형 AI(Generative AI) 혁명이 글로벌 권력 재편에 미치는 다양한 측면을 심도 있게 분석하며, AI 기술이 가져올 사회, 경제, 윤리적 변화에 대한 예측과 대비책을 다루고 있습니다. 전문가들은 이 보고서가 미래 AI 전략 수립에 중요한 지침이 될 것으로 평가합니다.
-        </div>
-      </div>
-      <span class="source">[Source: MIT Technology Review AI]</span>
+      <h3 class="news-title">**구글(Google)**, **크롬(Chrome)**의 에이전트형 기능 도입 앞두고 **보안 조치** 상세 공개</h3>
+      <p class="summary">
+        **구글(Google)**이 웹 브라우저 **크롬(Chrome)**에 에이전트형 **인공지능(AI)** 기능을 도입하기 전에, 이에 대한 철저한 **보안 장치(guardrails)**를 마련하고 있음을 상세히 설명했습니다. 이는 AI가 사용자 작업을 대신 수행하는 에이전트(agent) 기능이 오남용되거나 보안 취약점을 발생시키지 않도록 사전에 방지하려는 노력의 일환입니다. 구글은 개인 정보 보호와 웹 보안을 최우선으로 고려하며, AI 기술의 안전한 활용을 위한 업계 표준을 제시하고 사용자들의 신뢰를 확보하려는 전략을 펼치고 있습니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
     </div>
   </div>
 
   <div class="section-title">📄 BRIEF & OTHERS</div>
   <div class="brief-list">
     <div class="brief-item">
-      <div class="brief-item-title"><strong>ChatGPT에서 Instacart 식료품 구매</strong> 가능</div>
-      <div class="summary">이제 ChatGPT 사용자들은 레시피 계획부터 결제까지, 대화형 AI 인터페이스를 벗어나지 않고 Instacart를 통해 식료품을 주문하고 구매할 수 있게 되어, AI의 일상생활 침투와 편의성이 더욱 증대되고 있습니다.</div>
-      <span class="source">[Source: TechCrunch AI]</span>
+      <h4 class="brief-title">인공지능(AI)의 현황: **2030년 세계에 대한 비전**</h4>
+      <p class="summary">
+        **MIT 테크놀로지 리뷰(MIT Technology Review)**와 **파이낸셜 타임즈(Financial Times)**가 협력하여 발행하는 '인공지능(AI)의 현황' 보고서가 2030년 AI가 가져올 미래 사회의 비전을 제시합니다. 이 보고서는 **생성형 AI(Generative AI)** 혁명이 전 세계 권력 구조를 어떻게 재편하고 있는지 분석하며, 기술, 경제, 사회 전반에 걸쳐 예상되는 변화를 다룹니다. 장기적인 관점에서 AI가 인류 문명에 미칠 영향을 탐구합니다.
+      </p>
+      <p class="source">[Source: MIT Technology Review AI]</p>
     </div>
+
     <div class="brief-item">
-      <div class="brief-item-title">구글, <strong>크롬 에이전트 기능 보안 조치</strong> 상세 공개</div>
-      <div class="summary">구글은 크롬(Chrome) 브라우저에 도입될 에이전트(agentic) 기능에 대한 **보안 가드레일(security guardrails)**을 어떻게 구축하고 있는지 상세히 설명하며, 사용자 데이터 보호와 오용 방지에 대한 강력한 의지를 보였습니다.</div>
-      <span class="source">[Source: TechCrunch AI]</span>
+      <h4 class="brief-title">**구글(Google) AI** 가상 착용 앱 **'도플(Doppl)'**, 쇼핑 가능한 디스커버리 피드 추가</h4>
+      <p class="summary">
+        **구글(Google)**의 인공지능(AI) 기반 가상 착용(try-on) 앱 '**도플(Doppl)**'에 쇼핑 가능한 디스커버리 피드(discovery feed)가 추가되었습니다. 이 기능은 사용자에게 맞춤형 상품 추천을 제공하고, 가상으로 착용해볼 수 있게 하며, 판매처로의 직접 링크를 통해 구매까지 원스톱으로 가능하게 합니다. 이는 AI 기반 쇼핑 경험을 더욱 개인화하고 편리하게 만들려는 시도입니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
     </div>
+
     <div class="brief-item">
-      <div class="brief-item-title">힌지(Hinge), <strong>AI 대화 시작 기능</strong>으로 어색한 스몰톡 해소</div>
-      <div class="summary">데이팅 앱 힌지(Hinge)가 AI 기반의 **'대화 시작 도우미(Convo Starters)'** 기능을 출시하여, 사용자들이 의미 있는 대화를 시작할 수 있도록 개인화된 팁을 제공함으로써 어색하고 지루한 스몰톡을 줄이는 데 기여하고 있습니다.</div>
-      <span class="source">[Source: TechCrunch AI]</span>
+      <h4 class="brief-title">**챗GPT(ChatGPT)** 내에서 **인스타카트(Instacart)** 식료품 구매 가능</h4>
+      <p class="summary">
+        이제 **챗GPT(ChatGPT)**를 떠나지 않고도 **인스타카트(Instacart)**를 통해 식료품을 주문할 수 있게 되었습니다. 사용자는 챗봇(chatbot) 내에서 레시피(recipe) 계획부터 결제까지 모든 과정을 한 번에 처리할 수 있어, 쇼핑 경험의 편의성이 크게 향상될 것으로 기대됩니다. 이는 AI 챗봇의 활용 범위를 일상생활의 구매 활동까지 확장하는 중요한 사례입니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+
+    <div class="brief-item">
+      <h4 class="brief-title">**힌지(Hinge)**의 새로운 **AI 기능**, 지루한 스몰 토크(small talk) 넘어 의미 있는 대화 유도</h4>
+      <p class="summary">
+        데이팅 앱(dating app) **힌지(Hinge)**가 인공지능(AI) 기반의 '**대화 시작 도우미(Convo Starters)**' 기능을 출시했습니다. 이 기능은 사용자에게 개인화된 대화 시작 팁을 제공하여, 데이트 상대와 더 의미 있고 깊은 대화를 시작할 수 있도록 돕습니다. 이는 AI가 인간관계의 질을 향상시키는 데 기여할 수 있는 잠재력을 보여줍니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+
+    <div class="brief-item">
+      <h4 class="brief-title">**부킹닷컴(Booking.com)**의 에이전트(Agent) 전략: 체계적이고 모듈화된 접근으로 **2배 정확도 달성**</h4>
+      <p class="summary">
+        **부킹닷컴(Booking.com)**이 체계적이고 모듈화된 **에이전트(agent) 전략**을 통해 기존 대화형 추천 시스템의 정확도를 2배 높였습니다. 초기의 실험적인 접근 방식을 바탕으로 에이전트 기반 기술에 대한 깊은 이해를 구축했으며, 이는 고객 서비스 및 개인화된 추천 역량을 강화하는 핵심 동력이 되고 있습니다. 이로써 사용자들은 더욱 정확하고 만족스러운 여행 상품을 추천받을 수 있게 되었습니다.
+      </p>
+      <p class="source">[Source: VentureBeat AI]</p>
     </div>
   </div>
 </body>
