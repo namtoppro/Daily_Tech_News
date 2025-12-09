@@ -1,12 +1,12 @@
-# Daily Tech News ÀÚµ¿ ¼öÁý ¹× ¹èÆ÷ ½ºÅ©¸³Æ®
-# ÀÛ¾÷ ½ºÄÉÁÙ·¯¿¡¼­ ¸ÅÀÏ ÀÚµ¿ ½ÇÇà
+# Daily Tech News ìžë™ ìˆ˜ì§‘ ë° ë°°í¬ ìŠ¤í¬ë¦½íŠ¸
+# ìž‘ì—… ìŠ¤ì¼€ì¤„ëŸ¬ì—ì„œ ë§¤ì¼ ìžë™ ì‹¤í–‰
 
-# UTF-8 ÀÎÄÚµù ¼³Á¤ (ÇÑ±Û ¹× ÀÌ¸ðÁö Áö¿ø)
+# UTF-8 ì¸ì½”ë”© ì„¤ì • (í•œê¸€ ë° ì´ëª¨ì§€ ì§€ì›)
 $OutputEncoding = [System.Text.Encoding]::UTF8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $env:PYTHONIOENCODING = "utf-8"
 
-# ·Î±× ÆÄÀÏ ¼³Á¤
+# ë¡œê·¸ íŒŒì¼ ì„¤ì •
 $LogFile = "d:\anti\git-news\logs\$(Get-Date -Format 'yyyy-MM-dd').log"
 $LogDir = Split-Path -Parent $LogFile
 if (-not (Test-Path $LogDir)) {
@@ -17,26 +17,26 @@ function Write-Log {
     param($Message)
     $Timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $LogMessage = "$Timestamp - $Message"
-    # UTF-8·Î ·Î±× ÀúÀå
+    # UTF-8ë¡œ ë¡œê·¸ ì €ìž¥
     Add-Content -Path $LogFile -Value $LogMessage -Encoding UTF8
     Write-Host $LogMessage
 }
 
 Write-Log "=========================================="
-Write-Log "Daily Tech News ÀÚµ¿ ¼öÁý ½ÃÀÛ"
+Write-Log "Daily Tech News ìžë™ ìˆ˜ì§‘ ì‹œìž‘"
 Write-Log "=========================================="
 
-# ÀÛ¾÷ µð·ºÅä¸®·Î ÀÌµ¿
+# ìž‘ì—… ë””ë ‰í† ë¦¬ë¡œ ì´ë™
 Set-Location "d:\anti\git-news"
-Write-Log "ÀÛ¾÷ µð·ºÅä¸®: $(Get-Location)"
+Write-Log "ìž‘ì—… ë””ë ‰í† ë¦¬: $(Get-Location)"
 
-# 1. ´º½º ¼öÁý ¹× HTML »ý¼º
-Write-Log "Step 1: ´º½º ¼öÁý Áß..."
+# 1. ë‰´ìŠ¤ ìˆ˜ì§‘ ë° HTML ìƒì„±
+Write-Log "Step 1: ë‰´ìŠ¤ ìˆ˜ì§‘ ì¤‘..."
 try {
-    # PythonÀ» UTF-8 ¸ðµå·Î ½ÇÇà
+    # Pythonì„ UTF-8 ëª¨ë“œë¡œ ì‹¤í–‰
     $process = Start-Process -FilePath "python" -ArgumentList "generator.py" -NoNewWindow -Wait -PassThru -RedirectStandardOutput "temp_output.txt" -RedirectStandardError "temp_error.txt"
     
-    # Ãâ·Â ÀÐ±â (UTF-8)
+    # ì¶œë ¥ ì½ê¸° (UTF-8)
     if (Test-Path "temp_output.txt") {
         $output = Get-Content "temp_output.txt" -Encoding UTF8 -Raw
         if ($output) {
@@ -54,65 +54,65 @@ try {
     }
     
     if ($process.ExitCode -eq 0) {
-        Write-Log "SUCCESS: ´º½º ¼öÁý ¼º°ø"
+        Write-Log "SUCCESS: ë‰´ìŠ¤ ìˆ˜ì§‘ ì„±ê³µ"
     }
     else {
-        Write-Log "FAIL: ´º½º ¼öÁý ½ÇÆÐ (Exit Code: $($process.ExitCode))"
+        Write-Log "FAIL: ë‰´ìŠ¤ ìˆ˜ì§‘ ì‹¤íŒ¨ (Exit Code: $($process.ExitCode))"
         exit 1
     }
 }
 catch {
-    Write-Log "ERROR: ¿À·ù ¹ß»ý: $_"
+    Write-Log "ERROR: ì˜¤ë¥˜ ë°œìƒ: $_"
     exit 1
 }
 
-# 2. Git º¯°æ»çÇ× È®ÀÎ
-Write-Log "Step 2: Git º¯°æ»çÇ× È®ÀÎ..."
+# 2. Git ë³€ê²½ì‚¬í•­ í™•ì¸
+Write-Log "Step 2: Git ë³€ê²½ì‚¬í•­ í™•ì¸..."
 $GitStatus = git status --porcelain
 if ([string]::IsNullOrWhiteSpace($GitStatus)) {
-    Write-Log "º¯°æ»çÇ× ¾øÀ½. ÀÛ¾÷ Á¾·á."
+    Write-Log "ë³€ê²½ì‚¬í•­ ì—†ìŒ. ìž‘ì—… ì¢…ë£Œ."
     Write-Log "=========================================="
     exit 0
 }
 
-Write-Log "º¯°æµÈ ÆÄÀÏ:"
+Write-Log "ë³€ê²½ëœ íŒŒì¼:"
 $GitStatus | ForEach-Object { Write-Log "  $_" }
 
 # 3. Git Add
-Write-Log "Step 3: Git add ½ÇÇà..."
+Write-Log "Step 3: Git add ì‹¤í–‰..."
 git add . 2>&1 | Out-Null
 if ($LASTEXITCODE -eq 0) {
-    Write-Log "SUCCESS: Git add ¼º°ø"
+    Write-Log "SUCCESS: Git add ì„±ê³µ"
 }
 else {
-    Write-Log "FAIL: Git add ½ÇÆÐ"
+    Write-Log "FAIL: Git add ì‹¤íŒ¨"
     exit 1
 }
 
 # 4. Git Commit
-Write-Log "Step 4: Git commit ½ÇÇà..."
+Write-Log "Step 4: Git commit ì‹¤í–‰..."
 $CommitMessage = "Auto-update news - $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
 git commit -m $CommitMessage 2>&1 | Out-Null
 if ($LASTEXITCODE -eq 0) {
-    Write-Log "SUCCESS: Git commit ¼º°ø: $CommitMessage"
+    Write-Log "SUCCESS: Git commit ì„±ê³µ: $CommitMessage"
 }
 else {
-    Write-Log "FAIL: Git commit ½ÇÆÐ"
+    Write-Log "FAIL: Git commit ì‹¤íŒ¨"
     exit 1
 }
 
 # 5. Git Push
-Write-Log "Step 5: Git push ½ÇÇà..."
+Write-Log "Step 5: Git push ì‹¤í–‰..."
 git push 2>&1 | Out-Null
 if ($LASTEXITCODE -eq 0) {
-    Write-Log "SUCCESS: Git push ¼º°ø"
+    Write-Log "SUCCESS: Git push ì„±ê³µ"
 }
 else {
-    Write-Log "FAIL: Git push ½ÇÆÐ"
+    Write-Log "FAIL: Git push ì‹¤íŒ¨"
     exit 1
 }
 
 Write-Log "=========================================="
-Write-Log "SUCCESS: ¸ðµç ÀÛ¾÷ ¿Ï·á!"
+Write-Log "SUCCESS: ëª¨ë“  ìž‘ì—… ì™„ë£Œ!"
 Write-Log "=========================================="
 exit 0
