@@ -10,24 +10,24 @@
   .header h1 { font-size: 2.2em; color: #2c3e50; margin-bottom: 5px; }
   .header p { color: #555; font-size: 1.1em; }
   .section-title { font-size: 1.5em; font-weight: bold; margin: 30px 0 15px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 10px; }
- 
+
   /* Headline 스타일: 강조, 박스 형태 */
   .headline-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 5px solid #e74c3c; }
   .headline-title { font-size: 1.8em; margin: 0 0 10px; color: #c0392b; line-height: 1.3; }
   .headline-card ul { list-style-type: disc; margin-left: 20px; padding-left: 0; color: #555; }
   .headline-card ul li { margin-bottom: 5px; }
- 
+
   /* Major News 스타일: 2열 그리드 */
   .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .news-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
   .news-title { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; color: #2980b9; line-height: 1.4; }
- 
+
   /* Brief 스타일: 리스트 형태 */
   .brief-list { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
   .brief-item { border-bottom: 1px solid #eee; padding: 15px 0; }
   .brief-item:last-child { border-bottom: none; }
   .brief-title { font-weight: bold; color: #34495e; margin-bottom: 5px; display: block; }
- 
+
   .source { font-size: 0.85em; color: #7f8c8d; margin-top: 10px; text-align: right; font-style: italic; }
   .summary { line-height: 1.6; text-align: justify; margin-bottom: 15px; }
   .summary strong { color: #e74c3c; }
@@ -54,6 +54,7 @@
 <div class="archive-selector">
     <select onchange="if(this.value) location.href='archive/' + this.value">
         <option value="">📅 과거 기사 보기</option>
+        <option value="2025-12-12.html">2025-12-12</option>
         <option value="2025-12-11.html">2025-12-11</option>
         <option value="2025-12-10.html">2025-12-10</option>
         <option value="2025-12-09.html">2025-12-09</option>
@@ -67,7 +68,8 @@
     </select>
 </div>
 
-  
+  <!-- 아카이브 드롭다운은 후처리에서 자동 삽입됨, 여기에 넣지 마세요 -->
+
   <div class="header">
     <h1>🚀 Daily Tech Insight</h1>
     <p>오늘의 주요 IT 트렌드 심층 분석 - 2025-12-12</p>
@@ -75,126 +77,116 @@
 
   <div class="section-title">🚨 HEADLINE NEWS</div>
   <div class="headline-card">
-    <h2 class="headline-title">OpenAI, GPT-5.2 출시로 AI 기술 지형 선도…NVIDIA 인프라 핵심 역할</h2>
+    <h2 class="headline-title">구글, OpenAI GPT-5.2 출시 당일 최심층 AI 연구 에이전트 공개</h2>
     <div class="summary">
-      <p>구글의 '코드 레드(code red)' 메모 이후 치열한 거대 언어 모델(LLM) 경쟁이 가속화되는 가운데, OpenAI가 개발자와 전문가를 위한 **프론티어 모델 GPT-5.2**를 전격 출시했습니다. 이 모델은 추론 및 코딩 벤치마크, 특히 과학 및 수학 분야에서 혁신적인 진전을 보여주며 새로운 최고 기록을 세웠습니다. GPT-5.2의 개발 및 배포에는 **NVIDIA의 Hopper 및 GB200 NVL72 시스템**이 핵심 인프라로 활용되어, 복잡한 AI 모델 구축에 고성능 하드웨어의 중요성이 부각되었습니다.</p>
-      <p>초기 테스터들은 GPT-5.2가 특히 **비즈니스 작업 및 워크플로우**에서 강력한 업데이트를 제공한다고 평가하고 있어, 기업의 AI 도입을 가속화할 것으로 전망됩니다. 이번 출시는 AI 기술 경쟁을 더욱 심화시키고, 엔터프라이즈 환경에서의 AI 활용 범위를 넓히는 중요한 전환점이 될 것입니다.</p>
-      <ul>
-        <li>**기술 진보:** GPQA Diamond 및 FrontierMath 벤치마크에서 새로운 최고 성능 기록 달성.</li>
-        <li>**핵심 인프라:** NVIDIA의 Hopper 및 GB200 NVL72 시스템을 통해 훈련 및 배포.</li>
-        <li>**시장 영향:** 구글 제미니(Gemini)와의 경쟁 심화, 기업용 AI 솔루션 시장 확장 기대.</li>
-      </ul>
+      구글은 AI 경쟁사 OpenAI가 GPT-5.2를 출시한 바로 그날, 자체적으로 개발한 최심층 AI 연구 에이전트를 선보이며 AI 분야에서의 주도권 경쟁을 심화시켰습니다. 이는 거대 기술 기업 간의 치열한 **AI 개발 경쟁** 양상을 명확히 보여줍니다. 제미니 3 프로(Gemini 3 Pro) 기반의 이 **딥 리서치(Deep Research) 도구**는 개발자들이 자신의 애플리케이션에 구글의 고도화된 연구 역량을 통합할 수 있게 해, AI 기능 확장을 가속화할 것으로 예상됩니다. 이 에이전트는 복잡한 정보 탐색 및 분석 작업을 자동화하고, 다양한 산업에서 **새로운 AI 기반 서비스 개발**을 촉진할 잠재력을 가졌습니다. 동시에 이는 OpenAI와의 경쟁 구도에서 구글의 전략적 움직임을 대변하며, **AI 기술 혁신 속도**를 한층 더 끌어올릴 것입니다.
     </div>
-    <p class="source">[Source: TechCrunch AI, OpenAI, VentureBeat AI, NVIDIA Blog]</p>
+    <ul>
+      <li>**출시 시점:** OpenAI의 **GPT-5.2 출시와 동시**에 이루어져 경쟁 심화.</li>
+      <li>**기반 모델:** **제미니 3 프로(Gemini 3 Pro)** 기반의 **딥 리서치(Deep Research) 도구**.</li>
+      <li>**주요 기능:** 개발자들이 자체 앱에 구글의 **최심층 AI 연구 역량**을 임베드 가능.</li>
+      <li>**영향:** 복잡한 정보 탐색 및 분석 자동화, **AI 기반 서비스 개발 촉진** 기대.</li>
+    </ul>
+    <div class="source">[Source: TechCrunch AI]</div>
   </div>
 
   <div class="headline-card">
-    <h2 class="headline-title">디즈니의 AI 전략 변화: 구글 저작권 침해 주장과 OpenAI 협력 계약 동시 추진</h2>
+    <h2 class="headline-title">OpenAI, '코드 레드' 메모 후 GPT-5.2로 구글에 맞불</h2>
     <div class="summary">
-      <p>생성형 AI(Generative AI) 기술의 발전이 콘텐츠 산업에 미치는 영향이 커지면서, **디즈니(Disney)**가 AI 관련 저작권 문제와 전략적 제휴라는 두 가지 상반된 행보를 동시에 보여 주목받고 있습니다. 디즈니는 구글의 제미니(Gemini AI)가 자사의 **저작권 캐릭터를 무단 배포**했다고 주장하며 침해 중단 요구 서한을 보냈습니다. 이는 AI가 창작물을 학습하고 생성하는 과정에서 발생하는 저작권 이슈에 대한 주요 콘텐츠 기업의 강력한 경고로 해석됩니다.</p>
-      <p>그러나 이와 동시에 디즈니는 **OpenAI와 대규모 계약**을 체결하여, 소라(Sora)를 활용한 AI 비디오 생성에 자사 캐릭터를 사용할 수 있도록 허용했습니다. 디즈니는 이 계약을 통해 OpenAI의 주요 고객이 되어, OpenAI의 API를 활용해 디즈니플러스(Disney+)를 포함한 새로운 제품, 도구, 경험을 구축할 계획입니다.</p>
-      <p>이러한 움직임은 생성형 AI 시대에 저작권 보호와 혁신적 활용이라는 두 가지 과제 사이에서 콘텐츠 기업들이 복잡한 균형점을 찾아가고 있음을 보여줍니다. 디즈니의 사례는 AI 기술을 둘러싼 법적, 상업적 환경이 빠르게 진화하고 있음을 명확히 시사합니다.</p>
-      <ul>
-        <li>**구글 제미니 AI:** 디즈니 저작권 캐릭터 무단 배포 의혹 제기, 침해 중단 요구 서한 발송.</li>
-        <li>**OpenAI 협력:** 소라(Sora) 기반 AI 비디오 생성에 디즈니 캐릭터 사용 허용 계약 체결.</li>
-        <li>**전략적 전환:** 디즈니, OpenAI API 활용하여 신규 제품 및 서비스 개발 계획.</li>
-      </ul>
+      구글의 **제미니(Gemini) 모델의 발전**에 내부적으로 **'코드 레드(Code Red)'**를 발령할 정도로 위기감을 느꼈던 OpenAI가 이에 대응하여 **GPT-5.2**를 공식 출시했습니다. 이는 최근 AI 산업에서 구글과 OpenAI 간의 **첨예한 기술 패권 경쟁**이 고조되고 있음을 방증합니다. GPT-5.2는 개발자와 전문가를 대상으로 하는 **프론티어 모델(frontier model)**로, 추론 능력과 코딩 벤치마크에서 상당한 발전을 이루며 **제미니 3(Gemini 3)**와의 경쟁에서 우위를 점하려 하고 있습니다. 이 모델은 복잡한 비즈니스 작업과 워크플로우를 효율적으로 처리하며, **기업 AI 솔루션 시장**에 큰 영향을 미칠 것으로 보입니다. 다만, 높은 컴퓨팅 비용과 생성기 부재 문제는 앞으로 해결해야 할 과제로 남아있습니다.
     </div>
-    <p class="source">[Source: TechCrunch AI]</p>
+    <ul>
+      <li>**출시 동기:** 구글 제미니 모델 발전 후 내부 **'코드 레드'** 대응.</li>
+      <li>**모델 목표:** 개발자 및 전문가를 위한 **프론티어 모델(frontier model)**.</li>
+      <li>**주요 개선점:** **추론 및 코딩 벤치마크** 성능 대폭 향상.</li>
+      <li>**과제:** 높은 **컴퓨팅 비용** 및 **생성기 부재** 문제.</li>
+    </ul>
+    <div class="source">[Source: TechCrunch AI]</div>
   </div>
 
   <div class="section-title">🔥 MAJOR ISSUES</div>
   <div class="grid-container">
     <div class="news-card">
-      <h3 class="news-title">Google AI 의류 가상 피팅, 이제 셀카 한 장으로 가능</h3>
-      <div class="summary">
-        <p>구글의 AI 의류 가상 피팅(try-on) 기능이 크게 발전하여, 이제는 사용자가 **전신 사진 대신 셀카(selfie) 한 장**만으로도 의상을 가상으로 착용해 볼 수 있게 되었습니다. 나노 바나나(Nano Banana) 기술이 셀카를 기반으로 전신 디지털 버전을 생성하여 의류 피팅을 가능하게 하며, 이는 온라인 쇼핑 경험을 혁신하고 사용자 편의성을 극대화할 것으로 기대됩니다.</p>
-      </div>
-      <p class="source">[Source: TechCrunch AI]</p>
+      <h3 class="news-title">GPT-5.2 첫인상: 비즈니스 작업 및 워크플로우를 위한 강력한 업데이트</h3>
+      <p class="summary">
+        OpenAI의 **GPT-5.2**가 공식 출시된 후 초기 테스터들의 반응은 긍정적입니다. 이 모델은 특히 **비즈니스 환경**에서 복잡한 작업 처리와 워크플로우 자동화에 탁월한 성능을 보여주며, **기업 생산성 향상**에 크게 기여할 것으로 기대됩니다.
+      </p>
+      <div class="source">[Source: VentureBeat AI]</div>
     </div>
+
     <div class="news-card">
-      <h3 class="news-title">Google, Gemini 기반 웹 앱 제작 도구 'Disco' 공개</h3>
-      <div class="summary">
-        <p>구글 랩스(Google Labs)가 **제미니(Gemini) AI 기반**의 새로운 도구 '디스코(Disco)'를 선보였습니다. 이 도구는 사용자의 브라우저 탭을 활용하여 웹 애플리케이션을 자동으로 생성해주는 것을 목표로 하며, 현재 테스트 단계에 있습니다. '디스코'는 코딩 지식이 없는 사용자도 쉽게 웹 앱을 만들 수 있도록 지원하여 개발의 문턱을 낮출 것으로 전망됩니다.</p>
-      </div>
-      <p class="source">[Source: TechCrunch AI]</p>
+      <h3 class="news-title">OpenAI GPT-5.2 출시: 기업이 알아야 할 점</h3>
+      <p class="summary">
+        OpenAI가 **GPT-5.2**를 공개하며 **AI 시장의 전환점**을 맞이했습니다. 경쟁사의 압박 속에서 출시된 이 **차세대 거대 언어 모델(LLM)**은 기업의 데이터 분석, 콘텐츠 생성, 고객 서비스 등 다양한 영역에서 **혁신적인 변화**를 가져올 잠재력을 지니고 있습니다.
+      </p>
+      <div class="source">[Source: VentureBeat AI]</div>
     </div>
+
     <div class="news-card">
-      <h3 class="news-title">오페라, AI 브라우저 '네온' 월 20달러 유료 구독 모델 출시</h3>
-      <div class="summary">
-        <p>오페라(Opera)가 수개월간의 테스트를 거쳐 **AI 기반 웹 브라우저 '네온(Neon)'**을 공식 출시했습니다. '네온'은 월 **19.90달러**의 유료 구독 모델로 제공되며, 이는 AI 기능을 통합한 브라우저의 새로운 수익 모델을 제시하는 사례입니다. 이번 출시는 AI 서비스 유료화 추세가 강화되고 있음을 보여줍니다.</p>
-      </div>
-      <p class="source">[Source: TechCrunch AI]</p>
+      <h3 class="news-title">AI 복잡성 증가에 따라 모델 개발자들이 엔비디아에 의존</h3>
+      <p class="summary">
+        **OpenAI의 GPT-5.2**를 비롯한 최신 AI 모델들은 **엔비디아 호퍼(NVIDIA Hopper)** 및 **GB200 NVL72 시스템**과 같은 엔비디아 인프라에서 훈련 및 배포되고 있습니다. 이는 복잡해지는 AI 모델 개발에 있어 **엔비디아의 고성능 컴퓨팅 솔루션**이 핵심적인 역할을 하고 있음을 보여줍니다.
+      </p>
+      <div class="source">[Source: NVIDIA Blog]</div>
     </div>
+
     <div class="news-card">
-      <h3 class="news-title">1X, 가정용 휴머노이드 로봇 '네오' 산업용 시장 진출</h3>
-      <div class="summary">
-        <p>원래 가정용 로봇으로 설계되었던 1X의 휴머노이드 로봇 '네오(Neo)'가 이제 **공장 및 창고** 등 산업 현장에 투입될 예정으로 계약을 체결했습니다. 이는 휴머노이드 로봇 기술의 상업적 활용 범위를 넓히는 중요한 전환점이며, 초기 로봇 시장에서 B2B(기업 간 거래) 분야의 성장 잠재력을 시사합니다.</p>
-      </div>
-      <p class="source">[Source: TechCrunch AI]</p>
+      <h3 class="news-title">디즈니, 구글에 '대규모 저작권 침해' 주장하며 중단 명령 요구</h3>
+      <p class="summary">
+        디즈니가 구글의 **제미니 AI(Gemini AI)**가 자사의 저작권 보호 캐릭터를 무단으로 배포하고 있다며 **중단 명령(cease-and-desist)**을 요구했습니다. 이는 **생성형 AI(Generative AI)**의 저작권 침해 논란이 다시 한번 불거진 사례로, AI 기술 상용화의 **법적, 윤리적 문제점**을 부각시킵니다.
+      </p>
+      <div class="source">[Source: TechCrunch AI]</div>
     </div>
+
     <div class="news-card">
-      <h3 class="news-title">TIME, 젠슨 황 등 'AI 설계자들'을 올해의 인물로 선정</h3>
-      <div class="summary">
-        <p>타임(TIME)지가 **젠슨 황(Jensen Huang), 일론 머스크(Elon Musk), 샘 알트만(Sam Altman)** 등 AI 기술 발전에 지대한 영향을 미친 인물들을 묶어 **'AI 설계자들(Architects of AI)'**을 올해의 인물로 선정했습니다. 이는 AI 기술이 전 세계적으로 미치는 영향력과 그 선구자들의 중요성을 공식적으로 인정하는 상징적인 사건입니다.</p>
-      </div>
-      <p class="source">[Source: TechCrunch AI]</p>
-    </div>
-    <div class="news-card">
-      <h3 class="news-title">Harness, AI '사후 코드' 자동화로 2.4억 달러 투자 유치 및 55억 달러 가치 평가</h3>
-      <div class="summary">
-        <p>AI 모델 배포 및 운영(MLOps)을 자동화하는 솔루션을 제공하는 하네스(Harness)가 골드만삭스(Goldman Sachs) 주도로 **2.4억 달러(약 3,200억 원)** 규모의 시리즈 E 투자를 유치했습니다. 이로써 하네스의 기업 가치는 **55억 달러(약 7.3조 원)**에 달했으며, 이는 AI 개발의 '사후 코드(after-code)' 격차를 해소하려는 시장의 강력한 수요를 반영합니다.</p>
-      </div>
-      <p class="source">[Source: TechCrunch AI]</p>
+      <h3 class="news-title">1X, 주택용 휴머노이드 로봇을 공장 및 창고에 공급하는 계약 체결</h3>
+      <p class="summary">
+        원래 가정용으로 설계된 1X의 **네오(Neo) 로봇**이 이제 **산업용**으로 전환되어 공장과 창고에 투입될 예정입니다. 이 계약은 **휴머노이드 로봇**이 실제 산업 현장에서 **노동력 부족 문제**를 해결하고 **생산성 향상**에 기여할 수 있음을 시사하는 중요한 발전입니다.
+      </p>
+      <div class="source">[Source: TechCrunch AI]</div>
     </div>
   </div>
 
   <div class="section-title">📄 BRIEF & OTHERS</div>
   <div class="brief-list">
     <div class="brief-item">
-      <span class="brief-title">Runway, 첫 '월드 모델' 공개 및 비디오 모델에 오디오 기능 추가</span>
-      <p class="brief-summary">Runway가 물리 기반의 시뮬레이션 현실을 학습하고, 영상 및 로보틱스, 아바타 애플리케이션을 구동하는 **첫 월드 모델**을 선보였으며, 최신 비디오 모델에 네이티브 오디오 기능을 추가했습니다.</p>
-      <p class="source">[Source: TechCrunch AI]</p>
+      <span class="brief-title">구글, AI 의류 가상 피팅 기능에 셀카 활용 도입</span>
+      <p class="brief-summary">
+        구글의 **AI 기반 의류 가상 피팅** 기능이 이제 전신 사진 대신 **셀카 한 장**만으로도 가능해졌습니다. **나노 바나나(Nano Banana)** 기술을 통해 사용자의 전신 디지털 버전을 생성, 온라인 쇼핑의 **편의성을 높였습니다.**
+      </p>
+      <div class="source">[Source: TechCrunch AI]</div>
     </div>
+
     <div class="brief-item">
-      <span class="brief-title">Spoor, 조류 모니터링 AI 소프트웨어에 대한 관심 급증</span>
-      <p class="brief-summary">Spoor의 컴퓨터 비전(Computer Vision) 소프트웨어가 풍력 발전 단지 등에서 **조류 개체군 및 이동 패턴**을 추적하는 데 활용되며 높은 관심을 받고 있습니다.</p>
-      <p class="source">[Source: TechCrunch AI]</p>
+      <span class="brief-title">구글, 브라우저 탭으로 웹 앱을 만드는 제미니 기반 도구 '디스코' 공개</span>
+      <p class="brief-summary">
+        구글 랩스(Google Labs)에서 **제미니(Gemini)** 기반의 신규 도구인 **'디스코(Disco)'**를 테스트 중입니다. 이 도구는 사용자가 브라우저 탭을 활용하여 **간편하게 웹 앱을 제작**할 수 있게 하여 개발 효율성을 향상시킬 것으로 기대됩니다.
+      </p>
+      <div class="source">[Source: TechCrunch AI]</div>
     </div>
+
     <div class="brief-item">
-      <span class="brief-title">Port, Spotify 백스테이지 대항마로 1억 달러 투자 유치</span>
-      <p class="brief-summary">Port가 스포티파이(Spotify)의 인기 개발자 도구 카탈로그 '백스테이지(Backstage)'에 대한 독점적인 대안을 제공하며, 특히 **AI 에이전트 관리 기능**을 추가하여 1억 달러 투자를 유치했습니다.</p>
-      <p class="source">[Source: TechCrunch AI]</p>
+      <span class="brief-title">런웨이, 첫 월드 모델 출시 및 최신 비디오 모델에 네이티브 오디오 추가</span>
+      <p class="brief-summary">
+        **런웨이(Runway)**가 현실을 시뮬레이션하는 **물리 기반 월드 모델(physics-aware world model)**을 처음으로 선보였습니다. 이는 에이전트 훈련 및 비디오, 로봇공학, 아바타 애플리케이션에 활용되며, 최신 비디오 모델에는 **네이티브 오디오 기능**이 추가되었습니다.
+      </p>
+      <div class="source">[Source: TechCrunch AI]</div>
     </div>
+
     <div class="brief-item">
-      <span class="brief-title">Marble, 9백만 달러 투자 유치하며 세무 업무 AI 시장 진출</span>
-      <p class="brief-summary">세무 전문가를 위한 AI 에이전트를 개발하는 스타트업 마블(Marble)이 **9백만 달러(약 120억 원)**의 시드 투자를 유치하며 노동력 부족과 규제 복잡성에 시달리는 회계 산업에 AI를 도입합니다.</p>
-      <p class="source">[Source: VentureBeat AI]</p>
+      <span class="brief-title">편미분 방정식(PDE)에 관심을 가져야 하는 이유</span>
+      <p class="brief-summary">
+        허깅페이스(Hugging Face)에서 **편미분 방정식(PDEs)**의 중요성을 강조하는 글을 게재했습니다. PDEs는 물리 현상 모델링에 필수적인 수학적 도구로, **과학 및 공학 분야**의 발전에 핵심적인 역할을 합니다.
+      </p>
+      <div class="source">[Source: Hugging Face]</div>
     </div>
+
     <div class="brief-item">
-      <span class="brief-title">Nous Research, 수학 시험에서 탁월한 성능을 보인 오픈소스 AI 'Nomos 1' 공개</span>
-      <p class="brief-summary">누스 리서치(Nous Research)가 악명 높은 퍼트넘(Putnam) 수학 시험에서 **인간과 유사한 엘리트급 성능**을 달성한 오픈소스 수학 추론 시스템 '노모스 1(Nomos 1)'을 공개했습니다.</p>
-      <p class="source">[Source: VentureBeat AI]</p>
-    </div>
-    <div class="brief-item">
-      <span class="brief-title">llama.cpp, 모델 관리 기능 업데이트</span>
-      <p class="brief-summary">오픈소스 프로젝트 llama.cpp에 **모델 관리 기능**이 새롭게 추가되어, 다양한 AI 모델을 효율적으로 다룰 수 있게 되었습니다.</p>
-      <p class="source">[Source: Hugging Face]</p>
-    </div>
-    <div class="brief-item">
-      <span class="brief-title">카카오, 멀티모달 언어 모델 '카나나(Kanana)' 진화 과정 공개</span>
-      <p class="brief-summary">카카오의 AI 모델 개발 조직 카나나(Kanana)가 사람처럼 보고, 듣고, 말하며 한국적 맥락을 깊이 이해하는 **멀티모달(Multimodal) 언어 모델의 진화 과정**과 개발 현황을 공유했습니다.</p>
-      <p class="source">[Source: Kakao Tech]</p>
-    </div>
-    <div class="brief-item">
-      <span class="brief-title">카카오, 한국어-이미지 멀티모달 임베딩 모델 개발기</span>
-      <p class="brief-summary">카카오 테크(Kakao Tech) 블로그를 통해 한국어와 이미지를 동시에 이해하는 **멀티모달 임베딩 모델** 개발 사례가 소개되었으며, 이를 통해 '해변에서 노는 강아지 사진 찾아줘'와 같은 자연어 검색이 가능해질 전망입니다.</p>
-      <p class="source">[Source: Kakao Tech]</p>
-    </div>
-    <div class="brief-item">
-      <span class="brief-title">NVIDIA, 클라우드 게임 서비스 지포스 나우에 '몬스터 헌터 스토리즈' 시리즈 추가</span>
-      <p class="brief-summary">엔비디아(NVIDIA)의 클라우드 게임 서비스 **지포스 나우(GeForce NOW)**에 캡콤(Capcom)의 인기 롤플레잉 게임 '몬스터 헌터 스토리즈(Monster Hunter Stories)'와 '몬스터 헌터 스토리즈 2: 파멸의 날개(Wings of Ruin)'가 추가되었습니다.</p>
-      <p class="source">[Source: NVIDIA Blog]</p>
+      <span class="brief-title">코드 품질 개선 기법 26편: 설명의 핵심은 첫 문장에 있다</span>
+      <p class="brief-summary">
+        LY Corporation은 개발 생산성 유지를 위해 **코드 품질 및 개발 문화 개선**에 힘쓰고 있으며, 그 일환으로 **코드 설명의 명확성**을 강조하는 기법을 공유했습니다. 이는 유지보수성과 협업 효율성을 높이는 데 중요합니다.
+      </p>
+      <div class="source">[Source: Line (LY Corp)]</div>
     </div>
   </div>
 </body>
