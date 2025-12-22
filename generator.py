@@ -44,7 +44,7 @@ client = genai.Client(
     http_options=HttpOptions(api_version="v1"),
 )
 
-MODEL_ID = "gemini-2.5-flash"
+MODEL_ID = "gemini-3-flash-preview"
 
 # RSS 피드 목록
 RSS_FEEDS = [
@@ -68,11 +68,11 @@ RSS_FEEDS = [
 # 2. RSS 뉴스 수집
 # ------------------------------------------------------------------
 def fetch_news_data():
-    """RSS 피드에서 24시간 이내 뉴스 수집"""
+    """RSS 피드에서 72시간 이내 뉴스 수집"""
     print("📡 RSS 피드에서 뉴스 수집 중...")
 
     articles = []
-    cutoff_time = datetime.now() - timedelta(hours=24)
+    cutoff_time = datetime.now() - timedelta(hours=72)
 
     for feed_info in RSS_FEEDS:
         if not feed_info["enabled"]:
