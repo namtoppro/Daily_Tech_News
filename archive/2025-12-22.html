@@ -1,185 +1,53 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Tech Insight - 2025-12-22</title>
+<title>2025-12-22 Tech Briefing</title>
 <style>
-:root {
-  --primary-color: #2c3e50;
-  --accent-color: #e74c3c;
-  --highlight-color: #2980b9;
-  --bg-color: #f4f6f8;
-  --card-bg: #ffffff;
-  --text-color: #333333;
-  --meta-color: #7f8c8d;
-}
+  /* 여기에 CSS 작성: 모던하고 깔끔한 뉴스 대시보드 스타일 */
+  body { font-family: 'Pretendard', 'Roboto', system-ui, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f4f6f8; color: #333; line-height: 1.6; }
+  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2c3e50; padding-bottom: 10px; }
+  .header h1 { font-size: 2.2em; color: #2c3e50; margin-bottom: 5px; }
+  .header p { color: #555; font-size: 1.1em; }
+  .section-title { font-size: 1.5em; font-weight: bold; margin: 30px 0 15px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 10px; }
 
-body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  background: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  word-break: keep-all;
-}
+  /* Headline 스타일: 강조, 박스 형태 */
+  .headline-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 5px solid #e74c3c; }
+  .headline-title { font-size: 1.8em; margin: 0 0 10px; color: #c0392b; line-height: 1.3; }
+  .headline-card ul { list-style-type: disc; margin-left: 20px; padding-left: 0; color: #555; }
+  .headline-card ul li { margin-bottom: 5px; }
 
-/* Header */
-.header {
-  text-align: center;
-  margin-bottom: 40px;
-  border-bottom: 3px solid var(--primary-color);
-  padding-bottom: 20px;
-}
-.header h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  color: var(--primary-color);
-  letter-spacing: -1px;
-}
-.header p {
-  font-size: 1.1rem;
-  color: var(--meta-color);
-  margin: 10px 0 0;
-}
+  /* Major News 스타일: 2열 그리드 */
+  .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .news-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
+  .news-title { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; color: #2980b9; line-height: 1.4; }
 
-/* Archive Selector */
-.archive-selector {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.archive-selector select {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 2px solid var(--primary-color);
-  background: white;
-  cursor: pointer;
-  font-size: 0.95em;
-  transition: all 0.2s;
-}
-.archive-selector select:hover {
-  background: var(--primary-color);
-  color: white;
-}
+  /* Brief 스타일: 리스트 형태 */
+  .brief-list { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .brief-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+  .brief-item:last-child { border-bottom: none; }
+  .brief-title { font-weight: bold; color: #34495e; margin-bottom: 5px; display: block; }
 
-/* Section Title */
-.section-title {
-  font-size: 1.6em;
-  font-weight: 800;
-  margin: 40px 0 20px;
-  color: var(--primary-color);
-  border-left: 6px solid var(--accent-color);
-  padding-left: 15px;
-  display: flex;
-  align-items: center;
-}
+  .source { font-size: 0.85em; color: #7f8c8d; margin-top: 10px; text-align: right; font-style: italic; }
+  .summary { line-height: 1.6; text-align: justify; margin-bottom: 15px; }
+  .summary strong { color: #e74c3c; }
+  .brief-summary { line-height: 1.5; margin-top: 5px; color: #555; }
 
-/* News Grid */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-bottom: 30px;
-}
+  /* 아카이브 드롭다운 스타일 */
+  .archive-selector { position: absolute; top: 20px; right: 20px; z-index: 100; }
+  .archive-selector select { padding: 10px; border-radius: 5px; border: 2px solid #2c3e50; background: white; cursor: pointer; font-size: 0.9em; color: #2c3e50; }
 
-.news-card {
-  background: var(--card-bg);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-  border: 1px solid #eee;
-  transition: all 0.3s ease;
-}
-
-.news-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-.news-title {
-  font-size: 1.35em;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--highlight-color);
-  line-height: 1.4;
-}
-
-.news-meta {
-  font-size: 0.85em;
-  color: var(--meta-color);
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.news-summary {
-  font-size: 0.95em;
-  color: #555;
-  margin-bottom: 15px;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.news-link {
-  display: inline-block;
-  color: var(--highlight-color);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9em;
-  transition: color 0.2s;
-}
-
-.news-link:hover {
-  color: var(--accent-color);
-}
-
-/* Brief List */
-.brief-list {
-  background: var(--card-bg);
-  padding: 10px 25px;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.brief-item {
-  border-bottom: 1px solid #f0f0f0;
-  padding: 18px 0;
-}
-
-.brief-item:last-child {
-  border-bottom: none;
-}
-
-.brief-title {
-  font-weight: 700;
-  font-size: 1.1em;
-  color: #2c3e50;
-  margin-bottom: 8px;
-}
-
-.brief-content {
-  font-size: 0.9em;
-  color: #666;
-  line-height: 1.6;
-}
-
-.brief-meta {
-  font-size: 0.8em;
-  color: var(--meta-color);
-  margin-top: 5px;
-  font-style: italic;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
+  /* 반응형 디자인 */
+  @media (max-width: 768px) {
+    body { padding: 15px; }
+    .header h1 { font-size: 1.8em; }
+    .section-title { font-size: 1.3em; margin: 25px 0 10px; }
+    .headline-title { font-size: 1.5em; }
+    .grid-container { grid-template-columns: 1fr; }
+    .news-title { font-size: 1.1em; }
+    .archive-selector { position: static; text-align: center; margin-bottom: 20px; }
+    .archive-selector select { width: 100%; max-width: 300px; }
   }
-  .header h1 {
-    font-size: 2rem;
-  }
-}
 </style>
 </head>
 <body>
@@ -209,115 +77,119 @@ body {
     </select>
 </div>
 
+  <!-- 아카이브 드롭다운은 후처리에서 자동 삽입됨, 여기에 넣지 마세요 -->
 
-<div class="header">
-  <h1>🚀 Daily Tech Insight</h1>
-  <p>2025년 12월 22일(월) • 오늘의 주요 IT 트렌드 심층 분석</p>
-</div>
-
-<div class="section-title">🔥 주요 뉴스</div>
-<div class="grid-container">
-
-  <div class="news-card">
-    <div class="news-title">Waymo suspends service in San Francisco as robotaxis stall during blackout</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-21 15:46</div>
-    <div class="news-summary">Waymo suspended its SF robotaxi service on Saturday evening after a massive blackout appeared to leave many of its vehicles stalled on city streets....</div>
-    <a href="https://techcrunch.com/2025/12/21/waymo-suspends-service-in-san-francisco-as-robotaxis-stall-during-blackout/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="header">
+    <h1>🚀 Daily Tech Insight</h1>
+    <p>오늘의 주요 IT 트렌드 심층 분석 - 2025-12-22</p>
   </div>
 
-  <div class="news-card">
-    <div class="news-title">OpenAI allows users to directly adjust ChatGPT’s enthusiasm level</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-20 20:34</div>
-    <div class="news-summary">ChatGPT users can now tweak the chatbot’s warmth, enthusiasm, and emoji use....</div>
-    <a href="https://techcrunch.com/2025/12/20/openai-allows-users-to-directly-adjust-chatgpts-warmth-and-enthusiasm/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="section-title">🚨 HEADLINE NEWS</div>
+  <div class="headline-card">
+    <h2 class="headline-title">웨이모, 샌프란시스코 정전 중 로보택시 멈춰 서비스 중단</h2>
+    <p class="summary">
+      구글(Google)의 자율주행 자회사 웨이모(Waymo)가 샌프란시스코에서 발생한 대규모 정전(blackout)으로 인해 로보택시 서비스 운영을 일시적으로 중단했습니다.
+      정전 발생 직후, 시내 도로 곳곳에서 다수의 웨이모 차량이 멈춰 서는 상황이 발생하여 **자율주행 기술의 비상 상황 대처 능력**에 대한 의문이 제기되었습니다.
+      이번 사건은 자율주행 로보택시가 예측 불가능한 도시 환경에서 얼마나 취약할 수 있는지 보여주는 중요한 사례이며, 향후 상용화를 위한 **비상 전원 공급 시스템**, **원격 제어 능력**, **오프라인 주행 모드** 등 **안전 및 복구 메커니즘**의 강화가 필수적임을 시사합니다.
+    </p>
+    <ul>
+      <li>샌프란시스코 대규모 정전으로 웨이모 로보택시 서비스 일시 중단.</li>
+      <li>정전으로 인해 다수의 로보택시가 도로에서 정지.</li>
+      <li>자율주행 기술의 예측 불가능한 비상 상황 대처 능력에 대한 문제점 부각.</li>
+      <li>향후 로보택시 상용화를 위해 비상 전원, 원격 제어, 오프라인 주행 등 안전 시스템 강화 필요성 대두.</li>
+    </ul>
+    <p class="source">[Source: TechCrunch AI]</p>
+  </div>
+  <div class="headline-card">
+    <h2 class="headline-title">오픈AI, 8,300억 달러 가치로 1,000억 달러 자금 조달 추진 보도</h2>
+    <p class="summary">
+      생성형 AI(Generative AI) 시장의 선두 주자인 오픈AI(OpenAI)가 약 8,300억 달러(약 1,080조 원)의 기업 가치를 기반으로 무려 1,000억 달러(약 130조 원) 규모의 대규모 자금 조달을 추진 중인 것으로 알려졌습니다.
+      이는 챗GPT(ChatGPT)의 성공과 AI 기술 개발에 필요한 막대한 인프라 및 연구 비용을 충당하고, 글로벌 AI 시장에서의 **선도적 지위**를 확고히 하기 위한 전략으로 분석됩니다.
+      오픈AI는 2026년 1분기 말까지 투자를 유치하는 것을 목표로 하며, 특히 중동 국부 펀드(sovereign wealth funds)와 같은 대규모 전략적 투자자들을 물색하고 있는 것으로 보도되었습니다.
+      이러한 메가 펀딩은 AI 산업에 대한 시장의 폭발적인 기대감을 반영하며, 성공 시 오픈AI의 **차세대 AI 모델 개발**과 **산업 생태계 확장**에 막대한 영향을 미칠 것으로 전망됩니다.
+    </p>
+    <ul>
+      <li>오픈AI, 2026년 1분기 말까지 1,000억 달러(약 130조 원) 투자 유치 목표.</li>
+      <li>기업 가치는 8,300억 달러(약 1,080조 원)로 평가.</li>
+      <li>국부 펀드 등 대규모 전략적 투자자 모색 중.</li>
+      <li>성공 시 AI 기술 개발 및 시장 지배력 강화에 막대한 영향 예상.</li>
+    </ul>
+    <p class="source">[Source: TechCrunch AI]</p>
   </div>
 
-  <div class="news-card">
-    <div class="news-title">New York Governor Kathy Hochul signs RAISE Act to regulate AI safety</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-20 18:20</div>
-    <div class="news-summary">The bill will require large AI developers to publish information about their safety protocols and report safety incidents to the state within 72 hours....</div>
-    <a href="https://techcrunch.com/2025/12/20/new-york-governor-kathy-hochul-signs-raise-act-to-regulate-ai-safety/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="section-title">🔥 MAJOR ISSUES</div>
+  <div class="grid-container">
+    <div class="news-card">
+      <h3 class="news-title">뉴욕 주지사 캐시 호컬, AI 안전 규제 'RAISE 법안' 서명</h3>
+      <p class="summary">
+        뉴욕 주지사 캐시 호컬(Kathy Hochul)이 인공지능(AI) 안전 규제를 위한 **RAISE Act**에 서명했습니다. 이 법안은 대규모 AI 개발사들에게 안전 프로토콜(safety protocols) 정보를 공개하고, 안전 관련 사고 발생 시 72시간 이내에 주(州) 정부에 보고하도록 의무화합니다. AI 기술의 급속한 발전에 따른 **책임 있는 개발**과 **투명성 확보**를 목표로 하며, 다른 지역의 AI 규제 논의에도 중요한 선례가 될 것으로 예상됩니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">얀 르쿤, 새로운 '월드 모델' 스타트업 설립 확인... 50억 달러 이상 가치 추정</h3>
+      <p class="summary">
+        저명한 AI 과학자 얀 르쿤(Yann LeCun)이 새로운 스타트업 설립을 공식적으로 확인했습니다. 비록 그가 CEO를 맡지는 않지만, 이 스타트업은 AI가 환경을 이해하고 예측하며 추론하는 능력을 향상시키는 **'월드 모델(world model)'** 기술 개발에 집중할 예정입니다. 벌써 50억 달러 이상의 기업 가치를 목표로 한다는 보도가 나오며, **AI 인지 능력 발전**의 중요한 방향을 제시할 것으로 기대됩니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">메타, 2026년 출시 목표의 새로운 이미지 및 비디오 AI 모델 개발 중</h3>
+      <p class="summary">
+        메타(Meta)가 2026년 출시를 목표로 새로운 이미지 및 비디오 AI 모델을 개발 중이라고 보도되었습니다. 메타는 기존 텍스트 기반 모델의 코딩 능력 향상과 더불어, 시각 정보를 이해하고 추론하며 계획하는 **새로운 '월드 모델(world models)'** 탐색에도 주력하고 있습니다. 이는 모든 가능성을 학습하지 않고도 세상의 작동 방식을 파악하는 **진보된 멀티모달(multimodal) AI 기술**을 목표로 하는 중요한 움직임입니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">오픈AI, 미성년자 AI 기준 논의 속 챗GPT에 청소년 안전 규칙 추가</h3>
+      <p class="summary">
+        오픈AI(OpenAI)가 미성년자를 위한 AI 모델 행동 지침을 업데이트하고, 청소년 및 학부모용 AI 리터러시 자료를 공개했습니다. 규제 당국이 미성년자 AI 표준을 논의하는 시점에 나온 이 조치는 **AI의 윤리적 사용**과 **사용자 안전**에 대한 오픈AI의 노력을 보여줍니다. 다만, 이러한 정책이 실제 적용에서 얼마나 효과를 발휘할지는 여전히 지켜봐야 할 부분입니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">전 스플렁크 임원들 스타트업 '리졸브 AI', 시리즈 A 투자로 기업 가치 10억 달러 달성</h3>
+      <p class="summary">
+        전 스플렁크(Splunk) 임원들이 설립한 스타트업 **리졸브 AI(Resolve AI)**가 시리즈 A(Series A) 투자 유치를 통해 기업 가치 10억 달러(약 1조 3천억 원)를 달성하며 **유니콘 기업(unicorn company)** 반열에 올랐습니다. 라이트스피드 벤처 파트너스(Lightspeed Venture Partners)가 투자를 주도한 이번 사례는 AI 분야에 대한 벤처 캐피탈(Venture Capital)의 **지속적인 투자 열기**와 **기술 혁신에 대한 높은 기대**를 보여줍니다.
+      </p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+    <div class="news-card">
+      <h3 class="news-title">가드레일 없는 에이전트 자율성, SRE에게는 악몽</h3>
+      <p class="summary">
+        페이저듀티(PagerDuty)의 주앙 프레이타스(João Freitas)는 대규모 조직에서 **'가드레일(guardrails)' 없는 에이전트(agent) 자율성**이 SRE(Site Reliability Engineering, 사이트 신뢰성 엔지니어링) 팀에게 **악몽 같은 시나리오**를 초래할 수 있다고 경고합니다. AI 에이전트가 통제 없이 운영될 경우 예측 불가능한 오류나 시스템 다운을 야발할 수 있기에, **AI 시스템 도입 시 견고한 제어 및 모니터링 시스템 구축**의 중요성을 강조합니다.
+      </p>
+      <p class="source">[Source: VentureBeat AI]</p>
+    </div>
   </div>
 
-  <div class="news-card">
-    <div class="news-title">Ex-Splunk execs’ startup Resolve AI hits $1 billion valuation with Series A</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-20 00:58</div>
-    <div class="news-summary">The round was led by Lightspeed Venture Partners, according to people familiar with the deal....</div>
-    <a href="https://techcrunch.com/2025/12/19/ex-splunk-execs-startup-resolve-ai-hits-1-billion-valuation-with-series-a/" target="_blank" class="news-link">원문 보기 →</a>
+  <div class="section-title">📄 BRIEF & OTHERS</div>
+  <div class="brief-list">
+    <div class="brief-item">
+      <strong class="brief-title">오픈AI, 챗GPT의 '활기 수준' 직접 조절 기능 추가</strong>
+      <p class="brief-summary">챗GPT(ChatGPT) 사용자들이 이제 챗봇의 친밀도, 활기(enthusiasm) 수준, 이모티콘 사용 여부 등을 직접 조절할 수 있게 되면서, 사용자 경험을 개인화하고 응답 스타일을 미세 조정할 수 있게 되었습니다.</p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+    <div class="brief-item">
+      <strong class="brief-title">커서, 그래파이트 인수하며 공격적인 인수합병 지속</strong>
+      <p class="brief-summary">개발자 코드 에디터 스타트업 커서(Cursor)가 AI 코드 리뷰 지원 도구인 그래파이트(Graphite)를 인수하며 적극적인 인수합병(M&A) 행보를 이어가고 있습니다. 그래파이트는 최근 2억 9천만 달러(약 3,700억 원)의 가치를 평가받았습니다.</p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+    <div class="brief-item">
+      <strong class="brief-title">Known, 음성 AI로 오프라인 데이트 연결률 높여</strong>
+      <p class="brief-summary">데이팅 앱 Known이 음성 AI(voice AI)를 활용하여 사용자들의 오프라인 데이트 연결률을 높이고 있습니다. 샌프란시스코 테스트에서 소개팅의 80%가 실제 만남으로 이어져, 스와이프 기반 앱보다 훨씬 높은 효율을 보였습니다.</p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
+    <div class="brief-item">
+      <strong class="brief-title">AI 시대 이전에는 전문가가 유리했지만, 이제는 제너럴리스트가 승리한다</strong>
+      <p class="brief-summary">엘리즈AI(EliseAI) CTO 토니 스토야노프(Tony Stoyanov)는 AI가 많은 전문 작업을 대체함에 따라, 과거 백엔드 엔지니어 같은 전문가(specialists)보다 다양한 분야를 아우르며 문제 해결 능력을 갖춘 제너럴리스트(generalists)의 가치가 AI 시대에 더욱 높아지고 있다고 주장합니다.</p>
+      <p class="source">[Source: VentureBeat AI]</p>
+    </div>
+    <div class="brief-item">
+      <strong class="brief-title">로봇청소기부터 전기자전거까지, 하드웨어 스타트업들이 파산하는 이유</strong>
+      <p class="brief-summary">아이로봇(iRobot), 루미나르(Luminar), 래드 파워 바이크(Rad Power Bikes) 등 여러 하드웨어 스타트업들이 관세 압력, 공급망 문제, 변화하는 시장 등의 복합적인 어려움으로 파산 신청을 했습니다. 이는 물리적인 제품을 만드는 데 따르는 광범위한 도전 과제를 보여줍니다.</p>
+      <p class="source">[Source: TechCrunch AI]</p>
+    </div>
   </div>
-
-  <div class="news-card">
-    <div class="news-title">Cursor continues acquisition spree with Graphite deal</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 21:51</div>
-    <div class="news-summary">Graphite is an AI code review assistant that was last valued at $290 million....</div>
-    <a href="https://techcrunch.com/2025/12/19/cursor-continues-acquisition-spree-with-graphite-deal/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">Yann LeCun confirms his new ‘world model’ startup, reportedly seeks $5B+ valuation</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 19:23</div>
-    <div class="news-summary">Renowned AI scientist Yann LeCun confirmed on Thursday the worst-kept secret in the tech world: that he had indeed launched a new startup. Although he did say he will not be running the new company as its CEO....</div>
-    <a href="https://techcrunch.com/2025/12/19/yann-lecun-confirms-his-new-world-model-startup-reportedly-seeks-5b-valuation/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">Hardware’s brutal week: iRobot, Luminar, and Rad Power go bankrupt</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 18:18</div>
-    <div class="news-summary">The hardware world had a brutal week, with iRobot, Luminar, and Rad Power Bikes all filing for bankruptcy.&#160; Each company faces its own mix of tariff pressures, supply chain issues, and shifting markets, but together they tell a larger story abou...</div>
-    <a href="https://techcrunch.com/podcast/hardwares-brutal-week-irobot-luminar-and-rad-power-go-bankrupt/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">OpenAI adds new teen safety rules to ChatGPT as lawmakers weigh AI standards for minors</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 17:51</div>
-    <div class="news-summary">OpenAI updated its guidelines for how its AI models should behave with users under 18, and published new AI literacy resources for teens and parents. Still, questions remain about how well policies translate into practice....</div>
-    <a href="https://techcrunch.com/2025/12/19/openai-adds-new-teen-safety-rules-to-models-as-lawmakers-weigh-ai-standards-for-minors/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">Known uses voice AI to help you go on more in-person dates</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 17:23</div>
-    <div class="news-summary">In its test phase in San Francisco, Known said it observed 80% of its introductions led to physical dates, which is much higher than swipe-based dating apps....</div>
-    <a href="https://techcrunch.com/2025/12/19/known-uses-voice-ai-to-help-you-go-on-more-in-person-dates/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-  <div class="news-card">
-    <div class="news-title">Meta is developing a new image and video model for a 2026 release, report says</div>
-    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 16:05</div>
-    <div class="news-summary">Meta aims to make the text-based model better at coding while also exploring new world models that understand visual information and can reason, plan, and act without needing to be trained on every possibility....</div>
-    <a href="https://techcrunch.com/2025/12/19/meta-is-developing-a-new-image-and-video-model-for-a-2026-release-report-says/" target="_blank" class="news-link">원문 보기 →</a>
-  </div>
-
-</div>
-
-<div class="section-title">📄 기타 소식</div>
-<div class="brief-list">
-
-  <div class="brief-item">
-    <div class="brief-title">OpenAI is reportedly trying to raise $100B at an $830B valuation</div>
-    <div class="brief-content">The ChatGPT maker is aiming to raise the funding by the end of the first quarter in 2026, and the company may ask sovereign wealth funds to invest in ... <a href="https://techcrunch.com/2025/12/19/openai-is-reportedly-trying-to-raise-100b-at-an-830b-valuation/" target="_blank" class="news-link">더보기</a></div>
-    <div class="brief-meta">[AI News] TechCrunch AI • 2025-12-19 13:32</div>
-  </div>
-
-  <div class="brief-item">
-    <div class="brief-title">From Roombas to e-bikes, why are hardware startups going bankrupt?</div>
-    <div class="brief-content">The hardware world had a brutal week, with&#160;iRobot,&#160;Luminar, and&#160;Rad Power Bikes&#160;all filing for bankruptcy.&#160; Each company face... <a href="https://techcrunch.com/video/from-roombas-to-e-bikes-why-are-hardware-startups-going-bankrupt/" target="_blank" class="news-link">더보기</a></div>
-    <div class="brief-meta">[AI News] TechCrunch AI • 2025-12-19 13:00</div>
-  </div>
-
-  <div class="brief-item">
-    <div class="brief-title">Agent autonomy without guardrails is an SRE nightmare</div>
-    <div class="brief-content"><p><i>João Freitas is GM and VP of engineering for AI and automation at </i><a href="https://www.pagerduty.com/"><i>PagerDuty</i></a></p><p>As AI use ... <a href="https://venturebeat.com/ai/agent-autonomy-without-guardrails-is-an-sre-nightmare" target="_blank" class="news-link">더보기</a></div>
-    <div class="brief-meta">[AI News] VentureBeat AI • 2025-12-21 19:00</div>
-  </div>
-
-  <div class="brief-item">
-    <div class="brief-title">Hiring specialists made sense before AI — now generalists win</div>
-    <div class="brief-content"><p><i>Tony Stoyanov is CTO and co-founder of </i><a href="https://eliseai.com/"><i>EliseAI</i></a></p><p>In the 2010s, tech companies chased staff-lev... <a href="https://venturebeat.com/ai/hiring-specialists-made-sense-before-ai-now-generalists-win" target="_blank" class="news-link">더보기</a></div>
-    <div class="brief-meta">[AI News] VentureBeat AI • 2025-12-20 19:00</div>
-  </div>
-
-</div>
-
 </body>
 </html>

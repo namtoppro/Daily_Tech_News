@@ -44,7 +44,7 @@ client = genai.Client(
     http_options=HttpOptions(api_version="v1"),
 )
 
-MODEL_ID = "gemini-3-flash-preview"
+MODEL_ID = "gemini-2.5-flash"
 
 # RSS 피드 목록
 RSS_FEEDS = [
