@@ -1,53 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>2025-12-22 Tech Briefing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Tech Insight - 2025-12-22</title>
 <style>
-  /* 여기에 CSS 작성: 모던하고 깔끔한 뉴스 대시보드 스타일 */
-  body { font-family: 'Pretendard', 'Roboto', system-ui, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f4f6f8; color: #333; line-height: 1.6; }
-  .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2c3e50; padding-bottom: 10px; }
-  .header h1 { font-size: 2.2em; color: #2c3e50; margin-bottom: 5px; }
-  .header p { color: #555; font-size: 1.1em; }
-  .section-title { font-size: 1.5em; font-weight: bold; margin: 30px 0 15px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 10px; }
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --highlight-color: #2980b9;
+  --bg-color: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --meta-color: #7f8c8d;
+}
 
-  /* Headline 스타일: 강조, 박스 형태 */
-  .headline-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 5px solid #e74c3c; }
-  .headline-title { font-size: 1.8em; margin: 0 0 10px; color: #c0392b; line-height: 1.3; }
-  .headline-card ul { list-style-type: disc; margin-left: 20px; padding-left: 0; color: #555; }
-  .headline-card ul li { margin-bottom: 5px; }
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  word-break: keep-all;
+}
 
-  /* Major News 스타일: 2열 그리드 */
-  .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .news-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
-  .news-title { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; color: #2980b9; line-height: 1.4; }
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 20px;
+}
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--primary-color);
+  letter-spacing: -1px;
+}
+.header p {
+  font-size: 1.1rem;
+  color: var(--meta-color);
+  margin: 10px 0 0;
+}
 
-  /* Brief 스타일: 리스트 형태 */
-  .brief-list { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-  .brief-item { border-bottom: 1px solid #eee; padding: 15px 0; }
-  .brief-item:last-child { border-bottom: none; }
-  .brief-title { font-weight: bold; color: #34495e; margin-bottom: 5px; display: block; }
+/* Archive Selector */
+.archive-selector {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.archive-selector select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  background: white;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: all 0.2s;
+}
+.archive-selector select:hover {
+  background: var(--primary-color);
+  color: white;
+}
 
-  .source { font-size: 0.85em; color: #7f8c8d; margin-top: 10px; text-align: right; font-style: italic; }
-  .summary { line-height: 1.6; text-align: justify; margin-bottom: 15px; }
-  .summary strong { color: #e74c3c; }
-  .brief-summary { line-height: 1.5; margin-top: 5px; color: #555; }
+/* Section Title */
+.section-title {
+  font-size: 1.6em;
+  font-weight: 800;
+  margin: 40px 0 20px;
+  color: var(--primary-color);
+  border-left: 6px solid var(--accent-color);
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
 
-  /* 아카이브 드롭다운 스타일 */
-  .archive-selector { position: absolute; top: 20px; right: 20px; z-index: 100; }
-  .archive-selector select { padding: 10px; border-radius: 5px; border: 2px solid #2c3e50; background: white; cursor: pointer; font-size: 0.9em; color: #2c3e50; }
+/* News Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 30px;
+}
 
-  /* 반응형 디자인 */
-  @media (max-width: 768px) {
-    body { padding: 15px; }
-    .header h1 { font-size: 1.8em; }
-    .section-title { font-size: 1.3em; margin: 25px 0 10px; }
-    .headline-title { font-size: 1.5em; }
-    .grid-container { grid-template-columns: 1fr; }
-    .news-title { font-size: 1.1em; }
-    .archive-selector { position: static; text-align: center; margin-bottom: 20px; }
-    .archive-selector select { width: 100%; max-width: 300px; }
+.news-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.news-title {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--highlight-color);
+  line-height: 1.4;
+}
+
+.news-meta {
+  font-size: 0.85em;
+  color: var(--meta-color);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.news-summary {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.news-link {
+  display: inline-block;
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: color 0.2s;
+}
+
+.news-link:hover {
+  color: var(--accent-color);
+}
+
+/* Brief List */
+.brief-list {
+  background: var(--card-bg);
+  padding: 10px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.brief-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 18px 0;
+}
+
+.brief-item:last-child {
+  border-bottom: none;
+}
+
+.brief-title {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.brief-content {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.brief-meta {
+  font-size: 0.8em;
+  color: var(--meta-color);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
   }
+  .header h1 {
+    font-size: 2rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -76,53 +208,115 @@
     </select>
 </div>
 
-  <!-- 아카이브 드롭다운은 후처리에서 자동 삽입됨, 여기에 넣지 마세요 -->
 
-  <div class="header">
-    <h1>🚀 Daily Tech Insight</h1>
-    <p>오늘의 주요 IT 트렌드 심층 분석 - 2025-12-22</p>
+<div class="header">
+  <h1>🚀 Daily Tech Insight</h1>
+  <p>2025년 12월 22일(월) • 오늘의 주요 IT 트렌드 심층 분석</p>
+</div>
+
+<div class="section-title">🔥 주요 뉴스</div>
+<div class="grid-container">
+
+  <div class="news-card">
+    <div class="news-title">Waymo suspends service in San Francisco as robotaxis stall during blackout</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-21 15:46</div>
+    <div class="news-summary">Waymo suspended its SF robotaxi service on Saturday evening after a massive blackout appeared to leave many of its vehicles stalled on city streets....</div>
+    <a href="https://techcrunch.com/2025/12/21/waymo-suspends-service-in-san-francisco-as-robotaxis-stall-during-blackout/" target="_blank" class="news-link">원문 보기 →</a>
   </div>
 
-  <div class="section-title">🚨 HEADLINE NEWS</div>
-  
-  <div class="headline-card">
-    <h2 class="headline-title">웨이모(Waymo), 샌프란시스코 대규모 정전으로 로보택시 서비스 일시 중단</h2>
-    <div class="summary">
-      <p>지난 주말 샌프란시스코에 발생한 **대규모 정전**으로 인해, 구글의 자율주행 자회사 웨이모(Waymo)의 로보택시 서비스가 한동안 마비되고 일시적으로 운영이 중단되었습니다. 정전으로 인해 다수의 **자율주행 차량**이 도심 도로 한복판에서 멈춰서는 상황이 발생하면서 서비스 안정성에 대한 우려가 제기되었습니다. 이번 사태는 자율주행차가 운용되는 데 있어 **외부 인프라(전력, 통신)**에 대한 의존성과 이로 인한 **취약점**을 명확히 드러냈습니다. 향후 자율주행 서비스의 상용화를 위해서는 단순한 주행 기술 개발을 넘어, 예기치 못한 **인프라 장애**에 대응할 수 있는 더욱 **강화된 비상 시스템**과 **전력망 탄력성** 확보가 필수적임을 시사합니다.</p>
-    </div>
-    <ul>
-      <li>**배경**: 2025년 12월 21일 토요일 저녁, 샌프란시스코 전역에 걸친 대규모 정전 발생.</li>
-      <li>**원인**: 정전으로 인한 전력 공급 중단 및 통신 장애로 웨이모 로보택시 다수가 운행 불가 상태로 도로에 고립.</li>
-      <li>**결과**: 웨이모, 샌프란시스코 내 로보택시 서비스 긴급 중단 조치 발표.</li>
-      <li>**향후 전망**: 자율주행 서비스의 안정적인 운영을 위해 **전력망 및 통신 인프라의 탄력성** 확보와 **장애 시 비상 대응 프로토콜** 강화의 중요성이 대두됨.</li>
-    </ul>
-    <div class="source">[Source: TechCrunch AI]</div>
+  <div class="news-card">
+    <div class="news-title">OpenAI allows users to directly adjust ChatGPT’s enthusiasm level</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-20 20:34</div>
+    <div class="news-summary">ChatGPT users can now tweak the chatbot’s warmth, enthusiasm, and emoji use....</div>
+    <a href="https://techcrunch.com/2025/12/20/openai-allows-users-to-directly-adjust-chatgpts-warmth-and-enthusiasm/" target="_blank" class="news-link">원문 보기 →</a>
   </div>
 
-  <div class="headline-card">
-    <h2 class="headline-title">가드레일 없는 AI 에이전트 자율성, SRE(사이트 신뢰성 엔지니어링)팀의 악몽으로 떠올라</h2>
-    <div class="summary">
-      <p>기업 내 **인공지능(AI)** 기술 도입이 가속화되면서, **높은 투자 수익률(ROI)**을 약속하는 **자율적인 AI 에이전트**에 대한 기대가 커지고 있습니다. 하지만 **PagerDuty**의 AI 및 자동화 담당 GM이자 엔지니어링 VP인 João Freitas는 **명확한 가드레일(guardrail)** 없이 설계된 AI 에이전트의 자율성이 **사이트 신뢰성 엔지니어링(SRE)** 팀에게 **심각한 운영상 문제**를 초래할 수 있다고 경고했습니다. 통제되지 않는 AI 에이전트는 예상치 못한 방식으로 시스템의 안정성을 저해하고 복구 시간을 지연시켜, 기업의 핵심 비즈니스 운영에 치명적인 영향을 미칠 수 있기 때문입니다. 이는 AI 시스템 구축 시 혁신만큼이나 **안정성과 제어 메커니즘**을 우선시해야 하는 중요성을 강조하며, **책임감 있는 AI 개발**을 위한 **엄격한 거버넌스**와 **SRE적 관점의 설계**가 필수적임을 시사합니다.</p>
-    </div>
-    <ul>
-      <li>**배경**: 기업의 AI 활용 증가 및 자율 AI 에이전트 도입 확대 추세.</li>
-      <li>**원인**: **명확한 가드레일** 또는 제어 메커니즘 없이 구현된 AI 에이전트의 무분별한 자율성 부여.</li>
-      <li>**결과**: **사이트 신뢰성 엔지니어링(SRE)** 팀에 예측 불가능한 시스템 장애, 운영 복잡성 증가, 서비스 안정성 저해 등 **'악몽' 같은 상황** 초래.</li>
-      <li>**향후 전망**: AI 에이전트 개발 및 배포 시, **혁신과 더불어 안정성, 제어, 투명성**을 보장하는 **가드레일과 거버넌스 체계** 구축이 최우선 과제로 부상.</li>
-    </ul>
-    <div class="source">[Source: VentureBeat AI]</div>
+  <div class="news-card">
+    <div class="news-title">New York Governor Kathy Hochul signs RAISE Act to regulate AI safety</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-20 18:20</div>
+    <div class="news-summary">The bill will require large AI developers to publish information about their safety protocols and report safety incidents to the state within 72 hours....</div>
+    <a href="https://techcrunch.com/2025/12/20/new-york-governor-kathy-hochul-signs-raise-act-to-regulate-ai-safety/" target="_blank" class="news-link">원문 보기 →</a>
   </div>
 
-  <div class="section-title">🔥 MAJOR ISSUES</div>
-  <div class="grid-container">
-    <!-- MAJOR NEWS 카드들을 여기에 추가 -->
-    <!-- 현재 Input Data가 2개이므로 모두 Headline으로 처리. 더 많은 기사가 있을 경우 여기에 추가됨 -->
+  <div class="news-card">
+    <div class="news-title">Ex-Splunk execs’ startup Resolve AI hits $1 billion valuation with Series A</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-20 00:58</div>
+    <div class="news-summary">The round was led by Lightspeed Venture Partners, according to people familiar with the deal....</div>
+    <a href="https://techcrunch.com/2025/12/19/ex-splunk-execs-startup-resolve-ai-hits-1-billion-valuation-with-series-a/" target="_blank" class="news-link">원문 보기 →</a>
   </div>
 
-  <div class="section-title">📄 BRIEF & OTHERS</div>
-  <div class="brief-list">
-    <!-- BRIEF 아이템들을 여기에 추가 -->
-    <!-- 현재 Input Data가 2개이므로 모두 Headline으로 처리. 더 많은 기사가 있을 경우 여기에 추가됨 -->
+  <div class="news-card">
+    <div class="news-title">Cursor continues acquisition spree with Graphite deal</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 21:51</div>
+    <div class="news-summary">Graphite is an AI code review assistant that was last valued at $290 million....</div>
+    <a href="https://techcrunch.com/2025/12/19/cursor-continues-acquisition-spree-with-graphite-deal/" target="_blank" class="news-link">원문 보기 →</a>
   </div>
+
+  <div class="news-card">
+    <div class="news-title">Yann LeCun confirms his new ‘world model’ startup, reportedly seeks $5B+ valuation</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 19:23</div>
+    <div class="news-summary">Renowned AI scientist Yann LeCun confirmed on Thursday the worst-kept secret in the tech world: that he had indeed launched a new startup. Although he did say he will not be running the new company as its CEO....</div>
+    <a href="https://techcrunch.com/2025/12/19/yann-lecun-confirms-his-new-world-model-startup-reportedly-seeks-5b-valuation/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">Hardware’s brutal week: iRobot, Luminar, and Rad Power go bankrupt</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 18:18</div>
+    <div class="news-summary">The hardware world had a brutal week, with iRobot, Luminar, and Rad Power Bikes all filing for bankruptcy.&#160; Each company faces its own mix of tariff pressures, supply chain issues, and shifting markets, but together they tell a larger story abou...</div>
+    <a href="https://techcrunch.com/podcast/hardwares-brutal-week-irobot-luminar-and-rad-power-go-bankrupt/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">OpenAI adds new teen safety rules to ChatGPT as lawmakers weigh AI standards for minors</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 17:51</div>
+    <div class="news-summary">OpenAI updated its guidelines for how its AI models should behave with users under 18, and published new AI literacy resources for teens and parents. Still, questions remain about how well policies translate into practice....</div>
+    <a href="https://techcrunch.com/2025/12/19/openai-adds-new-teen-safety-rules-to-models-as-lawmakers-weigh-ai-standards-for-minors/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">Known uses voice AI to help you go on more in-person dates</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 17:23</div>
+    <div class="news-summary">In its test phase in San Francisco, Known said it observed 80% of its introductions led to physical dates, which is much higher than swipe-based dating apps....</div>
+    <a href="https://techcrunch.com/2025/12/19/known-uses-voice-ai-to-help-you-go-on-more-in-person-dates/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+  <div class="news-card">
+    <div class="news-title">Meta is developing a new image and video model for a 2026 release, report says</div>
+    <div class="news-meta">[AI News] TechCrunch AI • 2025-12-19 16:05</div>
+    <div class="news-summary">Meta aims to make the text-based model better at coding while also exploring new world models that understand visual information and can reason, plan, and act without needing to be trained on every possibility....</div>
+    <a href="https://techcrunch.com/2025/12/19/meta-is-developing-a-new-image-and-video-model-for-a-2026-release-report-says/" target="_blank" class="news-link">원문 보기 →</a>
+  </div>
+
+</div>
+
+<div class="section-title">📄 기타 소식</div>
+<div class="brief-list">
+
+  <div class="brief-item">
+    <div class="brief-title">OpenAI is reportedly trying to raise $100B at an $830B valuation</div>
+    <div class="brief-content">The ChatGPT maker is aiming to raise the funding by the end of the first quarter in 2026, and the company may ask sovereign wealth funds to invest in ... <a href="https://techcrunch.com/2025/12/19/openai-is-reportedly-trying-to-raise-100b-at-an-830b-valuation/" target="_blank" class="news-link">더보기</a></div>
+    <div class="brief-meta">[AI News] TechCrunch AI • 2025-12-19 13:32</div>
+  </div>
+
+  <div class="brief-item">
+    <div class="brief-title">From Roombas to e-bikes, why are hardware startups going bankrupt?</div>
+    <div class="brief-content">The hardware world had a brutal week, with&#160;iRobot,&#160;Luminar, and&#160;Rad Power Bikes&#160;all filing for bankruptcy.&#160; Each company face... <a href="https://techcrunch.com/video/from-roombas-to-e-bikes-why-are-hardware-startups-going-bankrupt/" target="_blank" class="news-link">더보기</a></div>
+    <div class="brief-meta">[AI News] TechCrunch AI • 2025-12-19 13:00</div>
+  </div>
+
+  <div class="brief-item">
+    <div class="brief-title">Agent autonomy without guardrails is an SRE nightmare</div>
+    <div class="brief-content"><p><i>João Freitas is GM and VP of engineering for AI and automation at </i><a href="https://www.pagerduty.com/"><i>PagerDuty</i></a></p><p>As AI use ... <a href="https://venturebeat.com/ai/agent-autonomy-without-guardrails-is-an-sre-nightmare" target="_blank" class="news-link">더보기</a></div>
+    <div class="brief-meta">[AI News] VentureBeat AI • 2025-12-21 19:00</div>
+  </div>
+
+  <div class="brief-item">
+    <div class="brief-title">Hiring specialists made sense before AI — now generalists win</div>
+    <div class="brief-content"><p><i>Tony Stoyanov is CTO and co-founder of </i><a href="https://eliseai.com/"><i>EliseAI</i></a></p><p>In the 2010s, tech companies chased staff-lev... <a href="https://venturebeat.com/ai/hiring-specialists-made-sense-before-ai-now-generalists-win" target="_blank" class="news-link">더보기</a></div>
+    <div class="brief-meta">[AI News] VentureBeat AI • 2025-12-20 19:00</div>
+  </div>
+
+</div>
+
 </body>
 </html>
