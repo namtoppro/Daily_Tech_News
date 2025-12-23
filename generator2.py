@@ -68,11 +68,11 @@ RSS_FEEDS = [
 # 2. RSS 뉴스 수집
 # ------------------------------------------------------------------
 def fetch_news_data():
-    """RSS 피드에서 72시간 이내 뉴스 수집"""
+    """RSS 피드에서 24시간 이내 뉴스 수집"""
     print("📡 RSS 피드에서 뉴스 수집 중...")
 
     articles = []
-    cutoff_time = datetime.now() - timedelta(hours=72)
+    cutoff_time = datetime.now() - timedelta(hours=24)
 
     for feed_info in RSS_FEEDS:
         if not feed_info["enabled"]:
