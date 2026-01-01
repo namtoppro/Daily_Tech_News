@@ -52,8 +52,9 @@
 </head>
 <body>
 <div class="archive-selector">
-    <select onchange="if(this.value) location.href='archive/' + this.value">
+    <select onchange="if(this.value) location.href = this.value">
         <option value="">📅 과거 기사 보기</option>
+        <option value="../index.html">🏠 오늘 뉴스로 이동</option>
         <option value="2025-12-31.html">2025-12-31</option>
         <option value="2025-12-30.html">2025-12-30</option>
         <option value="2025-12-29.html">2025-12-29</option>
