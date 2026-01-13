@@ -1,50 +1,36 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Daily Tech News Generator with AI (Vertex AI / Google Gen AI SDK)
-서비스 계정 JSON 키 파일로 인증하는 버전 + _generator.py 디자인 적용
-+ HTML 저장 위치에 post.md도 함께 저장 (root + archive)
+Daily Tech News Generator with AI (Hybrid Architecture)
+- Headline: Deep Research Agent + Imagen 4.0
+- Briefing: Gemini 2.5 Flash + Google Search Grounding
 """
 
 import os
-import re
-from glob import glob
+import time
+import glob
 from datetime import datetime, timedelta
-
 import feedparser
 from dotenv import load_dotenv
-
 from google import genai
-from google.genai.types import HttpOptions
+from google.genai import types
 
 # ------------------------------------------------------------------
-# 1. 환경 변수 로드 및 기본 설정
+# 1. 환경 설정
 # ------------------------------------------------------------------
 load_dotenv()
 
+# Google AI Studio API Key
+API_KEY = os.getenv("GOOGLE_API_KEY")
+if not API_KEY:
+    print("⚠️ 경고: GOOGLE_API_KEY가 .env 파일에 설정되지 않았습니다.")
+
+# 클라이언트 초기화
+client = genai.Client(api_key=API_KEY)
+
 TODAY = datetime.now().strftime('%Y-%m-%d')
-ARCHIVE_DIR = os.getenv("ARCHIVE_DIR", "archive")
-
-# Vertex AI / Gen AI 설정 (서비스 계정 JSON 경로는 GOOGLE_APPLICATION_CREDENTIALS로 지정)
-PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT")
-LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
-
-if not PROJECT_ID:
-    raise RuntimeError("GOOGLE_CLOUD_PROJECT 환경 변수가 설정되지 않았습니다.")
-if not LOCATION:
-    raise RuntimeError("GOOGLE_CLOUD_LOCATION 환경 변수가 설정되지 않았습니다.")
-if not os.getenv("GOOGLE_APPLICATION_CREDENTIALS"):
-    raise RuntimeError("GOOGLE_APPLICATION_CREDENTIALS 환경 변수가 설정되지 않았습니다. (서비스 계정 JSON 경로)")
-
-# Gen AI 클라이언트 생성 (Vertex AI 모드 + v1 API)
-client = genai.Client(
-    vertexai=True,
-    project=PROJECT_ID,
-    location=LOCATION,
-    http_options=HttpOptions(api_version="v1"),
-)
-
-MODEL_ID = "gemini-2.5-flash"
+ARCHIVE_DIR = "archive"
+IMAGE_FILENAME = "headline_thumb.png"
 
 # RSS 피드 목록
 RSS_FEEDS = [
@@ -65,338 +51,11 @@ RSS_FEEDS = [
 ]
 
 # ------------------------------------------------------------------
-# 2. RSS 뉴스 수집
+# [스타일 정의] CSS 코드를 문자열 변수로 분리 (SyntaxError 방지)
 # ------------------------------------------------------------------
-def fetch_news_data():
-    """RSS 피드에서 24시간 이내 뉴스 수집"""
-    print("📡 RSS 피드에서 뉴스 수집 중...")
-
-    articles = []
-    cutoff_time = datetime.now() - timedelta(hours=24)
-
-    for feed_info in RSS_FEEDS:
-        if not feed_info["enabled"]:
-            continue
-
-        try:
-            print(f"  - {feed_info['name']} 수집 중...")
-            feed = feedparser.parse(feed_info["url"])
-
-            for entry in feed.entries:
-                published = None
-                if hasattr(entry, "published_parsed") and entry.published_parsed:
-                    published = datetime(*entry.published_parsed[:6])
-                elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
-                    published = datetime(*entry.updated_parsed[:6])
-
-                if published and published > cutoff_time:
-                    article = {
-                        "title": getattr(entry, "title", "No Title"),
-                        "link": getattr(entry, "link", ""),
-                        "summary": getattr(entry, "summary", ""),
-                        "published": published.strftime("%Y-%m-%d %H:%M"),
-                        "source": feed_info["name"],
-                        "category": feed_info["category"],
-                    }
-                    articles.append(article)
-
-        except Exception as e:
-            print(f"  ⚠️ {feed_info['name']} 수집 실패: {e}")
-            continue
-
-    print(f"✅ 총 {len(articles)}개 기사 수집 완료")
-    return articles
-
-# ------------------------------------------------------------------
-# 3. Vertex AI로 HTML 리포트 생성 (디자인 변경됨)
-# ------------------------------------------------------------------
-def generate_html_content(news_data):
-    """AI에게 뉴스 분석 및 HTML 생성 요청 (Vertex AI Gemini)"""
-    print("🤖 AI가 뉴스 분석 중...")
-
-    # 뉴스 데이터를 텍스트로 변환
-    news_text = "\n\n".join(
-        [
-            f"[{article['category']}] {article['title']}\n"
-            f"출처: {article['source']}\n"
-            f"발행: {article['published']}\n"
-            f"요약: {article['summary'][:300]}...\n"
-            f"링크: {article['link']}"
-            for article in news_data
-        ]
-    )
-
-    # 프롬프트 (_generator.py의 디자인 적용, 아카이브 드롭다운은 후처리에서 삽입)
-    prompt = f"""
-# Role Definition
-
-당신은 '수석 IT 저널리스트'이자 '웹 퍼블리싱 전문가'입니다.
-
-[Input Data]를 분석하여 심도 있는 내용이 담긴 **단일 HTML 리포트**를 작성하세요.
-
-# Content Processing Rules (핵심: 무손실 요약 + 한글 번역)
-
-0. **한글 번역 필수:** 모든 기사 제목과 내용을 **반드시 한글로 번역**하세요. 영문 기사는 자연스러운 한국어로 완전히 번역하되, 전문 용어는 원어를 괄호 안에 병기할 수 있습니다 (예: 생성형 AI(Generative AI)).
-
-1. **깊이 있는 요약:** 기사를 한 줄로 너무 짧게 줄이지 마세요. 기사의 **'배경, 원인, 결과, 향후 전망'**이 포함되도록 3~5문장으로 서술형 요약을 하세요.
-
-2. **계층 구조화:**
-   - **🚨 HEADLINE (1~2개):** 가장 상세하게 작성 (기사당 300자 내외). 핵심 팩트와 수치를 불릿 포인트로 추가.
-   - **🔥 MAJOR NEWS (4~6개):** 기사의 핵심 논조가 유지되도록 요약 (기사당 150자 내외).
-   - **📄 BRIEF (나머지):** 간결하게 핵심만 전달.
-
-3. **출처 명시:** 모든 기사 하단에 `[Source: 언론사명]`을 작게 표기하세요.
-
-# Design & Layout Rules (CSS)
-
-- **전체 레이아웃:** A4 용지 1~2장 분량에 정보가 꽉 차 보이는 '대시보드' 스타일.
-- **반응형 그리드:**
-  - PC 화면: Headline은 상단 전체, Major News는 **2열(2 columns)** 그리드 배치로 공간 효율 극대화.
-  - 모바일: 1열로 보기 편하게 정렬.
-- **스타일링:**
-  - 폰트: 가독성 좋은 Sans-serif (Pretendard, Roboto, system-ui).
-  - 색상: 신뢰감을 주는 딥 블루(Deep Blue) & 그레이 톤. 중요 키워드는 **볼드체** 또는 하이라이트 처리.
-  - 가독성: 텍스트 덩어리가 너무 빽빽하지 않도록 적절한 `line-height`와 `padding` 사용.
-
-# HTML Structure Output
-
-아래 구조와 CSS 스타일을 **정확히** 따르는 완벽한 HTML5 코드를 작성하세요.
-**중요: 아카이브 드롭다운 메뉴(archive-selector)는 절대 작성하지 마세요. 후처리에서 자동으로 추가됩니다.**
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>{TODAY} Tech Briefing</title>
-<style>
-  /* 여기에 CSS 작성: 모던하고 깔끔한 뉴스 대시보드 스타일 */
-  body {{ font-family: 'Pretendard', 'Roboto', system-ui, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f4f6f8; color: #333; line-height: 1.6; }}
-  .header {{ text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2c3e50; padding-bottom: 10px; }}
-  .header h1 {{ font-size: 2.2em; color: #2c3e50; margin-bottom: 5px; }}
-  .header p {{ color: #555; font-size: 1.1em; }}
-  .section-title {{ font-size: 1.5em; font-weight: bold; margin: 30px 0 15px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 10px; }}
-
-  /* Headline 스타일: 강조, 박스 형태 */
-  .headline-card {{ background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 5px solid #e74c3c; }}
-  .headline-title {{ font-size: 1.8em; margin: 0 0 10px; color: #c0392b; line-height: 1.3; }}
-  .headline-card ul {{ list-style-type: disc; margin-left: 20px; padding-left: 0; color: #555; }}
-  .headline-card ul li {{ margin-bottom: 5px; }}
-
-  /* Major News 스타일: 2열 그리드 */
-  .grid-container {{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }}
-  .news-card {{ background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }}
-  .news-title {{ font-size: 1.2em; font-weight: bold; margin-bottom: 10px; color: #2980b9; line-height: 1.4; }}
-
-  /* Brief 스타일: 리스트 형태 */
-  .brief-list {{ background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }}
-  .brief-item {{ border-bottom: 1px solid #eee; padding: 15px 0; }}
-  .brief-item:last-child {{ border-bottom: none; }}
-  .brief-title {{ font-weight: bold; color: #34495e; margin-bottom: 5px; display: block; }}
-
-  .source {{ font-size: 0.85em; color: #7f8c8d; margin-top: 10px; text-align: right; font-style: italic; }}
-  .summary {{ line-height: 1.6; text-align: justify; margin-bottom: 15px; }}
-  .summary strong {{ color: #e74c3c; }}
-  .brief-summary {{ line-height: 1.5; margin-top: 5px; color: #555; }}
-
-  /* 아카이브 드롭다운 스타일 */
-  .archive-selector {{ position: absolute; top: 20px; right: 20px; z-index: 100; }}
-  .archive-selector select {{ padding: 10px; border-radius: 5px; border: 2px solid #2c3e50; background: white; cursor: pointer; font-size: 0.9em; color: #2c3e50; }}
-
-  /* 반응형 디자인 */
-  @media (max-width: 768px) {{
-    body {{ padding: 15px; }}
-    .header h1 {{ font-size: 1.8em; }}
-    .section-title {{ font-size: 1.3em; margin: 25px 0 10px; }}
-    .headline-title {{ font-size: 1.5em; }}
-    .grid-container {{ grid-template-columns: 1fr; }}
-    .news-title {{ font-size: 1.1em; }}
-    .archive-selector {{ position: static; text-align: center; margin-bottom: 20px; }}
-    .archive-selector select {{ width: 100%; max-width: 300px; }}
-  }}
-</style>
-</head>
-<body>
-  <!-- 아카이브 드롭다운은 후처리에서 자동 삽입됨, 여기에 넣지 마세요 -->
-
-  <div class="header">
-    <h1>🚀 Daily Tech Insight</h1>
-    <p>오늘의 주요 IT 트렌드 심층 분석 - {TODAY}</p>
-  </div>
-
-  <div class="section-title">🚨 HEADLINE NEWS</div>
-  <!-- HEADLINE 뉴스 카드들을 여기에 추가 -->
-
-  <div class="section-title">🔥 MAJOR ISSUES</div>
-  <div class="grid-container">
-    <!-- MAJOR NEWS 카드들을 여기에 추가 -->
-  </div>
-
-  <div class="section-title">📄 BRIEF & OTHERS</div>
-  <div class="brief-list">
-    <!-- BRIEF 아이템들을 여기에 추가 -->
-  </div>
-</body>
-</html>
-
-# Input Data
-
-{news_text}
-"""
-
-    try:
-        response = client.models.generate_content(
-            model=MODEL_ID,
-            contents=prompt,
-        )
-        html_content = response.text or ""
-
-        # 마크다운 코드 블록 제거
-        html_content = html_content.replace("```html", "").replace("```", "")
-
-        # 기존에 AI가 삽입한 archive-selector 제거 (있을 경우)
-        html_content = re.sub(
-            r'<div class="archive-selector">.*?</div>\s*',
-            '',
-            html_content,
-            flags=re.DOTALL
-        )
-
-        return html_content.strip()
-    except Exception as e:
-        print(f"⚠️ AI 생성 실패: {e}")
-        return generate_fallback_html(news_data)
-
-# ------------------------------------------------------------------
-# 3-1. Vertex AI로 Markdown 브리핑(post.md) 생성
-# ------------------------------------------------------------------
-def generate_post_markdown(news_data):
-    """AI에게 브리핑 기사(Markdown) 생성 요청"""
-    print("📝 AI가 post.md(브리핑) 작성 중...")
-
-    news_text = "\n\n".join(
-        [
-            f"[{article['category']}] {article['title']}\n"
-            f"출처: {article['source']}\n"
-            f"발행: {article['published']}\n"
-            f"요약: {article['summary'][:450]}...\n"
-            f"링크: {article['link']}"
-            for article in news_data
-        ]
-    )
-
-    prompt = f"""
-[Role]
-너는 데이터 저널리즘 팀의 에디터다. 과장 없이 사실만으로 설득한다.
-
-[Objective]
-업로드된 스토리 전체를 객관적 브리핑 기사 1편으로 작성하라.
-한국어 본문 + 영어 요약을 함께 제공하라.
-
-[Guidelines]
-- 문서 흐름: 문제 인식 -> 데이터/사실 제시 -> 의미/시사점
-- “발표/업데이트 내용”과 “해석/시사점”을 명확히 구분해 섹션을 나눠라.
-- 수치/버전/날짜가 있는 경우 반드시 표기.
-- 각 문단 끝에 관련 소스를 1개 이상 연결(Source: …)
-- 마지막에 직군별 인사이트(각 5~7줄):
-  - 개발자라면(구현/운영 관점)
-  - 경영자라면(전략/리스크)
-  - CFO라면(비용/ROI/계약)
-- 마지막 줄에 “전체 출처 목록”을 소스명 + 링크로 정리
-
-[Output]
-- Markdown으로만 출력
-- 맨 위에 H1 제목: "# Tech Briefing - {TODAY}"
-
-[Input Data]
-{news_text}
-"""
-
-    try:
-        response = client.models.generate_content(
-            model=MODEL_ID,
-            contents=prompt,
-        )
-        md = (response.text or "").strip()
-
-        # 혹시 모를 코드블록 제거
-        md = md.replace("```markdown", "").replace("```md", "").replace("```", "").strip()
-        return md
-    except Exception as e:
-        print(f"⚠️ post.md 생성 실패: {e}")
-        return generate_fallback_markdown(news_data)
-
-# ------------------------------------------------------------------
-# 3-2. post.md 기본 생성(폴백)
-# ------------------------------------------------------------------
-def generate_fallback_markdown(news_data):
-    lines = [f"# Tech Briefing - {TODAY}", ""]
-    lines.append("## 수집 기사 목록(요약)")
-    lines.append("")
-    for a in news_data:
-        lines.append(f"- **{a.get('title','')}** ({a.get('source','')}, {a.get('published','')})")
-        if a.get("link"):
-            lines.append(f"  - Source: {a['link']}")
-    lines.append("")
-    lines.append("전체 출처 목록")
-    for a in news_data:
-        if a.get("link"):
-            lines.append(f"- {a.get('source','')}: {a['link']}")
-    return "\n".join(lines)
-
-# ------------------------------------------------------------------
-# 4. 번역용 헬퍼 (Vertex AI 사용)
-# ------------------------------------------------------------------
-def translate_to_korean(text, text_type="title"):
-    """영문 텍스트를 한글로 번역 (Vertex AI Gemini 사용)"""
-    try:
-        if text_type == "title":
-            prompt = (
-                "다음 기사 제목을 자연스러운 한국어로 번역하세요. "
-                "번역문만 출력하세요:\n\n" + text
-            )
-        else:
-            prompt = (
-                "다음 기사 요약을 자연스러운 한국어로 번역하세요. "
-                "전문 용어는 원어를 괄호에 병기하세요. 번역문만 출력하세요:\n\n"
-                + text
-            )
-
-        response = client.models.generate_content(
-            model=MODEL_ID,
-            contents=prompt,
-        )
-        return (response.text or "").strip()
-    except Exception as e:
-        print(f"  ⚠️ 번역 실패 ({text[:30]}...): {e}")
-        return text
-
-# ------------------------------------------------------------------
-# 5. AI 실패 시 기본 HTML 생성 (_generator.py 디자인 적용)
-# ------------------------------------------------------------------
-def generate_fallback_html(news_data):
-    """AI 실패 시 기본 HTML 생성 + 번역기 사용 (디자인 업그레이드)"""
-    print("📝 기본 HTML 생성 중...")
-
-    today_obj = datetime.now()
-    date_display = (
-        today_obj.strftime("%Y년 %m월 %d일(%a)")
-        .replace("Mon", "월")
-        .replace("Tue", "화")
-        .replace("Wed", "수")
-        .replace("Thu", "목")
-        .replace("Fri", "금")
-        .replace("Sat", "토")
-        .replace("Sun", "일")
-    )
-
-    html = f"""<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Tech Insight - {TODAY}</title>
-<style>
-:root {{
+CSS_STYLE = """
+/* Modern Dashboard CSS */
+:root {
   --primary-color: #2c3e50;
   --accent-color: #e74c3c;
   --highlight-color: #2980b9;
@@ -404,334 +63,327 @@ def generate_fallback_html(news_data):
   --card-bg: #ffffff;
   --text-color: #333333;
   --meta-color: #7f8c8d;
-}}
+}
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  max-width: 1000px; margin: 0 auto; padding: 20px;
+  background: var(--bg-color); color: var(--text-color); line-height: 1.6;
+}
+.header { text-align: center; margin-bottom: 40px; border-bottom: 3px solid var(--primary-color); padding-bottom: 20px; }
+.header h1 { font-size: 2.5rem; margin: 0; color: var(--primary-color); letter-spacing: -1px; }
+.header p { font-size: 1.1rem; color: var(--meta-color); margin: 10px 0 0; }
 
-body {{
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  background: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  word-break: keep-all;
-}}
+.archive-selector { text-align: right; margin-bottom: 10px; }
+.archive-selector select { padding: 8px; border-radius: 5px; }
 
-/* Header */
-.header {{
-  text-align: center;
-  margin-bottom: 40px;
-  border-bottom: 3px solid var(--primary-color);
-  padding-bottom: 20px;
-}}
-.header h1 {{
-  font-size: 2.5rem;
-  margin: 0;
-  color: var(--primary-color);
-  letter-spacing: -1px;
-}}
-.header p {{
-  font-size: 1.1rem;
-  color: var(--meta-color);
-  margin: 10px 0 0;
-}}
+.section-title { font-size: 1.6em; font-weight: 800; margin: 40px 0 20px; color: var(--primary-color); border-left: 6px solid var(--accent-color); padding-left: 15px; }
 
-/* Archive Selector */
-.archive-selector {{
-  text-align: center;
-  margin-bottom: 20px;
-}}
-.archive-selector select {{
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 2px solid var(--primary-color);
-  background: white;
-  cursor: pointer;
-  font-size: 0.95em;
-  transition: all 0.2s;
-}}
-.archive-selector select:hover {{
-  background: var(--primary-color);
-  color: white;
-}}
+/* Headline */
+.headline-card { background: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-top: 6px solid var(--accent-color); margin-bottom: 40px; }
+.headline-tag { display: inline-block; background: var(--accent-color); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; margin-bottom: 15px; }
+.headline-title { font-size: 2em; font-weight: 800; margin-bottom: 20px; color: #c0392b; line-height: 1.3; }
+.headline-image img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; }
+.headline-content { font-size: 1.05em; color: #444; line-height: 1.8; }
 
-/* Section Title */
-.section-title {{
-  font-size: 1.6em;
-  font-weight: 800;
-  margin: 40px 0 20px;
-  color: var(--primary-color);
-  border-left: 6px solid var(--accent-color);
-  padding-left: 15px;
-  display: flex;
-  align-items: center;
-}}
+/* Grid */
+.grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+.news-card { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.04); border: 1px solid #eee; transition: transform 0.2s; }
+.news-card:hover { transform: translateY(-3px); }
+.news-title { font-size: 1.35em; font-weight: 700; margin-bottom: 15px; color: var(--highlight-color); }
+.news-meta { font-size: 0.85em; color: var(--meta-color); margin-bottom: 12px; }
+.news-summary { font-size: 0.95em; color: #555; text-align: justify; }
 
-/* News Grid */
-.grid-container {{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-bottom: 30px;
-}}
+/* Brief */
+.brief-list { background: var(--card-bg); padding: 10px 25px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.brief-item { border-bottom: 1px solid #f0f0f0; padding: 18px 0; }
+.brief-item:last-child { border-bottom: none; }
+.brief-title { font-weight: 700; font-size: 1.1em; color: #2c3e50; margin-bottom: 5px; }
+.brief-content { font-size: 0.9em; color: #666; }
 
-.news-card {{
-  background: var(--card-bg);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-  border: 1px solid #eee;
-  transition: all 0.3s ease;
-}}
+@media (max-width: 768px) {
+  .grid-container { grid-template-columns: 1fr; }
+  .header h1 { font-size: 2rem; }
+}
+"""
 
-.news-card:hover {{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}}
+# ------------------------------------------------------------------
+# 2. RSS 뉴스 수집
+# ------------------------------------------------------------------
+def fetch_rss_news():
+    print("📡 RSS 피드 데이터 수집 중...")
+    articles = []
+    cutoff_time = datetime.now() - timedelta(hours=24)
 
-.news-title {{
-  font-size: 1.35em;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--highlight-color);
-  line-height: 1.4;
-}}
+    for feed_info in RSS_FEEDS:
+        if not feed_info["enabled"]: continue
+        try:
+            feed = feedparser.parse(feed_info["url"])
+            for entry in feed.entries:
+                published = datetime.now()
+                # 날짜 파싱 시도
+                if hasattr(entry, 'published_parsed') and entry.published_parsed:
+                    published = datetime(*entry.published_parsed[:6])
+                elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
+                    published = datetime(*entry.updated_parsed[:6])
+                
+                if published > cutoff_time:
+                    articles.append({
+                        "title": entry.title,
+                        "link": entry.link,
+                        "summary": getattr(entry, "summary", ""),
+                        "source": feed_info["name"],
+                        "category": feed_info.get("category", "Tech")
+                    })
+        except Exception as e:
+            print(f"  ⚠️ {feed_info['name']} 수집 에러: {e}")
+            
+    print(f"✅ 총 {len(articles)}개 최신 기사 수집 완료")
+    return articles
 
-.news-meta {{
-  font-size: 0.85em;
-  color: var(--meta-color);
-  margin-bottom: 12px;
-  font-weight: 600;
-}}
+# ------------------------------------------------------------------
+# 3. [AI] 오늘의 헤드라인 주제 선정
+# ------------------------------------------------------------------
+def select_headline_topic(articles):
+    if not articles: return "최신 IT 트렌드"
+    
+    print("🧠 오늘의 핵심 주제 선정 중...")
+    titles = "\n".join([f"- [{a['source']}] {a['title']}" for a in articles[:40]])
+    
+    prompt = f"""
+    다음은 지난 24시간 동안 수집된 테크 뉴스 제목들입니다.
+    이 중에서 가장 기술적으로 중요하고 파급력이 큰 '단 하나의 주제'를 선정해주세요.
+    
+    [뉴스 목록]
+    {titles}
+    
+    답변은 군더더기 없이 주제만 한글로 출력하세요. (예: Gemini 1.5 Pro 출시와 멀티모달 혁신)
+    """
+    
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+        topic = response.text.strip()
+    except:
+        topic = articles[0]['title']
+        
+    print(f"🎯 선정된 주제: {topic}")
+    return topic
 
-.news-summary {{
-  font-size: 0.95em;
-  color: #555;
-  margin-bottom: 15px;
-  line-height: 1.7;
-  text-align: justify;
-}}
+# ------------------------------------------------------------------
+# 4. [솔루션 1] Deep Research & Imagen (헤드라인)
+# ------------------------------------------------------------------
+def create_premium_headline(topic):
+    print(f"🕵️ '{topic}' 심층 조사 시작 (Deep Research)... (약 3~5분 소요)")
+    
+    headline_content = ""
+    
+    try:
+        # Deep Research Agent 호출
+        task = client.interactions.create(
+            agent="deep-research-pro-preview-12-2025", 
+            input=f"{topic}에 대한 최신 동향, 기술적 특징, 시장 반응, 주요 플레이어를 심층 분석해서 뉴스 리포트 형식으로 작성해줘. 반드시 한국어로 작성해.",
+            background=True
+        )
+        
+        while True:
+            chk = client.interactions.get(task.id)
+            if chk.status == "completed":
+                headline_content = chk.outputs[-1].text
+                print("\n✅ 심층 리포트 작성 완료")
+                break
+            elif chk.status == "failed":
+                raise Exception(f"Deep Research 실패: {chk.error}")
+            
+            print(".", end="", flush=True)
+            time.sleep(5)
+            
+    except Exception as e:
+        print(f"\n⚠️ Deep Research 에러 (Flash 모델로 대체): {e}")
+        resp = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=f"{topic}에 대해 자세히 설명해줘.",
+            config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())])
+        )
+        headline_content = resp.text
 
-.news-link {{
-  display: inline-block;
-  color: var(--highlight-color);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9em;
-  transition: color 0.2s;
-}}
+    # Imagen 썸네일 생성
+    print("🎨 AI 썸네일 이미지 생성 중 (Imagen)...")
+    try:
+        img_prompt = f"Futuristic technology illustration regarding {topic}, high quality, cinematic lighting, professional, 4k, 16:9 aspect ratio, no text"
+        img_resp = client.models.generate_images(
+            model='imagen-4.0-generate-001',
+            prompt=img_prompt,
+            config=types.GenerateImagesConfig(number_of_images=1, aspect_ratio="16:9")
+        )
+        img_resp.generated_images[0].image.save(IMAGE_FILENAME)
+        print(f"✅ 이미지 저장 완료: {IMAGE_FILENAME}")
+    except Exception as e:
+        print(f"⚠️ 이미지 생성 실패: {e}")
 
-.news-link:hover {{
-  color: var(--accent-color);
-}}
+    return headline_content
 
-/* Brief List */
-.brief-list {{
-  background: var(--card-bg);
-  padding: 10px 25px;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}}
+# ------------------------------------------------------------------
+# 5. 나머지 뉴스 처리 (Major & Brief)
+# ------------------------------------------------------------------
+def create_other_news_html(articles, headline_topic):
+    print("📰 나머지 뉴스 요약 및 HTML 생성 중...")
+    
+    news_text = "\n".join([f"[{a['source']}] {a['title']} - {a['link']}" for a in articles])
+    
+    prompt = f"""
+    당신은 IT 뉴스 에디터입니다. 오늘의 메인 주제인 '{headline_topic}'은 이미 다루었으니 제외하세요.
+    나머지 뉴스([Source Data])를 바탕으로 아래 두 섹션의 **HTML 코드(div 태그 내용만)**를 작성해주세요.
+    
+    1. **🔥 MAJOR ISSUES**: 중요한 뉴스 4~6개를 선정. (grid-container, news-card 클래스 사용)
+    2. **📄 BRIEF & OTHERS**: 그 외 단신들. (brief-list, brief-item 클래스 사용)
+    
+    **작성 규칙:**
+    - 한국어로 번역 및 요약할 것.
+    - Google Search를 사용하여 최신 내용을 보강할 것.
+    - 아래 CSS 클래스 구조를 정확히 지킬 것:
+      <div class="grid-container"> ... <div class="news-card"> ... </div> ... </div>
+      <div class="brief-list"> ... <div class="brief-item"> ... </div> ... </div>
+    
+    [Source Data]
+    {news_text}
+    """
+    
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())])
+    )
+    
+    return response.text
 
-.brief-item {{
-  border-bottom: 1px solid #f0f0f0;
-  padding: 18px 0;
-}}
+# ------------------------------------------------------------------
+# 6. 아카이브 드롭다운 (오류 수정됨)
+# ------------------------------------------------------------------
+def build_archive_dropdown(is_archive=False):
+    # 파일 검색
+    files = sorted(glob.glob(os.path.join(ARCHIVE_DIR, "*.html")), reverse=True)
+    options = ""
+    for f in files:
+        # 오류가 발생했던 부분을 안전하게 수정: os.path.basename 사용 후 replace
+        filename = os.path.basename(f)
+        date_str = filename.replace(".html", "")
+        options += f'<option value="{date_str}.html">{date_str}</option>\n'
+    
+    # 드롭다운 동작 스크립트 설정
+    js_action = "if(this.value) location.href = this.value" if is_archive else "if(this.value) location.href='archive/' + this.value"
+    
+    return f"""<div class="archive-selector">
+    <select onchange="{js_action}">
+        <option value="">📅 과거 뉴스 보기</option>
+        {options}
+    </select>
+</div>"""
 
-.brief-item:last-child {{
-  border-bottom: none;
-}}
+# ------------------------------------------------------------------
+# 7. 최종 HTML 조립
+# ------------------------------------------------------------------
+def build_final_html(topic, headline_body, other_news_html):
+    date_display = datetime.now().strftime("%Y년 %m월 %d일")
+    
+    img_tag = ""
+    if os.path.exists(IMAGE_FILENAME):
+        img_tag = f'<div class="headline-image"><img src="{IMAGE_FILENAME}" alt="AI Generated Image"></div>'
+    
+    formatted_headline = headline_body.replace("\n-", "<br>• ").replace("\n", "<br>")
+    dropdown = build_archive_dropdown(False)
 
-.brief-title {{
-  font-weight: 700;
-  font-size: 1.1em;
-  color: #2c3e50;
-  margin-bottom: 8px;
-}}
-
-.brief-content {{
-  font-size: 0.9em;
-  color: #666;
-  line-height: 1.6;
-}}
-
-.brief-meta {{
-  font-size: 0.8em;
-  color: var(--meta-color);
-  margin-top: 5px;
-  font-style: italic;
-}}
-
-/* Responsive */
-@media (max-width: 768px) {{
-  .grid-container {{
-    grid-template-columns: 1fr;
-  }}
-  .header h1 {{
-    font-size: 2rem;
-  }}
-}}
+    # .format() 메소드로 HTML 템플릿 완성 (f-string 오류 원천 차단)
+    html_template = """<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Tech Insight - {today}</title>
+<style>
+{css}
 </style>
 </head>
 <body>
 
+{dropdown}
+
 <div class="header">
   <h1>🚀 Daily Tech Insight</h1>
-  <p>{date_display} • 오늘의 주요 IT 트렌드 심층 분석</p>
+  <p>{date_display} • AI Deep Research & Analysis</p>
 </div>
 
-<div class="section-title">🔥 주요 뉴스</div>
-<div class="grid-container">
-"""
-
-    print("🌐 기사 번역 중...")
-    for idx, article in enumerate(news_data[:10], 1):
-        print(f"  [{idx}/10] {article['title'][:50]}...")
-        translated_title = translate_to_korean(article["title"], "title")
-        translated_summary = translate_to_korean(article["summary"][:250], "summary")
-
-        html += f"""
-  <div class="news-card">
-    <div class="news-title">{translated_title}</div>
-    <div class="news-meta">[{article['category']}] {article['source']} • {article['published']}</div>
-    <div class="news-summary">{translated_summary}...</div>
-    <a href="{article['link']}" target="_blank" class="news-link">원문 보기 →</a>
+<div class="headline-card">
+  <span class="headline-tag">AI 심층 리포트</span>
+  {img_tag}
+  <div class="headline-title">{topic}</div>
+  <div class="headline-content">
+    {formatted_headline}
   </div>
-"""
-
-    html += """
 </div>
 
-<div class="section-title">📄 기타 소식</div>
-<div class="brief-list">
-"""
+<div class="section-title">🔥 MAJOR ISSUES</div>
+{other_news_html}
 
-    for idx, article in enumerate(news_data[10:20], 11):
-        print(f"  [{idx}/20] {article['title'][:50]}...")
-        translated_title = translate_to_korean(article["title"], "title")
-        translated_summary = translate_to_korean(article["summary"][:150], "summary")
-
-        html += f"""
-  <div class="brief-item">
-    <div class="brief-title">{translated_title}</div>
-    <div class="brief-content">{translated_summary}... <a href="{article['link']}" target="_blank" class="news-link">더보기</a></div>
-    <div class="brief-meta">[{article['category']}] {article['source']} • {article['published']}</div>
-  </div>
-"""
-
-    html += """
-</div>
+<footer style="text-align:center; margin-top:50px; color:#aaa; font-size:0.85em; padding: 20px;">
+  Powered by Google Gemini 2.5 Deep Research & Imagen 4.0
+</footer>
 
 </body>
 </html>
 """
-    return html
+    return html_template.format(
+        today=TODAY,
+        css=CSS_STYLE,
+        dropdown=dropdown,
+        date_display=date_display,
+        img_tag=img_tag,
+        topic=topic,
+        formatted_headline=formatted_headline,
+        other_news_html=other_news_html
+    )
 
 # ------------------------------------------------------------------
-# 6. 아카이브 드롭다운 생성
-# ------------------------------------------------------------------
-def build_archive_dropdown(is_archive_page=False):
-    """아카이브 드롭다운 메뉴 생성
-
-    Args:
-        is_archive_page: True면 archive/*.html용, False면 index.html용
-    """
-    files = sorted(glob(os.path.join(ARCHIVE_DIR, "*.html")), reverse=True)
-    options = ""
-
-    for f in files:
-        date_str = os.path.basename(f).replace(".html", "")
-        options += f'        <option value="{date_str}.html">{date_str}</option>\n'
-
-    if is_archive_page:
-        # archive/*.html용: 상대 경로 사용 + 메인 이동 옵션 추가
-        dropdown_html = f"""<div class="archive-selector">
-    <select onchange="if(this.value) location.href = this.value">
-        <option value="">📅 과거 기사 보기</option>
-        <option value="../index.html">🏠 오늘 뉴스로 이동</option>
-{options}    </select>
-</div>"""
-    else:
-        # index.html용: archive/ 경로 추가
-        dropdown_html = f"""<div class="archive-selector">
-    <select onchange="if(this.value) location.href='archive/' + this.value">
-        <option value="">📅 과거 기사 보기</option>
-{options}    </select>
-</div>"""
-    return dropdown_html
-
-# ------------------------------------------------------------------
-# 7. HTML에 드롭다운 삽입
-# ------------------------------------------------------------------
-def insert_archive_dropdown(html_content, is_archive_page=False):
-    """HTML에 아카이브 드롭다운 삽입"""
-    dropdown = build_archive_dropdown(is_archive_page)
-
-    # <body> 태그 바로 다음에 드롭다운 삽입
-    if "<body>" in html_content:
-        html_content = html_content.replace("<body>", f"<body>\n{dropdown}\n")
-    elif "<body " in html_content:
-        # <body class="..."> 같은 형태도 처리
-        html_content = re.sub(
-            r'(<body[^>]*>)',
-            rf'\1\n{dropdown}\n',
-            html_content
-        )
-
-    return html_content
-
-# ------------------------------------------------------------------
-# 8. 메인 실행 함수
+# Main Execution
 # ------------------------------------------------------------------
 def main():
-    print("=" * 60)
-    print("  Daily Tech News Generator with AI (Vertex AI)")
-    print("=" * 60)
-
+    print("="*50)
+    print(" Daily Tech News Generator (Hybrid Edition)")
+    print("="*50)
+    
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
-
+    
     # 1. 뉴스 수집
-    raw_data = fetch_news_data()
-
-    if not raw_data:
+    articles = fetch_rss_news()
+    if not articles:
         print("❌ 수집된 기사가 없습니다.")
         return
 
-    # 2. AI 요약 생성 (드롭다운 없는 원본 HTML)
-    html_content = generate_html_content(raw_data)
-
-    # 2-1. AI 브리핑 마크다운 생성 (post.md)
-    post_md = generate_post_markdown(raw_data)
-
-    # 3. index.html용 HTML 생성 (드롭다운 삽입)
-    index_html = insert_archive_dropdown(html_content, is_archive_page=False)
-
-    # 4. archive용 HTML 생성 (드롭다운 삽입)
-    archive_html = insert_archive_dropdown(html_content, is_archive_page=True)
-
-    # 5. 파일 저장
+    # 2. 주제 선정
+    headline_topic = select_headline_topic(articles)
+    
+    # 3. 헤드라인 심층 생성
+    headline_body = create_premium_headline(headline_topic)
+    
+    # 4. 나머지 뉴스 생성
+    other_news_html = create_other_news_html(articles, headline_topic)
+    
+    # 5. HTML 조립
+    final_html = build_final_html(headline_topic, headline_body, other_news_html)
+    
+    # 6. 파일 저장
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(final_html)
+    print("✅ index.html 업데이트 완료")
+    
     archive_path = os.path.join(ARCHIVE_DIR, f"{TODAY}.html")
     with open(archive_path, "w", encoding="utf-8") as f:
-        f.write(archive_html)
-    print(f"✅ Archive 저장: {archive_path}")
-
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(index_html)
-    print("✅ Index 업데이트: index.html")
-
-    # ✅ post.md 저장 (index.html과 같은 위치 + archive에도 저장)
-    with open("post.md", "w", encoding="utf-8") as f:
-        f.write(post_md)
-    print("✅ post.md 저장: post.md")
-
-    archive_md_path = os.path.join(ARCHIVE_DIR, f"{TODAY}.md")
-    with open(archive_md_path, "w", encoding="utf-8") as f:
-        f.write(post_md)
-    print(f"✅ Archive post.md 저장: {archive_md_path}")
-
-    print("=" * 60)
-    print("✨ 작업 완료!")
-    print("=" * 60)
+        # 아카이브용은 동일 내용 저장 (필요 시 경로 수정 가능)
+        # 아카이브 폴더 내에서는 이미지/CSS 경로가 달라질 수 있으므로 href만 수정
+        content_for_archive = final_html.replace('href="archive/', 'href="')
+        f.write(content_for_archive)
+    print(f"✅ 아카이브 저장 완료: {archive_path}")
 
 if __name__ == "__main__":
     main()
