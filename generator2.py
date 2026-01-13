@@ -7,6 +7,7 @@ Daily Tech News Generator with AI (Hybrid Architecture)
 """
 
 import os
+import re
 import time
 import glob
 from datetime import datetime, timedelta
@@ -16,17 +17,31 @@ from google import genai
 from google.genai import types
 
 # ------------------------------------------------------------------
-# 1. 환경 설정
+# 1. 환경 설정 및 충돌 방지 (매우 중요)
 # ------------------------------------------------------------------
 load_dotenv()
 
-# Google AI Studio API Key
+# [중요] Vertex AI(GCP)와의 충돌 방지를 위해 기존 환경변수 임시 해제
+# 이 코드가 없으면 PC에 설정된 GCP 자격증명을 먼저 참조하여 401 오류가 발생할 수 있음
+if "GOOGLE_APPLICATION_CREDENTIALS" in os.environ:
+    del os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
+if "GOOGLE_CLOUD_PROJECT" in os.environ:
+    del os.environ["GOOGLE_CLOUD_PROJECT"]
+
+# Google AI Studio API Key 확인
 API_KEY = os.getenv("GOOGLE_API_KEY")
 if not API_KEY:
     print("⚠️ 경고: GOOGLE_API_KEY가 .env 파일에 설정되지 않았습니다.")
 
-# 클라이언트 초기화
-client = genai.Client(api_key=API_KEY)
+# 클라이언트 초기화 (http_options로 v1beta 강제 지정하여 호환성 확보)
+try:
+    client = genai.Client(
+        api_key=API_KEY,
+        http_options={'api_version': 'v1beta'}
+    )
+except Exception as e:
+    print(f"❌ 클라이언트 초기화 실패: {e}")
+    exit(1)
 
 TODAY = datetime.now().strftime('%Y-%m-%d')
 ARCHIVE_DIR = "archive"
@@ -165,7 +180,8 @@ def select_headline_topic(articles):
             contents=prompt
         )
         topic = response.text.strip()
-    except:
+    except Exception as e:
+        print(f"⚠️ 주제 선정 실패: {e}")
         topic = articles[0]['title']
         
     print(f"🎯 선정된 주제: {topic}")
@@ -180,7 +196,7 @@ def create_premium_headline(topic):
     headline_content = ""
     
     try:
-        # Deep Research Agent 호출
+        # Deep Research Agent 호출 (API Key 모드)
         task = client.interactions.create(
             agent="deep-research-pro-preview-12-2025", 
             input=f"{topic}에 대한 최신 동향, 기술적 특징, 시장 반응, 주요 플레이어를 심층 분석해서 뉴스 리포트 형식으로 작성해줘. 반드시 한국어로 작성해.",
@@ -201,12 +217,17 @@ def create_premium_headline(topic):
             
     except Exception as e:
         print(f"\n⚠️ Deep Research 에러 (Flash 모델로 대체): {e}")
-        resp = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=f"{topic}에 대해 자세히 설명해줘.",
-            config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())])
-        )
-        headline_content = resp.text
+        # Fallback: 일반 Flash 모델로 대체
+        try:
+            resp = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=f"'{topic}'에 대해 최신 정보를 바탕으로 심층 리포트를 한국어로 작성해줘.",
+                config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())])
+            )
+            headline_content = resp.text
+        except Exception as fallback_e:
+            print(f"❌ Fallback 실패: {fallback_e}")
+            headline_content = f"죄송합니다. '{topic}'에 대한 정보를 불러오는데 실패했습니다."
 
     # Imagen 썸네일 생성
     print("🎨 AI 썸네일 이미지 생성 중 (Imagen)...")
@@ -250,28 +271,28 @@ def create_other_news_html(articles, headline_topic):
     {news_text}
     """
     
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt,
-        config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())])
-    )
-    
-    return response.text
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())])
+        )
+        return response.text
+    except Exception as e:
+        print(f"❌ 기타 뉴스 생성 실패: {e}")
+        return "<p>뉴스 생성 중 오류가 발생했습니다.</p>"
 
 # ------------------------------------------------------------------
-# 6. 아카이브 드롭다운 (오류 수정됨)
+# 6. 아카이브 드롭다운
 # ------------------------------------------------------------------
 def build_archive_dropdown(is_archive=False):
-    # 파일 검색
     files = sorted(glob.glob(os.path.join(ARCHIVE_DIR, "*.html")), reverse=True)
     options = ""
     for f in files:
-        # 오류가 발생했던 부분을 안전하게 수정: os.path.basename 사용 후 replace
         filename = os.path.basename(f)
         date_str = filename.replace(".html", "")
         options += f'<option value="{date_str}.html">{date_str}</option>\n'
     
-    # 드롭다운 동작 스크립트 설정
     js_action = "if(this.value) location.href = this.value" if is_archive else "if(this.value) location.href='archive/' + this.value"
     
     return f"""<div class="archive-selector">
@@ -294,7 +315,7 @@ def build_final_html(topic, headline_body, other_news_html):
     formatted_headline = headline_body.replace("\n-", "<br>• ").replace("\n", "<br>")
     dropdown = build_archive_dropdown(False)
 
-    # .format() 메소드로 HTML 템플릿 완성 (f-string 오류 원천 차단)
+    # .format() 사용 (CSS 중괄호 오류 방지)
     html_template = """<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -379,8 +400,6 @@ def main():
     
     archive_path = os.path.join(ARCHIVE_DIR, f"{TODAY}.html")
     with open(archive_path, "w", encoding="utf-8") as f:
-        # 아카이브용은 동일 내용 저장 (필요 시 경로 수정 가능)
-        # 아카이브 폴더 내에서는 이미지/CSS 경로가 달라질 수 있으므로 href만 수정
         content_for_archive = final_html.replace('href="archive/', 'href="')
         f.write(content_for_archive)
     print(f"✅ 아카이브 저장 완료: {archive_path}")
