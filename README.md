@@ -58,6 +58,18 @@ source .venv/bin/activate
 - `archive/YYYY-MM-DD-audio-script.md`
 - `archive/YYYY-MM-DD.wav`
 
+## 유튜브 메타데이터 생성
+```bash
+cd /Users/namtop/data/Daily_Tech_News
+source .venv/bin/activate
+./run_youtube_metadata.sh
+```
+
+생성물 예시:
+- `archive/YYYY-MM-DD-youtube-title.txt`
+- `archive/YYYY-MM-DD-youtube-description.txt`
+- `archive/YYYY-MM-DD-youtube-metadata.json`
+
 ## 참고
 - 기존 `run_daily_news.ps1`는 Windows용 레거시 스크립트입니다.
 - 현재 기본 운영 스크립트는 `run_daily_news.sh` 입니다.
