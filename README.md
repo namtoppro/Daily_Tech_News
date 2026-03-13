@@ -48,3 +48,4 @@ chmod +x run_daily_news.sh
 - 기존 `run_daily_news.ps1`는 Windows용 레거시 스크립트입니다.
 - 현재 기본 운영 스크립트는 `run_daily_news.sh` 입니다.
 - Git push를 하려면 이 맥에서 GitHub 인증이 되어 있어야 합니다.
+- 브리핑 품질 규칙은 `QUALITY_RULES.md`를 따릅니다. 핵심 사실 보존이 카드 길이보다 우선입니다.
