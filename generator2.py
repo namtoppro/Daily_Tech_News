@@ -148,6 +148,9 @@ def generate_html_content(news_data):
   .header {{ text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2c3e50; padding-bottom: 10px; }}
   .header h1 {{ font-size: 2.2em; color: #2c3e50; margin-bottom: 5px; }}
   .header p {{ color: #555; font-size: 1.1em; }}
+  .audio-player {{ background: white; border: 1px solid #e5e7eb; border-left: 5px solid #e74c3c; border-radius: 10px; padding: 14px 16px; margin: 0 0 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }}
+  .audio-player-title {{ font-weight: 700; color: #c0392b; margin-bottom: 8px; }}
+  .audio-player audio {{ width: 100%; }}
   .section-title {{ font-size: 1.5em; font-weight: bold; margin: 30px 0 15px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 10px; }}
   .headline-card {{ background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 5px solid #e74c3c; }}
   .headline-title {{ font-size: 1.8em; margin: 0 0 10px; color: #c0392b; line-height: 1.3; }}
@@ -388,6 +391,27 @@ def insert_archive_dropdown(html_content, is_archive_page=False):
     return html_content
 
 
+
+def build_audio_player(is_archive_page=False):
+    audio_path = f'{TODAY}.wav' if is_archive_page else f'archive/{TODAY}.wav'
+    return f"""<div class=\"audio-player\">
+  <div class=\"audio-player-title\">🎧 오늘의 오디오 브리핑</div>
+  <audio controls preload=\"none\">
+    <source src=\"{audio_path}\" type=\"audio/wav\">
+    브라우저가 오디오 재생을 지원하지 않습니다.
+  </audio>
+</div>"""
+
+
+def insert_audio_player(html_content, is_archive_page=False):
+    player = build_audio_player(is_archive_page)
+    if '<div class="header">' in html_content:
+        return html_content.replace('<div class="header">', f'{player}\n\n<div class="header">', 1)
+    if '<body>' in html_content:
+        return html_content.replace('<body>', f'<body>\n{player}\n', 1)
+    return html_content
+
+
 def main():
     print('=' * 60)
     print(f'  Daily Tech News Generator with Gemini API ({MODEL_ID})')
@@ -401,7 +425,9 @@ def main():
     html_content = generate_html_content(raw_data)
     post_md = generate_post_markdown(raw_data)
     index_html = insert_archive_dropdown(html_content, is_archive_page=False)
+    index_html = insert_audio_player(index_html, is_archive_page=False)
     archive_html = insert_archive_dropdown(html_content, is_archive_page=True)
+    archive_html = insert_audio_player(archive_html, is_archive_page=True)
 
     archive_path = os.path.join(ARCHIVE_DIR, f'{TODAY}.html')
     with open(archive_path, 'w', encoding='utf-8') as f:
