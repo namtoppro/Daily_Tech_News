@@ -67,4 +67,4 @@ source .venv/bin/activate
 
 
 ## 기본 해시태그
-- 하단 해시태그 기본값: `#로프리 #청담랩`
+- 하단 기본값: `https://lowprice.koreall.site/` + `#청담랩`
