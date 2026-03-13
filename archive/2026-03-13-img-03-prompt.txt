@@ -1,0 +1,14 @@
+**[Scene Description]**
+A futuristic, cinematic wide shot of a massive, hyper-advanced server infrastructure seamlessly blending into an abstract, glowing digital brain made of intricate fiber optic networks and holographic data streams. In the center, a subtle, ethereal hologram of the scales of justice intricately woven from glowing digital particles hovers over a high-tech topographical digital twin map. A solitary human silhouette stands in the foreground, facing the colossal digital structure, symbolizing human oversight, legal boundaries, and ethical control over autonomous systems. 
+
+**[Atmosphere]**
+Serious, high-tech, suspenseful, thought-provoking, and deeply cinematic. Designed to look like a premium broadcast news background with a sleek, modern corporate documentary vibe. 
+
+**[Color Palette]**
+Deep cyber-blue and neon cyan (representing cold, efficient data and cloud infrastructure) in sharp contrast with cautionary glowing amber, warm gold, and deep shadows (representing ethical friction, legal boundaries, and human warmth).
+
+**[Composition]**
+Ultra-wide 16:9 aspect ratio, rule of thirds, deep depth of field. Sharp focus on the central intersection of the human silhouette and the glowing digital scales, with smooth, blurred background elements to provide clean, dark negative space on the left and right sides for news graphics and anchor placement. High-end architectural photography style, 8k resolution, volumetric lighting.
+
+**[Negative Prompt]**
+No text, no letters, no typography, no words, no numbers, no logos, no watermarks, no brand names, no UI elements, no weapons, no violence, no NSFW, no cartoon, no anime, no messy cables, no low resolution.

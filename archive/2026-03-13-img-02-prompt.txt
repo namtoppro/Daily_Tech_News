@@ -1,0 +1,11 @@
+A cinematic, high-quality news background image representing personalized AI personas in consumer applications. 
+
+[Scene Description] On the right side of the frame, a sleek, minimalistic glass smart device rests on a dark, reflective surface. Smooth, glowing holographic AI avatars—abstract, friendly, and elegant translucent silhouettes—emerge from the device. These digital proxies are gently interacting with floating, luminous 3D icons: a speech bubble, an abstract heart shape, and a small stylized parcel, symbolizing communication, matchmaking, and commerce. 
+
+[Atmosphere] The mood is sophisticated, futuristic, yet deeply warm and inviting, illustrating the seamless and emotionally connected role of AI assistants in daily digital life. 
+
+[Color Palette] The background features a deep cinematic navy blue, contrasted by vibrant tech cyan and neon purple accents. The holographic AI elements emit a soft, warm amber and coral glow, bridging the gap between cold technology and human warmth. 
+
+[Composition] An asymmetrical, rule-of-thirds layout with the main subjects placed on the right, leaving smooth, out-of-focus negative space on the left side for news graphics and anchor placement. Shot at eye level with an 85mm lens, shallow depth of field, volumetric lighting, 8k resolution, photorealistic tech styling.
+
+[Negative Prompt] --no text, words, letters, typography, fonts, logos, watermarks, brand names, real app interfaces, UI clutter, recognizable corporate symbols, explicit content, suggestive imagery, NSFW, creepy humanoid faces, terminator robots, messy background. --ar 16:9 --v 6.0

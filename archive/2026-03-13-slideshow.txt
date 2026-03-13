@@ -1,0 +1,7 @@
+file '2026-03-13-img-01.png'
+duration 55.004
+file '2026-03-13-img-02.png'
+duration 55.004
+file '2026-03-13-img-03.png'
+duration 55.004
+file '2026-03-13-img-03.png'
