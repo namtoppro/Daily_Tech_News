@@ -9,6 +9,7 @@ Audio extension pipeline for Daily Tech News.
 
 import os
 import base64
+import wave
 from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
@@ -111,14 +112,25 @@ def generate_tts_wav(script: str) -> Path | None:
         ext = '.wav'
         if 'mpeg' in mime or 'mp3' in mime:
             ext = '.mp3'
+            out = Path(ARCHIVE_DIR) / f'{TODAY}{ext}'
+            out.write_bytes(raw)
+            print(f'TTS_AUDIO_SAVED={out} mime={mime} bytes={len(raw)}')
+            return out
         elif 'ogg' in mime:
             ext = '.ogg'
-        elif 'wav' in mime or 'L16' in mime:
-            ext = '.wav'
-        out = Path(ARCHIVE_DIR) / f'{TODAY}{ext}'
-        out.write_bytes(raw)
-        print(f'TTS_AUDIO_SAVED={out} mime={mime} bytes={len(raw)}')
-        return out
+            out = Path(ARCHIVE_DIR) / f'{TODAY}{ext}'
+            out.write_bytes(raw)
+            print(f'TTS_AUDIO_SAVED={out} mime={mime} bytes={len(raw)}')
+            return out
+        elif 'wav' in mime or 'L16' in mime or 'pcm' in mime:
+            out = Path(ARCHIVE_DIR) / f'{TODAY}.wav'
+            with wave.open(str(out), 'wb') as wf:
+                wf.setnchannels(1)
+                wf.setsampwidth(2)
+                wf.setframerate(24000)
+                wf.writeframes(raw)
+            print(f'TTS_AUDIO_SAVED={out} mime={mime} bytes={len(raw)} wrapped_as=wav')
+            return out
 
     raise RuntimeError('TTS 오디오 inline_data를 찾지 못했습니다.')
 
