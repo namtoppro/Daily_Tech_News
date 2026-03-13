@@ -67,4 +67,8 @@ source .venv/bin/activate
 
 
 ## 기본 해시태그
-- 하단 기본값: `https://lowprice.koreall.site/` + `#청담랩`
+- 하단 기본값: `https://lowprice.koreall.site/` + `#로프리` + `#청담랩`
+
+## 유튜브 운영 규칙
+- 유튜브 제목/설명문/공개정책/업로드 순서는 `YOUTUBE_RULES.md`를 따릅니다.
+- 외부 업로드는 기본적으로 `private` 또는 `unlisted` 검토 후 공개합니다.
