@@ -159,11 +159,12 @@ def generate_html_content(news_data):
   .brief-list {{ background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }}
   .brief-item {{ border-bottom: 1px solid #eee; padding: 15px 0; }}
   .brief-item:last-child {{ border-bottom: none; }}
-  .brief-title {{ font-weight: bold; color: #34495e; margin-bottom: 5px; display: block; }}
+  .brief-title {{ font-weight: bold; color: #2980b9; margin-bottom: 8px; display: block; font-size: 1.08em; line-height: 1.45; }}
   .source {{ font-size: 0.85em; color: #7f8c8d; margin-top: 10px; text-align: right; font-style: italic; }}
   .summary {{ line-height: 1.6; text-align: justify; margin-bottom: 15px; }}
   .summary strong {{ color: #e74c3c; }}
-  .brief-summary {{ line-height: 1.5; margin-top: 5px; color: #555; }}
+  .brief-summary {{ line-height: 1.6; margin-top: 5px; color: #555; }}
+  .brief-summary strong {{ color: #e74c3c; }}
   .archive-selector {{ position: absolute; top: 20px; right: 20px; z-index: 100; }}
   .archive-selector select {{ padding: 10px; border-radius: 5px; border: 2px solid #2c3e50; background: white; cursor: pointer; font-size: 0.9em; color: #2c3e50; }}
   @media (max-width: 768px) {{
