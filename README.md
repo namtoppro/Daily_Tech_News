@@ -70,6 +70,23 @@ source .venv/bin/activate
 - `archive/YYYY-MM-DD-youtube-description.txt`
 - `archive/YYYY-MM-DD-youtube-metadata.json`
 
+## 유튜브 업로드
+사전 준비:
+- Google Cloud Console에서 YouTube Data API v3 사용 설정
+- OAuth client secret 파일 준비 (`youtube_client_secret.json`)
+- 기본 공개 상태는 `private` 권장
+
+실행:
+```bash
+cd /Users/namtop/data/Daily_Tech_News
+source .venv/bin/activate
+pip install -r requirements.txt
+./run_youtube_upload.sh
+```
+
+업로드 결과물 예시:
+- `archive/YYYY-MM-DD-youtube-upload.json`
+
 ## 참고
 - 기존 `run_daily_news.ps1`는 Windows용 레거시 스크립트입니다.
 - 현재 기본 운영 스크립트는 `run_daily_news.sh` 입니다.

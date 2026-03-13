@@ -210,8 +210,9 @@ https://lowprice.koreall.site/
 - `archive/YYYY-MM-DD-youtube-title.txt`
 - `archive/YYYY-MM-DD-youtube-description.txt`
 - `archive/YYYY-MM-DD-youtube-metadata.json`
+- `archive/YYYY-MM-DD-youtube-upload.json`
 
-이렇게 해두면 업로드 실패 시에도 제목/설명문을 재사용할 수 있다.
+이렇게 해두면 업로드 실패 시에도 제목/설명문을 재사용할 수 있고, 업로드 성공 시 receipt도 남길 수 있다.
 
 ---
 
