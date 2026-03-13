@@ -11,7 +11,9 @@
   .header p { color: #555; font-size: 1.1em; }
   .section-title { font-size: 1.5em; font-weight: bold; margin: 30px 0 15px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 10px; }
   .headline-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 5px solid #e74c3c; }
-  .headline-title { font-size: 1.6em; font-weight: bold; margin: 0 0 10px; color: #c0392b; line-height: 1.4; }
+  .headline-title { font-size: 1.8em; margin: 0 0 10px; color: #c0392b; line-height: 1.3; }
+  .headline-card ul { list-style-type: disc; margin-left: 20px; padding-left: 0; color: #555; }
+  .headline-card ul li { margin-bottom: 5px; }
   .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .news-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
   .news-title { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; color: #2980b9; line-height: 1.4; }
@@ -20,16 +22,21 @@
   .brief-item:last-child { border-bottom: none; }
   .brief-title { font-weight: bold; color: #34495e; margin-bottom: 5px; display: block; }
   .source { font-size: 0.85em; color: #7f8c8d; margin-top: 10px; text-align: right; font-style: italic; }
-  .summary { line-height: 1.6; text-align: justify; margin-bottom: 15px; color: #444; }
-  .summary strong { color: #2c3e50; background-color: #fce4ec; padding: 0 4px; border-radius: 3px; }
+  .summary { line-height: 1.6; text-align: justify; margin-bottom: 15px; }
+  .summary strong { color: #e74c3c; }
   .brief-summary { line-height: 1.5; margin-top: 5px; color: #555; }
+  .brief-summary strong { color: #e74c3c; }
+  .archive-selector { position: absolute; top: 20px; right: 20px; z-index: 100; }
+  .archive-selector select { padding: 10px; border-radius: 5px; border: 2px solid #2c3e50; background: white; cursor: pointer; font-size: 0.9em; color: #2c3e50; }
   @media (max-width: 768px) {
     body { padding: 15px; }
     .header h1 { font-size: 1.8em; }
     .section-title { font-size: 1.3em; margin: 25px 0 10px; }
-    .headline-title { font-size: 1.4em; }
+    .headline-title { font-size: 1.5em; }
     .grid-container { grid-template-columns: 1fr; }
     .news-title { font-size: 1.1em; }
+    .archive-selector { position: static; text-align: center; margin-bottom: 20px; }
+    .archive-selector select { width: 100%; max-width: 300px; }
   }
 </style>
 </head>
@@ -99,143 +106,203 @@
   <div class="section-title">🚨 HEADLINE NEWS</div>
   
   <div class="headline-card">
-    <div class="headline-title">아틀라시안(Atlassian), AI 투자 자금 확보 위해 전체 직원의 10% 대규모 감원</div>
+    <h2 class="headline-title">아틀라시안, AI 투자 확대를 위해 1,600명 규모의 인력 감축 단행</h2>
     <div class="summary">
-      아틀라시안(Atlassian)이 인공지능(AI) 분야에 더 많은 자금을 투입하기 위해 전체 인력의 10%에 해당하는 약 1,600명을 해고하는 구조조정을 단행했습니다. 블록(Block) 등 주요 IT 기업들에 이어 소프트웨어 업계가 AI 역량 강화를 명목으로 기존 인력을 축소하는 흐름을 명확히 보여줍니다. 이는 기업의 핵심 투자 축이 전통적인 IT 개발 및 운영에서 AI 기반 서비스 고도화로 급격히 이동하고 있음을 <strong>시사</strong>하며, 노동 시장의 재편 가능성을 내포하고 있습니다.
+      협업 툴 기업 아틀라시안(Atlassian)이 AI 분야로 자금을 전환하기 위해 전체 인력의 10%에 해당하는 약 1,600명을 해고했습니다. 이는 기존 블록(Block) 등 다른 기술 기업들이 보여준 행보와 유사하게, 핵심 역량과 자원을 인공지능 기술 고도화에 재배치하는 과정에서 확인된 대규모 구조조정 사례입니다.
+      <br><br>
+      <strong>[인사이트]</strong> 글로벌 IT 업계의 AI 전환이 단순한 기술 도입을 넘어 기존 인력 구조의 근본적인 재편으로 이어지고 있음을 시사한다.
     </div>
     <div class="source">[Source: TechCrunch AI]</div>
   </div>
 
   <div class="headline-card">
-    <div class="headline-title">美 국방부, 군사 표적 결정 과정에 AI 챗봇 도입 검토</div>
+    <h2 class="headline-title">미 국방부, 군사 표적 설정 및 의사결정 과정에 AI 챗봇 활용 검토</h2>
     <div class="summary">
-      미국 국방부가 생성형 AI 시스템을 활용해 타격 목표의 우선순위를 정하고 추천하는 방안을 내부적으로 검토 중인 것으로 확인되었습니다. 최종적인 타격 결정은 여전히 인간의 검증을 거치게 되지만, 군사 전술적 의사결정 과정에 AI 챗봇이 직접적으로 개입하기 시작했음을 <strong>보여주는</strong> 사례입니다. 이는 AI 기술이 단순한 정보 요약이나 행정 보조를 넘어 국가 안보와 직결된 치명적인 작전 영역으로 그 적용 범위가 빠르게 확대되고 있음을 <strong>시사</strong>합니다.
+      미국 국방부가 생성형 AI를 활용하여 공격 목표 목록의 우선순위를 정하고 타격 대상을 추천하는 시스템을 검토 중인 것으로 확인되었습니다. 해당 시스템은 최종적으로 인간의 검증을 거치게 되지만, 군사 작전의 치명적인 의사결정 과정에 챗봇 형태의 AI가 깊숙이 관여하기 시작했음을 보여줍니다.
+      <br><br>
+      <strong>[인사이트]</strong> 인공지능 기술이 국방 안보의 핵심 전술 단계까지 진입함에 따라, 무기 체계 자동화에 따른 윤리적 논쟁과 통제력 확보 문제가 한층 심화될 가능성이 있다.
     </div>
     <div class="source">[Source: MIT Technology Review AI]</div>
   </div>
 
   <div class="section-title">🔥 MAJOR ISSUES</div>
+  
   <div class="grid-container">
-    
     <div class="news-card">
       <div>
-        <div class="news-title">구글 맵스, 10년 만의 최대 개편으로 AI 검색 및 몰입형 내비게이션 지원</div>
-        <div class="summary">구글이 10여 년 만의 최대 규모 업데이트를 통해 구글 맵스에 AI 기반의 'Ask Maps' 기능과 향상된 몰입형 내비게이션을 추가했습니다. 이는 단순한 길 찾기를 넘어 일상적인 공간 탐색 경험 자체를 대화형 AI 환경으로 재편하려는 의도로 해석됩니다.</div>
+        <div class="news-title">엔비디아 GTC 2026, 미래 컴퓨팅을 이끌 차세대 AI 비전 공유</div>
+        <div class="summary">
+          젠슨 황 엔비디아 CEO는 GTC 2026 기조연설을 통해 새로운 하드웨어 제품군과 파트너십을 발표하며 컴퓨팅 생태계의 비전을 공유했습니다.
+          <br><br>
+          <strong>[인사이트]</strong> AI 칩셋 시장을 주도하는 엔비디아의 전략이 단순 하드웨어 제공을 넘어 전체 산업 생태계의 인프라 표준을 규정하는 방향으로 진화하고 있음을 보여준다.
+        </div>
       </div>
       <div class="source">[Source: TechCrunch AI]</div>
     </div>
 
     <div class="news-card">
       <div>
-        <div class="news-title">우아한형제들 기술블로그, "AI 도입으로 실무자의 업무 방식 자체가 변화"</div>
-        <div class="summary">우아한형제들의 한 프로젝트 매니저는 회의록 요약 등 반복적인 문서 작업에 AI를 도입하여 주말 근무를 없앴습니다. 이는 AI가 일자리를 대체하기보다 실무자의 병목 구간을 해소하여 기획 등 본연의 핵심 업무에 집중할 수 있도록 돕는 실무 도구로 작동하고 있음을 보여줍니다.</div>
+        <div class="news-title">우아한형제들, AI 도입으로 변화하는 실무 환경과 조직 문화 조명</div>
+        <div class="summary">
+          우아한형제들의 기획 직군 담당자가 회의록 요약 등 단순 반복 업무를 AI로 대체하면서, 실무진의 업무 소요 시간이 획기적으로 단축된 사례가 공개되었습니다.
+          <br><br>
+          <strong>[인사이트]</strong> 기업 내 AI 도입의 진정한 가치는 도구의 고도화가 아니라, 구성원이 핵심적인 사고와 창의적 업무에 온전히 집중할 수 있는 환경의 조성으로 해석된다.
+        </div>
       </div>
       <div class="source">[Source: Woowa Bros]</div>
     </div>
 
     <div class="news-card">
       <div>
-        <div class="news-title">페이스북 마켓플레이스, 판매자 대신 응답하는 '메타 AI' 기능 출시</div>
-        <div class="summary">구매자가 상품에 대해 문의할 때 판매자가 메타 AI를 이용해 설명, 픽업 위치, 가격 등의 등록 정보를 바탕으로 자동 답장을 작성할 수 있게 되었습니다. 이는 개인 간 거래(C2C) 플랫폼에서 AI를 활용한 커뮤니케이션 자동화가 본격적으로 도입되고 있음을 시사합니다.</div>
+        <div class="news-title">그래머리, 작가 동의 없는 데이터 학습으로 프라이버시 침해 집단 소송 직면</div>
+        <div class="summary">
+          저널리스트 줄리아 앵윈을 비롯한 작가들이 문법 교정 AI 그래머리(Grammarly)를 상대로 무단 데이터 학습 및 프라이버시 침해에 대한 집단 소송을 제기했습니다.
+          <br><br>
+          <strong>[인사이트]</strong> 생성 AI 서비스 모델이 고도화될수록 창작자의 지식재산권 보호와 데이터 수집 동의 절차에 대한 법적 기준 확립이 시급한 과제임을 시사한다.
+        </div>
       </div>
       <div class="source">[Source: TechCrunch AI]</div>
     </div>
 
     <div class="news-card">
       <div>
-        <div class="news-title">그래머리(Grammarly), 사용자 동의 없는 AI 학습 데이터 활용으로 집단 소송 직면</div>
-        <div class="summary">언론인 줄리아 앙윈이 작가의 동의 없이 저작물을 AI 에디터 학습에 사용했다며 그래머리를 상대로 프라이버시 및 퍼블리시티권 침해 집단 소송을 제기했습니다. 이는 AI 서비스 고도화 이면에 존재하는 데이터 수집의 법적·윤리적 리스크를 단적으로 보여줍니다.</div>
+        <div class="news-title">구글, 과거 뉴스 보도와 AI 결합해 국지적 돌발 홍수 예측 시스템 구축</div>
+        <div class="summary">
+          구글은 데이터가 부족한 지역의 홍수 위험을 파악하기 위해 대규모 언어 모델(LLM)을 활용, 과거 뉴스 보도의 정성적 기록을 정량적 데이터로 변환하는 시스템을 도입했습니다.
+          <br><br>
+          <strong>[인사이트]</strong> 파편화된 비정형 텍스트 기록을 AI를 통해 유의미한 재난 대응 지표로 가공함으로써, 공공 안전 분야에서 데이터 한계를 극복하는 대안을 보여준다.
+        </div>
       </div>
       <div class="source">[Source: TechCrunch AI]</div>
     </div>
 
     <div class="news-card">
       <div>
-        <div class="news-title">검루프(Gumloop), 모든 직원의 AI 에이전트화를 목표로 5천만 달러 투자 유치</div>
-        <div class="summary">직관적인 AI 에이전트 빌더를 제공하는 검루프가 벤치마크 주도로 5천만 달러의 투자를 받았습니다. 코딩 지식이 없는 일반 직원도 업무 자동화 도구를 직접 구축할 수 있게 지원하여, 전사적인 AI 내재화 수요가 벤처 투자의 핵심 동인이 되고 있음을 확인시켜 줍니다.</div>
+        <div class="news-title">검루프, 전 직원의 'AI 에이전트 빌더' 전환 목표로 5천만 달러 투자 유치</div>
+        <div class="summary">
+          직관적인 AI 에이전트 구축 도구를 제공하는 스타트업 검루프가 벤치마크로부터 5천만 달러를 확보하며, 비개발 직군의 AI 활용 능력 강화에 나섰습니다.
+          <br><br>
+          <strong>[인사이트]</strong> 기업의 AI 경쟁력이 소수의 전문 엔지니어가 아닌 현업 담당자들의 자체적인 자동화 도구 구축 역량에 의해 좌우되는 흐름이 가속화되고 있음을 의미한다.
+        </div>
       </div>
       <div class="source">[Source: TechCrunch AI]</div>
     </div>
 
     <div class="news-card">
       <div>
-        <div class="news-title">데이팅 앱 틴더·범블, AI 어시스턴트 도입 및 오프라인 연결 전략 선회</div>
-        <div class="summary">데이팅 앱 틴더가 오프라인 이벤트와 가상 스피드 데이팅을 재도입하고, 범블은 사용자 성향을 분석하는 AI 비서 'Bee'를 출시했습니다. 단순 매칭 피로도를 줄이기 위해 AI 알고리즘을 고도화하는 동시에 실제 만남을 촉진하는 하이브리드 전략으로 선회하는 양상으로 해석됩니다.</div>
+        <div class="news-title">데이팅 앱의 진화: 틴더의 오프라인 강화와 범블의 AI 매칭 비서 도입</div>
+        <div class="summary">
+          틴더는 오프라인 이벤트와 가상 데이팅을 도입했고, 범블은 호환성 기반 매칭을 돕는 AI 비서 '비(Bee)'를 선보이며 이용자 유치 경쟁에 나섰습니다.
+          <br><br>
+          <strong>[인사이트]</strong> 데이팅 앱 산업이 단순 스와이프 방식을 탈피해, AI의 데이터 분석과 오프라인 경험을 결합한 입체적 플랫폼으로 진화하고 있음을 시사한다.
+        </div>
       </div>
       <div class="source">[Source: TechCrunch AI]</div>
     </div>
-
   </div>
 
   <div class="section-title">📄 BRIEF & OTHERS</div>
+  
   <div class="brief-list">
-    
     <div class="brief-item">
-      <span class="brief-title">AWS, S3 스토리지용 계정 리전 네임스페이스 신규 도입</span>
-      <div class="brief-summary">아마존웹서비스(AWS)가 데이터 스토리지 수요 증가에 대응하여 S3 범용 버킷의 생성과 관리를 단순화하는 새로운 계정 리전 네임스페이스 기능을 출시했습니다.</div>
+      <span class="brief-title">록스 AI, 12억 달러 기업가치 달성하며 유니콘 등극</span>
+      <div class="brief-summary">
+        록스 AI(Rox AI)가 기존 CRM 도구를 대체하는 AI 네이티브 설루션으로 12억 달러의 기업 가치를 인정받았습니다.
+        <br>
+        <strong>[인사이트]</strong> 영업 자동화 시장에서 인공지능이 보조 역할을 넘어 핵심 시스템으로 격상되었음을 보여준다.
+      </div>
+      <div class="source">[Source: TechCrunch AI]</div>
+    </div>
+
+    <div class="brief-item">
+      <span class="brief-title">AWS, Amazon S3 계정 리전 네임스페이스 출시</span>
+      <div class="brief-summary">
+        AWS가 Amazon S3에 계정 리전 네임스페이스 기능을 추가해 대규모 데이터 스토리지 환경에서 버킷 관리를 간소화했습니다.
+        <br>
+        <strong>[인사이트]</strong> 기업의 클라우드 데이터 규모 확장에 대응하여 자원 관리의 독립성과 유연성을 높인 조치로 해석된다.
+      </div>
       <div class="source">[Source: AWS News]</div>
     </div>
 
     <div class="brief-item">
-      <span class="brief-title">엔비디아 GTC 2026, 젠슨 황 기조연설 관전 포인트</span>
-      <div class="brief-summary">이번 GTC 행사에서 젠슨 황 CEO는 엔비디아의 컴퓨팅 비전을 공유하며, 새로운 하드웨어 제품군 발표와 주요 기술 파트너십을 중점적으로 다룰 것으로 파악됩니다.</div>
+      <span class="brief-title">메타 AI, 페이스북 마켓플레이스 자동 응답 기능 지원</span>
+      <div class="brief-summary">
+        메타 AI가 페이스북 마켓플레이스 판매자를 대신해 게시물 정보를 바탕으로 구매자의 문의에 자동 응답하는 기능을 도입했습니다.
+        <br>
+        <strong>[인사이트]</strong> 개인 간 거래(C2C) 플랫폼에서 AI가 커뮤니케이션 비용을 줄여 거래 효율성을 높이는 구조를 시사한다.
+      </div>
       <div class="source">[Source: TechCrunch AI]</div>
     </div>
 
     <div class="brief-item">
-      <span class="brief-title">영업 자동화 AI 스타트업 록스(Rox), 기업 가치 12억 달러 달성</span>
-      <div class="brief-summary">기존 CRM 도구를 대체할 AI 네이티브 솔루션을 제공하는 록스가 설립 2년 만에 12억 달러의 기업 가치를 인정받으며 B2B 영업 지원 시장의 빠른 성장을 증명했습니다.</div>
+      <span class="brief-title">원더풀, 20억 달러 가치로 1억 5천만 달러 시리즈 B 투자 유치</span>
+      <div class="brief-summary">
+        원더풀이 1억 달러 규모의 시리즈 A 이후 단 4개월 만에 인사이트 파트너스 주도로 1억 5천만 달러의 투자를 유치했습니다.
+        <br>
+        <strong>[인사이트]</strong> 유망 AI 스타트업에 대한 자본 집중 속도가 빨라지며 시장 선점 경쟁이 극대화되고 있음을 의미한다.
+      </div>
       <div class="source">[Source: TechCrunch AI]</div>
     </div>
 
     <div class="brief-item">
-      <span class="brief-title">알렉사+(Alexa+), 성인 전용 '사시(Sassy)' 성격 옵션 추가</span>
-      <div class="brief-summary">아마존이 알렉사에 욕설과 가벼운 조롱이 가능한 성인 전용 성격 옵션을 추가했습니다. 다만, 노골적인 NSFW(후방주의) 콘텐츠는 여전히 제한하는 안전망을 유지합니다.</div>
+      <span class="brief-title">아마존 알렉사 플러스, 성인 전용 '비속어' 성격 옵션 추가</span>
+      <div class="brief-summary">
+        아마존 알렉사 플러스에 비속어 사용은 가능하지만 성인용 콘텐츠는 제한하는 '새시(Sassy)' 성격 옵션이 새롭게 추가되었습니다.
+        <br>
+        <strong>[인사이트]</strong> 음성 비서의 개인화가 감정적 유희의 영역으로 확장되되, 안전성 기준은 엄격히 유지되고 있음을 보여준다.
+      </div>
       <div class="source">[Source: TechCrunch AI]</div>
     </div>
 
     <div class="brief-item">
-      <span class="brief-title">원더풀(Wonderful), 시리즈 B에서 1억 5천만 달러 대규모 자금 조달</span>
-      <div class="brief-summary">원더풀이 1억 달러 규모의 시리즈 A를 유치한 지 불과 4개월 만에 인사이트 파트너스 주도로 20억 달러의 가치를 인정받으며 1억 5천만 달러 추가 투자 유치에 성공했습니다.</div>
-      <div class="source">[Source: TechCrunch AI]</div>
-    </div>
-
-    <div class="brief-item">
-      <span class="brief-title">구글, 과거 뉴스 보도와 LLM을 결합한 돌발 홍수 예측 시스템 개발</span>
-      <div class="brief-summary">구글이 대형언어모델(LLM)을 활용해 정성적인 과거 뉴스 보도 문서를 정량적 데이터로 변환함으로써, 데이터가 부족한 지역의 돌발 홍수 예측 정확도를 높이는 접근 방식을 선보였습니다.</div>
-      <div class="source">[Source: TechCrunch AI]</div>
-    </div>
-
-    <div class="brief-item">
-      <span class="brief-title">MIT 테크 리뷰, 현실 세계 제품 설계를 위한 실용적 AI 공학 조명</span>
-      <div class="brief-summary">제품 엔지니어들이 자동차, 가전제품, 의료 기기 등 물리적 세계의 제품 설계와 검증 과정에 AI를 결합하여 개발 공정을 효율화하는 실용적인 도입 방식을 점진적으로 확대하고 있습니다.</div>
+      <span class="brief-title">현실 세계를 위한 산업용 AI 엔지니어링의 부상</span>
+      <div class="brief-summary">
+        일상 가전부터 의료 기기까지 물리적 제품 설계와 최적화에 인공지능을 결합하는 산업용 AI 엔지니어링이 급격히 확산하고 있습니다.
+        <br>
+        <strong>[인사이트]</strong> AI의 영향력이 디지털 소프트웨어를 넘어 하드웨어 제조 산업의 근본적 혁신 원동력으로 작용할 가능성이 있다.
+      </div>
       <div class="source">[Source: MIT Technology Review AI]</div>
     </div>
 
     <div class="brief-item">
-      <span class="brief-title">엔비디아, 산업용 AI와 디지털 트윈을 통한 옴니버스 생태계 확장</span>
-      <div class="brief-summary">엔비디아는 물리 엔진과 AI가 결합된 인프라를 통해 제조 및 엔지니어링 산업군이 실제 제품을 구축하기 전 가상 환경에서 공정을 시뮬레이션하고 최적화하도록 지원하고 있습니다.</div>
+      <span class="brief-title">엔비디아 옴니버스, 산업용 AI와 디지털 트윈 융합 가속화</span>
+      <div class="brief-summary">
+        엔비디아 옴니버스가 산업용 AI와 디지털 트윈을 결합해 실물 제작 전 제품 및 공정 시뮬레이션의 효율을 극대화하고 있습니다.
+        <br>
+        <strong>[인사이트]</strong> 가상 공간에서의 정교한 사전 검증이 제조업의 물리적 자원 낭비를 줄이고 개발 속도를 앞당기고 있음을 시사한다.
+      </div>
       <div class="source">[Source: NVIDIA Blog]</div>
     </div>
 
     <div class="brief-item">
-      <span class="brief-title">엔비디아 지포스 나우, GDC 2026에서 게임 스트리밍 성능 대폭 개선 발표</span>
-      <div class="brief-summary">샌프란시스코에서 열린 GDC 행사에서 엔비디아는 매끄러운 성능 향상, 게임 탐색 용이성 개선, 신규 블록버스터 타이틀 라인업이 포함된 지포스 나우(GeForce NOW) 업데이트를 공개했습니다.</div>
+      <span class="brief-title">엔비디아, GDC 2026에서 지포스 나우 신규 업데이트 발표</span>
+      <div class="brief-summary">
+        엔비디아는 GDC 2026 현장에서 지포스 나우의 성능 개선과 게임 검색 기능 강화 등 새로운 플랫폼 업데이트를 공개했습니다.
+        <br>
+        <strong>[인사이트]</strong> 클라우드 게이밍 플랫폼이 사용자 경험을 지속적으로 고도화하며 차세대 게임 유통 채널로서의 입지를 다지고 있다.
+      </div>
       <div class="source">[Source: NVIDIA Blog]</div>
     </div>
 
     <div class="brief-item">
-      <span class="brief-title">허깅페이스, 데이터 과학자처럼 사고하는 엔비디아 NeMo 에이전트 소개</span>
-      <div class="brief-summary">엔비디아의 NeMo 에이전트 툴킷이 재사용 가능한 도구 생성 기술을 바탕으로 DABStep 리더보드 1위를 달성하며 데이터 탐색 영역에서의 자율 에이전트 성능을 입증했습니다.</div>
+      <span class="brief-title">허깅페이스, 데이터 사이언티스트처럼 사고하는 AI 에이전트 공개</span>
+      <div class="brief-summary">
+        허깅페이스에 등록된 엔비디아 오픈소스 툴킷이 데이터 분석가의 사고를 모방한 재사용 가능한 도구 생성으로 벤치마크 1위를 기록했습니다.
+        <br>
+        <strong>[인사이트]</strong> 복잡한 데이터 분석 영역에서도 자율형 AI 에이전트의 문제 해결 능력이 전문가 수준에 도달하고 있음을 의미한다.
+      </div>
       <div class="source">[Source: Hugging Face]</div>
     </div>
 
     <div class="brief-item">
-      <span class="brief-title">라인야후(LY Corp), 거대 통합 클라우드 플랫폼 'Flava' 아키텍처 공개</span>
-      <div class="brief-summary">라인야후가 방대한 트래픽과 데이터를 안정적으로 처리하기 위해 두 개의 기존 프라이빗 클라우드를 하나로 통합한 차세대 플랫폼 'Flava'의 구조와 설계 철학을 공유했습니다.</div>
+      <span class="brief-title">라인(LY Corp), 두 개의 거대 클라우드를 통합한 플랫폼 'Flava' 아키텍처 소개</span>
+      <div class="brief-summary">
+        라인이 방대한 트래픽과 데이터를 안정적으로 처리하기 위해 두 개의 거대 클라우드를 성공적으로 통합한 차세대 인프라 '플라바'를 구축했습니다.
+        <br>
+        <strong>[인사이트]</strong> 초대형 플랫폼 생태계를 유지하기 위한 자체 프라이빗 클라우드 내재화 및 최적화 전략의 중요성을 확인시켜 준다.
+      </div>
       <div class="source">[Source: Line (LY Corp)]</div>
     </div>
-
   </div>
 </body>
 </html>
