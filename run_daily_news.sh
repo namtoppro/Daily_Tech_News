@@ -4,7 +4,13 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_DIR="$SCRIPT_DIR/logs"
 LOG_FILE="$LOG_DIR/$(date +%F).log"
+REPORT_FILE="$LOG_DIR/$(date +%F)-report.txt"
 mkdir -p "$LOG_DIR"
+START_TS="$(date '+%Y-%m-%d %H:%M:%S')"
+FINAL_STATUS="RUNNING"
+FINAL_NOTE=""
+LATEST_COMMIT=""
+COLLECTED_COUNT=""
 
 log() {
   local msg="$1"
@@ -31,6 +37,38 @@ record_step_result() {
   STEP_RESULTS+=("${step_name}|${status}")
 }
 
+extract_collected_count() {
+  COLLECTED_COUNT="$(grep '총 .*개 기사 수집 완료' "$LOG_FILE" 2>/dev/null | tail -n 1 | sed -E 's/.*총 ([0-9]+)개 기사 수집 완료.*/\1/' || true)"
+}
+
+write_report() {
+  local end_ts
+  end_ts="$(date '+%Y-%m-%d %H:%M:%S')"
+  extract_collected_count
+  {
+    printf '[Daily Tech News 자동 실행 리포트]\n'
+    printf -- '- 시작: %s\n' "$START_TS"
+    printf -- '- 종료: %s\n' "$end_ts"
+    printf -- '- 최종 상태: %s\n' "$FINAL_STATUS"
+    if [ -n "$FINAL_NOTE" ]; then
+      printf -- '- 메모: %s\n' "$FINAL_NOTE"
+    fi
+    if [ -n "$COLLECTED_COUNT" ]; then
+      printf -- '- 수집 기사 수: %s건\n' "$COLLECTED_COUNT"
+    fi
+    if [ -n "$LATEST_COMMIT" ]; then
+      printf -- '- 커밋: %s\n' "$LATEST_COMMIT"
+    fi
+    printf '\n[단계별 결과]\n'
+    for item in "${STEP_RESULTS[@]}"; do
+      local name="${item%%|*}"
+      local status="${item##*|}"
+      printf -- '- %s: %s\n' "$name" "$status"
+    done
+  } > "$REPORT_FILE"
+  log "리포트 저장: $REPORT_FILE"
+}
+
 print_step_summary() {
   log "=========================================="
   log "STEP SUMMARY"
@@ -52,8 +90,11 @@ run_required_step() {
     log "$step_name 성공"
   else
     record_step_result "$step_name" "FAILED"
+    FINAL_STATUS="FAILED"
+    FINAL_NOTE="$step_name 실패"
     log "$step_name 실패 - 필수 단계 실패로 중단"
     print_step_summary
+    write_report
     exit 1
   fi
 }
@@ -83,8 +124,11 @@ log "Step 6: Git 변경사항 확인"
 GIT_STATUS="$(git status --porcelain)"
 if [ -z "$GIT_STATUS" ]; then
   record_step_result "Step 6: Git 변경사항 확인" "NO_CHANGES"
+  FINAL_STATUS="SUCCESS"
+  FINAL_NOTE="변경사항 없음"
   log "변경사항 없음. 작업 종료."
   print_step_summary
+  write_report
   exit 0
 fi
 record_step_result "Step 6: Git 변경사항 확인" "SUCCESS"
@@ -95,8 +139,11 @@ if git add .; then
   record_step_result "Step 7: Git add" "SUCCESS"
 else
   record_step_result "Step 7: Git add" "FAILED"
+  FINAL_STATUS="FAILED"
+  FINAL_NOTE="Git add 실패"
   log "Git add 실패"
   print_step_summary
+  write_report
   exit 1
 fi
 
@@ -104,25 +151,35 @@ log "Step 8: Git commit"
 COMMIT_MESSAGE="Auto-update news - $(date '+%Y-%m-%d %H:%M')"
 if git commit -m "$COMMIT_MESSAGE"; then
   record_step_result "Step 8: Git commit" "SUCCESS"
+  LATEST_COMMIT="$(git rev-parse --short HEAD 2>/dev/null || true)"
   log "Git commit 성공: $COMMIT_MESSAGE"
 else
   record_step_result "Step 8: Git commit" "FAILED"
+  FINAL_STATUS="FAILED"
+  FINAL_NOTE="Git commit 실패"
   log "Git commit 실패"
   print_step_summary
+  write_report
   exit 1
 fi
 
 log "Step 9: Git push"
 if git push; then
   record_step_result "Step 9: Git push" "SUCCESS"
+  FINAL_STATUS="SUCCESS"
+  FINAL_NOTE="모든 작업 완료"
   log "Git push 성공"
 else
   record_step_result "Step 9: Git push" "FAILED"
+  FINAL_STATUS="FAILED"
+  FINAL_NOTE="Git push 실패"
   log "Git push 실패"
   print_step_summary
+  write_report
   exit 1
 fi
 
 print_step_summary
+write_report
 log "SUCCESS: 모든 작업 완료"
 log "=========================================="
