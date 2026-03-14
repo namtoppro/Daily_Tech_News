@@ -47,6 +47,18 @@ chmod +x run_daily_news.sh
 ./run_daily_news.sh
 ```
 
+현재 `run_daily_news.sh`는 아래 순서를 수행합니다.
+1. 텍스트 뉴스 생성
+2. 오디오 파이프라인
+3. 이미지 파이프라인
+4. 비디오 파이프라인
+5. 유튜브 메타데이터 생성
+6. git commit / push
+
+주의:
+- 오디오/이미지/비디오/메타데이터 단계는 실패해도 텍스트 발행 자체는 유지하도록 설계되어 있습니다.
+- 유튜브 실제 업로드는 아직 별도 실행 단계입니다.
+
 ## 오디오 대본 + 음성 생성
 ```bash
 cd /Users/namtop/data/Daily_Tech_News
