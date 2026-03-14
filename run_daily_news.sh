@@ -5,6 +5,8 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_DIR="$SCRIPT_DIR/logs"
 LOG_FILE="$LOG_DIR/$(date +%F).log"
 REPORT_FILE="$LOG_DIR/$(date +%F)-report.txt"
+REPORT_CHANNEL="${REPORT_CHANNEL:-telegram}"
+REPORT_TARGET="${REPORT_TARGET:-5548753399}"
 mkdir -p "$LOG_DIR"
 START_TS="$(date '+%Y-%m-%d %H:%M:%S')"
 FINAL_STATUS="RUNNING"
@@ -69,6 +71,27 @@ write_report() {
   log "리포트 저장: $REPORT_FILE"
 }
 
+send_report() {
+  if ! command -v openclaw >/dev/null 2>&1; then
+    log "리포트 전송 스킵: openclaw CLI 없음"
+    return 0
+  fi
+
+  local report_message
+  report_message="$(cat "$REPORT_FILE")"
+  if [ -z "$report_message" ]; then
+    log "리포트 전송 스킵: 리포트 내용 비어 있음"
+    return 0
+  fi
+
+  log "리포트 전송 시도: ${REPORT_CHANNEL}:${REPORT_TARGET}"
+  if openclaw message send --channel "$REPORT_CHANNEL" --target "$REPORT_TARGET" --message "$report_message"; then
+    log "리포트 전송 성공"
+  else
+    log "리포트 전송 실패"
+  fi
+}
+
 print_step_summary() {
   log "=========================================="
   log "STEP SUMMARY"
@@ -95,6 +118,7 @@ run_required_step() {
     log "$step_name 실패 - 필수 단계 실패로 중단"
     print_step_summary
     write_report
+    send_report
     exit 1
   fi
 }
@@ -129,6 +153,7 @@ if [ -z "$GIT_STATUS" ]; then
   log "변경사항 없음. 작업 종료."
   print_step_summary
   write_report
+  send_report
   exit 0
 fi
 record_step_result "Step 6: Git 변경사항 확인" "SUCCESS"
@@ -144,6 +169,7 @@ else
   log "Git add 실패"
   print_step_summary
   write_report
+  send_report
   exit 1
 fi
 
@@ -160,6 +186,7 @@ else
   log "Git commit 실패"
   print_step_summary
   write_report
+  send_report
   exit 1
 fi
 
@@ -176,10 +203,12 @@ else
   log "Git push 실패"
   print_step_summary
   write_report
+  send_report
   exit 1
 fi
 
 print_step_summary
 write_report
+send_report
 log "SUCCESS: 모든 작업 완료"
 log "=========================================="
