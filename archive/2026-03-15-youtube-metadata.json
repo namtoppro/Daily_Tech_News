@@ -1,0 +1,40 @@
+{
+  "date": "2026-03-15",
+  "title": "[2026-03-15] 오늘의 AI·테크 브리핑 | 미 육군 AI 계약, 메타 인력 감축, 챗GPT 앱 통합",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 미국 육군의 국방 테크 계약, 메타의 인력 구조조정 검토, 챗GPT의 서드파티 앱 직접 통합 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- 미국 육군, 국방 테크 기업 앤두릴(Anduril)과 최대 200억 달러 규모 조달 통합 계약 발표\n- 메타(Meta), AI 인프라 투자 비용 상쇄를 위해 최대 20% 인력 감축 검토\n- 챗GPT(ChatGPT), 도어대시·우버 등 서드파티 앱 직접 실행 기능 출시\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews #인공지능 #테크브리핑",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#인공지능",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "AI",
+    "테크뉴스",
+    "미 육군",
+    "앤두릴",
+    "메타 감원",
+    "구조조정",
+    "챗GPT",
+    "오픈AI",
+    "인공지능 트렌드",
+    "기술뉴스"
+  ],
+  "privacyStatus": "private",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-15.mp4",
+  "videoExists": false,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-15.md",
+    "archive/2026-03-15-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "과장 없는 정보형 제목 적용, 핵심 이슈 3가지 요약 및 브랜드 태그 포함 완료",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

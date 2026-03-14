@@ -1,0 +1,14 @@
+**[Scene Description]**
+A futuristic, high-tech conceptual scene of an advanced tactical command center. Hundreds of fragmented digital nodes, chaotic glowing data streams, and abstract unmanned drone schematics are seamlessly merging into one massive, powerful, glowing unified central core on a sleek dark metallic holographic table. Representing the massive integration of advanced AI technology and modern military defense systems. 
+
+**[Atmosphere]**
+Serious, authoritative, cutting-edge, epic, and highly advanced. A clean, professional aesthetic perfectly suited for a tech news briefing background.
+
+**[Color Palette]**
+Deep military navy blue and dark tactical olive green in the background, contrasting strongly with bright neon cyan, glowing amber, and crisp white volumetric holographic lights in the center.
+
+**[Composition]**
+Wide-angle shot, center-focused symmetrical composition. Shallow depth of field with the background seamlessly blurred to allow space for news anchors or graphics. Eye-level angle, 8k resolution, photorealistic, cinematic lighting, Unreal Engine 5 render style, 16:9 aspect ratio.
+
+**[Negative Prompt]**
+text, letters, fonts, typography, words, watermarks, signatures, logos, brand names, national flags, people, human figures, messy UI, suggestive content, NSFW, gore, graphic violence, literal weapons.

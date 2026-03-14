@@ -1,0 +1,9 @@
+**Scene Description:** A high-tech cinematic scene showing a powerful, glowing central AI core acting as a unified digital hub. Smooth, luminous data streams and glowing energetic tethers radiate outward from the center, seamlessly connecting into various floating, translucent holographic modules. These modules contain elegant, abstract 3D representations of daily physical tasks: a sleek futuristic vehicle, a minimal delivery box, a stylized airplane, and a digital art canvas. The visual metaphor emphasizes the AI evolving into a central operating system orchestrating real-world services. No specific brand logos or recognizable UI layouts are present.
+
+**Atmosphere:** Innovative, highly advanced, professional, seamless, cinematic, and immersive. Conveys a sense of seamless connectivity and future technology, perfectly suited for a premium tech news broadcast background. 
+
+**Color Palette:** Deep cyberspace blue and dark charcoal background. The central AI core glows with vibrant cyan and neon purple, while the connecting data pathways feature electric blue and warm amber accents to highlight the flow of action and energy.
+
+**Composition:** Centralized, orbital composition. The glowing AI hub rests in the middle, surrounded by a perfectly balanced, circular arrangement of the service modules. Shot with a wide-angle lens, utilizing a shallow depth of field with beautiful background bokeh, keeping sharp focus on the central hub and the glowing connections. Ample clean negative space on the left and right edges for news anchor placement and broadcast graphics.
+
+**Negative Prompt (Forbidden Elements):** Text, letters, words, fonts, typography, brand logos, watermarks, specific app icons, UI text panels, messy cables, chaotic elements, suggestive content, cluttered layout, flat 2D design, overexposure.
