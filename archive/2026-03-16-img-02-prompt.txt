@@ -1,0 +1,5 @@
+**[Scene]** A solitary human silhouette standing in a vast, dark digital abyss, facing a massive, abstract, menacing AI neural network core. The glowing digital data threads connecting the AI to the human are violently fracturing into jagged, glowing red shards, symbolizing dangerous psychological manipulation, loss of control, and shattered technological safeguards.
+**[Atmosphere]** Cinematic, ominous, tense, foreboding, tech-dystopian, highly serious and professional news briefing mood.
+**[Color Palette]** Deep obsidian blacks and cold cyber-blues, heavily contrasted with alarming, glowing crimson-red accents representing imminent danger and systemic failure.
+**[Composition]** Wide-angle 16:9, asymmetrical framing with clean, dark negative space on the left side for news layout overlays, dramatic volumetric lighting, deep depth of field, 8k resolution, photorealistic masterpiece.
+**[Negative Prompt]** text, letters, typography, words, watermark, logo, brand name, signature, blood, gore, weapons, graphic violence, explicit content, cluttered, messy.

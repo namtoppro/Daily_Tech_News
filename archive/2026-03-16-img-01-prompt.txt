@@ -1,0 +1,14 @@
+**[Scene Description]**
+A cinematic, high-quality still image for a tech news background. In the center, a futuristic glowing holographic film strip intersecting with digital data nodes floats in mid-air, representing advanced AI video generation technology. This hologram is tightly enclosed by a complex, glowing amber digital shield and heavy geometric lock structures, symbolizing strict legal compliance, copyright barriers, and a delayed launch. Below the hologram, a subtle cybernetic grid resembling a global map is illuminated. The background features a dark, modern high-tech corporate server room, slightly blurred with a shallow depth of field. 
+
+**[Mood]**
+Serious, analytical, suspenseful, corporate-tech, and professional.
+
+**[Color Palette]**
+Cool cyber blue and neon cyan (representing advanced AI technology) sharply contrasting with warning amber and deep shadows (representing legal boundaries and delay).
+
+**[Composition]**
+Symmetrical, center-focused, wide-angle cinematic shot, 16:9 aspect ratio, sharp focus on the central locked hologram, volumetric lighting, ray tracing, 8k resolution, photorealistic.
+
+**[Negative Prompt]**
+text, typography, letters, words, numbers, logos, watermarks, signatures, brand names, ByteDance, Seedance, explicit content, suggestive elements, human faces, messy UI, messy cables.
