@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.namtop.daily-tech-news-recovery</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/namtop/data/Daily_Tech_News/run_recovery_check.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/namtop/data/Daily_Tech_News</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>8</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/namtop/data/Daily_Tech_News/logs/launchd-recovery.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/namtop/data/Daily_Tech_News/logs/launchd-recovery.err.log</string>
+</dict>
+</plist>
