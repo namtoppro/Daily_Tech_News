@@ -1,0 +1,40 @@
+{
+  "date": "2026-03-17",
+  "title": "오늘의 AI·테크 브리핑 | 엔비디아 생태계 확장, AI 저작권 소송, 버티컬 AI 부상 | 2026-03-17",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 엔비디아의 생태계 확장, AI 저작권 및 보안 리스크, 버티컬 AI의 부상 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- 엔비디아 GTC 2026 발표 및 1조 달러 규모 차세대 칩 수요 전망\n- 브리태니커·메리엄 웹스터의 오픈AI 저작권 침해 소송 제기\n- xAI 그록(Grok) 유해 콘텐츠 논란 및 미 국방부 도입 보안 우려\n- Amazon S3 20주년 및 금융·로보틱스 등 산업 특화 버티컬 AI 투자 가속화\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews #인공지능 #테크브리핑",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#인공지능",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "엔비디아",
+    "블랙웰",
+    "오픈AI",
+    "AI저작권",
+    "xAI",
+    "그록",
+    "버티컬AI",
+    "아마존S3",
+    "AI인프라",
+    "기술뉴스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-17.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-17.md",
+    "archive/2026-03-17-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "2026-03-17 엔비디아, AI 저작권 소송, 버티컬 AI 이슈 유튜브 메타데이터 생성 완료",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

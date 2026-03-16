@@ -1,0 +1,9 @@
+**Scene Description:** A futuristic and abstract visualization of a vast, established digital cloud infrastructure forming a solid, glowing grid foundation. From this mature base, powerful vertical pillars of luminous data are rising sharply upwards, symbolizing the emergence of domain-specific vertical AI. Within these glowing vertical streams, subtle, high-tech holographic shapes emerge: a sophisticated robotic optical lens representing physical AI and visual memory, seamlessly blending with structured, flowing geometric nodes representing modernized financial data systems. 
+
+**Atmosphere:** High-tech, visionary, cinematic, professional, and sophisticated. The mood is analytical and forward-looking, perfectly suited for a premium tech news broadcast.
+
+**Color Palette:** Deep midnight blue and cyan for the foundational cloud grid, contrasting beautifully with vibrant amber, glowing gold, and bright neon teal for the ascending vertical AI pillars.
+
+**Composition:** Ultra-wide aspect ratio (16:9), rule of thirds, dynamic depth of field. The midground is sharply focused while the foreground and deep background are softly blurred. The layout is spacious with a clear negative space on the left side, designed specifically to serve as a backdrop for a news presenter. High-quality 8k resolution, volumetric lighting, unreal engine 5 render style.
+
+**Negative Prompt (Do not include):** Text, letters, typography, numbers, watermarks, signatures, logos, brand names, AWS, S3, Nvidia, Hugging Face, human faces, excessive clutter, chaotic wires, cartoon, anime, illustrations, low resolution, inappropriate content, sensual elements.
