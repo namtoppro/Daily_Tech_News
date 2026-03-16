@@ -170,6 +170,16 @@ def build_prompt(context: dict) -> str:
 """
 
 
+def normalize_title(title: str) -> str:
+    title = re.sub(r'\s+', ' ', title).strip()
+    m = re.match(r'^\[(\d{4}-\d{2}-\d{2})\]\s*(.+)$', title)
+    if m:
+        date_part, rest = m.group(1), m.group(2).strip()
+        if date_part not in rest:
+            title = f'{rest} | {date_part}'
+    return title
+
+
 def generate_metadata(context: dict) -> dict:
     raw = ai_generate(build_prompt(context))
     data = extract_json_block(raw)
@@ -177,7 +187,7 @@ def generate_metadata(context: dict) -> dict:
     title = str(data.get('title', '')).strip()
     if not title:
         raise RuntimeError('생성된 제목이 비어 있습니다.')
-    title = re.sub(r'\s+', ' ', title)
+    title = normalize_title(title)
 
     description = str(data.get('description', '')).strip()
     if not description:
