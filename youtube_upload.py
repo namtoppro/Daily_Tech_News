@@ -4,7 +4,7 @@
 YouTube upload pipeline for Daily Tech News.
 - Reads today's generated mp4 + metadata json
 - Uses OAuth installed-app flow for YouTube Data API v3
-- Uploads with privacyStatus defaulting to private
+- Uploads with privacyStatus defaulting to configured env policy
 - Keeps upload isolated from text/audio/image/video generation
 """
 

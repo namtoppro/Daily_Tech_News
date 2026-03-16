@@ -198,9 +198,14 @@ def generate_metadata(context: dict) -> dict:
     if not keywords:
         keywords = ['AI', 'Tech News', 'Daily Tech News', '인공지능', '기술뉴스']
 
-    privacy = str(data.get('privacyStatus', DEFAULT_PRIVACY)).strip().lower()
-    if privacy not in {'private', 'unlisted', 'public'}:
+    requested_privacy = str(data.get('privacyStatus', '')).strip().lower()
+    allowed_privacies = {'private', 'unlisted', 'public'}
+    if DEFAULT_PRIVACY in allowed_privacies:
         privacy = DEFAULT_PRIVACY
+    elif requested_privacy in allowed_privacies:
+        privacy = requested_privacy
+    else:
+        privacy = 'public'
 
     category = str(data.get('category', 'Science & Technology')).strip() or 'Science & Technology'
     playlist = str(data.get('playlistSuggestion', 'Daily Tech News')).strip() or 'Daily Tech News'
