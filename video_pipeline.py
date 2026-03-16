@@ -7,7 +7,7 @@ Video pipeline for Daily Tech News.
 """
 
 import os
-import math
+import shutil
 import subprocess
 from datetime import datetime
 from pathlib import Path
@@ -17,6 +17,8 @@ ARCHIVE_DIR = Path(os.getenv('ARCHIVE_DIR', 'archive'))
 VIDEO_WIDTH = int(os.getenv('VIDEO_WIDTH', '1280'))
 VIDEO_HEIGHT = int(os.getenv('VIDEO_HEIGHT', '720'))
 VIDEO_FPS = int(os.getenv('VIDEO_FPS', '30'))
+FFPROBE_BIN = os.getenv('FFPROBE_BIN') or shutil.which('ffprobe') or '/opt/homebrew/bin/ffprobe'
+FFMPEG_BIN = os.getenv('FFMPEG_BIN') or shutil.which('ffmpeg') or '/opt/homebrew/bin/ffmpeg'
 
 
 def get_audio_file() -> Path:
@@ -35,8 +37,18 @@ def get_images():
     return images
 
 
+def ensure_video_bins():
+    missing = []
+    if not Path(FFPROBE_BIN).exists():
+        missing.append(f'ffprobe={FFPROBE_BIN}')
+    if not Path(FFMPEG_BIN).exists():
+        missing.append(f'ffmpeg={FFMPEG_BIN}')
+    if missing:
+        raise RuntimeError('필수 비디오 도구 없음: ' + ', '.join(missing))
+
+
 def get_audio_duration(audio_path: Path) -> float:
-    cmd = ['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', str(audio_path)]
+    cmd = [FFPROBE_BIN, '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', str(audio_path)]
     out = subprocess.check_output(cmd, text=True).strip()
     return float(out)
 
@@ -59,7 +71,7 @@ def build_video(audio_path: Path, images):
     output = ARCHIVE_DIR / f'{TODAY}.mp4'
 
     cmd = [
-        'ffmpeg', '-y',
+        FFMPEG_BIN, '-y',
         '-f', 'concat', '-safe', '0', '-i', str(concat_file),
         '-i', str(audio_path),
         '-vf', f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}:force_original_aspect_ratio=decrease,pad={VIDEO_WIDTH}:{VIDEO_HEIGHT}:(ow-iw)/2:(oh-ih)/2,format=yuv420p",
@@ -76,9 +88,12 @@ def build_video(audio_path: Path, images):
 
 
 def main():
+    ensure_video_bins()
     audio = get_audio_file()
     images = get_images()
     output, per_image, duration, concat_file = build_video(audio, images)
+    print(f'FFPROBE_BIN={FFPROBE_BIN}')
+    print(f'FFMPEG_BIN={FFMPEG_BIN}')
     print(f'AUDIO={audio}')
     print(f'IMAGE_COUNT={len(images)}')
     print(f'DURATION={duration:.2f}')

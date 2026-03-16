@@ -13,6 +13,8 @@ FINAL_STATUS="RUNNING"
 FINAL_NOTE=""
 LATEST_COMMIT=""
 COLLECTED_COUNT=""
+OPTIONAL_FAILURES=0
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
 log() {
   local msg="$1"
@@ -72,7 +74,12 @@ write_report() {
 }
 
 send_report() {
-  if ! command -v openclaw >/dev/null 2>&1; then
+  local openclaw_bin
+  openclaw_bin="$(command -v openclaw 2>/dev/null || true)"
+  if [ -z "$openclaw_bin" ] && [ -x "/opt/homebrew/bin/openclaw" ]; then
+    openclaw_bin="/opt/homebrew/bin/openclaw"
+  fi
+  if [ -z "$openclaw_bin" ]; then
     log "리포트 전송 스킵: openclaw CLI 없음"
     return 0
   fi
@@ -85,7 +92,7 @@ send_report() {
   fi
 
   log "리포트 전송 시도: ${REPORT_CHANNEL}:${REPORT_TARGET}"
-  if openclaw message send --channel "$REPORT_CHANNEL" --target "$REPORT_TARGET" --message "$report_message"; then
+  if "$openclaw_bin" message send --channel "$REPORT_CHANNEL" --target "$REPORT_TARGET" --message "$report_message"; then
     log "리포트 전송 성공"
   else
     log "리포트 전송 실패"
@@ -133,6 +140,7 @@ run_optional_step() {
     log "$step_name 성공"
   else
     record_step_result "$step_name" "FAILED"
+    OPTIONAL_FAILURES=1
     log "$step_name 실패 - 텍스트 발행은 유지하고 다음 단계로 진행"
   fi
 }
@@ -193,8 +201,13 @@ fi
 log "Step 9: Git push"
 if git push; then
   record_step_result "Step 9: Git push" "SUCCESS"
-  FINAL_STATUS="SUCCESS"
-  FINAL_NOTE="모든 작업 완료"
+  if [ "$OPTIONAL_FAILURES" -eq 1 ]; then
+    FINAL_STATUS="PARTIAL_SUCCESS"
+    FINAL_NOTE="선택 단계 일부 실패"
+  else
+    FINAL_STATUS="SUCCESS"
+    FINAL_NOTE="모든 작업 완료"
+  fi
   log "Git push 성공"
 else
   record_step_result "Step 9: Git push" "FAILED"
