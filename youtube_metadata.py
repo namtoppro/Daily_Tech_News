@@ -22,7 +22,7 @@ TODAY = datetime.now().strftime('%Y-%m-%d')
 ARCHIVE_DIR = Path(os.getenv('ARCHIVE_DIR', 'archive'))
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 YOUTUBE_METADATA_MODEL = os.getenv('YOUTUBE_METADATA_MODEL', os.getenv('GEMINI_MODEL', 'gemini-3.1-pro-preview'))
-DEFAULT_PRIVACY = os.getenv('YOUTUBE_DEFAULT_PRIVACY', 'private').strip().lower() or 'private'
+DEFAULT_PRIVACY = os.getenv('YOUTUBE_DEFAULT_PRIVACY', 'public').strip().lower() or 'public'
 
 if not GEMINI_API_KEY:
     raise RuntimeError('GEMINI_API_KEY 환경 변수가 설정되지 않았습니다.')

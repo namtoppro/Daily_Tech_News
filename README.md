@@ -53,11 +53,12 @@ chmod +x run_daily_news.sh
 3. 이미지 파이프라인
 4. 비디오 파이프라인
 5. 유튜브 메타데이터 생성
-6. git commit / push
+6. 유튜브 업로드
+7. git commit / push
 
 주의:
-- 오디오/이미지/비디오/메타데이터 단계는 실패해도 텍스트 발행 자체는 유지하도록 설계되어 있습니다.
-- 유튜브 실제 업로드는 아직 별도 실행 단계입니다.
+- 오디오/이미지/비디오/메타데이터/유튜브 업로드 단계는 실패해도 텍스트 발행 자체는 유지하도록 설계되어 있습니다.
+- 현재 유튜브 기본 업로드 공개상태는 `public`입니다.
 
 ## 오디오 대본 + 음성 생성
 ```bash
@@ -86,7 +87,7 @@ source .venv/bin/activate
 사전 준비:
 - Google Cloud Console에서 YouTube Data API v3 사용 설정
 - OAuth client secret 파일 준비 (`youtube_client_secret.json`)
-- 기본 공개 상태는 `private` 권장
+- 기본 공개 상태는 현재 `public`
 
 실행:
 ```bash

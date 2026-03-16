@@ -13,6 +13,9 @@ FINAL_STATUS="RUNNING"
 FINAL_NOTE=""
 LATEST_COMMIT=""
 COLLECTED_COUNT=""
+YOUTUBE_UPLOAD_URL=""
+YOUTUBE_UPLOAD_VIDEO_ID=""
+YOUTUBE_UPLOAD_PRIVACY=""
 OPTIONAL_FAILURES=0
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
@@ -49,6 +52,33 @@ write_report() {
   local end_ts
   end_ts="$(date '+%Y-%m-%d %H:%M:%S')"
   extract_collected_count
+  local receipt_file="$SCRIPT_DIR/archive/$(date +%F)-youtube-upload.json"
+  if [ -f "$receipt_file" ]; then
+    YOUTUBE_UPLOAD_URL="$(python3 - <<PY
+import json
+from pathlib import Path
+p = Path(r'''$receipt_file''')
+d = json.loads(p.read_text(encoding='utf-8'))
+print(d.get('url',''))
+PY
+)"
+    YOUTUBE_UPLOAD_VIDEO_ID="$(python3 - <<PY
+import json
+from pathlib import Path
+p = Path(r'''$receipt_file''')
+d = json.loads(p.read_text(encoding='utf-8'))
+print(d.get('videoId',''))
+PY
+)"
+    YOUTUBE_UPLOAD_PRIVACY="$(python3 - <<PY
+import json
+from pathlib import Path
+p = Path(r'''$receipt_file''')
+d = json.loads(p.read_text(encoding='utf-8'))
+print(d.get('privacyStatus',''))
+PY
+)"
+  fi
   {
     printf '[Daily Tech News 자동 실행 리포트]\n'
     printf -- '- 시작: %s\n' "$START_TS"
@@ -62,6 +92,15 @@ write_report() {
     fi
     if [ -n "$LATEST_COMMIT" ]; then
       printf -- '- 커밋: %s\n' "$LATEST_COMMIT"
+    fi
+    if [ -n "$YOUTUBE_UPLOAD_VIDEO_ID" ]; then
+      printf -- '- 유튜브 videoId: %s\n' "$YOUTUBE_UPLOAD_VIDEO_ID"
+    fi
+    if [ -n "$YOUTUBE_UPLOAD_PRIVACY" ]; then
+      printf -- '- 유튜브 공개상태: %s\n' "$YOUTUBE_UPLOAD_PRIVACY"
+    fi
+    if [ -n "$YOUTUBE_UPLOAD_URL" ]; then
+      printf -- '- 유튜브 링크: %s\n' "$YOUTUBE_UPLOAD_URL"
     fi
     printf '\n[단계별 결과]\n'
     for item in "${STEP_RESULTS[@]}"; do
@@ -151,11 +190,12 @@ run_optional_step "Step 2: 오디오 파이프라인" "$SCRIPT_DIR/run_audio_pip
 run_optional_step "Step 3: 이미지 파이프라인" "$SCRIPT_DIR/run_image_pipeline.sh"
 run_optional_step "Step 4: 비디오 파이프라인" "$SCRIPT_DIR/run_video_pipeline.sh"
 run_optional_step "Step 5: 유튜브 메타데이터 생성" "$SCRIPT_DIR/run_youtube_metadata.sh"
+run_optional_step "Step 6: 유튜브 업로드" "$SCRIPT_DIR/run_youtube_upload.sh"
 
-log "Step 6: Git 변경사항 확인"
+log "Step 7: Git 변경사항 확인"
 GIT_STATUS="$(git status --porcelain)"
 if [ -z "$GIT_STATUS" ]; then
-  record_step_result "Step 6: Git 변경사항 확인" "NO_CHANGES"
+  record_step_result "Step 7: Git 변경사항 확인" "NO_CHANGES"
   FINAL_STATUS="SUCCESS"
   FINAL_NOTE="변경사항 없음"
   log "변경사항 없음. 작업 종료."
@@ -164,14 +204,14 @@ if [ -z "$GIT_STATUS" ]; then
   send_report
   exit 0
 fi
-record_step_result "Step 6: Git 변경사항 확인" "SUCCESS"
+record_step_result "Step 7: Git 변경사항 확인" "SUCCESS"
 printf '%s\n' "$GIT_STATUS" | tee -a "$LOG_FILE"
 
-log "Step 7: Git add"
+log "Step 8: Git add"
 if git add .; then
-  record_step_result "Step 7: Git add" "SUCCESS"
+  record_step_result "Step 8: Git add" "SUCCESS"
 else
-  record_step_result "Step 7: Git add" "FAILED"
+  record_step_result "Step 8: Git add" "FAILED"
   FINAL_STATUS="FAILED"
   FINAL_NOTE="Git add 실패"
   log "Git add 실패"
@@ -181,14 +221,14 @@ else
   exit 1
 fi
 
-log "Step 8: Git commit"
+log "Step 9: Git commit"
 COMMIT_MESSAGE="Auto-update news - $(date '+%Y-%m-%d %H:%M')"
 if git commit -m "$COMMIT_MESSAGE"; then
-  record_step_result "Step 8: Git commit" "SUCCESS"
+  record_step_result "Step 9: Git commit" "SUCCESS"
   LATEST_COMMIT="$(git rev-parse --short HEAD 2>/dev/null || true)"
   log "Git commit 성공: $COMMIT_MESSAGE"
 else
-  record_step_result "Step 8: Git commit" "FAILED"
+  record_step_result "Step 9: Git commit" "FAILED"
   FINAL_STATUS="FAILED"
   FINAL_NOTE="Git commit 실패"
   log "Git commit 실패"
@@ -198,9 +238,9 @@ else
   exit 1
 fi
 
-log "Step 9: Git push"
+log "Step 10: Git push"
 if git push; then
-  record_step_result "Step 9: Git push" "SUCCESS"
+  record_step_result "Step 10: Git push" "SUCCESS"
   if [ "$OPTIONAL_FAILURES" -eq 1 ]; then
     FINAL_STATUS="PARTIAL_SUCCESS"
     FINAL_NOTE="선택 단계 일부 실패"
@@ -210,7 +250,7 @@ if git push; then
   fi
   log "Git push 성공"
 else
-  record_step_result "Step 9: Git push" "FAILED"
+  record_step_result "Step 10: Git push" "FAILED"
   FINAL_STATUS="FAILED"
   FINAL_NOTE="Git push 실패"
   log "Git push 실패"
