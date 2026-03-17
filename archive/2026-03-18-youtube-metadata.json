@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-18",
+  "title": "오늘의 AI·테크 브리핑 | 맞춤형 소형 AI, 로컬 분산 인프라, 에이전트 생태계 | 2026-03-18",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 맞춤형 소형 AI 모델, 로컬 기반 AI 분산 인프라, AI 에이전트 대중화 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- OpenAI GPT-5.4 미니/나노 출시 및 기업·국방용 맞춤형 AI 경쟁 격화\n- NVIDIA 통신망 협력 및 로컬 PC 기반 AI 분산 인프라 확장\n- 구글 퍼스널 인텔리전스 확대 및 자율형 AI 에이전트 관리 생태계 대두\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews #인공지능 #테크브리핑",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#인공지능",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "OpenAI",
+    "GPT-5.4",
+    "맞춤형 AI",
+    "엔비디아",
+    "로컬 AI",
+    "분산 인프라",
+    "AI 에이전트",
+    "구글"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-18.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-18.md",
+    "archive/2026-03-18-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "2026-03-18 유튜브 업로드용 메타데이터 자동 생성 (맞춤형 AI, 로컬 인프라, 에이전트 실생활 적용 이슈 포함)",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

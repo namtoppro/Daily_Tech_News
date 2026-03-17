@@ -5,3 +5,5 @@ logs/
 *.pyc
 youtube_client_secret.json
 youtube_token.json
+*.mp3
+*.wav

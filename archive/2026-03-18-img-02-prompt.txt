@@ -1,0 +1,9 @@
+**Scene Description:** A cinematic, abstract visualization of a decentralized AI network and edge computing infrastructure. A wide, expansive grid of multiple glowing geometric nodes of varying sizes—representing local personal computers, edge servers, and sleek spatial computing visors—interconnected by pulsing, smooth streams of light. The visualization shows data and clean energy flowing efficiently without a single central massive core, emphasizing a beautifully balanced, distributed web of localized computing power and stable power management.
+
+**Atmosphere:** Professional, cutting-edge, calm, and sophisticated. Highly polished tech-noir aesthetic, perfectly suited for a premium tech news broadcast background.
+
+**Color Palette:** Deep navy blue and charcoal dark background, illuminated by vibrant cyan and electric blue data streams, with subtle emerald green accents symbolizing energy efficiency and stable power distribution. 
+
+**Composition:** 16:9 wide-angle panoramic view, strong depth of field with sharp, intricate nodes in the foreground and smoothly glowing, blurred network webs in the deep background. Strategic use of negative space on the left or center to allow room for news graphics and an anchor.
+
+**Negative Prompt (Forbidden Elements):** text, letters, words, typography, fonts, watermarks, corporate logos, brand names, Apple logo, NVIDIA logo, messy cables, chaotic lighting, human figures, faces, suggestive or explicit content, overexposure, flat lighting.

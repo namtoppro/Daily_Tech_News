@@ -1,0 +1,14 @@
+**[Scene Description]**
+A cinematic, high-tech tactical command room blending enterprise server architecture with military-grade security vault elements. In the center, multiple miniaturized, intensely glowing, intricate digital cubes are floating above a heavy metallic pedestal, representing highly efficient custom small AI models. The glowing cubes are enveloped by translucent, geometric holographic shields and laser grids, symbolizing independent data sovereignty and impenetrable defense. Sparks of digital light flow from the base into the cubes, depicting the process of forging new independent technology from scratch. 
+
+**[Atmosphere]**
+Serious, cutting-edge, highly professional, and secure. It evokes a sense of top-tier corporate strategy, advanced national defense, and the quiet intensity of a technological cold war. 
+
+**[Color Palette]**
+Deep navy blue and dark gunmetal grey in the background to represent security and defense, sharply contrasting with vibrant cyan, electric neon blue, and piercing amber-gold luminescent accents radiating from the miniature AI cores.
+
+**[Composition]**
+Wide-angle, symmetrical medium shot. The camera is positioned at a slight low angle to make the glowing AI cores look monumental despite their small size. Shallow depth of field with blurred, massive futuristic server banks in the background to create smooth negative space on the left and right sides, perfect for news briefing text overlays. Hyper-detailed, 8k resolution, cinematic lighting, photorealistic Unreal Engine 5 render style.
+
+**[Negative Prompt / Forbidden Elements]**
+text, letters, numbers, typography, watermarks, signatures, logos, specific brand names, corporate symbols, messy wires, human figures, faces, cartoon, anime, illustration, low quality, provocative, NSFW.
