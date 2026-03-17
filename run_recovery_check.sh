@@ -116,6 +116,8 @@ if [ -f ".venv/bin/activate" ]; then
   source .venv/bin/activate
 fi
 
+git rm --cached --ignore-unmatch youtube_client_secret.json youtube_token.json >/dev/null 2>&1 || true
+
 if [ ! -f "post.md" ] || [ ! -f "$ARCHIVE_DIR/${TODAY}.md" ]; then
   log "텍스트 기반 산출물 부족 - 전체 파이프라인 재실행"
   bash "$SCRIPT_DIR/run_daily_news.sh" 2>&1 | tee -a "$LOG_FILE"

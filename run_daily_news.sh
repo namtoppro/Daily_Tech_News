@@ -207,8 +207,13 @@ fi
 record_step_result "Step 7: Git 변경사항 확인" "SUCCESS"
 printf '%s\n' "$GIT_STATUS" | tee -a "$LOG_FILE"
 
+ensure_secret_files_untracked() {
+  git rm --cached --ignore-unmatch youtube_client_secret.json youtube_token.json >/dev/null 2>&1 || true
+}
+
 log "Step 8: Git add"
-if git add .; then
+ensure_secret_files_untracked
+if git add -A . ':(exclude)youtube_client_secret.json' ':(exclude)youtube_token.json'; then
   record_step_result "Step 8: Git add" "SUCCESS"
 else
   record_step_result "Step 8: Git add" "FAILED"
