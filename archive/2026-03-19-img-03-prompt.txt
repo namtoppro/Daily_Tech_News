@@ -1,0 +1,14 @@
+**[Scene Description]**
+A futuristic, bezel-less transparent glass device floating in a sleek, dark environment. Above the device, a fragmented, chaotic grid of small 3D glass cubes, representing traditional apps, is gracefully shattering and dissolving into glowing digital stardust. This luminous dust smoothly flows and converges into one singular, powerful, pulsating ring of pure light at the center, symbolizing a unified AI agent and a prompt-based operating system. 
+
+**[Atmosphere]**
+Cinematic, visionary, high-tech, professional, sleek, and revolutionary.
+
+**[Color Palette]**
+Deep obsidian black and dark midnight blue for the background, with striking, high-contrast accents of neon cyan, glowing azure, and subtle electric purple for the energy streams and light particles.
+
+**[Composition]**
+16:9 wide-angle shot, off-center placement with ample negative space on one side to accommodate a news anchor or broadcast graphics. Dynamic slight low-angle perspective, shallow depth of field with cinematic bokeh in the background, 8k resolution, photorealistic volumetric lighting, sharp focus on the central glowing ring.
+
+**[Negative Prompt / Do Not Include]**
+Text, letters, numbers, fonts, typography, writing, logos, watermarks, brand names, recognizable corporate identities, cluttered UI elements, messy screens, app icons with graphics, human figures, provocative imagery, NSFW.

@@ -213,7 +213,7 @@ ensure_secret_files_untracked() {
 
 log "Step 8: Git add"
 ensure_secret_files_untracked
-if git add -A . ':(exclude)youtube_client_secret.json' ':(exclude)youtube_token.json'; then
+if git add -A . && git reset -- youtube_client_secret.json youtube_token.json >/dev/null 2>&1 || git add -A .; then
   record_step_result "Step 8: Git add" "SUCCESS"
 else
   record_step_result "Step 8: Git add" "FAILED"
