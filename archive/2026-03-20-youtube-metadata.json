@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-20",
+  "title": "오늘의 AI·테크 브리핑 | 제프 베조스 AI 투자, 봇 트래픽 전망, 도어대시 데이터 | 2026-03-20",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 제프 베조스의 제조업 AI 투자, 2027년 봇 트래픽 전망, 도어대시의 AI 데이터 수집 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- 제프 베조스, 구형 제조업 AI 혁신에 1,000억 달러 투자 추진\n- 클라우드플레어 CEO \"2027년 AI 봇 트래픽이 인간 추월할 것\"\n- 메타, 제3자 의존도 낮추는 자체 AI 콘텐츠 검수 시스템 도입\n- 도어대시, 배달원 대상 AI 학습용 데이터 수집 보상 앱 'Tasks' 출시\n- 오픈AI, 코딩 에이전트 오정렬(Misalignment) 모니터링 기술 공개\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews"
+  ],
+  "keywords": [
+    "제프 베조스",
+    "아마존",
+    "클라우드플레어",
+    "봇 트래픽",
+    "도어대시",
+    "오픈AI",
+    "메타",
+    "인공지능",
+    "기술뉴스",
+    "테크브리핑"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-20.mp4",
+  "videoExists": false,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-20.md",
+    "archive/2026-03-20-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "제프 베조스의 1,000억 달러 AI 투자, 봇 트래픽 역전 전망, 기업들의 AI 내재화 등 주요 산업별 AI 동향 정보형 요약",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

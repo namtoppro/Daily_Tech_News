@@ -41,8 +41,9 @@
 </head>
 <body>
 <div class="archive-selector">
-    <select onchange="if(this.value) location.href='archive/' + this.value">
+    <select onchange="if(this.value) location.href = this.value">
         <option value="">📅 과거 기사 보기</option>
+        <option value="../index.html">🏠 오늘 뉴스로 이동</option>
         <option value="2026-03-19.html">2026-03-19</option>
         <option value="2026-03-18.html">2026-03-18</option>
         <option value="2026-03-17.html">2026-03-17</option>
@@ -106,7 +107,7 @@
   <div class="audio-player">
   <div class="audio-player-title">🎧 오늘의 오디오 브리핑</div>
   <audio controls preload="none">
-    <source src="archive/2026-03-20.wav" type="audio/wav">
+    <source src="2026-03-20.wav" type="audio/wav">
     브라우저가 오디오 재생을 지원하지 않습니다.
   </audio>
 </div>
