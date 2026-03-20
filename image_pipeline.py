@@ -44,12 +44,31 @@ def load_briefing() -> str:
 
 def extract_story_blocks(text: str):
     blocks = []
-    pattern = re.compile(r'^###\s+\d+\.\s+(.+)$', re.MULTILINE)
-    matches = list(pattern.finditer(text))
+    # Support both:
+    # 1) ### 1. Title
+    # 2) ### Title
+    pattern = re.compile(r'^###\s+(?:\d+\.\s+)?(.+)$', re.MULTILINE)
+    matches = []
+    for m in pattern.finditer(text):
+        title = (m.group(1) or '').strip()
+        if not title:
+            continue
+        if title in ['English Summary: Today\'s Tech Updates', '오늘의 핵심 이슈', '직군별 오늘의 인사이트']:
+            continue
+        matches.append(m)
+
+    stop_markers = ['## 직군별 오늘의 인사이트', '**전체 출처 목록**', '\n---\n']
     for i, m in enumerate(matches):
         title = m.group(1).strip()
         start = m.end()
-        end = matches[i + 1].start() if i + 1 < len(matches) else text.find('## 오늘의 인사이트') if '## 오늘의 인사이트' in text[start:] else len(text)
+        if i + 1 < len(matches):
+            end = matches[i + 1].start()
+        else:
+            end = len(text)
+            for marker in stop_markers:
+                marker_pos = text.find(marker, start)
+                if marker_pos != -1:
+                    end = min(end, marker_pos)
         body = text[start:end].strip()
         if title and body:
             blocks.append({'title': title, 'body': body})

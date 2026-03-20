@@ -1,0 +1,9 @@
+Scene: A sprawling, futuristic digital highway representing global internet infrastructure. A massive, overwhelming torrent of sharp, geometric, high-speed fiber-optic data streams (symbolizing AI bot traffic) is dynamically overtaking and dwarfing a smaller, softly glowing stream of light (symbolizing human traffic). Vast arrays of abstract, towering server nodes stretch into the infinite background. 
+
+Atmosphere: Cinematic, majestic, cutting-edge, professional, and slightly overwhelming, perfectly suited for a tech news broadcast background. 
+
+Color Palette: Deep obsidian black background, dominated by intense neon cyan and electric blue for the massive AI data streams, contrasting with a subtle, fading line of warm amber or gold for the human data. 
+
+Composition: Wide-angle 16:9, dynamic diagonal perspective pulling the viewer's eye toward a glowing horizon, extreme depth of field with softly blurred background elements, ample clean negative space on the left and right edges for news graphics and presenter overlays, volumetric lighting. 
+
+Negative Prompt: Text, letters, typography, numbers, logos, watermarks, brand names, human figures, literal robot characters, faces, chaotic clutter, NSFW, explicit content, watermark, signature.

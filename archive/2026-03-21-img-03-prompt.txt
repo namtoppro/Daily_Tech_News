@@ -1,0 +1,9 @@
+**Scene Description:** A majestic conceptual visualization blending neoclassical government pillars seamlessly morphing into a glowing artificial intelligence neural network. The fragmented digital circuits on the edges unify into a massive, smooth, glowing central data highway. In the subtle foreground, abstract silhouettes of a parent and child stand together behind a glowing golden protective shield, looking out toward the vast digital horizon. 
+
+**Atmosphere:** Cinematic, serious, institutional, futuristic, and highly professional. Designed specifically as a clean, high-end tech news broadcasting background.
+
+**Color Palette:** Deep navy blue and dark slate, illuminated by glowing cyan tech lines and warm golden amber architectural highlights.
+
+**Composition:** Wide-angle shot, symmetrical balance, ample clean negative space in the center and upper half for news graphics, volumetric lighting, shallow depth of field, 8k resolution, photorealistic cinematic style, 16:9 aspect ratio.
+
+**Negative Prompt:** text, words, letters, fonts, typography, watermarks, logos, brand names, recognizable faces, specific politicians, provocative elements, explicit content, messy lines, chaotic clutter.

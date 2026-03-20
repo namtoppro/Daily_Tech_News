@@ -188,9 +188,26 @@ run_required_step "Step 1: 뉴스 수집 및 HTML 생성" python3 generator2.py
 
 run_optional_step "Step 2: 오디오 파이프라인" "$SCRIPT_DIR/run_audio_pipeline.sh"
 run_optional_step "Step 3: 이미지 파이프라인" "$SCRIPT_DIR/run_image_pipeline.sh"
-run_optional_step "Step 4: 비디오 파이프라인" "$SCRIPT_DIR/run_video_pipeline.sh"
+
+TODAY_STR="$(date '+%Y-%m-%d')"
+VIDEO_PATH="archive/${TODAY_STR}.mp4"
+
+if ls archive/${TODAY_STR}-img-* >/dev/null 2>&1; then
+  run_optional_step "Step 4: 비디오 파이프라인" "$SCRIPT_DIR/run_video_pipeline.sh"
+else
+  record_step_result "Step 4: 비디오 파이프라인" "SKIPPED"
+  OPTIONAL_FAILURES=1
+  log "Step 4: 비디오 파이프라인 스킵 - 오늘자 이미지가 없어 비디오를 만들지 않음"
+fi
+
 run_optional_step "Step 5: 유튜브 메타데이터 생성" "$SCRIPT_DIR/run_youtube_metadata.sh"
-run_optional_step "Step 6: 유튜브 업로드" "$SCRIPT_DIR/run_youtube_upload.sh"
+if [ -f "$VIDEO_PATH" ]; then
+  run_optional_step "Step 6: 유튜브 업로드" "$SCRIPT_DIR/run_youtube_upload.sh"
+else
+  record_step_result "Step 6: 유튜브 업로드" "SKIPPED"
+  OPTIONAL_FAILURES=1
+  log "Step 6: 유튜브 업로드 스킵 - 업로드할 mp4가 없음"
+fi
 
 log "Step 7: Git 변경사항 확인"
 GIT_STATUS="$(git status --porcelain)"

@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-21",
+  "title": "오늘의 AI·테크 브리핑 | 엔비디아 오픈클로, AI 자율 에이전트, 미국 규제 완화 | 2026-03-21",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 엔비디아의 GTC 발표, 자율형 AI 에이전트 상용화, 트럼프 행정부의 새로운 AI 정책 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- 엔비디아 GTC: 2027년 1조 달러 매출 타깃 및 오픈클로(OpenClaw) 전략\n- 완전 자동화 AI 에이전트의 실물 경제 진입 (오픈AI 자동화 연구원, 워드프레스 에이전트)\n- 트럼프 행정부의 AI 정책 프레임워크 공개 및 연방 정부 주도 규제 완화\n- 마이크로소프트의 주요 앱 내 코파일럿(Copilot) 기능 탑재 축소\n- AI 데이터센터 물리적 확장의 새로운 병목 현상: 전력 인프라 한계\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#테크브리핑",
+    "#인공지능"
+  ],
+  "keywords": [
+    "엔비디아 GTC",
+    "오픈클로 전략",
+    "AI 에이전트",
+    "오픈AI",
+    "트럼프 AI 정책",
+    "마이크로소프트 코파일럿",
+    "데이터센터 전력",
+    "허깅페이스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-21.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-21.md",
+    "archive/2026-03-21-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "엔비디아 하드웨어 생태계, AI 에이전트 동향, 미국 규제 완화 정책 등 핵심 정보 5건 메타데이터 생성 완료",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

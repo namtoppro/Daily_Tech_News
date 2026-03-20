@@ -1,0 +1,9 @@
+**Scene Description:** A modern gig-economy delivery worker standing on a quiet residential street at twilight, holding a sleek smartphone. The phone's camera is recording everyday objects like a doorway and street elements. Visually, the physical environment being recorded is subtlely transforming into glowing digital data nodes, 3D wireframes, and luminous light streams that flow directly into the smartphone lens, symbolizing the extraction of real-world data for AI machine learning. 
+
+**Atmosphere:** Cinematic, highly professional, innovative, and subtly futuristic while remaining grounded in modern reality. Perfect for a serious technology news briefing background.
+
+**Color Palette:** A striking contrast between the warm, natural amber of evening streetlights and the cool, high-tech neon cyan and glowing digital purples representing the AI data processing. 
+
+**Composition:** Asymmetrical medium-wide shot, with the delivery worker positioned on the right third of the frame, looking and pointing the phone towards the center-left. The left side features spacious negative space with a beautifully blurred bokeh effect of the suburban cityscape, allowing room for news anchors or graphics. Dramatic rim lighting on the subject, 8k resolution, hyper-realistic, shot on 35mm lens.
+
+**Negative Prompt:** text, words, letters, fonts, logos, watermarks, brand names, corporate symbols, UI elements, signature, provocative, nudity, excessive skin, violence, deformed anatomy, messy background, flat lighting.

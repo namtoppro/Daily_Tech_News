@@ -1,0 +1,9 @@
+**Scene Description:** A cinematic, futuristic digital landscape illustrating the shift in artificial intelligence architecture. On the left side, a massive, overly complex, and tangled glowing digital monolith is slowly retracting and dissolving into the shadows, symbolizing the reduction of heavy, bloated software features. On the right side, multiple small, brilliant, agile glowing modular cubes and sleek neural nodes are rapidly connecting in a highly organized, streamlined network, representing the rise of lightweight, purpose-built open-source models. 
+
+**Atmosphere:** High-tech, professional, sleek, and dynamic. A mood of analytical transition from a heavy, overwhelming burden to optimized, lightning-fast agility. Perfectly suited for a premium tech news briefing background.
+
+**Color Palette:** Deep cyber-blue and dark slate for the background and retracting elements, sharply contrasted with vibrant neon teal, crisp white, and bright amber accents illuminating the newly forming agile modular nodes.
+
+**Composition:** Wide-angle panoramic shot (16:9 ratio), split visual contrast showing the old receding and the new emerging. Dramatic cinematic lighting with volumetric rays cutting through the digital space. Shallow depth of field with soft, out-of-focus digital particles floating in the foreground. Generous negative space in the upper center to accommodate a news anchor or graphics.
+
+**Negative Prompt:** Text, letters, typography, words, signatures, watermarks, corporate logos, brand marks, Windows logo, Copilot logo, messy clutter, human faces, human figures, realistic screens, UI interfaces, explicit content, NSFW.

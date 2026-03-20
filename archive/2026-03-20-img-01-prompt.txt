@@ -1,0 +1,9 @@
+**Scene Description:** A vast, colossal traditional manufacturing plant where heavy, weathered steel machinery and giant rusty gears are seamlessly integrating with glowing, futuristic artificial intelligence data streams. Brilliant holographic blueprints and luminous digital neural networks wrap around the old iron structures, while sleek, state-of-the-art robotic sensors interact with the vintage factory equipment, symbolizing a massive technological evolution.
+
+**Atmosphere:** Cinematic, monumental, and awe-inspiring, conveying a sense of a massive paradigm shift, heavy capital investment, and the quiet power of futuristic innovation reviving a dormant industry.
+
+**Color Palette:** A striking, high-contrast blend. Gritty, warm amber, dark rust, and heavy iron tones of the traditional factory clash beautifully with sleek, glowing neon cyan, deep cobalt blue, and shimmering golden light effects representing advanced AI and massive wealth.
+
+**Composition:** Wide-angle landscape shot, central symmetrical perspective looking down a massive industrial corridor. Deep depth of field with the glowing AI-machinery integration as the sharp focal point in the middle ground. Subtle vignette and balanced negative space on the edges, perfectly suited for news briefing overlays and anchor placement. Shot on 35mm lens, 8k resolution, photorealistic.
+
+**Negative Prompt:** text, words, letters, typography, watermarks, logos, brand names, Amazon logo, human faces, Jeff Bezos, signatures, NSFW, provocative, deformed, blurry, chaotic, overexposed, flat lighting, 2d illustration.
