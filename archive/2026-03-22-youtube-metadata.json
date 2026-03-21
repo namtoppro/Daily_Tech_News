@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-22",
+  "title": "오늘의 AI·테크 브리핑 | AI 소설 출판 취소, 보안 솔루션 논란, AI 버블 시각차 | 2026-03-22",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 AI 소설 출판 취소, B2B 컴플라이언스 논란, AI 버블에 대한 시장 시각차 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- 출판사 아셰트, AI 텍스트 생성 우려로 소설 출판 전면 취소\n- 컴플라이언스 스타트업 델브(Delve), '가짜 규정 준수' 의혹 직면\n- 엔비디아 컨퍼런스를 바라보는 월가와 기술 업계의 AI 버블 시각차\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "AI 소설 출판 취소",
+    "아셰트 북 그룹",
+    "델브 컴플라이언스",
+    "가짜 규정 준수",
+    "엔비디아 컨퍼런스",
+    "AI 버블 우려",
+    "IT 뉴스",
+    "인공지능 트렌드",
+    "기술 브리핑"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-22.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-22.md",
+    "archive/2026-03-22-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "2026-03-22 기준 AI 저작권, 보안 컴플라이언스, AI 버블 시각차 브리핑 영상 메타데이터",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

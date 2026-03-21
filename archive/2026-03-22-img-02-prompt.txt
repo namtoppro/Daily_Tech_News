@@ -1,0 +1,9 @@
+**Scene Description:** A glowing, high-tech holographic padlock and digital shield representing corporate data compliance, but the structure is a mere illusion. Half of the holographic shield is glitching heavily, dissolving into broken pixels and wireframes to reveal a hollow, dark void inside. Glowing streams of data leak out through the shattered digital cracks, symbolizing false security and hidden vulnerabilities. 
+
+**Atmosphere:** Tense, mysterious, and ominous, conveying a sense of betrayed trust and the exposure of a hidden cyber risk. 
+
+**Color Palette:** A sharp, dramatic contrast between "trustworthy" neon cyan/green and "warning" crimson red, set against a deep, dark corporate server-room background. 
+
+**Composition:** Wide-angle, cinematic news background layout. The glitching shield is slightly off-center to allow ample negative space for news anchors or graphical overlays. Shallow depth of field with soft bokeh in the background, 8k resolution, highly detailed photorealistic render.
+
+**Negative Prompt:** text, letters, words, typography, fonts, watermarks, logos, brand names, human faces, gore, explicit content, sensationalism, chaotic clutter, messy background.
