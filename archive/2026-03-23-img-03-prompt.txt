@@ -1,0 +1,11 @@
+A cinematic, high-quality still image for a tech news background. 
+
+Scene: A futuristic, glowing microchip hovering and being precisely forged by high-tech robotic arms and microscopic laser beams in a highly advanced, sterile manufacturing laboratory. The intricate circuitry of the central microchip seamlessly transforms into two abstract holographic visualizations: on one side, glowing digital light trails resembling a sleek, aerodynamic vehicle on a futuristic highway, and on the other side, a stylized orbital trajectory and a rocket ascending into a starry cosmos. This symbolizes the vertical integration and synergy between advanced automotive and space exploration technologies converging into a single semiconductor core.
+
+Atmosphere: Visionary, cutting-edge, monumental, professional, and slightly mysterious.
+
+Color Palette: Deep space navy blue and obsidian black backgrounds, heavily contrasted and illuminated by electric neon cyan (representing clean energy and data) and warm glowing amber/gold (representing manufacturing heat and propulsion).
+
+Composition: Central perspective with symmetrical balance. Macro-photography focus on the glowing microchip in the foreground. A shallow depth of field gently blurs the expansive, state-of-the-art factory background, providing a clean, cinematic negative space ideal for news graphics or presenters.
+
+Negative Prompt: No text, no fonts, no letters, no words, no logos, no watermarks, no brand names, no trademarks, no human faces, no car badges, no rocket company emblems, no explicit content, no messy elements, no low resolution.

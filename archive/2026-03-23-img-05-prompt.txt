@@ -1,0 +1,9 @@
+**Scene Description:** A sleek, futuristic physical robot with smooth, rounded matte white modular segments subtly resembling a high-tech snowman, standing inside a cutting-edge laboratory. The robot is reaching out its mechanical hand to physically interact with a glowing, holographic network of digital data streams emerging from towering data center server racks in the background. The scene beautifully captures the evolution of AI from the digital software realm into the physical world.
+
+**Atmosphere:** Cinematic, visionary, sophisticated, awe-inspiring, professional tech news briefing style.
+
+**Color Palette:** Deep obsidian black, glowing emerald green, pristine matte white, and polished metallic silver.
+
+**Composition:** Wide-angle shot, 16:9 aspect ratio, rule of thirds with the robot positioned slightly to the right to leave clean empty space on the left for news anchor or graphics. Shallow depth of field, beautiful cinematic bokeh blurring the background servers, soft and dramatic volumetric lighting highlighting the physical textures of the robot's hardware, 8k resolution, highly detailed photorealism.
+
+**Negative Prompt:** text, font, letters, typography, watermark, logo, brand name, trademark, signature, graphic overlays, messy, cluttered, childish, cartoonish, 3d render plastic, illustrative, provocative, NSFW, violent.

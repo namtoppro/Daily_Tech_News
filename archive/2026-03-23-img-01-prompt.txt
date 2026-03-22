@@ -1,0 +1,9 @@
+**Scene Description:** A state-of-the-art, futuristic microchip glowing with intricate, pulsating circuit patterns, resting on a sleek metallic pedestal inside a vast, cutting-edge high-tech server laboratory. Behind the central processor, rows of abstract, monolithic cloud servers stretch into the distance, symbolizing massive AI infrastructure, technological independence, and vertical integration. 
+
+**Atmosphere:** Cinematic, hyper-realistic, serious, and monumental. Conveys a sense of massive scale, cutting-edge innovation, and an exclusive behind-the-scenes look at a top-tier tech facility. 
+
+**Color Palette:** Deep cybernetic cloud blues contrasted with warm, glowing amber and sleek metallic silver tones, illuminated by volumetric lighting and neon rim lights.
+
+**Composition:** Low-angle dynamic perspective, macro focus on the central chip with a deep depth of field showing an expansive, softly blurred background. Clean and professional framing, leaving sufficient negative space for news broadcast graphics.
+
+**Negative Prompt:** Text, letters, fonts, words, typography, logos, watermarks, specific brand names, apples, messy cables, humans, cartoon style, illustration, low resolution, noisy, explicit content.
