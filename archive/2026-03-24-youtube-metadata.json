@@ -1,0 +1,41 @@
+{
+  "date": "2026-03-24",
+  "title": "오늘의 AI·테크 브리핑 | 애플 WWDC 2026, 오픈AI 전력 확보, AI 인프라 보안 | 2026-03-24",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 애플 WWDC 2026 일정, 오픈AI의 전력 확보, AI 인프라 보안 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- 이종 하드웨어 AI 추론 최적화 및 엔비디아의 자율 AI 에이전트 보안(OpenShell) 발표\n- 샘 올트먼의 헬리온 이사회 사임과 오픈AI 전력 확보, 애플 WWDC 2026 일정 공개\n- 화면을 실시간으로 읽는 AI 도구 투자 유치 및 앤스로픽의 정부 조달망 배제 논란\n- AI 코딩 생태계 확장과 코어 시스템의 로우레벨 메모리 제어(C++) 양극화 트렌드\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews #테크브리핑 #애플 #엔비디아",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#테크브리핑",
+    "#애플",
+    "#엔비디아"
+  ],
+  "keywords": [
+    "애플 WWDC 2026",
+    "오픈AI 전력",
+    "샘 올트먼 헬리온",
+    "엔비디아 OpenShell",
+    "짐렛 랩스",
+    "실시간 AI",
+    "앤스로픽 정부 조달",
+    "바이브 코딩",
+    "기술뉴스",
+    "테크브리핑"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-24.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-24.md",
+    "archive/2026-03-24-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "애플 WWDC 발표, 오픈AI 전력 확보, 엔비디아 보안 등 주요 벤더의 인프라 및 생태계 확장 이슈를 중심으로 메타데이터 생성 완료",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
