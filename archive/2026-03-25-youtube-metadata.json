@@ -1,0 +1,37 @@
+{
+  "date": "2026-03-25",
+  "title": "오늘의 AI·테크 브리핑 | Arm 자체 칩, AI 에이전트 통제, 오픈AI 커머스 | 2026-03-25",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 Arm의 자체 칩 생산, AI 에이전트의 통제망 강화, 오픈AI의 커머스 전략 변화 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- AI 인프라 확장과 Arm의 자체 하드웨어 생태계 구축\n- AI 에이전트 자율성 확대와 안전 통제망 강화\n- 엔터프라이즈 AI B2B 통합과 커머스 전략의 전환\n- 대규모 시스템의 메모리 안전성 및 의존성 관리 최적화\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews #테크브리핑 #인공지능",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#테크브리핑",
+    "#인공지능"
+  ],
+  "keywords": [
+    "Arm 자체 칩",
+    "오픈AI",
+    "AI 커머스",
+    "데이터센터",
+    "클로드 코드",
+    "엔터프라이즈 AI",
+    "기술뉴스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-25.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-25.md",
+    "archive/2026-03-25-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "Arm의 자체 CPU 출시와 오픈AI 커머스 전략 변화 중심의 정보형 메타데이터 생성",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
