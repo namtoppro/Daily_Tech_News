@@ -1,0 +1,5 @@
+**Scene description:** A cinematic wide shot of a massive, futuristic AI data center facility, towering server racks pulsing with intense energy streams. Thick glowing power cables intertwine like a complex global energy grid. Heavy, imposing abstract monumental stone pillars representing government regulation cast deep, dramatic shadows over the glowing servers, visually depicting the clash between technological expansion and restrictive legislation.
+**Atmosphere:** Serious, tense, cinematic, futuristic yet grounded, monumental, high-stakes corporate and political tension.
+**Color palette:** Cold technological cyan and deep neon blue clashing with warm, warning amber and stark shadowy blacks.
+**Composition:** Wide-angle landscape, dramatic diagonal lighting, deep depth of field, balanced layout with subtle negative space on the sides for news graphic overlays, 8k resolution, photorealistic, high-end architectural photography style.
+**Negative prompt:** text, letters, words, typography, watermarks, logos, brand names, specific politicians, flags, humans, faces, explicit content, messy, chaotic, cluttered.

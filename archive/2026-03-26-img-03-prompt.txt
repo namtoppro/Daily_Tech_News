@@ -1,0 +1,9 @@
+**Scene Description:** A conceptual wide-angle shot of a futuristic corporate environment. Massive glowing streams of golden light and digital data pour down from above into specific, towering sleek pillars, symbolizing concentrated capital in specialized vertical AI. In the foreground, a stark visual divide representing the skills gap: one silhouetted professional stands confidently on an elevated, brightly glowing high-tech platform interacting with floating complex holograms, while another silhouetted figure stands on a significantly lower, shadowed, dimly lit concrete level looking up at the light. 
+
+**Atmosphere:** Cinematic, high-tech, professional, and dramatic. The mood is slightly tense yet awe-inspiring, visually illustrating the extreme polarization between massive tech investment and human inequality. 
+
+**Color Palette:** Vibrant golden-yellow (wealth/capital) and neon cyan (advanced AI technology) sharply contrasting with deep, muted shadow tones, cold blues, and dark charcoal greys (the technological divide and those left behind). 
+
+**Composition:** Ultra-wide shot, rule of thirds, extreme depth of field. Dramatic volumetric lighting piercing through the shadows. The framing includes generous negative space on the left and right edges, perfectly optimized for a news briefing background and UI overlay. Shot on 35mm lens, 8k resolution, photorealistic rendering.
+
+**Negative Prompt (Forbidden Elements):** text, letters, words, typography, numbers, logos, watermarks, signatures, brand names, specific UI elements, explicit content, NSFW, violence, messy clutter, cartoon, illustration, 2D graphic, comic style.

@@ -1,0 +1,39 @@
+{
+  "date": "2026-03-26",
+  "title": "오늘의 AI·테크 브리핑 | AI 인프라 규제, 구글 AI 압축, 버티컬 AI 투자 | 2026-03-26",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 AI 데이터 센터 규제 법안, 구글의 AI 메모리 압축 알고리즘, 버티컬 AI 투자 집중 및 기술 격차 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- AI 데이터 센터 건설 중단 법안 발의와 엔비디아의 전력망 안정화 입장\n- 구글, 최대 6배 AI 메모리 압축 알고리즘 'TurboQuant' 및 음악 모델 공개\n- 하비(Harvey) 등 버티컬 AI 스타트업 대규모 투자 유치와 사내 AI 기술 격차 심화\n- AWS의 초고속 데이터베이스 생성 지원 및 메타의 쇼핑 AI 도입 등 생태계 장벽 완화\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews #인공지능 #클라우드",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#인공지능",
+    "#클라우드"
+  ],
+  "keywords": [
+    "AI 규제",
+    "데이터센터",
+    "구글 TurboQuant",
+    "버티컬 AI",
+    "AI 기술격차",
+    "AWS 클라우드",
+    "메타 쇼핑",
+    "테크뉴스",
+    "기술브리핑"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-26.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-26.md",
+    "archive/2026-03-26-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "정치권의 AI 데이터센터 규제 움직임과 구글 알고리즘 최적화, 버티컬 AI 투자 동향을 정보형으로 요약함",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
