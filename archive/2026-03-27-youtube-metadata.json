@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-27",
+  "title": "오늘의 AI·테크 브리핑 | 데이터센터 규제, 오픈소스 경량 AI, 오픈AI 서비스 개편 | 2026-03-27",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 데이터센터 전력 규제 압박, 목적형 오픈소스 AI의 부상, 빅테크의 서비스 선택과 집중 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- 미국 상원, 데이터센터 전력 소비 조사 및 AI 일자리 세금 논의\n- 코히어·미스트랄 등 목적형 오픈소스 경량 AI 모델 출시\n- 위키피디아 AI 작성 단속 및 오픈AI 부가 프로젝트 중단\n- AWS 콘솔 편의성 개편 및 엔비디아 물리적 AI 확대\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#클라우드",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "데이터센터 전력",
+    "오픈소스 AI",
+    "경량 AI 모델",
+    "오픈AI",
+    "엔비디아",
+    "AWS",
+    "인공지능 뉴스",
+    "테크 뉴스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-27.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-27.md",
+    "archive/2026-03-27-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "데이터센터 인프라 규제, 경량화 모델 출시, 플랫폼 신뢰성 확보 등 AI 산업 주요 동향을 과장 없이 요약함",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

@@ -1,0 +1,14 @@
+**[Scene Description]**
+A glowing, compact, futuristic microchip resting on a sleek, dark metallic pedestal. Holographic data streams seamlessly emanate from the microchip: abstract, luminous sound waves on one side representing voice AI, and floating, illuminated abstract cinematic frames on the other representing video AI. A soft, translucent hexagonal digital energy shield gracefully wraps around these data streams, symbolizing copyright protection, IP safety, and secure guardrails. 
+
+**[Atmosphere]**
+Cinematic, high-tech, professional, secure, and modern. Perfectly tailored for a premium technology news broadcast background with a sophisticated, authoritative tone.
+
+**[Color Palette]**
+Deep navy blue and dark charcoal gray for the background to create a premium feel. Vibrant cyan blue for the audio sound waves, warm glowing amber for the video frames, and a subtle, soft emerald green for the protective digital shield.
+
+**[Composition]**
+16:9 aspect ratio, wide-angle shot. Asymmetrical composition with the microchip and holograms placed slightly to the right, leaving an elegant negative space on the left side with a smooth, dark bokeh effect to accommodate news text overlays or an anchor. Shallow depth of field, with razor-sharp focus on the microchip and the glowing shield, while the background gently blurs.
+
+**[Negative Prompt / Forbidden Elements]**
+--no text, fonts, letters, numbers, typography, signatures, logos, watermarks, brand names, human faces, characters, messy cables, cluttered background, provocative imagery, violent elements, low resolution, distorted shapes, cartoon style.

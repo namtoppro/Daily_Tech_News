@@ -1,0 +1,9 @@
+**Scene Description:** A wide cinematic shot of a futuristic data center seamlessly blending into an expansive virtual universe, representing the physical AI era. In the foreground, sleek metallic server racks emit intense warm amber and glowing orange light, symbolizing heavy energy consumption and power infrastructure. Floating gracefully across the space are translucent holographic panels displaying abstract audio waveforms, fluid cinematic video frames, and cascading glowing nodes representing complex code and cloud networks. At the center, an ethereal, glowing book made of pure light is shielded by geometric digital barriers, symbolizing the defense of human knowledge and encyclopedias against artificial generation. Subtle, imposing architectural pillars loom in the background, hinting at government regulation and structure.
+
+**Atmosphere:** High-tech, serious, intellectual, futuristic yet grounded, perfectly suited for a professional tech news briefing background.
+
+**Color Palette:** Deep cyber-blue and dark metallic grey contrasted with vibrant neon amber, glowing orange, and sharp cyan accents.
+
+**Composition:** Extreme wide-angle, symmetrical balance, deep depth of field, sharp focus on the central glowing energy core and floating holograms, dramatic cinematic lighting, volumetric rays sweeping across the server racks, 8k resolution, photorealistic masterpiece.
+
+**Negative Prompt:** Text, letters, typography, fonts, words, watermarks, signatures, logos, brand names, UI elements, messy dashboard, human figures, erotic, NSFW, explicit content, violence, cartoon, illustration.
