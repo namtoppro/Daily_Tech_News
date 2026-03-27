@@ -1,0 +1,41 @@
+{
+  "date": "2026-03-28",
+  "title": "오늘의 AI·테크 브리핑 | 오픈AI 상장 전망, SK하이닉스 美 상장, 소라 중단 | 2026-03-28",
+  "description": "오늘의 AI·테크 브리핑입니다.\n오늘 영상에서는 오픈AI 기업공개(IPO) 전망, SK하이닉스의 미국 상장 추진, 그리고 AI 인프라의 물리적 한계 이슈를 정리했습니다.\n\n[오늘의 핵심 이슈]\n- 소프트뱅크 400억 달러 대출 및 2026년 오픈AI 상장(IPO) 가능성\n- 메모리 반도체 공급망 재편을 위한 SK하이닉스의 최대 140억 달러 규모 미국 상장 추진\n- 토지·전력 확보 등 인프라 한계로 인한 오픈AI 영상 생성 모델 소라(Sora) 운영 중단\n- 230년 전통 스태들러(STADLER)의 전사적 챗GPT 도입 및 지식 근로 생산성 향상\n\n이 영상은 Daily Tech News 브리핑을 바탕으로 제작되었습니다.\n자세한 내용은 본문/아카이브를 함께 참고하세요.\n\n출처 및 참고:\n- Daily Tech News archive\n- 원문 기사/공식 블로그/공식 발표 자료 기반 요약\n\n최저가 검색은 로프리\nhttps://lowprice.koreall.site/\n#로프리 #청담랩\n#AI #TechNews #DailyTechNews",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#오픈AI",
+    "#SK하이닉스",
+    "#기술뉴스"
+  ],
+  "keywords": [
+    "오픈AI 상장",
+    "소프트뱅크 대출",
+    "SK하이닉스 미국 상장",
+    "소라 운영 중단",
+    "OpenAI Sora",
+    "AI 인프라",
+    "데이터센터 전력",
+    "챗GPT 실무입",
+    "인공지능",
+    "테크브리핑"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-03-28.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-03-28.md",
+    "archive/2026-03-28-audio-script.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "제목에 과장된 표현을 배제하고 오늘 브리핑의 핵심 정보(자본 조달, 상장, 인프라 한계)를 직관적으로 검색 가능하도록 구성함",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

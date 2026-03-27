@@ -1,0 +1,11 @@
+file '2026-03-28-img-01.jpg'
+duration 34.562
+file '2026-03-28-img-02.jpg'
+duration 34.562
+file '2026-03-28-img-03.jpg'
+duration 34.562
+file '2026-03-28-img-04.jpg'
+duration 34.562
+file '2026-03-28-img-05.jpg'
+duration 34.562
+file '2026-03-28-img-05.jpg'

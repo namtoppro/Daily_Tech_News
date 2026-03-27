@@ -1,0 +1,9 @@
+Scene: A dramatic landscape showing a massive, futuristic, cold-metallic data center abruptly halted by a rustic wooden fence and untouched golden farmlands. In the foreground, thick unplugged power cables and dormant, unlit fiber optic wires lie scattered on cracked earth, symbolizing a system shutdown and energy limits. Subtle, glowing translucent barriers resembling heavy chains block the technological expansion, representing strict legal and physical boundaries.
+
+Atmosphere: Cinematic, tense, monumental, and slightly melancholic, representing a heavy clash between limitless digital ambition and grounded physical reality. High-end news broadcast aesthetic, highly detailed, photorealistic.
+
+Color: Strong visual contrast between cold neon cyan and steel gray of the technology, and warm earthy amber, brown, and golden tones of the natural soil. Deep cinematic shadows to emphasize the "shutdown" mood.
+
+Composition: Ultra-wide angle cinematic shot, 16:9 aspect ratio. Rule of thirds applied to leave clean negative space in the upper and side areas for news graphics and anchor placement. Deep depth of field with sharp focus on the unplugged cables in the foreground leading toward the massive physical barrier in the midground.
+
+Negative prompt: text, typography, letters, words, logos, watermarks, brand names, explicit content, provocative, NSFW, human figures, faces, character illustrations, cartoon, anime, flat design, chaotic clutter.

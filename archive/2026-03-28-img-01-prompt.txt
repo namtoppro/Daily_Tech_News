@@ -1,0 +1,9 @@
+**Scene Description:** A colossal, futuristic financial vault where flowing liquid gold energy seamlessly merges with glowing blue digital neural networks. In the center, a massive, abstract crystalline sphere representing an advanced artificial intelligence core slowly ascends on a sleek monolithic metallic pedestal. Giant, illuminated data streams pulse and flow upward like towering pillars, symbolizing an unprecedented influx of massive global capital and the imminent, monumental market launch of an AI ecosystem. 
+
+**Atmosphere:** Epic, cinematic, corporate-futuristic, awe-inspiring, high-tech finance, conveying a sense of monumental scale and imminent breakthrough.
+
+**Color Palette:** Deep navy blue and dark slate gray background, featuring striking, high-contrast accents of luminous cyan, neon glowing blue, and rich, radiant gold.
+
+**Composition:** Symmetrical ultra-wide angle shot, deep depth of field, dramatic volumetric lighting cascading from a high ceiling, clear leading lines drawing the viewer's eye directly to the central ascending glowing core, leaving adequate clean space on the sides for a news anchor overlay. 
+
+**Negative Prompt:** text, letters, numbers, alphabet, typography, logos, watermarks, brand names, corporate symbols, signatures, humans, characters, messy background, cluttered, provocative, nude, NSFW.

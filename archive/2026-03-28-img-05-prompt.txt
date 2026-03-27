@@ -1,0 +1,9 @@
+Scene: A futuristic and highly detailed macro view of a massive glowing silicon memory chip acting as the foundation of a sophisticated digital landscape. Majestic golden upward-trending light trails and luminous data streams rise from the center of the chip, symbolizing massive financial investments, wealth, and monumental tech IPOs. On the right side of the composition, holographic film strips and crystalline camera lenses are elegantly fragmenting and dissolving into floating digital ash, representing the sudden shutdown of advanced visual AI projects. In the softly blurred background, subtle ancient mechanical gears seamlessly morph into glowing fiber-optic network nodes, illustrating the transformation of traditional, centuries-old industries into the modern AI era. 
+
+Atmosphere: Cinematic, high-stakes, dramatic, polished, and sophisticated. It carries a heavy, serious corporate tech news vibe with a sense of both creation and destruction. 
+
+Color Palette: Deep midnight cyber-blue and dark sleek silver as the base, contrasted with striking metallic gold for the financial elements, and a touch of fading amber and crimson where the holographic glass dissolves. 
+
+Composition: Wide-angle 16:9 aspect ratio, center-weighted foundation with a strong diagonal upward movement to the right. Smooth, high-quality depth of field with rich bokeh in the background to leave clean negative space, perfect for a news broadcast overlay. Volumetric studio lighting, 8k resolution, photorealistic render. 
+
+Negative Prompt: No text, no words, no letters, no typography, no fonts, no logos, no watermarks, no brand names, no corporate symbols, no human figures, no provocative content, no NSFW, no messy clutter, no flat lighting.
