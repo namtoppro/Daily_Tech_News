@@ -1,0 +1,11 @@
+A high-quality cinematic still image for a tech news background. 
+
+[Scene Description] A wide-angle shot of a massive, glowing holographic film strip projected inside a dark, sprawling futuristic server room. The glowing digital film strip is abruptly fracturing, glitching, and dissolving into cold, heavy metallic cubes and thick disconnected cables, symbolizing a reality check and the heavy computational limits of artificial intelligence video generation. The glowing light of the projection is visibly dimming, revealing stark, massive computing hardware in the background.
+
+[Atmosphere] Serious, dramatic, and analytical. It captures the exact moment of transition from a dreamlike technological illusion to a harsh, practical physical reality. 
+
+[Color Palette] A stark contrast between fading, vibrant neon hues (magenta and cyan) of the hologram and the expanding cold, realistic tones of steel blue, slate grey, and deep shadows of the physical server room.
+
+[Composition] Wide-angle landscape, rule of thirds, deep depth of field. Sharp focus on the fracturing digital film strip on the right side, with soft focus on the towering server racks in the background. Abundant clean negative space on the left side, perfectly designed for a news presenter overlay or graphics. Volumetric lighting, 8k resolution, photorealistic style.
+
+[Negative Prompt] No text, no letters, no words, no fonts, no logos, no watermarks, no brand names, no UI elements, no symbols, no explicit content, no overexposure.
