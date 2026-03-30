@@ -1,0 +1,14 @@
+**[Scene Description]** 
+A high-quality cinematic still image for a tech news background. In the center, a futuristic, translucent holographic human figure formed by glowing data particles, geometric nodes, and luminous DNA-like strands, representing a medical digital twin and synthetic healthcare data. This central hologram seamlessly connects to a vast, expansive digital neural network and floating architectural tech grids that spread outward, symbolizing a growing AI developer ecosystem and secure data infrastructure. 
+
+**[Atmosphere]** 
+High-tech, professional, intellectual, visionary, and trustworthy, with a sleek corporate sci-fi mood suitable for a premium news broadcast.
+
+**[Color Palette]** 
+Deep navy blue and dark cyan background for a sense of trust and technology, accented with vibrant neon teal, clinical bright white, and subtle glowing amber highlights representing human life.
+
+**[Composition]** 
+Wide-angle cinematic shot (16:9 aspect ratio). The central holographic figure is perfectly balanced with ample clean negative space on the left and right sides for news graphics and text overlays. Shallow depth of field with softly blurred, floating luminescent data particles in the foreground and a vast digital grid fading into the background. Volumetric lighting, 8k resolution, photorealistic Unreal Engine 5 render style.
+
+**[Negative Prompt (금지 요소)]** 
+No text, no words, no letters, no typography, no logos, no watermarks, no brand names, no UI interfaces, no explicit content, no gore, no anatomical horror, no messy or cluttered details.

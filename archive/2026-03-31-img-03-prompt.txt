@@ -1,0 +1,14 @@
+**[Scene Description]**
+A futuristic, abstract representation of AI data verification and trust. A complex, glowing stream of chaotic digital particles and abstract geometric shapes is being precisely scanned, filtered, and inspected by a sleek, transparent optical lens and intense laser scanning beams. As the chaotic data passes through the verification light, it transforms into clean, highly organized, and stable glowing crystal nodes, symbolizing the transition from endless generation to rigorous validation.
+
+**[Mood]**
+Serious, analytical, high-tech, cinematic, professional, and subtly tense yet trustworthy.
+
+**[Color Palette]**
+Deep cyber navy blue and dark graphite backgrounds, sharply contrasted by vibrant amber and bright cyan scanning lights to emphasize the inspection process. 
+
+**[Composition]**
+16:9 widescreen aspect ratio, asymmetrical composition with deep, smooth negative space on the left side (ideal for news anchors or graphic overlays). Shallow depth of field with sharp focus on the central scanning mechanism, enhanced by cinematic volumetric lighting and soft glowing reflections. 8k resolution, photorealistic 3D render.
+
+**[Negative Prompt / Forbidden Elements]**
+No text, no letters, no typography, no words, no watermarks, no logos, no brand names, no UI elements, no human faces, no explicit content, no messy lines.
