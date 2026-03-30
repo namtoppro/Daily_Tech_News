@@ -42,26 +42,49 @@ def load_today_briefing() -> str:
     return path.read_text(encoding='utf-8', errors='replace')
 
 
+def load_story_pack_text() -> str:
+    path = Path(ARCHIVE_DIR) / f'{TODAY}-story-pack.json'
+    if not path.exists():
+        return ''
+    return path.read_text(encoding='utf-8', errors='replace').strip()
+
+
 def generate_audio_script(briefing_text: str) -> str:
+    story_pack_text = load_story_pack_text()
     prompt = f"""
 [Role]
-너는 IT 뉴스 브리핑 전문 라디오 작가다.
+너는 IT 뉴스 브리핑 전문 라디오 작가이자 유튜브용 테크 뉴스 진행자다.
 
 [Objective]
-아래 일간 기술 브리핑 문서를 바탕으로 2~4분 길이의 한국어 오디오 브리핑 대본을 작성하라.
-NotebookLM 스타일처럼 자연스럽고 매끄럽지만, 과장되거나 잡담이 많으면 안 된다.
+아래 입력을 바탕으로 2~4분 길이의 한국어 오디오 브리핑 대본을 작성하라.
+단순 뉴스 나열형이 아니라, hook-first 구조의 유튜브형 설명 대본이어야 한다.
+
+[Priority]
+1. story pack이 있으면 그것을 최우선 반영한다.
+2. briefing 문서는 사실 확인/보강 용도로 쓴다.
+3. 웹 브리핑 문장을 그대로 길게 낭독하지 마라.
+
+[Required Structure]
+- Hook: 첫 2문장 안에 오늘 가장 중요한 변화와 시청 이유를 넣는다.
+- Setup: 왜 이 이슈를 지금 봐야 하는지 설명한다.
+- Main facts: 핵심 사실 3개를 자연스럽게 연결한다.
+- Takeaway: 오늘 흐름을 한 문장으로 정리한다.
+- Ending: 맨 끝은 반드시 "이상 오늘의 기술 브리핑이었습니다."로 끝낸다.
 
 [Rules]
 - 핵심 사실을 훼손하지 마라.
-- 뉴스 3~5개 정도만 핵심 순서대로 압축해 전달하라.
-- 너무 긴 제목 나열 금지
-- 자연스럽게 연결하되 정보 밀도를 유지하라.
-- 진행 톤은 차분한 브리핑형
-- 선정적 과장 금지
-- 맨 끝에 "이상 오늘의 기술 브리핑이었습니다."로 끝내라.
+- 메인 이슈 1개를 중심으로 말하고, 나머지는 보조 근거처럼 연결하라.
+- 너무 긴 제목 나열 금지.
+- 문장 길이는 짧고 낭독 가능하게 유지하라.
+- 진행 톤은 차분하지만 첫 도입은 분명해야 한다.
+- 선정적 과장 금지.
 - Markdown 문법 없이 순수 대본 텍스트만 출력하라.
+- 오디오로 읽었을 때 어색한 괄호/불릿/기호 나열을 피하라.
 
-[Input]
+[Optional Story Pack]
+{story_pack_text if story_pack_text else '(없음)'}
+
+[Briefing Input]
 {briefing_text}
 """
     return ai_generate(AUDIO_SCRIPT_MODEL, prompt)

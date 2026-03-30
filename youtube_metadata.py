@@ -22,7 +22,7 @@ TODAY = datetime.now().strftime('%Y-%m-%d')
 ARCHIVE_DIR = Path(os.getenv('ARCHIVE_DIR', 'archive'))
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 YOUTUBE_METADATA_MODEL = os.getenv('YOUTUBE_METADATA_MODEL', os.getenv('GEMINI_MODEL', 'gemini-3.1-pro-preview'))
-DEFAULT_PRIVACY = os.getenv('YOUTUBE_DEFAULT_PRIVACY', 'public').strip().lower() or 'public'
+DEFAULT_PRIVACY = os.getenv('YOUTUBE_DEFAULT_PRIVACY', 'unlisted').strip().lower() or 'unlisted'
 
 if not GEMINI_API_KEY:
     raise RuntimeError('GEMINI_API_KEY 환경 변수가 설정되지 않았습니다.')
@@ -45,6 +45,7 @@ def load_context() -> dict:
     post_path = Path('post.md')
     archive_md_path = ARCHIVE_DIR / f'{TODAY}.md'
     audio_script_path = ARCHIVE_DIR / f'{TODAY}-audio-script.md'
+    story_pack_path = ARCHIVE_DIR / f'{TODAY}-story-pack.json'
     video_path = ARCHIVE_DIR / f'{TODAY}.mp4'
     rules_path = Path('YOUTUBE_RULES.md')
 
@@ -52,16 +53,19 @@ def load_context() -> dict:
     archive_text = read_required_text(archive_md_path, f'{archive_md_path} 파일이 없습니다.')
     rules_text = read_required_text(rules_path, 'YOUTUBE_RULES.md가 없습니다.')
     audio_script_text = audio_script_path.read_text(encoding='utf-8', errors='replace').strip() if audio_script_path.exists() else ''
+    story_pack_text = story_pack_path.read_text(encoding='utf-8', errors='replace').strip() if story_pack_path.exists() else ''
 
     return {
         'post_path': str(post_path),
         'archive_md_path': str(archive_md_path),
         'audio_script_path': str(audio_script_path),
+        'story_pack_path': str(story_pack_path),
         'video_path': str(video_path),
         'rules_text': rules_text,
         'post_text': post_text,
         'archive_text': archive_text,
         'audio_script_text': audio_script_text,
+        'story_pack_text': story_pack_text,
         'video_exists': video_path.exists(),
     }
 
@@ -116,7 +120,7 @@ def build_prompt(context: dict) -> str:
     return f"""
 [System Role]
 너는 Daily Tech News의 유튜브 편집 데스크다.
-목표는 클릭베이트가 아니라 정보형·검색형 제목과 설명문을 만드는 것이다.
+목표는 클릭베이트가 아니라, 메인 이슈가 선명한 이슈형 제목과 설명문을 만드는 것이다.
 
 [Must Follow Rules]
 {context['rules_text']}
@@ -124,6 +128,7 @@ def build_prompt(context: dict) -> str:
 [Task]
 아래 입력을 바탕으로 오늘 영상의 유튜브 메타데이터를 생성하라.
 반드시 JSON 객체 하나만 출력하라. 코드블록 없이 출력하라.
+story pack이 있으면 메인 이슈/훅/제목 후보를 우선 반영하고, 없으면 post.md와 archive를 기반으로 보수적으로 생성하라.
 
 [Output JSON Schema]
 {{
@@ -140,7 +145,7 @@ def build_prompt(context: dict) -> str:
 }}
 
 [Output Rules]
-- title: 한국어 제목 1개만
+- title: 한국어 제목 1개만. 브리핑형보다 이슈형 제목을 우선한다.
 - description: 실제 유튜브 설명문 완성본
 - hashtags: 브랜드 태그 + 일반 탐색 태그 포함
 - keywords: 검색용 키워드 5~10개
@@ -158,6 +163,10 @@ def build_prompt(context: dict) -> str:
 - 링크 `https://lowprice.koreall.site/` 포함
 - 설명문에는 오늘 핵심 이슈 3~5개를 bullet로 포함
 - 설명문 첫 두 줄 안에 영상 성격이 드러나야 함
+- 메인 이슈가 드러나지 않는 날짜/브리핑형 제목 반복을 피할 것
+
+[Optional Story Pack]
+{context['story_pack_text'] if context['story_pack_text'] else '(없음)'}
 
 [Primary Input: post.md]
 {context['post_text']}
@@ -233,6 +242,7 @@ def generate_metadata(context: dict) -> dict:
             context['post_path'],
             context['archive_md_path'],
             context['audio_script_path'],
+            context['story_pack_path'],
             'YOUTUBE_RULES.md',
         ],
         'notes': notes,
