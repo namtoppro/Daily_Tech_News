@@ -31,6 +31,7 @@ GEMINI_MODEL=gemini-3.1-pro-preview
 AUDIO_SCRIPT_MODEL=gemini-3.1-pro-preview
 GEMINI_TTS_MODEL=gemini-2.5-flash-preview-tts
 ARCHIVE_DIR=archive
+VIDEO_FPS=25
 ```
 
 ## 수동 실행
