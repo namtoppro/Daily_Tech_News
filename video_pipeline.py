@@ -283,20 +283,68 @@ def create_keyword_overlay(text: str, idx: int) -> Path:
     return save_overlay(f'keyword-overlay-{idx:02d}', image)
 
 
+def rebalance_subtitle_text(text: str) -> str:
+    text = clean_text(text)
+    replacements = [
+        ('것을 넘어 ', '것을 넘어\n'),
+        ('위해 ', '위해\n'),
+        ('보면 ', '보면\n'),
+        ('답했을 정도로 ', '답했을 정도로\n'),
+        ('합성해 ', '합성해\n'),
+        ('모사하는 ', '모사하는\n'),
+        ('확장을 위해 ', '확장을 위해\n'),
+        ('무료로 제공하며 ', '무료로 제공하며\n'),
+    ]
+    for src, dst in replacements:
+        if src in text and '\n' not in text:
+            text = text.replace(src, dst, 1)
+    return text
+
+
 def create_subtitle_overlay(text: str, idx: int) -> Path:
     image, draw = make_overlay_canvas()
-    font = load_font(FONT_BOLD, 36)
-    lines = wrap_text(draw, text, font, VIDEO_WIDTH - 240)
-    box_h = 56 + max(0, len(lines) - 1) * 34
+    font = load_font(FONT_BOLD, 38)
+    text = rebalance_subtitle_text(text)
+    raw_lines = [line.strip() for line in text.split('\n') if line.strip()]
+    lines = []
+    for raw in raw_lines:
+        lines.extend(wrap_text(draw, raw, font, VIDEO_WIDTH - 320))
+    lines = lines[:2]
+    box_h = 62 + max(0, len(lines) - 1) * 42
     top = VIDEO_HEIGHT - 54 - box_h
-    draw.rounded_rectangle((90, top, VIDEO_WIDTH - 90, VIDEO_HEIGHT - 34), radius=20, fill=(0, 0, 0, 165))
+    draw.rounded_rectangle((120, top, VIDEO_WIDTH - 120, VIDEO_HEIGHT - 34), radius=22, fill=(0, 0, 0, 176))
     y = top + 18
-    for line in lines[:3]:
+    for line in lines:
         bbox = draw.textbbox((0, 0), line, font=font)
         w = bbox[2] - bbox[0]
         draw.text(((VIDEO_WIDTH - w) / 2, y), line, font=font, fill=(255, 255, 255, 255))
-        y += 32
+        y += 40
     return save_overlay(f'subtitle-overlay-{idx:03d}', image)
+
+
+def create_section_overlay(label: str, title: str, idx: int) -> Path:
+    image, draw = make_overlay_canvas()
+    draw.rectangle((0, 0, VIDEO_WIDTH, VIDEO_HEIGHT), fill=(6, 10, 20, 160))
+    pill_font = load_font(FONT_BOLD, 26)
+    title_font = load_font(FONT_BOLD, 42)
+    pill_text = label
+    pill_bbox = draw.textbbox((0, 0), pill_text, font=pill_font)
+    pill_w = pill_bbox[2] - pill_bbox[0]
+    pill_h = pill_bbox[3] - pill_bbox[1]
+    pill_x1 = (VIDEO_WIDTH - pill_w) / 2 - 28
+    pill_x2 = (VIDEO_WIDTH + pill_w) / 2 + 28
+    pill_y1 = 212
+    pill_y2 = pill_y1 + pill_h + 26
+    draw.rounded_rectangle((pill_x1, pill_y1, pill_x2, pill_y2), radius=24, fill=(56, 189, 248, 235))
+    draw.text(((VIDEO_WIDTH - pill_w) / 2, pill_y1 + 11), pill_text, font=pill_font, fill=(10, 15, 28, 255))
+    lines = wrap_text(draw, title, title_font, VIDEO_WIDTH - 280)
+    y = pill_y2 + 34
+    for line in lines[:2]:
+        bbox = draw.textbbox((0, 0), line, font=title_font)
+        w = bbox[2] - bbox[0]
+        draw.text(((VIDEO_WIDTH - w) / 2, y), line, font=title_font, fill=(255, 255, 255, 255))
+        y += 54
+    return save_overlay(f'section-overlay-{idx:02d}', image)
 
 
 def create_outro_overlay(title: str, subtitle: str) -> Path:
@@ -304,24 +352,30 @@ def create_outro_overlay(title: str, subtitle: str) -> Path:
     draw.rectangle((0, 0, VIDEO_WIDTH, VIDEO_HEIGHT), fill=(0, 0, 0, 190))
     font_title = load_font(FONT_BOLD, 46)
     font_sub = load_font(FONT_REGULAR, 24)
+    font_cta = load_font(FONT_BOLD, 28)
     title_lines = wrap_text(draw, title, font_title, VIDEO_WIDTH - 220)
     sub_lines = wrap_text(draw, subtitle, font_sub, VIDEO_WIDTH - 260)
-    y = 220
+    y = 192
     for line in title_lines[:2]:
         bbox = draw.textbbox((0, 0), line, font=font_title)
         w = bbox[2] - bbox[0]
         draw.text(((VIDEO_WIDTH - w) / 2, y), line, font=font_title, fill=(255, 255, 255, 255))
         y += 60
-    y += 18
-    for line in sub_lines[:3]:
+    y += 14
+    for line in sub_lines[:2]:
         bbox = draw.textbbox((0, 0), line, font=font_sub)
         w = bbox[2] - bbox[0]
         draw.text(((VIDEO_WIDTH - w) / 2, y), line, font=font_sub, fill=(230, 236, 245, 255))
         y += 34
+    cta = '구독하고 다음 브리핑도 바로 받아보세요'
+    bbox = draw.textbbox((0, 0), cta, font=font_cta)
+    w = bbox[2] - bbox[0]
+    draw.rounded_rectangle(((VIDEO_WIDTH - w) / 2 - 24, y + 18, (VIDEO_WIDTH + w) / 2 + 24, y + 62), radius=18, fill=(56, 189, 248, 235))
+    draw.text(((VIDEO_WIDTH - w) / 2, y + 24), cta, font=font_cta, fill=(10, 15, 28, 255))
     footer = 'lowprice.koreall.site'
     bbox = draw.textbbox((0, 0), footer, font=font_sub)
     w = bbox[2] - bbox[0]
-    draw.text(((VIDEO_WIDTH - w) / 2, y + 24), footer, font=font_sub, fill=(125, 211, 252, 255))
+    draw.text(((VIDEO_WIDTH - w) / 2, y + 92), footer, font=font_sub, fill=(125, 211, 252, 255))
     return save_overlay('outro-overlay', image)
 
 
@@ -375,6 +429,12 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[
     usable_start = min(duration, VIDEO_INTRO_SEC + 3.0)
     usable_end = max(usable_start + VIDEO_CARD_SEC, duration - VIDEO_OUTRO_SEC - VIDEO_CARD_SEC)
     if card_texts and duration > (VIDEO_INTRO_SEC + VIDEO_OUTRO_SEC + 1.0):
+        section_labels = ['첫째', '둘째', '셋째']
+        section_titles = [
+            '인프라 비용을 줄이는 우회로',
+            '생성보다 검증이 중요해진 시장',
+            '헬스케어 데이터 병목의 우회',
+        ]
         if len(card_texts) == 1:
             card_times = [max(usable_start, min(duration - VIDEO_OUTRO_SEC - VIDEO_CARD_SEC, duration * 0.38))]
         else:
@@ -383,7 +443,11 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[
             card_times = [usable_start + step * idx for idx in range(len(card_texts))]
         for idx, text in enumerate(card_texts, start=1):
             start = card_times[idx - 1]
-            overlays.append({'path': create_keyword_overlay(text, idx), 'start': start, 'end': min(duration - VIDEO_OUTRO_SEC - 0.2, start + VIDEO_CARD_SEC), 'kind': 'card'})
+            section_start = max(min(duration, VIDEO_INTRO_SEC), start - 1.0)
+            section_end = min(duration - VIDEO_OUTRO_SEC - 0.2, section_start + 1.2)
+            overlays.append({'path': create_section_overlay(section_labels[idx - 1], section_titles[idx - 1], idx), 'start': section_start, 'end': section_end, 'kind': 'section'})
+            card_start = min(duration - VIDEO_OUTRO_SEC - 0.2, section_end + 0.15)
+            overlays.append({'path': create_keyword_overlay(text, idx), 'start': card_start, 'end': min(duration - VIDEO_OUTRO_SEC - 0.2, card_start + VIDEO_CARD_SEC), 'kind': 'card'})
 
     subtitle_start = min(duration, VIDEO_INTRO_SEC)
     subtitle_end = max(subtitle_start, duration - VIDEO_OUTRO_SEC)
