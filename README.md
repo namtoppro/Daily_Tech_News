@@ -49,16 +49,19 @@ chmod +x run_daily_news.sh
 
 현재 `run_daily_news.sh`는 아래 순서를 수행합니다.
 1. 텍스트 뉴스 생성
-2. 오디오 파이프라인
-3. 이미지 파이프라인
-4. 비디오 파이프라인
-5. 유튜브 메타데이터 생성
-6. 유튜브 업로드
-7. git commit / push
+2. 유튜브 story pack 생성
+3. 오디오 파이프라인
+4. 이미지 파이프라인
+5. 비디오 파이프라인
+6. 유튜브 메타데이터 생성
+7. 썸네일 후보 생성
+8. 유튜브 업로드
+9. git commit / push
 
 주의:
-- 오디오/이미지/비디오/메타데이터/유튜브 업로드 단계는 실패해도 텍스트 발행 자체는 유지하도록 설계되어 있습니다.
-- 현재 유튜브 기본 업로드 공개상태는 `public`입니다.
+- story pack/오디오/이미지/비디오/메타데이터/유튜브 업로드 단계는 실패해도 텍스트 발행 자체는 유지하도록 설계되어 있습니다.
+- story pack 실패 시 유튜브 단계는 보수적 generic fallback으로 진행합니다.
+- 현재 유튜브 기본 업로드 공개상태는 `unlisted`입니다.
 
 ## 오디오 대본 + 음성 생성
 ```bash
@@ -87,7 +90,8 @@ source .venv/bin/activate
 사전 준비:
 - Google Cloud Console에서 YouTube Data API v3 사용 설정
 - OAuth client secret 파일 준비 (`youtube_client_secret.json`)
-- 기본 공개 상태는 현재 `public`
+- 기본 공개 상태는 현재 `unlisted`
+- 자동 `public` 업로드는 기본 차단이며, 정말 필요할 때만 `YOUTUBE_ALLOW_AUTO_PUBLIC=true`를 명시합니다.
 
 실행:
 ```bash

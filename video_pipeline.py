@@ -83,6 +83,13 @@ def load_story_pack() -> dict:
     return json.loads(path.read_text(encoding='utf-8'))
 
 
+def load_youtube_metadata() -> dict:
+    path = ARCHIVE_DIR / f'{TODAY}-youtube-metadata.json'
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding='utf-8'))
+
+
 def clean_text(text: str) -> str:
     text = re.sub(r'\*+', ' ', text or '')
     text = re.sub(r'\s+', ' ', text)
@@ -235,8 +242,12 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[
     main_issue = story_pack.get('main_issue', {}) or {}
     narrative = story_pack.get('narrative', {}) or {}
     title_candidates = story_pack.get('title_candidates', []) or []
+    metadata = load_youtube_metadata()
 
-    intro_title = title_candidates[0] if title_candidates else main_issue.get('title', 'Daily Tech News')
+    intro_title = (
+        title_candidates[0]
+        if title_candidates else clean_text(main_issue.get('title', '')) or clean_text(metadata.get('title', '')) or 'Daily Tech News'
+    )
     intro_sub = narrative.get('hook') or main_issue.get('why_it_matters') or '오늘 가장 중요한 기술 이슈를 빠르게 정리합니다.'
     mode = 'story-pack' if story_pack else 'generic'
     overlays = [
@@ -253,13 +264,30 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[
             cleaned = clean_text(str(narrative.get(key, '')))
             if cleaned:
                 card_texts.append(cleaned)
-    if not story_pack:
-        card_texts = []
-    card_texts = card_texts[:3]
+    if not card_texts:
+        fallback_title = clean_text(metadata.get('title', ''))
+        if fallback_title:
+            card_texts.append(fallback_title)
+        fallback_keywords = metadata.get('keywords', []) or []
+        if fallback_keywords:
+            card_texts.append(' · '.join([clean_text(str(x)) for x in fallback_keywords[:4] if clean_text(str(x))]))
+        for sentence in split_sentences(script)[:2]:
+            cleaned = clean_text(sentence)
+            if cleaned:
+                card_texts.append(cleaned)
+    deduped_cards = []
+    seen_cards = set()
+    for item in card_texts:
+        key = item.lower()
+        if not item or key in seen_cards:
+            continue
+        seen_cards.add(key)
+        deduped_cards.append(item)
+    card_texts = deduped_cards[:3]
 
-    usable_start = VIDEO_INTRO_SEC + 3.0
+    usable_start = min(duration, VIDEO_INTRO_SEC + 3.0)
     usable_end = max(usable_start + VIDEO_CARD_SEC, duration - VIDEO_OUTRO_SEC - VIDEO_CARD_SEC)
-    if card_texts:
+    if card_texts and duration > (VIDEO_INTRO_SEC + VIDEO_OUTRO_SEC + 1.0):
         if len(card_texts) == 1:
             card_times = [max(usable_start, min(duration - VIDEO_OUTRO_SEC - VIDEO_CARD_SEC, duration * 0.38))]
         else:
@@ -271,18 +299,25 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[
             overlays.append({'path': create_keyword_overlay(text, idx), 'start': start, 'end': min(duration - VIDEO_OUTRO_SEC - 0.2, start + VIDEO_CARD_SEC), 'kind': 'card'})
 
     sentences = split_sentences(script)
-    if sentences:
+    subtitle_start = min(duration, VIDEO_INTRO_SEC)
+    subtitle_end = max(subtitle_start, duration - VIDEO_OUTRO_SEC)
+    subtitle_window = max(0.0, subtitle_end - subtitle_start)
+    if sentences and subtitle_window > 0.0:
         weights = [max(1, len(s.replace(' ', ''))) for s in sentences]
         total_weight = sum(weights)
-        cursor = 0.0
+        cursor = subtitle_start
         for idx, (sentence, weight) in enumerate(zip(sentences, weights), start=1):
-            seg = duration * (weight / total_weight)
             if idx == len(sentences):
-                end = duration
+                end = subtitle_end
             else:
-                end = min(duration, cursor + max(1.4, seg))
+                seg = subtitle_window * (weight / total_weight)
+                end = min(subtitle_end, cursor + max(1.2, seg))
+            if end <= cursor:
+                continue
             overlays.append({'path': create_subtitle_overlay(sentence, idx), 'start': cursor, 'end': end, 'kind': 'subtitle'})
             cursor = end
+            if cursor >= subtitle_end:
+                break
 
     outro_start = max(0.0, duration - VIDEO_OUTRO_SEC)
     outro_sub = narrative.get('takeaway') or '더 자세한 내용은 설명란과 아카이브를 확인하세요.'
