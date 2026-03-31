@@ -31,6 +31,8 @@ VIDEO_MAX_PER_IMAGE_SEC = float(os.getenv('VIDEO_MAX_PER_IMAGE_SEC', '6.0'))
 VIDEO_INTRO_SEC = float(os.getenv('VIDEO_INTRO_SEC', '5.0'))
 VIDEO_OUTRO_SEC = float(os.getenv('VIDEO_OUTRO_SEC', '4.0'))
 VIDEO_CARD_SEC = float(os.getenv('VIDEO_CARD_SEC', '3.2'))
+VIDEO_SUBTITLE_GAP_FILL_SEC = float(os.getenv('VIDEO_SUBTITLE_GAP_FILL_SEC', '1.1'))
+VIDEO_SUBTITLE_MIN_SEC = float(os.getenv('VIDEO_SUBTITLE_MIN_SEC', '1.2'))
 FFPROBE_BIN = os.getenv('FFPROBE_BIN') or shutil.which('ffprobe') or '/opt/homebrew/bin/ffprobe'
 FFMPEG_BIN = os.getenv('FFMPEG_BIN') or shutil.which('ffmpeg') or '/opt/homebrew/bin/ffmpeg'
 FONT_REGULAR = os.getenv('VIDEO_FONT_REGULAR', '/System/Library/Fonts/AppleSDGothicNeo.ttc')
@@ -140,7 +142,35 @@ def load_subtitle_segments() -> list[dict]:
         if end <= start:
             continue
         segments.append({'start': start, 'end': end, 'text': text})
-    return segments
+
+    if not segments:
+        return []
+
+    normalized = []
+    for idx, segment in enumerate(segments):
+        start = float(segment['start'])
+        end = float(segment['end'])
+        text = clean_text(segment['text'])
+        if idx > 0:
+            prev = normalized[-1]
+            start = max(start, prev['start'])
+            gap = max(0.0, start - prev['end'])
+            if gap <= VIDEO_SUBTITLE_GAP_FILL_SEC:
+                bridged_end = min(start, prev['end'] + gap)
+                prev['end'] = max(prev['end'], bridged_end)
+                start = prev['end']
+        if idx < len(segments) - 1:
+            next_start = float(segments[idx + 1]['start'])
+            available = max(0.0, next_start - start)
+            min_end = start + min(VIDEO_SUBTITLE_MIN_SEC, available)
+            end = max(end, min_end)
+            end = min(end, next_start)
+        else:
+            end = max(end, start + VIDEO_SUBTITLE_MIN_SEC)
+        if end <= start:
+            continue
+        normalized.append({'start': start, 'end': end, 'text': text})
+    return normalized
 
 
 def prepare_render_dir() -> None:
@@ -336,8 +366,8 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[
             start = card_times[idx - 1]
             overlays.append({'path': create_keyword_overlay(text, idx), 'start': start, 'end': min(duration - VIDEO_OUTRO_SEC - 0.2, start + VIDEO_CARD_SEC), 'kind': 'card'})
 
-    subtitle_start = min(duration, VIDEO_INTRO_SEC)
-    subtitle_end = max(subtitle_start, duration - VIDEO_OUTRO_SEC)
+    subtitle_start = 0.0
+    subtitle_end = duration
     subtitle_window = max(0.0, subtitle_end - subtitle_start)
     subtitle_segments = []
     for segment in load_subtitle_segments():
