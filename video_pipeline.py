@@ -33,8 +33,8 @@ VIDEO_OUTRO_SEC = float(os.getenv('VIDEO_OUTRO_SEC', '4.0'))
 VIDEO_CARD_SEC = float(os.getenv('VIDEO_CARD_SEC', '3.2'))
 FFPROBE_BIN = os.getenv('FFPROBE_BIN') or shutil.which('ffprobe') or '/opt/homebrew/bin/ffprobe'
 FFMPEG_BIN = os.getenv('FFMPEG_BIN') or shutil.which('ffmpeg') or '/opt/homebrew/bin/ffmpeg'
-FONT_REGULAR = os.getenv('VIDEO_FONT_REGULAR', '/System/Library/Fonts/Supplemental/Arial.ttf')
-FONT_BOLD = os.getenv('VIDEO_FONT_BOLD', '/System/Library/Fonts/Supplemental/Arial Bold.ttf')
+FONT_REGULAR = os.getenv('VIDEO_FONT_REGULAR', '/System/Library/Fonts/AppleSDGothicNeo.ttc')
+FONT_BOLD = os.getenv('VIDEO_FONT_BOLD', '/System/Library/Fonts/AppleSDGothicNeo.ttc')
 
 
 def get_audio_file() -> Path:
@@ -103,6 +103,44 @@ def split_sentences(text: str) -> list[str]:
     text = re.sub(r'([\.\!\?])\s+', r'\1\n', text)
     text = re.sub(r'(다\.)\s+', r'\1\n', text)
     return [p.strip(' .') for p in text.splitlines() if p.strip(' .')]
+
+
+def parse_srt_timestamp(value: str) -> float:
+    hms, ms = value.split(',')
+    h, m, s = [int(x) for x in hms.split(':')]
+    return h * 3600 + m * 60 + s + (int(ms) / 1000.0)
+
+
+def load_subtitle_segments() -> list[dict]:
+    srt_path = ARCHIVE_DIR / f'{TODAY}.srt'
+    if not srt_path.exists():
+        return []
+    raw = srt_path.read_text(encoding='utf-8', errors='replace').strip()
+    if not raw:
+        return []
+    blocks = re.split(r'\n\s*\n', raw)
+    segments = []
+    for block in blocks:
+        lines = [line.strip('\ufeff') for line in block.splitlines() if line.strip()]
+        if len(lines) < 2:
+            continue
+        time_line = lines[1] if '-->' in lines[1] else lines[0]
+        if '-->' not in time_line:
+            continue
+        start_raw, end_raw = [x.strip() for x in time_line.split('-->')]
+        text_lines = lines[2:] if '-->' in lines[1] else lines[1:]
+        text = clean_text(' '.join(text_lines))
+        if not text:
+            continue
+        try:
+            start = parse_srt_timestamp(start_raw)
+            end = parse_srt_timestamp(end_raw)
+        except Exception:
+            continue
+        if end <= start:
+            continue
+        segments.append({'start': start, 'end': end, 'text': text})
+    return segments
 
 
 def prepare_render_dir() -> None:
@@ -298,26 +336,38 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[
             start = card_times[idx - 1]
             overlays.append({'path': create_keyword_overlay(text, idx), 'start': start, 'end': min(duration - VIDEO_OUTRO_SEC - 0.2, start + VIDEO_CARD_SEC), 'kind': 'card'})
 
-    sentences = split_sentences(script)
     subtitle_start = min(duration, VIDEO_INTRO_SEC)
     subtitle_end = max(subtitle_start, duration - VIDEO_OUTRO_SEC)
     subtitle_window = max(0.0, subtitle_end - subtitle_start)
-    if sentences and subtitle_window > 0.0:
-        weights = [max(1, len(s.replace(' ', ''))) for s in sentences]
-        total_weight = sum(weights)
-        cursor = subtitle_start
-        for idx, (sentence, weight) in enumerate(zip(sentences, weights), start=1):
-            if idx == len(sentences):
-                end = subtitle_end
-            else:
-                seg = subtitle_window * (weight / total_weight)
-                end = min(subtitle_end, cursor + max(1.2, seg))
-            if end <= cursor:
-                continue
-            overlays.append({'path': create_subtitle_overlay(sentence, idx), 'start': cursor, 'end': end, 'kind': 'subtitle'})
-            cursor = end
-            if cursor >= subtitle_end:
-                break
+    subtitle_segments = []
+    for segment in load_subtitle_segments():
+        start = max(subtitle_start, float(segment.get('start', 0.0)))
+        end = min(subtitle_end, float(segment.get('end', 0.0)))
+        text = clean_text(str(segment.get('text', '')))
+        if not text or end <= start:
+            continue
+        subtitle_segments.append({'start': start, 'end': end, 'text': text})
+    if subtitle_segments:
+        for idx, segment in enumerate(subtitle_segments, start=1):
+            overlays.append({'path': create_subtitle_overlay(segment['text'], idx), 'start': segment['start'], 'end': segment['end'], 'kind': 'subtitle'})
+    else:
+        sentences = split_sentences(script)
+        if sentences and subtitle_window > 0.0:
+            weights = [max(1, len(s.replace(' ', ''))) for s in sentences]
+            total_weight = sum(weights)
+            cursor = subtitle_start
+            for idx, (sentence, weight) in enumerate(zip(sentences, weights), start=1):
+                if idx == len(sentences):
+                    end = subtitle_end
+                else:
+                    seg = subtitle_window * (weight / total_weight)
+                    end = min(subtitle_end, cursor + max(1.2, seg))
+                if end <= cursor:
+                    continue
+                overlays.append({'path': create_subtitle_overlay(sentence, idx), 'start': cursor, 'end': end, 'kind': 'subtitle'})
+                cursor = end
+                if cursor >= subtitle_end:
+                    break
 
     outro_start = max(0.0, duration - VIDEO_OUTRO_SEC)
     outro_sub = narrative.get('takeaway') or '더 자세한 내용은 설명란과 아카이브를 확인하세요.'
