@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-01",
+  "title": "오픈AI 1,220억 달러 조달, 지금 AI 시장에 던지는 핵심 신호",
+  "description": "매일 쏟아지는 글로벌 기술 동향의 핵심을 분석하는 데일리 테크 뉴스입니다.\n오늘의 메인 이슈는 1,220억 달러라는 천문학적 자금을 조달한 오픈AI의 독주와 극단적으로 양극화되는 AI 생태계의 현실입니다.\n\n[오늘의 핵심 이슈]\n• 오픈AI, 1,220억 달러 신규 자금 조달 및 8,520억 달러 기업 가치 평가\n• 빅테크 연합과 30억 달러 개인 투자금 유입이 시사하는 초대형 인프라 전쟁\n• 3,300만 달러를 투자받았던 AI 스타트업 Yupp의 1년 만의 폐업과 생태계 생존 리스크\n• 범용 모델의 대안으로 부상하는 소형·도메인 특화 모델 (IBM Granite 4.0)\n• 막대한 전력 소모를 해결하기 위한 엔비디아의 지능형 AI 전력망 최적화 비전\n\n본 영상은 수집된 글로벌 IT 매체의 원문 기사 및 공식 발표 기반 요약으로, 과장 없이 오늘 주목해야 할 기술 시장의 구조적 변화를 명확하게 전달합니다.\n\n더 많은 정보와 인사이트는 아래 링크에서 확인하세요.\nhttps://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #TechNews #스타트업 #인공지능",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#스타트업",
+    "#인공지능"
+  ],
+  "keywords": [
+    "오픈AI",
+    "OpenAI",
+    "인공지능",
+    "스타트업 폐업",
+    "엔비디아",
+    "특화모델",
+    "데이터센터",
+    "테크뉴스",
+    "기술브리핑"
+  ],
+  "privacyStatus": "unlisted",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-01.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-01.md",
+    "archive/2026-04-01-audio-script.md",
+    "archive/2026-04-01-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "메인 이슈(오픈AI 자본 집중)와 서브 이슈(스타트업 폐업, 특화 모델 부상)의 극적 대비를 통해 AI 생태계의 양극화를 강조한 패키징",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

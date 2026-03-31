@@ -1,0 +1,9 @@
+**Scene Description:** A vast, futuristic AI data factory and sustainable technological landscape. Massive, sleek architectural structures symbolizing modular AI networks and scalable infrastructure rise from a luminous, energy-efficient smart grid. Streams of dynamic, glowing data flow like highways through the facility, seamlessly merging with subtle, organic waves of eco-friendly energy. Floating geometric nodes and holographic spheres represent multimodal vision, smart connectivity, and massive financial data streams converging into a brilliantly glowing central core. 
+
+**Atmosphere:** Highly professional, cinematic, awe-inspiring, and futuristic. The mood is dynamic yet clean and structured, providing a sophisticated and polished backdrop perfectly suited for a premium technology news briefing.
+
+**Color Palette:** Deep cyber-blue and dark midnight purple for the technological foundation, sharply contrasted with vibrant emerald green representing sustainability, and radiant glowing gold signifying immense financial investment and energy flow.
+
+**Composition:** Ultra-wide panoramic shot, architectural scale. Strong leading lines draw the viewer's eye toward the bright central hub in the distance. Subtle depth of field with a slightly blurred foreground to create clean, negative space ideal for news graphics and an anchor. Balanced using the rule of thirds. 
+
+**Negative Prompt:** Text, letters, numbers, words, typography, fonts, watermarks, corporate logos, brand names, human figures, faces, messy cables, chaotic clutter, dystopian elements, explicit content, violence, gore.

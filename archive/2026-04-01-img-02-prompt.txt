@@ -1,0 +1,9 @@
+**Scene Description**: A cinematic, abstract representation of an advanced AI system seamlessly integrating into various dimensions of business and daily life. A glowing, multifaceted central AI core radiating smooth, luminous data streams that fluidly connect to multiple sleek, transparent floating holographic panels. One panel displays abstract corporate workflow diagrams, data charts, and green eco-sustainability nodes. Another panel shows soft glowing soundwaves and smart home connectivity icons representing lifestyle services. The background features a vast, sophisticated, softly blurred modern digital architecture without any specific hardware.
+
+**Atmosphere**: Futuristic, professional, serene, highly sophisticated, and tech-optimistic. High-end news broadcast quality with a sense of seamless technological evolution.
+
+**Color Palette**: Deep corporate blue and dark obsidian as the base, illuminated by vibrant cyan and electric blue data streams, with striking, purposeful accents of glowing neon green (for sustainability) and warm amber (for human lifestyle integration).
+
+**Composition**: Ultra-wide 16:9 aspect ratio, rule of thirds, dynamic cinematic angle. Shallow depth of field with beautiful, soft bokeh in the background to provide clean negative space for news layout. Volumetric lighting with smooth gradients.
+
+**Negative Prompt**: Text, words, letters, typography, fonts, logos, brand names, watermarks, signatures, chaotic, cluttered, messy UI, provocative, NSFW, poorly drawn, noisy, overexposed.

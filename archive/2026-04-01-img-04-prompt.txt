@@ -1,0 +1,9 @@
+**Scene Description:** A sprawling, futuristic digital ecosystem landscape representing the AI tech market. On the left and center, robust, glowing geometric data structures and solid obsidian monoliths radiate with strong, stable energy networks, symbolizing technological moats and thriving innovation. On the right side, fragile, glass-like digital towers are fracturing, splintering, and dissolving into dark cybernetic dust, illustrating survival failure and harsh market risks. A dynamic river of luminous data particles flows through the center, actively feeding the solid structures while fading away from the collapsing ones. 
+
+**Atmosphere:** Cinematic, dramatic, high-stakes, sophisticated, tension between solid growth and fragile decay, high-tech corporate reality, serious news briefing mood.
+
+**Color Palette:** Deep navy blue and shadowy charcoal for the background. Vibrant electric cyan and warm neon amber illuminating the successful, stable elements. Fading cold grey and dull ice-blue for the decaying, shattering structures.
+
+**Composition:** Extreme wide-angle panoramic shot, 16:9 aspect ratio, rule of thirds, dramatic volumetric lighting from below, high contrast, sleek polished textures, deep depth of field. Substantial dark negative space at the top and edges to perfectly accommodate news broadcast graphic overlays and a virtual presenter.
+
+**Negative Prompt:** Text, typography, words, letters, numbers, logos, watermarks, brand names, human figures, faces, explicit content, cartoon, anime, illustration, messy UI, cluttered background, bright sunny daylight.

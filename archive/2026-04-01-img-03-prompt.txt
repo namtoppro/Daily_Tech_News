@@ -1,0 +1,9 @@
+**Scene Description:** A futuristic and cinematic conceptual landscape of an advanced AI data center. Massive, towering server monoliths in the distant background represent heavy, power-hungry generic AI models. In the sharp foreground, sleek, compact, brightly glowing crystalline micro-processors stand out, representing highly optimized and specialized AI models. A luminous, intelligent power grid made of flowing digital light connects these processors to the environment, dynamically pulsing to symbolize smart energy efficiency, infrastructure optimization, and a flexible power network.
+
+**Atmosphere:** Sophisticated, visionary, high-tech, cinematic, intellectual, calm yet pulsing with advanced technological energy. 
+
+**Color Palette:** Deep cyber-blue and dark industrial steel for the background infrastructure, sharply contrasted with vibrant emerald green, neon cyan, and warm electric gold flowing through the intelligent energy grid and the compact glowing nodes.
+
+**Composition:** Wide-angle landscape shot, dynamic diagonal perspective. Shallow depth of field focusing on the brilliant, compact nodes in the lower third of the frame. Ample clean, smooth negative space in the center and upper areas, perfectly suited for a news broadcast background or graphic overlays. Volumetric lighting, subtle lens flares, and soft cinematic glowing effects.
+
+**Negative Prompt:** text, font, lettering, alphabet, words, watermark, logo, brand name, signature, trademark, human, faces, messy cables, chaotic, cluttered, overexposed, violent, NSFW, provocative, grotesque.
