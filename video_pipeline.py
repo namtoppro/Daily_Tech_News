@@ -47,6 +47,7 @@ SUBTITLE_TEXT_REPLACEMENTS = {
     '데이터 한계를 우비하고': '데이터 한계를 우회하고',
     '오늘의 흐림을': '오늘의 흐름을',
     '우주의 데이터 센터': '우주 데이터 센터',
+    '인공지능 3사 밑에서': '인공지능 상사 밑에서',
 }
 
 
@@ -384,8 +385,8 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[
             start = card_times[idx - 1]
             overlays.append({'path': create_keyword_overlay(text, idx), 'start': start, 'end': min(duration - VIDEO_OUTRO_SEC - 0.2, start + VIDEO_CARD_SEC), 'kind': 'card'})
 
-    subtitle_start = 0.0
-    subtitle_end = duration
+    subtitle_start = min(duration, VIDEO_INTRO_SEC)
+    subtitle_end = max(subtitle_start, duration - VIDEO_OUTRO_SEC)
     subtitle_window = max(0.0, subtitle_end - subtitle_start)
     subtitle_segments = []
     for segment in load_subtitle_segments():
