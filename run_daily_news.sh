@@ -171,10 +171,10 @@ run_required_step() {
 
 run_optional_step() {
   local step_name="$1"
-  local script_path="$2"
+  shift
 
   log "$step_name"
-  if "$script_path" 2>&1 | tee -a "$LOG_FILE"; then
+  if "$@" 2>&1 | tee -a "$LOG_FILE"; then
     record_step_result "$step_name" "SUCCESS"
     log "$step_name 성공"
   else
