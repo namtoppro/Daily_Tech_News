@@ -266,7 +266,7 @@ def create_keyword_overlay(text: str, idx: int) -> Path:
 
 def create_subtitle_overlay(text: str, idx: int) -> Path:
     image, draw = make_overlay_canvas()
-    font = load_font(FONT_BOLD, 24)
+    font = load_font(FONT_BOLD, 32)
     lines = wrap_text(draw, text, font, VIDEO_WIDTH - 240)
     box_h = 56 + max(0, len(lines) - 1) * 34
     top = VIDEO_HEIGHT - 54 - box_h
