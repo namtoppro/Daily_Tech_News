@@ -37,6 +37,17 @@ FFPROBE_BIN = os.getenv('FFPROBE_BIN') or shutil.which('ffprobe') or '/opt/homeb
 FFMPEG_BIN = os.getenv('FFMPEG_BIN') or shutil.which('ffmpeg') or '/opt/homebrew/bin/ffmpeg'
 FONT_REGULAR = os.getenv('VIDEO_FONT_REGULAR', '/System/Library/Fonts/AppleSDGothicNeo.ttc')
 FONT_BOLD = os.getenv('VIDEO_FONT_BOLD', '/System/Library/Fonts/AppleSDGothicNeo.ttc')
+SUBTITLE_TEXT_REPLACEMENTS = {
+    '조단이의 자본': '조 단위의 자본',
+    '검진할 것인가': '검증할 것인가',
+    '벽목 현상': '병목현상',
+    '쾌적화': '최적화',
+    '엔스로픽': '앤스로픽',
+    '플랫폼 코드에': '플랫폼 코도에',
+    '데이터 한계를 우비하고': '데이터 한계를 우회하고',
+    '오늘의 흐림을': '오늘의 흐름을',
+    '우주의 데이터 센터': '우주 데이터 센터',
+}
 
 
 def get_audio_file() -> Path:
@@ -98,6 +109,13 @@ def clean_text(text: str) -> str:
     return text.strip()
 
 
+def apply_subtitle_text_replacements(text: str) -> str:
+    text = clean_text(text)
+    for src, dst in SUBTITLE_TEXT_REPLACEMENTS.items():
+        text = text.replace(src, dst)
+    return clean_text(text)
+
+
 def split_sentences(text: str) -> list[str]:
     text = clean_text(text)
     if not text:
@@ -131,7 +149,7 @@ def load_subtitle_segments() -> list[dict]:
             continue
         start_raw, end_raw = [x.strip() for x in time_line.split('-->')]
         text_lines = lines[2:] if '-->' in lines[1] else lines[1:]
-        text = clean_text(' '.join(text_lines))
+        text = apply_subtitle_text_replacements(' '.join(text_lines))
         if not text:
             continue
         try:
@@ -266,7 +284,7 @@ def create_keyword_overlay(text: str, idx: int) -> Path:
 
 def create_subtitle_overlay(text: str, idx: int) -> Path:
     image, draw = make_overlay_canvas()
-    font = load_font(FONT_BOLD, 32)
+    font = load_font(FONT_BOLD, 36)
     lines = wrap_text(draw, text, font, VIDEO_WIDTH - 240)
     box_h = 56 + max(0, len(lines) - 1) * 34
     top = VIDEO_HEIGHT - 54 - box_h

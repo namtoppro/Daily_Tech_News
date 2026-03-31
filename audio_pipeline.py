@@ -49,8 +49,23 @@ def load_story_pack_text() -> str:
     return path.read_text(encoding='utf-8', errors='replace').strip()
 
 
+HOOK_TEMPLATES = [
+    '오늘 진짜 봐야 할 변화는 {core_change}입니다.',
+    '지금 돈이 이동하는 곳은 {core_change}입니다.',
+    '오늘 핵심은 {core_change}입니다.',
+    '지금 시장이 가장 민감하게 반응하는 변화는 {core_change}입니다.',
+    '이번 흐름의 본질은 {core_change}입니다.',
+    '오늘 이슈의 중심은 {core_change}입니다.',
+    '겉으로는 여러 뉴스가 보이지만, 실제 핵심은 {core_change}입니다.',
+    '지금 테크 업계에서 가장 먼저 봐야 할 변화는 {core_change}입니다.',
+    '이번 브리핑에서 놓치면 안 되는 포인트는 {core_change}입니다.',
+    '오늘 시장이 돈과 관심을 함께 보내는 지점은 {core_change}입니다.',
+]
+
+
 def generate_audio_script(briefing_text: str) -> str:
     story_pack_text = load_story_pack_text()
+    hook_templates_text = '\n'.join([f'- {item}' for item in HOOK_TEMPLATES])
     prompt = f"""
 [Role]
 너는 IT 뉴스 브리핑 전문 라디오 작가이자 유튜브용 테크 뉴스 진행자다.
@@ -79,7 +94,10 @@ def generate_audio_script(briefing_text: str) -> str:
 - 진행 톤은 차분하지만 첫 도입은 분명해야 한다.
 - 첫 2문장은 단순 인사말보다, 시청자가 왜 지금 이 영상을 봐야 하는지 바로 느끼게 만들어라.
 - 첫 문장 또는 둘째 문장에는 시장 변화, 사용자 영향, 비용 변화, 신뢰 문제 중 최소 1개를 직접 언급하라.
-- 아래와 같은 뉘앙스를 선호한다: "오늘 핵심은 ~입니다", "지금 돈이 이동하는 곳은 ~입니다", "오늘 진짜 봐야 할 변화는 ~입니다".
+- 첫 문장은 아래 템플릿 중 하나의 구조를 반드시 따른다. 단, 표현은 입력 사실에 맞게 자연스럽게 채워라.
+{hook_templates_text}
+- 첫 문장은 반드시 마침표로 끝나는 완결된 한 문장으로 작성한다.
+- 둘째 문장은 첫 문장의 의미를 풀어주되, 입력 출처가 수집된 기사/공식 발표라는 점을 자연스럽게 연결할 수 있다.
 - 선정적 과장 금지.
 - 입력은 수집된 원문 기사/공식 발표/브리핑 요약이다. 입력에 없는 사실, 숫자, 인과관계, 전망을 새로 만들지 마라.
 - "AI가 분석한 결과"처럼 들리는 표현을 피하고, 사실 기반 정리 톤을 유지하라.
