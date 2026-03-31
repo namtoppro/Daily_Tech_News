@@ -22,6 +22,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 TODAY = datetime.now().strftime('%Y-%m-%d')
 ARCHIVE_DIR = Path(os.getenv('ARCHIVE_DIR', 'archive'))
+RENDER_DIR = ARCHIVE_DIR / '.render' / TODAY
 VIDEO_WIDTH = int(os.getenv('VIDEO_WIDTH', '1280'))
 VIDEO_HEIGHT = int(os.getenv('VIDEO_HEIGHT', '720'))
 VIDEO_FPS = int(os.getenv('VIDEO_FPS', '30'))
@@ -97,13 +98,19 @@ def split_sentences(text: str) -> list[str]:
     return [p.strip(' .') for p in text.splitlines() if p.strip(' .')]
 
 
+def prepare_render_dir() -> None:
+    if RENDER_DIR.exists():
+        shutil.rmtree(RENDER_DIR)
+    RENDER_DIR.mkdir(parents=True, exist_ok=True)
+
+
 def make_concat_file(images: list[Path], per_image_sec: float) -> Path:
-    concat_path = ARCHIVE_DIR / f'{TODAY}-slideshow.txt'
+    concat_path = RENDER_DIR / f'{TODAY}-slideshow.txt'
     lines = []
     for img in images:
-        lines.append(f"file '{img.name}'")
+        lines.append(f"file '{img.resolve()}'")
         lines.append(f'duration {per_image_sec:.3f}')
-    lines.append(f"file '{images[-1].name}'")
+    lines.append(f"file '{images[-1].resolve()}'")
     concat_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return concat_path
 
@@ -140,7 +147,7 @@ def make_overlay_canvas() -> tuple[Image.Image, ImageDraw.ImageDraw]:
 
 
 def save_overlay(name: str, image: Image.Image) -> Path:
-    out = ARCHIVE_DIR / f'{TODAY}-{name}.png'
+    out = RENDER_DIR / f'{TODAY}-{name}.png'
     image.save(out)
     return out
 
@@ -224,13 +231,14 @@ def create_outro_overlay(title: str, subtitle: str) -> Path:
     return save_overlay('outro-overlay', image)
 
 
-def build_overlay_plan(duration: float, story_pack: dict, script: str) -> list[dict]:
+def build_overlay_plan(duration: float, story_pack: dict, script: str) -> tuple[list[dict], str]:
     main_issue = story_pack.get('main_issue', {}) or {}
     narrative = story_pack.get('narrative', {}) or {}
     title_candidates = story_pack.get('title_candidates', []) or []
 
     intro_title = title_candidates[0] if title_candidates else main_issue.get('title', 'Daily Tech News')
     intro_sub = narrative.get('hook') or main_issue.get('why_it_matters') or '오늘 가장 중요한 기술 이슈를 빠르게 정리합니다.'
+    mode = 'story-pack' if story_pack else 'generic'
     overlays = [
         {'path': create_intro_overlay(intro_title, intro_sub), 'start': 0.0, 'end': min(duration, VIDEO_INTRO_SEC), 'kind': 'intro'}
     ]
@@ -245,6 +253,8 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> list[d
             cleaned = clean_text(str(narrative.get(key, '')))
             if cleaned:
                 card_texts.append(cleaned)
+    if not story_pack:
+        card_texts = []
     card_texts = card_texts[:3]
 
     usable_start = VIDEO_INTRO_SEC + 3.0
@@ -277,7 +287,7 @@ def build_overlay_plan(duration: float, story_pack: dict, script: str) -> list[d
     outro_start = max(0.0, duration - VIDEO_OUTRO_SEC)
     outro_sub = narrative.get('takeaway') or '더 자세한 내용은 설명란과 아카이브를 확인하세요.'
     overlays.append({'path': create_outro_overlay('Daily Tech News', outro_sub), 'start': outro_start, 'end': duration, 'kind': 'outro'})
-    return overlays
+    return overlays, mode
 
 
 def build_filter_complex(overlays: list[dict]) -> str:
@@ -294,6 +304,7 @@ def build_filter_complex(overlays: list[dict]) -> str:
 
 
 def build_video(audio_path: Path, images: list[Path]):
+    prepare_render_dir()
     duration = get_audio_duration(audio_path)
     visual_window = max(1.0, duration)
     slideshow_window = max(1.0, visual_window - VIDEO_INTRO_SEC - VIDEO_OUTRO_SEC)
@@ -301,7 +312,7 @@ def build_video(audio_path: Path, images: list[Path]):
     concat_file = make_concat_file(images, per_image)
     script = load_audio_script()
     story_pack = load_story_pack()
-    overlays = build_overlay_plan(duration, story_pack, script)
+    overlays, mode = build_overlay_plan(duration, story_pack, script)
     output = ARCHIVE_DIR / f'{TODAY}.mp4'
 
     cmd = [FFMPEG_BIN, '-y', '-f', 'concat', '-safe', '0', '-i', str(concat_file), '-i', str(audio_path)]
@@ -321,14 +332,14 @@ def build_video(audio_path: Path, images: list[Path]):
         str(output),
     ])
     subprocess.check_call(cmd)
-    return output, per_image, duration, concat_file, overlays
+    return output, per_image, duration, concat_file, overlays, mode
 
 
 def main():
     ensure_video_bins()
     audio = get_audio_file()
     images = get_images()
-    output, per_image, duration, concat_file, overlays = build_video(audio, images)
+    output, per_image, duration, concat_file, overlays, mode = build_video(audio, images)
     print(f'FFPROBE_BIN={FFPROBE_BIN}')
     print(f'FFMPEG_BIN={FFMPEG_BIN}')
     print(f'AUDIO={audio}')
@@ -337,6 +348,7 @@ def main():
     print(f'PER_IMAGE_SEC={per_image:.2f}')
     print(f'CONCAT_FILE={concat_file}')
     print(f'OVERLAY_COUNT={len(overlays)}')
+    print(f'STORY_PACK_MODE={mode}')
     print(f'VIDEO_OUT={output}')
 
 

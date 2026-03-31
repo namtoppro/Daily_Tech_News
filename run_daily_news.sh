@@ -185,7 +185,24 @@ run_optional_step() {
 }
 
 run_required_step "Step 1: 뉴스 수집 및 HTML 생성" python3 generator2.py
-run_optional_step "Step 2: 유튜브 story pack 생성" python3 "$SCRIPT_DIR/story_pack.py"
+STORY_PACK_PATH="archive/$(date '+%Y-%m-%d')-story-pack.json"
+STORY_PACK_READY=0
+log "Step 2: 유튜브 story pack 생성"
+if python3 "$SCRIPT_DIR/story_pack.py" 2>&1 | tee -a "$LOG_FILE"; then
+  if [ -f "$STORY_PACK_PATH" ]; then
+    STORY_PACK_READY=1
+    record_step_result "Step 2: 유튜브 story pack 생성" "SUCCESS"
+    log "Step 2: 유튜브 story pack 생성 성공"
+  else
+    record_step_result "Step 2: 유튜브 story pack 생성" "FAILED"
+    OPTIONAL_FAILURES=1
+    log "Step 2: 유튜브 story pack 생성 실패 - 산출물 없음"
+  fi
+else
+  record_step_result "Step 2: 유튜브 story pack 생성" "FAILED"
+  OPTIONAL_FAILURES=1
+  log "Step 2: 유튜브 story pack 생성 실패 - generic fallback 모드"
+fi
 run_optional_step "Step 3: 오디오 파이프라인" "$SCRIPT_DIR/run_audio_pipeline.sh"
 run_optional_step "Step 4: 이미지 파이프라인" "$SCRIPT_DIR/run_image_pipeline.sh"
 
@@ -219,18 +236,20 @@ else
   log "Step 6: 유튜브 메타데이터 생성 실패 - 유튜브 업로드는 차단"
 fi
 
+run_optional_step "Step 7: 썸네일 후보 생성" python3 "$SCRIPT_DIR/thumbnail_generator.py"
+
 if [ -f "$VIDEO_PATH" ] && [ "$METADATA_READY" -eq 1 ]; then
-  run_optional_step "Step 7: 유튜브 업로드" "$SCRIPT_DIR/run_youtube_upload.sh"
+  run_optional_step "Step 8: 유튜브 업로드" "$SCRIPT_DIR/run_youtube_upload.sh"
 else
-  record_step_result "Step 7: 유튜브 업로드" "SKIPPED"
+  record_step_result "Step 8: 유튜브 업로드" "SKIPPED"
   OPTIONAL_FAILURES=1
-  log "Step 7: 유튜브 업로드 스킵 - mp4 또는 fresh metadata가 없음"
+  log "Step 8: 유튜브 업로드 스킵 - mp4 또는 fresh metadata가 없음"
 fi
 
-log "Step 8: Git 변경사항 확인"
+log "Step 9: Git 변경사항 확인"
 GIT_STATUS="$(git status --porcelain)"
 if [ -z "$GIT_STATUS" ]; then
-  record_step_result "Step 8: Git 변경사항 확인" "NO_CHANGES"
+  record_step_result "Step 9: Git 변경사항 확인" "NO_CHANGES"
   FINAL_STATUS="SUCCESS"
   FINAL_NOTE="변경사항 없음"
   log "변경사항 없음. 작업 종료."
@@ -239,19 +258,19 @@ if [ -z "$GIT_STATUS" ]; then
   send_report
   exit 0
 fi
-record_step_result "Step 8: Git 변경사항 확인" "SUCCESS"
+record_step_result "Step 9: Git 변경사항 확인" "SUCCESS"
 printf '%s\n' "$GIT_STATUS" | tee -a "$LOG_FILE"
 
 ensure_secret_files_untracked() {
   git rm --cached --ignore-unmatch youtube_client_secret.json youtube_token.json >/dev/null 2>&1 || true
 }
 
-log "Step 9: Git add"
+log "Step 10: Git add"
 ensure_secret_files_untracked
 if git add -A . && git reset -- youtube_client_secret.json youtube_token.json >/dev/null 2>&1 || git add -A .; then
-  record_step_result "Step 9: Git add" "SUCCESS"
+  record_step_result "Step 10: Git add" "SUCCESS"
 else
-  record_step_result "Step 9: Git add" "FAILED"
+  record_step_result "Step 10: Git add" "FAILED"
   FINAL_STATUS="FAILED"
   FINAL_NOTE="Git add 실패"
   log "Git add 실패"
@@ -261,14 +280,14 @@ else
   exit 1
 fi
 
-log "Step 10: Git commit"
+log "Step 11: Git commit"
 COMMIT_MESSAGE="Auto-update news - $(date '+%Y-%m-%d %H:%M')"
 if git commit -m "$COMMIT_MESSAGE"; then
-  record_step_result "Step 10: Git commit" "SUCCESS"
+  record_step_result "Step 11: Git commit" "SUCCESS"
   LATEST_COMMIT="$(git rev-parse --short HEAD 2>/dev/null || true)"
   log "Git commit 성공: $COMMIT_MESSAGE"
 else
-  record_step_result "Step 10: Git commit" "FAILED"
+  record_step_result "Step 11: Git commit" "FAILED"
   FINAL_STATUS="FAILED"
   FINAL_NOTE="Git commit 실패"
   log "Git commit 실패"
@@ -278,9 +297,9 @@ else
   exit 1
 fi
 
-log "Step 11: Git push"
+log "Step 12: Git push"
 if git push; then
-  record_step_result "Step 11: Git push" "SUCCESS"
+  record_step_result "Step 12: Git push" "SUCCESS"
   if [ "$OPTIONAL_FAILURES" -eq 1 ]; then
     FINAL_STATUS="PARTIAL_SUCCESS"
     FINAL_NOTE="선택 단계 일부 실패"
@@ -290,7 +309,7 @@ if git push; then
   fi
   log "Git push 성공"
 else
-  record_step_result "Step 11: Git push" "FAILED"
+  record_step_result "Step 12: Git push" "FAILED"
   FINAL_STATUS="FAILED"
   FINAL_NOTE="Git push 실패"
   log "Git push 실패"

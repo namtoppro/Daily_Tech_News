@@ -7,3 +7,6 @@ youtube_client_secret.json
 youtube_token.json
 *.mp3
 *.wav
+archive/.render/
+archive/*-thumbnail-*.png
+archive/*-thumbcopy-*.txt
