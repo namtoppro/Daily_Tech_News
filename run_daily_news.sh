@@ -191,6 +191,8 @@ run_optional_step "Step 4: 이미지 파이프라인" "$SCRIPT_DIR/run_image_pip
 
 TODAY_STR="$(date '+%Y-%m-%d')"
 VIDEO_PATH="archive/${TODAY_STR}.mp4"
+YOUTUBE_METADATA_PATH="archive/${TODAY_STR}-youtube-metadata.json"
+METADATA_READY=0
 
 if ls archive/${TODAY_STR}-img-* >/dev/null 2>&1; then
   run_optional_step "Step 5: 비디오 파이프라인" "$SCRIPT_DIR/run_video_pipeline.sh"
@@ -200,13 +202,29 @@ else
   log "Step 5: 비디오 파이프라인 스킵 - 오늘자 이미지가 없어 비디오를 만들지 않음"
 fi
 
-run_optional_step "Step 6: 유튜브 메타데이터 생성" "$SCRIPT_DIR/run_youtube_metadata.sh"
-if [ -f "$VIDEO_PATH" ]; then
+log "Step 6: 유튜브 메타데이터 생성"
+if "$SCRIPT_DIR/run_youtube_metadata.sh" 2>&1 | tee -a "$LOG_FILE"; then
+  if [ -f "$YOUTUBE_METADATA_PATH" ] && [ "$YOUTUBE_METADATA_PATH" -nt "$LOG_FILE" -o "$YOUTUBE_METADATA_PATH" -nt "$VIDEO_PATH" ]; then
+    METADATA_READY=1
+    record_step_result "Step 6: 유튜브 메타데이터 생성" "SUCCESS"
+    log "Step 6: 유튜브 메타데이터 생성 성공"
+  else
+    record_step_result "Step 6: 유튜브 메타데이터 생성" "FAILED"
+    OPTIONAL_FAILURES=1
+    log "Step 6: 유튜브 메타데이터 생성 실패 - 오늘자 fresh metadata 확인 불가"
+  fi
+else
+  record_step_result "Step 6: 유튜브 메타데이터 생성" "FAILED"
+  OPTIONAL_FAILURES=1
+  log "Step 6: 유튜브 메타데이터 생성 실패 - 유튜브 업로드는 차단"
+fi
+
+if [ -f "$VIDEO_PATH" ] && [ "$METADATA_READY" -eq 1 ]; then
   run_optional_step "Step 7: 유튜브 업로드" "$SCRIPT_DIR/run_youtube_upload.sh"
 else
   record_step_result "Step 7: 유튜브 업로드" "SKIPPED"
   OPTIONAL_FAILURES=1
-  log "Step 7: 유튜브 업로드 스킵 - 업로드할 mp4가 없음"
+  log "Step 7: 유튜브 업로드 스킵 - mp4 또는 fresh metadata가 없음"
 fi
 
 log "Step 8: Git 변경사항 확인"

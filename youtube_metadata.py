@@ -189,6 +189,42 @@ def normalize_title(title: str) -> str:
     return title
 
 
+def validate_story_pack_if_present(context: dict) -> None:
+    if not context.get('story_pack_text'):
+        return
+    data = extract_json_block(context['story_pack_text'])
+    main_issue = data.get('main_issue', {}) or {}
+    hook_candidates = data.get('hook_candidates', []) or []
+    title_candidates = data.get('title_candidates', []) or []
+    if not str(main_issue.get('title', '')).strip():
+        raise RuntimeError('story pack 검증 실패: main_issue.title 비어 있음')
+    if not str(main_issue.get('why_it_matters', '')).strip():
+        raise RuntimeError('story pack 검증 실패: main_issue.why_it_matters 비어 있음')
+    if not any(str(x).strip() for x in hook_candidates):
+        raise RuntimeError('story pack 검증 실패: hook_candidates 비어 있음')
+    if not any(str(x).strip() for x in title_candidates):
+        raise RuntimeError('story pack 검증 실패: title_candidates 비어 있음')
+
+
+BULLET_RE = re.compile(r'^\s*[-•]\s+', re.M)
+
+
+def validate_metadata_output(metadata: dict) -> None:
+    title = str(metadata.get('title', '')).strip()
+    description = str(metadata.get('description', '')).strip()
+    if not title:
+        raise RuntimeError('메타데이터 검증 실패: title 비어 있음')
+    if title.startswith('오늘의 AI·테크 브리핑') and '|' not in title:
+        raise RuntimeError('메타데이터 검증 실패: 브리핑형 제목만 남아 있음')
+    if '#로프리' not in description or '#청담랩' not in description:
+        raise RuntimeError('메타데이터 검증 실패: 브랜드 태그 누락')
+    if 'https://lowprice.koreall.site/' not in description:
+        raise RuntimeError('메타데이터 검증 실패: 브랜드 링크 누락')
+    bullet_count = len(BULLET_RE.findall(description))
+    if bullet_count < 3:
+        raise RuntimeError(f'메타데이터 검증 실패: 핵심 이슈 bullet 부족 ({bullet_count})')
+
+
 def generate_metadata(context: dict) -> dict:
     raw = ai_generate(build_prompt(context))
     data = extract_json_block(raw)
@@ -265,7 +301,9 @@ def save_outputs(metadata: dict) -> tuple[Path, Path, Path]:
 
 def main():
     context = load_context()
+    validate_story_pack_if_present(context)
     metadata = generate_metadata(context)
+    validate_metadata_output(metadata)
     title_path, desc_path, meta_path = save_outputs(metadata)
     print(f'YOUTUBE_TITLE={title_path}')
     print(f'YOUTUBE_DESCRIPTION={desc_path}')

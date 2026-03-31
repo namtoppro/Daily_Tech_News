@@ -113,14 +113,21 @@ def build_tags(metadata: dict) -> list[str]:
     return deduped[:15]
 
 
+def ensure_safe_privacy(metadata: dict) -> str:
+    privacy = str(metadata.get('privacyStatus', YOUTUBE_DEFAULT_PRIVACY)).strip().lower()
+    if privacy not in {'private', 'unlisted', 'public'}:
+        privacy = YOUTUBE_DEFAULT_PRIVACY
+    if os.getenv('YOUTUBE_ALLOW_AUTO_PUBLIC', '').strip().lower() not in {'1', 'true', 'yes'} and privacy == 'public':
+        raise RuntimeError('자동 업로드에서 public 공개는 차단되어 있습니다. unlisted/private를 사용하거나 YOUTUBE_ALLOW_AUTO_PUBLIC=true 를 명시하세요.')
+    return privacy
+
+
 def upload_video(metadata: dict) -> dict:
     creds = get_credentials()
     youtube = build('youtube', 'v3', credentials=creds)
     video_path = get_video_path(metadata)
 
-    privacy = str(metadata.get('privacyStatus', YOUTUBE_DEFAULT_PRIVACY)).strip().lower()
-    if privacy not in {'private', 'unlisted', 'public'}:
-        privacy = YOUTUBE_DEFAULT_PRIVACY
+    privacy = ensure_safe_privacy(metadata)
 
     title = str(metadata.get('title', '')).strip()
     if not title:
