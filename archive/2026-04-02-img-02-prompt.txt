@@ -1,0 +1,9 @@
+**Scene Description:** A colossal, futuristic AI data center seamlessly integrated with a massive industrial natural gas power plant. Ultra-modern glowing server racks intricately connected to giant, heavy industrial steel pipelines, towering exhaust structures, and massive turbines. Vivid blue natural gas flames subtly illuminating the base of the complex, symbolizing the massive fossil-fuel energy source powering the artificial intelligence. 
+
+**Atmosphere:** Imposing, hyper-realistic, cinematic, and slightly dystopian. The mood is serious and monumental, highlighting the overwhelming industrial scale and the heavy energy cost hidden behind advanced digital technology. 
+
+**Color Palette:** A striking, high-contrast mix. Cold, glowing neon cyans and deep blues representing AI data streams and natural gas combustion, heavily contrasting with dark metallic steel, brushed aluminum, matte black, and subtle warm orange reflections from the industrial exhaust and atmospheric steam.
+
+**Composition:** Ultra-wide panoramic establishing shot, deep depth of field. Symmetrical leading lines draw the viewer's eyes from the industrial pipes in the foreground toward the infinite rows of glowing servers in the background. The center and upper areas have a clean, balanced layout, making it a perfect, non-distracting backdrop for a news broadcast anchor. 
+
+**Negative Prompt (Forbidden Elements):** Text, letters, words, numbers, fonts, watermarks, logos, brand names, Meta logo, infinity symbol, explicit content, human figures, bright sunny skies, cartoon style, illustration.

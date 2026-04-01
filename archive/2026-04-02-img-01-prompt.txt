@@ -1,0 +1,5 @@
+**Positive Prompt:**
+A vast futuristic digital network landscape with thousands of glowing cyan and blue interconnected nodes representing an open-source data ecosystem. A massive, heavy, semi-transparent neon-red digital containment barrier is abruptly crashing down and expanding in the center, accidentally freezing, chaining, and shattering countless surrounding data blocks. The tumbling digital cubes are turning from bright glowing blue to dead dark gray. Cinematic, tense, high-tech, and dramatic atmosphere conveying a sense of system error and unintended collateral damage. Deep cyber blue and vibrant cyan clashing violently with harsh, imposing alert-red and deep dark shadows. Wide-angle shot, dramatic low-angle perspective, dynamic depth of field with blurred floating data particles in the foreground, volumetric lighting, 8k resolution, highly detailed photorealistic digital art, suitable for a professional tech news background.
+
+**Negative Prompt:**
+text, fonts, letters, words, typography, numbers, logos, watermarks, brand names, signatures, UI elements, human figures, faces, explicit content, suggestive imagery, messy lines, chaotic noise.
