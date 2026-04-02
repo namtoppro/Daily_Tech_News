@@ -62,7 +62,7 @@ chmod +x run_daily_news.sh
 주의:
 - story pack/오디오/이미지/비디오/메타데이터/유튜브 업로드 단계는 실패해도 텍스트 발행 자체는 유지하도록 설계되어 있습니다.
 - story pack 실패 시 유튜브 단계는 보수적 generic fallback으로 진행합니다.
-- 현재 유튜브 기본 업로드 공개상태는 `unlisted`입니다.
+- 현재 유튜브 기본 업로드 공개상태는 `public`입니다.
 
 ## 오디오 대본 + 음성 생성
 ```bash
@@ -91,8 +91,8 @@ source .venv/bin/activate
 사전 준비:
 - Google Cloud Console에서 YouTube Data API v3 사용 설정
 - OAuth client secret 파일 준비 (`youtube_client_secret.json`)
-- 기본 공개 상태는 현재 `unlisted`
-- 자동 `public` 업로드는 기본 차단이며, 정말 필요할 때만 `YOUTUBE_ALLOW_AUTO_PUBLIC=true`를 명시합니다.
+- 기본 공개 상태는 현재 `public`
+- 자동 `public` 업로드가 현재 활성화되어 있습니다 (`YOUTUBE_ALLOW_AUTO_PUBLIC=true`).
 
 실행:
 ```bash
