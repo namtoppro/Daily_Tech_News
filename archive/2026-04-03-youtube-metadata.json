@@ -1,0 +1,41 @@
+{
+  "date": "2026-04-03",
+  "title": "OpenAI의 팟캐스트 인수와 종량제 도입, 지금 중요한 이유",
+  "description": "최고의 AI 기술을 다투던 OpenAI가 돌연 실리콘밸리의 기술 방송 채널을 인수하고, 기업용 요금제를 전면 개편했습니다.\n오늘 영상에서는 기술 경쟁을 넘어 미디어를 통한 여론 주도와 비용 장벽 파괴에 나선 OpenAI의 전략적 행보를 분석합니다.\n\n■ 오늘 핵심 이슈\n- OpenAI, 실리콘밸리 기술 팟캐스트 TBPN 전격 인수 및 독립 운영\n- 기업용 Codex에 종량제(Pay-as-you-go) 도입으로 초기 AI 도입 비용 해결\n- NVIDIA, 온디바이스 환경을 위한 Google Gemma 4 모델 가속 지원\n- MS와 Google, 신규 파운데이션 모델 및 아바타 커스텀 등 멀티모달 기능 강화\n\n본 영상은 수집된 원문 기사와 공식 발표를 기반으로 핵심 내용을 요약 및 분석했습니다. 기업들의 AI 도입 전략과 디바이스로 확장되는 로컬 AI의 흐름을 확인해 보세요.\n\nhttps://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #TechNews #인공지능",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#DailyTechNews",
+    "#인공지능",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "OpenAI",
+    "TBPN 인수",
+    "종량제 요금제",
+    "페이애즈유고",
+    "NVIDIA",
+    "로컬 AI",
+    "Gemma 4",
+    "멀티모달",
+    "마이크로소프트",
+    "기술뉴스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-03.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-03.md",
+    "archive/2026-04-03-audio-script.md",
+    "archive/2026-04-03-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "OpenAI의 미디어 인수와 요금제 변화라는 이례적인 행보를 메인으로 내세워 B2B 임팩트와 시청 이유를 강하게 부여함.",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

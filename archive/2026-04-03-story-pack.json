@@ -1,0 +1,73 @@
+{
+  "date": "2026-04-03",
+  "main_issue": {
+    "title": "OpenAI의 미디어 채널 인수 및 기업용 종량제 도입",
+    "angle": "AI 선도 기업이 단순 기술 개발을 넘어 자체 미디어를 통한 여론 주도와 비용 장벽 파괴로 시장 지배력을 굳히고 있다.",
+    "why_it_matters": "AI 기업이 자체 미디어 채널을 확보해 규제와 여론에 직접 대응하기 시작했으며, 종량제 도입으로 기업들의 AI 도입 초기 위험 비용을 획기적으로 낮춰 B2B 생태계의 판도를 바꿀 수 있기 때문입니다.",
+    "key_facts": [
+      "OpenAI가 실리콘밸리 기술 팟캐스트 TBPN을 인수하여 수석 정치 전략가 관리하에 독립적으로 운영할 예정입니다.",
+      "대중적·정치적 AI 담론을 주도하고 기술 커뮤니티와의 대화를 확장하려는 목적입니다.",
+      "동시에 기업용 Codex 모델에 사용한 만큼만 지불하는 종량제(Pay-as-you-go) 요금제를 도입해 고정 비용 부담을 없앴습니다."
+    ],
+    "key_numbers": [
+      "2026년 4월 2일 미디어 인수 및 요금제 발표",
+      "ChatGPT Business 및 Enterprise 2개 버전 대상 종량제 적용"
+    ],
+    "source_articles": [
+      "TechCrunch AI: OpenAI acquires TBPN, the buzzy founder-led business talk show",
+      "OpenAI: OpenAI acquires TBPN",
+      "OpenAI: Codex now offers more flexible pricing for teams"
+    ]
+  },
+  "supporting_issues": [
+    {
+      "title": "NVIDIA의 로컬 에이전트 AI 가속 지원",
+      "role": "supporting",
+      "key_fact": "클라우드 의존을 줄이고 개별 디바이스에서 실시간으로 작동하는 온디바이스 환경을 위해 Google의 소형 모델 Gemma 4 가속을 발표했습니다.",
+      "source_articles": [
+        "NVIDIA Blog: From RTX to Spark: NVIDIA Accelerates Gemma 4 for Local Agentic AI"
+      ]
+    },
+    {
+      "title": "Microsoft와 Google의 멀티모달 기능 강화",
+      "role": "supporting",
+      "key_fact": "MS는 음성·오디오·이미지에 특화된 신규 모델 3종을 공개했고, Google은 Vids 앱에 텍스트 기반 아바타 커스텀 기능을 추가하며 애플리케이션 내 멀티모달 통합을 가속했습니다.",
+      "source_articles": [
+        "TechCrunch AI: Microsoft takes on AI rivals with three new foundational models",
+        "TechCrunch AI: Google now lets you direct avatars through prompts in its Vids app"
+      ]
+    }
+  ],
+  "hook_candidates": [
+    "최고의 AI를 만드는 OpenAI가 돌연 실리콘밸리의 방송 채널을 인수했습니다. 기술 회사가 미디어를 산 이유, 과연 무엇일까요?",
+    "기업들의 AI 도입을 막고 있던 가장 큰 장벽인 고정 비용 문제가 마침내 해결될 조짐을 보이고 있습니다.",
+    "오늘 AI 업계의 핵심은 새로운 AI 모델이 아닙니다. 여론을 움직일 미디어 확보와 가격 정책의 거대한 변화입니다."
+  ],
+  "title_candidates": [
+    "OpenAI의 미디어 인수, 단순 기술 회사를 넘어선 이유",
+    "OpenAI의 이번 변화, 기업 사용자에게 달라지는 점",
+    "오늘 AI 업계 핵심: 모델보다 중요해진 여론과 비용",
+    "OpenAI의 팟캐스트 인수와 종량제, 지금 당장 중요한 이유",
+    "오늘의 AI·테크 브리핑 | OpenAI 미디어 인수, 로컬 AI의 확장"
+  ],
+  "thumbnail_copy_candidates": [
+    "미디어를 삼킨 OpenAI",
+    "바뀌는 AI 요금제",
+    "AI 기업의 이례적 행보"
+  ],
+  "narrative": {
+    "hook": "최고의 기술력을 다투던 OpenAI가 돌연 실리콘밸리의 기술 팟캐스트를 전격 인수했습니다. 여기에 기업들을 위한 요금제까지 완전히 뜯어고쳤는데요.",
+    "setup": "지금까지 AI 업계가 더 똑똑한 모델을 만드는 '성능 경쟁'에 몰두했다면, 이제는 대중의 인식과 기업의 도입 비용을 직접 통제하는 '인프라와 여론전'으로 판이 바뀌고 있습니다.",
+    "fact_1": "OpenAI가 인수한 팟캐스트 TBPN은 수석 정치 전략가의 지휘 아래 운영됩니다. AI를 둘러싼 규제와 대중의 여론 형성에 직접 스피커로 나서겠다는 강력한 의지입니다.",
+    "fact_2": "이와 동시에 기업용 Codex 모델에는 '종량제'를 도입했습니다. 고정 구독료가 부담스러워 AI 도입을 망설이던 기업들을 단번에 흡수하겠다는 전략적 승부수입니다.",
+    "fact_3": "이처럼 선두 기업이 시장 지배력을 다지는 사이, NVIDIA와 MS, 구글은 클라우드를 넘어 기기 자체에서 구동되는 로컬 AI와 멀티모달 기능으로 우리 일상 속 침투를 가속화하고 있습니다.",
+    "takeaway": "이제 AI 경쟁은 모델의 크기를 넘어, 사회적 신뢰를 확보하고 기업의 진입 장벽을 낮추는 방향으로 진화했습니다. 기업들은 달라진 비용 구조와 로컬 AI의 보안 이점을 활용해 자사의 도입 전략을 재검토할 시점입니다."
+  },
+  "packaging_notes": "영상 전체를 여러 뉴스의 단순 나열이 아닌, OpenAI의 '미디어 인수'라는 다소 이례적이고 흥미로운 행보를 전면에 세워 클릭을 유도합니다. 이후 실질적인 비즈니스 임팩트가 있는 '종량제 도입' 이슈를 묶어 실용성을 더했습니다. 보조 이슈인 NVIDIA와 멀티모달 소식은 메인 이슈를 방해하지 않도록, AI 기술이 일상적 디바이스(로컬/멀티모달)로 확장되는 큰 흐름으로 간결하게 압축해 뒷받침합니다.",
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-03.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "generatorModel": "gemini-3.1-pro-preview"
+}
