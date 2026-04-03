@@ -1,0 +1,9 @@
+**Scene Description:** A massive futuristic data pipeline architecture transforming from heavy, rigid metallic server blocks into ultra-fast, glowing fiber-optic streams of light. The glowing digital particles accelerate rapidly and merge into a vast, high-tech crystalline structure resembling an illuminated digital lake or glowing ice, symbolizing a seamless and high-speed data transition. 
+
+**Atmosphere:** Cinematic, professional, highly technological, dynamic, and expansive, conveying a powerful sense of breakthrough speed, modernization, and stable infrastructure.
+
+**Color Palette:** Deep cyber-blue, cool icy cyan, and energetic neon blue streaks with bright white light accents, set against a dark, moody, and sleek background to make the glowing data elements pop.
+
+**Composition:** Wide-angle shot, dynamic diagonal perspective with strong leading lines pulling the viewer's eye from the foreground into a radiant digital horizon. Ample clean negative space around the top and sides for news graphics and anchor placement. High-end 3D render, volumetric lighting, subtle motion blur on the flowing data, depth of field, 8k resolution.
+
+**Negative Prompt:** Text, words, letters, numbers, logos, watermarks, brand names, signatures, human faces, characters, messy cables, cluttered layout, cartoon, 2D illustration, low resolution, flat lighting, suggestive content.

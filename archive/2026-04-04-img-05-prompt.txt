@@ -1,0 +1,9 @@
+**Scene:** A futuristic, monumental data center facility integrated into a subtle natural landscape, powered by massive glowing energy conduits. In the foreground, translucent, glowing ice-like data blocks are accelerating at warp speed through a secure, holographic hexagonal shield network. Subtle abstract digital DNA strands float within the bright data streams, representing the fusion of artificial intelligence, massive energy infrastructure, and biotechnology. 
+
+**Atmosphere:** Cinematic, epic, and highly technological yet organized. It conveys a sense of immense scale, rapid acceleration, and strict secure governance, functioning perfectly as a sophisticated, non-distracting background for a news broadcast.
+
+**Color:** Deep cyber-blue and crisp iceberg cyan, sharply contrasting with intense, warm amber and glowing orange energy lines. Dark, moody architectural shadows to make the neon lights pop.
+
+**Composition:** Extreme wide-angle landscape shot, 16:9 aspect ratio, rule of thirds. Foreground focus on the fast-moving ice-data and glowing security shields, naturally leading the eye toward the massive, illuminated power facility in the deep background. Dramatic volumetric lighting with a shallow depth of field on the closest floating particles.
+
+**Negative Prompt:** Text, letters, typography, words, fonts, watermarks, logos, brand names, signatures, humans, faces, crowds, NSFW, explicit content, gore, violence, chaotic UI, messy clutter.

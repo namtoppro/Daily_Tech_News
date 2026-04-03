@@ -1,0 +1,41 @@
+{
+  "date": "2026-04-04",
+  "title": "오늘 AI 업계 핵심: 모델 성능보다 더 다급해진 전력 확보 경쟁",
+  "description": "오늘의 Daily Tech News에서는 AI 인프라 확장이 직면한 전력 딜레마와 현실적인 장벽을 짚어봅니다.\n빅테크 기업들이 AI 데이터센터 전력 확보를 위해 친환경 기조를 미루고 대규모 화석 연료 발전소 건설에 나서며 새로운 국면을 맞이하고 있습니다.\n\n📌 오늘 다룬 핵심 이슈\n• 빅테크 3사(메타·MS·구글)의 대규모 천연가스 발전소 건설 추진과 전력 확보 딜레마\n• 데이터센터를 아마존 물류센터보다 기피 시설로 여기는 지역 사회의 반발 심화\n• 앤스로픽, 4억 달러 규모 바이오 AI 스타트업 인수 및 규제 입법 대응용 자체 PAC 설립\n• AWS, 다중 계정 중앙 제어가 가능한 Bedrock Guardrails 정식 출시\n• 라인플러스, Hive에서 Iceberg 전환을 통한 데이터 반영 속도 12배 향상\n\n이 영상은 글로벌 IT 매체의 원문 기사와 기업 공식 발표 기반 요약을 통해 보수적으로 해석 및 재구성되었습니다.\n\n🌐 더 많은 테크 뉴스와 인사이트는 아래 링크에서 확인하세요.\nhttps://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #데이터센터 #빅테크 #테크뉴스",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#데이터센터",
+    "#빅테크",
+    "#테크뉴스",
+    "#기술뉴스"
+  ],
+  "keywords": [
+    "AI",
+    "인공지능",
+    "데이터센터",
+    "전력 딜레마",
+    "빅테크",
+    "천연가스 발전소",
+    "앤스로픽",
+    "AWS Bedrock",
+    "테크브리핑",
+    "인프라"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-04.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-04.md",
+    "archive/2026-04-04-audio-script.md",
+    "archive/2026-04-04-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "데이터센터 전력 한계와 부지 확보라는 메인 이슈를 전면에 내세운 이슈형 제목 적용, 브랜드 필수 태그 및 원문 기반 요약 문구 포함 완수",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

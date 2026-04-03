@@ -1,0 +1,9 @@
+**Scene Description:** 거대한 중앙의 빛나는 디지털 코어가 정교하고 투명한 기하학적 방어막을 생성하여, 수많은 작은 AI 데이터 노드들이 연결된 방대한 기업형 네트워크를 안전하게 통제하고 보호하는 미래지향적이고 추상적인 장면. 데이터 흐름은 무질서하지 않고 질서정연하게 보안 장벽을 통과하며 통제되는 모습.
+
+**Atmosphere:** 최첨단 기술력, 확고한 신뢰감, 전문성, 안전함이 느껴지는 시네마틱하고 웅장한 하이테크 기업 분위기.
+
+**Color Palette:** 깊은 사이버 블루와 빛나는 시안(Cyan) 색상을 주조색으로 사용하고, 단단한 메탈릭 티타늄 질감 위에 권위와 가치를 상징하는 우아한 골드(Gold) 빛을 포인트로 가미.
+
+**Composition:** 와이드 앵글 샷, 중앙의 거버넌스 코어에 시선을 집중시키는 안정적인 대칭 구도. 배경의 무한한 네트워크 그리드는 피사계 심도(Depth of Field)를 얕게 주어 부드럽게 블러 처리함으로써, 뉴스 브리핑 앵커나 그래픽이 돋보일 수 있는 시각적 여백과 공간감을 확보.
+
+**Negative Prompt (금지 요소):** text, words, letters, typography, logos, watermarks, brand names, messy cables, chaos, disorganized lines, human faces, provocative elements, low resolution.
