@@ -1,0 +1,19 @@
+오늘 AI 업계에서 가장 주목해야 할 구독 생태계의 과금 모델 변화를 전해드립니다.
+앤스로픽(Anthropic)이 클로드 코드(Claude Code)에 서드파티 연동 시 추가 과금하는 정책을 도입했습니다.
+
+■ 오늘 브리핑의 핵심 포인트
+- 앤스로픽, 클로드 코드에 외부 도구(OpenClaw 등) 연동 시 추가 비용 부과 발표
+- 무제한 구독 모델에서 서드파티 사용량 비례 종량제가 결합된 '이중 과금'으로 전환
+- 인프라 및 API 호출 비용을 실사용자에게 전가하기 시작한 AI 수익 모델의 변화
+- 엔비디아, 가상 공간을 넘어 농업·제조업 등 실제 환경에 투입되는 물리적 AI 성과 공유
+
+본 영상은 수집된 원문 기사와 공식 발표 기반 요약을 바탕으로 제작되었습니다.
+
+[출처 목록]
+- TechCrunch AI: Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage
+- NVIDIA Blog: National Robotics Week — Latest Physical AI Research
+
+AI 도입 및 운영 비용을 최적화하고 싶다면?
+https://lowprice.koreall.site/
+
+#로프리 #청담랩 #AI #테크브리핑 #기술뉴스
