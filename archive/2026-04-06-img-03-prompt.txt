@@ -1,0 +1,5 @@
+**Scene:** A sleek, advanced physical AI humanoid robot lifting heavy cargo in an ultra-modern, clean industrial logistics center. In the soft-focus background, an older human worker is calmly overseeing the process, symbolizing harmonious collaboration and filling the workforce gap. 
+**Atmosphere:** Cinematic, optimistic, highly professional, realistic high-tech documentary style, portraying a practical, efficient, and hopeful future.
+**Color Palette:** Cool industrial steel blues and metallic silvers beautifully contrasted with warm golden sunrise lighting streaming through large facility windows.
+**Composition:** Wide-angle landscape shot, rule of thirds, the robot is positioned on the right side to leave clear negative space on the left for news anchors and graphics, shallow depth of field, 8k resolution, photorealistic, volumetric lighting, shot on 35mm lens.
+**Negative Prompt:** text, font, letters, typography, watermarks, logos, brand names, signatures, dystopian, gloomy, violent, NSFW, anime, cartoon, excessive cables, messy environment.

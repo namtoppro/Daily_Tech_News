@@ -1,0 +1,14 @@
+**[Scene Description]**
+A massive, futuristic data center facility orbiting Earth in outer space. High-tech modular satellite structures containing endless rows of glowing server racks, enclosed in advanced transparent vacuum pods. The curved, majestic horizon of Earth is visible in the background, softly glowing with atmospheric clouds and city lights. Gigantic, sleek solar panel arrays extending from the facility, capturing the intense sunlight of space to power the servers. 
+
+**[Atmosphere]**
+Cinematic, awe-inspiring, and cutting-edge. A silent yet powerful mood that conveys the ultimate next-generation technological frontier and the vastness of space, perfectly suited for a professional tech news briefing background.
+
+**[Color Palette]**
+Deep cosmic blacks and starry dark midnight blues in the background. Striking contrast with the electric cyan, glowing neon blue, and pristine white lights emitting from the data servers. Warm, radiant golden sunlight reflecting off the sleek titanium and metallic surfaces of the orbital infrastructure.
+
+**[Composition]**
+Wide-angle, epic establishing shot. Asymmetrical composition with the orbital data center occupying the right and center-midground, leaving clean, deep space (negative space) on the left side to accommodate news anchors or lower-third graphics. High depth of field emphasizing the sheer colossal scale of the mega-infrastructure floating above the planet. High-end 3D render, photorealistic, 8k resolution, volumetric lighting.
+
+**[Negative Prompt]**
+text, letters, words, typography, fonts, watermarks, signatures, logos, brand names, SpaceX, Elon Musk, Starlink, human figures, astronauts, explosions, weapons, chaotic clutter, sci-fi battles, terrestrial landscapes, low quality, blurred.
