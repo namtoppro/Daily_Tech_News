@@ -1,0 +1,11 @@
+A high-quality cinematic still image for a tech news background. 
+
+Scene: A cutting-edge smart factory and logistics hub where the virtual software world physically merges with the real economy. Glowing, translucent holographic data streams and digital nodes seamlessly connect into physical, sleek robotic arms and automated conveyor belts handling modern cargo. In the background, clean modern server racks represent IT infrastructure. 
+
+Atmosphere: Visionary, professional, sophisticated, and high-tech. 
+
+Color Palette: Deep navy blue and dark industrial grays, contrasted with vibrant glowing cyan representing AI data and warm amber highlights representing physical industry. 
+
+Composition: Wide-angle landscape, rule of thirds, shallow depth of field with the central robotic-holographic interaction in sharp focus, dramatic volumetric lighting, leaving smooth negative space on the left side for news graphics overlay. 
+
+Negative Prompt: text, letters, numbers, fonts, typography, logos, watermarks, brand names, corporate symbols, signatures, NSFW, violence, messy UI, chaotic, cartoon, illustration.

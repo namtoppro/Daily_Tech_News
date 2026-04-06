@@ -1,0 +1,38 @@
+{
+  "date": "2026-04-07",
+  "title": "OpenAI가 제안한 로봇세와 주 4일제, 지금 중요한 이유는 이것",
+  "description": "오늘 영상에서는 기술을 넘어 거시 경제의 룰을 직접 설계하려는 OpenAI의 파격적인 제안을 다룹니다.\n단순한 AI 모델 업데이트가 아닌, 로봇세와 주 4일제 도입 등 다가올 AI 시대의 경제 비전에 대해 짚어봅니다.\n\n■ 오늘 다룬 핵심 이슈\n• OpenAI의 파격 제안: AI 수익에 대한 로봇세 부과 및 주 4일제 도입 비전\n• 1억 달러 규모 자본 이동: OpenAI 출신들이 조성한 벤처 펀드 'Zero Shot'\n• 플랫폼 장악: 우버·스포티파이 등을 직접 제어하는 ChatGPT 서드파티 연동 공식화\n• 일상 침투 가속: 인터넷 없이 작동하는 구글의 온디바이스 오프라인 AI 앱 조용히 출시\n• 인프라 안보화: 미사일 타격 위협을 받는 AI 데이터센터와 지정학적 리스크\n\n본 영상은 수집된 원문 기사와 공식 발표 기반 요약으로 작성되었습니다.\n\nhttps://lowprice.koreall.site/\n#로프리 #청담랩 #AI #인공지능 #테크브리핑",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#인공지능",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "OpenAI",
+    "로봇세",
+    "주 4일제",
+    "ChatGPT",
+    "온디바이스 AI",
+    "데이터센터",
+    "Zero Shot",
+    "인공지능",
+    "테크뉴스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-07.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-07.md",
+    "archive/2026-04-07-audio-script.md",
+    "archive/2026-04-07-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "OpenAI의 거시경제 제안(로봇세/주 4일제)을 메인 이슈로 설정하여 이슈형 패키징 완료",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

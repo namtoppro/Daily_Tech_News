@@ -1,0 +1,9 @@
+**Scene Description:** A sleek, futuristic smartphone resting on a dark glossy surface, emitting a self-contained, glowing holographic AI core from its screen to represent secure, offline on-device intelligence. From this central glowing core, bright interconnected neural data pathways branch outward into the air, linking to multiple floating, abstract, minimalist holographic geometric shapes and generic lifestyle icons (such as a stylized abstract vehicle, coffee cup, music note, and digital canvas) representing seamless third-party service integration. The network illustrates a centralized AI acting as a universal offline gateway. 
+
+**Atmosphere:** High-tech, cinematic, professional, sleek, sophisticated, cutting-edge innovation, perfectly suited for a premium tech news broadcast background. 
+
+**Color Palette:** Dark graphite and deep obsidian background. Luminescent cyan and electric blue for the central on-device AI core, contrasted with vibrant neon accents of magenta, amber, and emerald green for the branching external service nodes. 
+
+**Composition:** Cinematic wide shot, asymmetrical composition with the central glowing device positioned smoothly on the lower right third. Shallow depth of field with elegant, dark geometric bokeh in the background to leave clean negative space on the left side for a news anchor or digital overlays. Highly detailed, 8k resolution, volumetric lighting, photorealistic rendering. 
+
+**Negative Prompt:** Text, letters, typography, words, fonts, watermarks, signatures, real-world corporate logos, brand names, messy, cluttered, overexposed, human figures, faces, explicit content, NSFW.
