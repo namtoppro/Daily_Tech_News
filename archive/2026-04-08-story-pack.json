@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-08",
+  "main_issue": {
+    "title": "클라우드 종속의 종말: 우버와 앤스로픽의 AI 인프라 다변화",
+    "angle": "단일 빅테크 클라우드에 의존하던 기업들이, 비용과 성능 최적화를 위해 특정 AI 칩과 다중 벤더를 직접 선택하는 '디커플링(Decoupling)' 현상",
+    "why_it_matters": "단일 벤더 종속(Vendor Lock-in) 시대가 저물고 있습니다. 범용 클라우드 대신 자사 서비스에 맞는 칩과 데이터센터를 직접 조합하는 역량이 향후 기업의 AI 서비스 마진과 성능을 결정짓는 핵심 경쟁력이 될 것입니다.",
+    "key_facts": [
+      "우버가 오라클과 구글 대신 아마존(AWS)의 자체 AI 칩을 승차 공유 시스템에 도입하는 계약을 체결했습니다.",
+      "연간 환산 매출 300억 달러를 돌파한 앤스로픽이 단일 인프라에 의존하지 않고 구글, 브로드컴과의 컴퓨팅 자원 계약을 동시 확대했습니다.",
+      "데이터센터 제공업체 파머스(Firmus)가 기업가치 55억 달러를 달성하고, 인텔이 테라팹(Terafab) 프로젝트에 합류하는 등 인프라 하드웨어에 막대한 자본이 몰리고 있습니다."
+    ],
+    "key_numbers": [
+      "300억 달러 (앤스로픽 연간 환산 매출 Run-rate)",
+      "55억 달러 (데이터센터 기업 파머스 최근 기업가치)"
+    ],
+    "source_articles": [
+      "Uber is the latest to be won over by Amazon’s AI chips (TechCrunch AI)",
+      "Anthropic ups compute deal with Google and Broadcom amid skyrocketing demand (TechCrunch AI)"
+    ]
+  },
+  "supporting_issues": [
+    {
+      "title": "에이전트 중심의 아키텍처 재설계",
+      "role": "supporting",
+      "key_fact": "MIT 테크놀로지 리뷰는 AI의 실시간 자율 워크플로우를 위해 기존 레거시 시스템에 AI를 덧붙이는 대신 '에이전트 중심의 프로세스 재설계'가 필수적이라고 분석했습니다.",
+      "source_articles": [
+        "Enabling agent-first process redesign (MIT Technology Review AI)"
+      ]
+    },
+    {
+      "title": "AWS S3 Files 출시와 성능 향상",
+      "role": "supporting",
+      "key_fact": "AWS가 1ms 수준의 지연 시간으로 S3 버킷을 고성능 파일 시스템처럼 사용할 수 있는 'S3 Files'를 출시해 인프라 유연성을 높였습니다.",
+      "source_articles": [
+        "Launching S3 Files, making S3 buckets accessible as file systems (AWS News)"
+      ]
+    },
+    {
+      "title": "사모 자본의 AI 직접 투자 가속",
+      "role": "supporting",
+      "key_fact": "패밀리 오피스 등 프라이빗 자산 그룹이 기존 벤처캐피털(VC)을 우회해 초기 AI 스타트업에 직접 투자하며 시장 유동성을 키우고 있습니다.",
+      "source_articles": [
+        "The AI gold rush is pulling private wealth into riskier, earlier bets (TechCrunch AI)"
+      ]
+    }
+  ],
+  "hook_candidates": [
+    "우버가 오라클과 구글 대신 아마존의 AI 칩을 선택했습니다. 빅테크들의 인프라 종속이 깨지고 있습니다.",
+    "연 매출 300억 달러를 돌파한 앤스로픽이 컴퓨팅 파트너를 전면 다변화하고 있습니다. 지금 데이터센터 시장에 무슨 일이 벌어지고 있을까요?",
+    "더 이상 특정 기업의 칩 하나만 바라보지 않습니다. 칩 단위까지 내려간 기업들의 AI 비용 최적화 경쟁이 본격적으로 시작됐습니다."
+  ],
+  "title_candidates": [
+    "우버의 아마존 AI 칩 채택, 지금 인프라 시장에 중요한 이유",
+    "앤스로픽과 우버의 선택, 클라우드 종속 시대가 끝나는 신호",
+    "오늘 AI 업계 핵심: 특정 인프라 의존도를 낮추는 기업들의 생존 전략",
+    "빅테크 클라우드 환승 시작, 칩 단위로 쪼개지는 AI 인프라",
+    "오늘의 AI·테크 브리핑 | 우버 AI 칩, 앤스로픽 300억 달러, S3 Files"
+  ],
+  "thumbnail_copy_candidates": [
+    "무너지는 인프라 독점",
+    "클라우드 종속 끝났다",
+    "우버가 아마존 칩을 택한 이유"
+  ],
+  "narrative": {
+    "hook": "우버가 구글과 오라클 대신 아마존의 자체 AI 칩을 선택했습니다.",
+    "setup": "AI 모델 운영 비용이 기하급수적으로 늘어나면서, 기업들이 단일 클라우드에 종속되는 대신 서비스 단위에 맞춰 인프라를 직접 취사선택하기 시작했습니다. 이른바 인프라 디커플링의 시작입니다.",
+    "fact_1": "가장 두드러진 변화는 벤더 다변화입니다. 연 매출 300억 달러 규모로 급성장한 앤스로픽은 단일 기업에 묶이지 않고 구글, 브로드컴과의 컴퓨팅 파트너십을 동시에 확대하고 있습니다.",
+    "fact_2": "우버 역시 비용과 성능 최적화를 위해 기존 파트너 대신 아마존의 AI 칩을 자사 승차 공유 기능에 전격 도입하며 칩 단위의 벤더 선택을 보여주었습니다.",
+    "fact_3": "여기에 파머스 같은 데이터센터 전문 기업의 기업가치가 55억 달러까지 치솟고, 사모 펀드의 직접 투자가 인프라 시장으로 쏟아지며 물리적 자원 확보 경쟁도 최고조에 달했습니다.",
+    "takeaway": "범용 클라우드의 시대에서 맞춤형 AI 인프라의 시대로 넘어가고 있습니다. 기업 입장에서는 벤더 종속을 탈피하고 서비스 비용에 최적화된 하드웨어 전략을 다시 짜야 할 시점입니다."
+  },
+  "packaging_notes": "썸네일과 초반 시각 자료는 우버, 아마존, 앤스로픽, 구글의 로고를 대비시켜 '빅테크 간의 얽히고설킨 인프라 환승 현상'을 직관적으로 보여주어야 합니다. 주식 종목 추천이나 특정 기업(인텔, 파머스)의 투자 유망성을 암시하는 뉘앙스는 철저히 배제하고, '비용 최적화를 위한 기업들의 B2B 전략 변화'에 초점을 맞춰 패키징해주세요.",
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-08.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "generatorModel": "gemini-3.1-pro-preview"
+}

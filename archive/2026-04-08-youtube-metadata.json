@@ -1,0 +1,40 @@
+{
+  "date": "2026-04-08",
+  "title": "앤스로픽과 우버의 선택, 클라우드 종속 시대가 끝나는 신호",
+  "description": "오늘 다룰 테크 뉴스의 핵심은 빅테크 인프라 시장의 환승 현상과 기업들의 비용 최적화 경쟁입니다.\n단일 클라우드 종속(Vendor Lock-in) 시대가 저물고, 서비스 단가에 맞춰 AI 칩을 직접 선택하는 '디커플링'이 시작되었습니다.\n\n◼︎ 오늘의 핵심 이슈\n• 우버, 오라클·구글 대신 아마존(AWS) 자체 AI 칩 전격 도입\n• 연 매출 300억 달러 돌파한 앤스로픽, 구글·브로드컴으로 컴퓨팅 자원 다변화\n• AWS, 1ms 지연 시간의 고성능 스토리지 'S3 Files' 출시\n• MIT 테크 리뷰, 기존 레거시 시스템 대신 '에이전트 중심 설계' 강조\n• 사모 자본, 벤처캐피털 우회해 초기 AI 스타트업 직접 투자 가속\n\n* 본 영상은 수집된 원문 기사 및 공식 발표를 기반으로 요약한 기술 트렌드 브리핑입니다.\n\nhttps://lowprice.koreall.site/\n#로프리 #청담랩",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#클라우드",
+    "#TechNews",
+    "#인공지능",
+    "#기술뉴스"
+  ],
+  "keywords": [
+    "우버 AI 칩",
+    "아마존 AWS",
+    "앤스로픽",
+    "클라우드 종속",
+    "인프라 디커플링",
+    "AI 하드웨어",
+    "S3 Files",
+    "에이전트 설계",
+    "AI 투자"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-08.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-08.md",
+    "archive/2026-04-08-audio-script.md",
+    "archive/2026-04-08-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "우버와 앤스로픽의 인프라 다변화를 메인 이슈로 잡아, 클라우드 벤더 종속 탈피 현상을 강조한 패키징",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

@@ -1,0 +1,14 @@
+**[Scene Description]**
+A cinematic, wide-angle shot of a colossal, futuristic data center interior that seamlessly blends into a glowing, sprawling silicon chip landscape, symbolizing the massive scale of AI infrastructure expansion. Infinite rows of towering, high-tech server monoliths are connected by intricate, pulsing fiber-optic energy streams that bridge different sectors, representing complex, decentralized computing networks and massive hardware investments. 
+
+**[Atmosphere]**
+Monumental, highly professional, cutting-edge, and silently intense, conveying the heavy gravity of a global technological race and massive capital investment. 
+
+**[Color Palette]**
+A striking contrast of deep cyber-blue and cool cyan (representing infinite data and cooling systems) intersecting with intense, glowing amber and vibrant gold (representing raw processing power, energy, and high-value physical assets). 
+
+**[Composition]**
+Symmetrical, ultra-wide panoramic perspective looking straight down a massive digital canyon or corridor. Volumetric lighting and a subtle depth of field with slightly blurred edges, creating a perfect, unobtrusive central focus that leaves ample negative space for news anchors or graphical overlays. 8k resolution, photorealistic, Unreal Engine 5 render style.
+
+**[Negative Prompt / Forbidden Elements]**
+No text, no letters, no numbers, no words, no logos, no watermarks, no brand names, no corporate symbols, no human figures, no faces, no flesh, no violence, no sensationalism, no messy wires, no chaotic elements.
