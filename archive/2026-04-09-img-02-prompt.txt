@@ -1,0 +1,9 @@
+**Scene Description:** A cinematic, abstract representation of a highly advanced digital ecosystem. A massive, stable dark metallic central core, symbolizing cloud infrastructure, extends multiple equal-sized, glowing fiber-optic pathways to various complex, floating geometric neural nodes, representing a balanced multi-investment strategy. Seamlessly embedded within these glowing data streams are small, dynamic holographic screens displaying abstract digital media, symbolizing native content services integrated directly into an AI operating system network. 
+
+**Atmosphere:** Professional, cutting-edge, sleek, and futuristic. A high-end, sophisticated tech news broadcasting vibe that is organized and visually striking without being visually overwhelming. 
+
+**Color Palette:** Deep cyber blue and dark obsidian background, creating a premium feel. Contrasting glowing accents of vibrant cyan, electric violet, and warm amber to differentiate the multiple data pathways and AI nodes. 
+
+**Composition:** Wide-angle, cinematic 16:9 aspect ratio. Shallow depth of field with the central monolithic core slightly off-center, creating dynamic leading lines with the glowing data streams. Ample clean negative space incorporated to the side, perfect for a news presenter or overlay graphics. Volumetric lighting with soft glowing rays.
+
+**Negative Prompt:** Text, typography, words, letters, logos, watermarks, brand names, specific corporate symbols, human figures, provocative imagery, messy cables, chaotic layout, low resolution, 2D illustration, cartoonish, flat lighting.

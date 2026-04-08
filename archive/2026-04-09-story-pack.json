@@ -1,0 +1,82 @@
+{
+  "date": "2026-04-09",
+  "main_issue": {
+    "title": "전사적 AI 에이전트 상용화와 '디지털 노동자'의 등장",
+    "angle": "단순 대화형 챗봇에서 물리적·가상 환경을 직접 제어하고 작업을 수행하는 '자율형 AI 에이전트'로의 패러다임 전환",
+    "why_it_matters": "AI가 단순한 질의응답을 넘어 하드웨어 리소스를 점유하며 스스로 일하는 형태로 진화했습니다. 사용자는 앱 구동 없이 문자로만 지시를 내리고, 기업은 AI를 새로운 '디지털 노동력'으로 고용하여 원격 제어하는 등 인력 및 인프라 운영 방식이 근본적으로 변하고 있습니다.",
+    "key_facts": [
+      "OpenAI가 'Frontier', 'ChatGPT Enterprise' 등 전사적으로 AI 에이전트를 도입하는 기업용 AI의 다음 단계를 발표했습니다.",
+      "일반 사용자가 복잡한 설정 없이 문자 메시지 하나로 자동화 작업을 수행할 수 있는 AI 에이전트 'Poke'가 출시되었습니다.",
+      "Astropad가 Mac Mini에서 구동되는 AI 에이전트를 스마트폰으로 지연 없이 원격 제어할 수 있는 'Workbench' 도구를 공개했습니다."
+    ],
+    "key_numbers": [
+      "수십억 달러 (AWS가 Anthropic과 OpenAI 양측에 집행한 전략적 투자 규모)",
+      "수백만 명 (Tubi 네이티브 앱이 노출될 ChatGPT의 사용자 기반)"
+    ],
+    "source_articles": [
+      "OpenAI: The next phase of enterprise AI",
+      "TechCrunch: AI agent Poke makes setting up automations as easy as sending a text",
+      "TechCrunch: Astropad’s Workbench reimagines remote desktop for AI agents, not IT support",
+      "TechCrunch: Atlassian launches visual AI tools and third-party agents in Confluence"
+    ]
+  },
+  "supporting_issues": [
+    {
+      "title": "ChatGPT, 단순 챗봇에서 새로운 '운영체제'로 진화",
+      "role": "supporting",
+      "key_fact": "스트리밍 서비스 Tubi가 수백만 명이 이용하는 ChatGPT 내부에 직접 구동되는 최초의 네이티브 앱을 출시하며, 파운데이션 모델이 새로운 플랫폼으로 작용하기 시작했습니다.",
+      "source_articles": [
+        "TechCrunch: Tubi is the first streamer to launch a native app within ChatGPT"
+      ]
+    },
+    {
+      "title": "클라우드 거인의 생존 방식, AWS의 복수 투자 방어",
+      "role": "supporting",
+      "key_fact": "AWS 경영진은 경쟁 관계인 Anthropic과 OpenAI 모두에 수십억 달러를 투자한 것에 대해, 인프라 제공자로서의 우위를 위한 '타당한 충돌(OK conflict)'이라고 입장을 밝혔습니다.",
+      "source_articles": [
+        "TechCrunch: AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict"
+      ]
+    },
+    {
+      "title": "AGI 도래 여부를 둘러싼 업계 리더들의 엇갈린 시각",
+      "role": "supporting",
+      "key_fact": "Databricks 창립자가 'AGI는 이미 도래했다'고 선언한 반면, MS AI 리더는 AI의 성장이 아직 기하급수적인 궤도에 있다고 평가하며 AI 능력을 측정하는 기준이 변하고 있음을 시사했습니다.",
+      "source_articles": [
+        "TechCrunch: Databricks co-founder wins prestigious ACM award, says ‘AGI is here already’",
+        "MIT Technology Review: Mustafa Suleyman: AI development won’t hit a wall anytime soon—here’s why"
+      ]
+    }
+  ],
+  "hook_candidates": [
+    "단순히 질문에 답하는 AI의 시대가 끝나고, 사람 대신 시스템을 직접 조작하는 '디지털 노동자'가 쏟아지기 시작했습니다.",
+    "이제 앱을 켜지 않아도 문자로 AI에게 지시하고, 심지어 AI 전용 컴퓨터를 폰으로 원격 제어하는 시대가 열렸습니다.",
+    "오늘 하루에 쏟아진 글로벌 AI 소식들의 공통점, 바로 '스스로 일하는 AI 에이전트'의 상용화입니다."
+  ],
+  "title_candidates": [
+    "OpenAI의 이번 발표, 챗봇을 넘어선 '진짜 AI'가 옵니다",
+    "내 폰과 컴퓨터를 직접 조작하는 AI, 오늘부터 시작된 변화",
+    "오늘 AI 업계 핵심: 사람 대신 일하는 '디지털 노동자'의 등장",
+    "AI 에이전트 상용화, 직장인과 개발자에게 달라지는 점",
+    "챗봇 시대의 종말, 스스로 움직이는 AI 에이전트가 쏟아집니다"
+  ],
+  "thumbnail_copy_candidates": [
+    "챗봇 시대 끝",
+    "진짜 AI가 옵니다",
+    "일하는 AI 등장"
+  ],
+  "narrative": {
+    "hook": "단순히 질문에 답하던 챗봇의 시대가 끝나고, 내 컴퓨터를 직접 움직이며 스스로 일하는 'AI 에이전트'가 본격적으로 쏟아지기 시작했습니다.",
+    "setup": "오늘 OpenAI의 새로운 기업용 AI 청사진부터, 문자만 보내면 스스로 움직이는 AI, 심지어 이들을 원격 관리하는 전용 도구까지 하루 만에 발표됐습니다.",
+    "fact_1": "OpenAI는 전사적으로 AI 에이전트를 도입하는 기업용 AI의 다음 단계를 선언했고, Atlassian은 협업 툴 Confluence에 여러 서드파티 에이전트들을 공식적으로 연동했습니다.",
+    "fact_2": "일반 사용자 역시 복잡한 설정 없이 문자 메시지만으로 자동화를 시키는 'Poke'가 등장했고, Mac Mini 기반으로 돌아가는 AI 에이전트를 스마트폰으로 원격 제어하는 'Workbench' 도구까지 출시됐습니다.",
+    "fact_3": "이와 동시에, ChatGPT 안에서 직접 영화를 볼 수 있는 Tubi의 네이티브 앱이 최초로 출시되며, AI 모델이 단순한 검색 도구를 넘어 일종의 거대한 운영체제로 진화하고 있습니다.",
+    "takeaway": "이제 AI는 지식 검색 도구를 넘어 하드웨어를 점유하고 스스로 행동하는 '디지털 노동력'으로 자리 잡고 있습니다. 우리의 업무 방식과 기술 인프라의 근본적인 재설계가 필요한 시점입니다. 이상 오늘의 기술 브리핑이었습니다."
+  },
+  "packaging_notes": "오늘 영상은 쏟아진 다수의 에이전트 및 투자 관련 뉴스를 나열하지 말고, 'AI 에이전트의 상용화와 디지털 노동자의 등장'이라는 하나의 큰 내러티브로 묶어서 전달해야 합니다. 시청자가 '사용자가 앱을 직접 조작하지 않고 AI가 대신 일하는 환경이 현실화되었다'는 점을 직관적으로 느끼게 하는 것이 핵심입니다. Tubi의 네이티브 앱 출시나 AWS의 복수 투자 전략은 이 거대한 AI 에이전트 플랫폼 생태계가 어떻게 재편되고 있는지 보강해 주는 재료로 활용하여 무게감을 더하세요.",
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-09.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "generatorModel": "gemini-3.1-pro-preview"
+}

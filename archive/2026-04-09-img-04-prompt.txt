@@ -1,0 +1,9 @@
+**Scene Description:** A cinematic, abstract high-tech digital landscape representing the seamless integration of Artificial General Intelligence and complex cloud infrastructure. In the background, two towering, luminous pillars of glowing data streams stand side-by-side, symbolizing massive dual investments. In the foreground, interconnected glowing neural pathways effortlessly weave into sleek, blank digital interfaces and smooth multimedia light waves. A soft, radiant, semi-transparent energy shield encloses the central core, representing digital safety and protection. 
+
+**Mood:** Awe-inspiring, professional, futuristic, highly cinematic, authoritative, and sophisticated.
+
+**Color Palette:** Deep cyber navy blue background, vibrant electric cyan neural pathways, rich gold accents highlighting data nodes, and soft crisp white volumetric lighting.
+
+**Composition:** Ultra-wide 16:9 aspect ratio, balanced asymmetry providing clean negative space on the left side for a news presenter or graphics, dramatic depth of field with slightly blurred foreground particles, sharp focus on the luminous central network, 8k resolution, photorealistic render.
+
+**Negative Prompt:** Text, typography, letters, words, watermarks, logos, brand names, UI overlays, human figures, human faces, sexually explicit content, violence, messy clutter, chaotic chaotic wires, cartoonish style.
