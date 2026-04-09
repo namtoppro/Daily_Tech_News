@@ -1,0 +1,9 @@
+A cinematic still image of a massive, futuristic sleek metallic monolith representing a giant B2B AI enterprise, standing in a vast, dark high-tech environment. Deep, jagged cracks are rapidly spreading across its pristine surface, symbolizing a critical security breach. Glowing digital data streams and luminous abstract data particles are leaking heavily from the shattered fissures into the dark void. 
+
+Atmosphere: Ominous, serious, high-tension, conveying a sense of monumental corporate crisis and broken trust in the digital era. 
+
+Color palette: Cold corporate cyber-blue and sleek dark silver drastically contrasting with alarming, glowing neon crimson and warning orange radiating from the cracks. 
+
+Composition: Wide shot, dramatic low-angle perspective to emphasize the giant scale of the structure, leaving ample dark negative space on the left and right sides suitable for a news briefing video overlay. Deep depth of field with dramatic cinematic volumetric lighting, 8k resolution, photorealistic masterpiece. 
+
+Negative prompt: text, letters, typography, words, watermarks, signatures, logos, brand names, human figures, faces, blood, violence, suggestive elements, overly cluttered background.
