@@ -1,0 +1,9 @@
+**Scene Description:** A massive, imposing futuristic digital monolith in a sleek dark cyberspace environment. Small, glowing data streams and digital bridges attempting to connect to the monolith are abruptly severed and blocked by a solid, glowing energy barrier. Fragmented digital particles scatter at the point of disconnection.
+
+**Atmosphere:** Cinematic, serious, high-tech, tense, conveying a sense of strict restriction, digital monopoly, and severed access.
+
+**Color Palette:** Deep cyber-blue and dark obsidian shadows for the main structure, contrasting heavily with stark warning neon-red and vibrant orange at the blocked connection points.
+
+**Composition:** Low angle wide shot, rich depth of field, out-of-focus background, large clean negative space on the left and right sides suitable for news briefing text overlays, 8k resolution, volumetric lighting, photorealistic.
+
+**Negative Prompt:** text, fonts, letters, words, typography, watermarks, signatures, logos, brand names, human figures, faces, characters, NSFW, messy details, cluttered composition.

@@ -1,0 +1,14 @@
+**[Scene Description]**
+A futuristic, high-tech robotics laboratory where an advanced, sleek humanoid robot is in the process of materializing from a digital simulation into the real world. The left side of the robot's body is made of glowing, translucent holographic wireframes and digital particles, which seamlessly morph into hyper-realistic, solid brushed metal, titanium, and carbon fiber on the right side. The robot is reaching out to touch a physical mechanical gear on a sleek workbench, symbolizing the leap of AI from software environments into physical reality and industrial applications. 
+
+**[Mood]**
+Cinematic, visionary, cutting-edge, sophisticated, and awe-inspiring. Clean and professional, perfectly tailored for a prime-time tech news broadcast background.
+
+**[Color Palette]**
+A dynamic contrast of deep cyberspace blues and vivid, luminous emerald greens (subtly hinting at digital computing) transitioning smoothly into warm, realistic tungsten workshop lighting. Accents of metallic silver, matte black, and ambient volumetric lighting to emphasize the physical textures.
+
+**[Composition]**
+Ultra-wide cinematic shot, 16:9 aspect ratio. The transitioning robot is positioned on the right third of the frame (Rule of Thirds), keeping the subject slightly off-center. Shallow depth of field with a beautifully blurred, high-tech industrial background. The left and center areas feature smooth, clean negative space, providing an ideal, uncluttered area for news anchors and text graphics. 
+
+**[Negative Prompt (금지 요소)]**
+Text, words, letters, numbers, typography, logos, brand names, watermarks, signatures, copyright marks, messy, chaotic background, split-screen borders, provocative, NSFW, deformed structures.

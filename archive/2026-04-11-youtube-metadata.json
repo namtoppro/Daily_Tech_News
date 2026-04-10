@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-11",
+  "title": "자체 경고 3번 무시한 OpenAI, 플랫폼의 법적 책임이 흔들리는 이유",
+  "description": "오늘 테크 브리핑에서는 무너진 AI 안전망과 플랫폼의 법적 책임을 묻는 핵심 이슈를 살펴봅니다.\n내부 시스템의 치명적 경고를 3번이나 무시한 OpenAI 피소 사태가 오늘 영상의 핵심입니다.\n\n[오늘의 핵심 이슈]\n• OpenAI 피소: '대량 인명 피해' 경고 플래그 무시 및 AI 악용 방치에 따른 법적 책임론 대두\n• 앤스로픽 통제 강화: 외부 우회 서비스(OpenClaw) 개발자의 클로드 API 접근 즉각 차단\n• 엔비디아 물리적 AI: 시뮬레이션 환경과 파운데이션 모델 결합으로 현실 세계 로봇 적용 가속화\n\n본 영상은 글로벌 테크 매체의 원문 기사 및 공식 발표 기반 요약을 통해 객관적 사실을 전달합니다. (출처: TechCrunch AI, NVIDIA Blog 등)\n\n📌 더 많은 인사이트는 로프리 청담랩에서 확인하세요:\nhttps://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #테크브리핑 #기술뉴스",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#테크브리핑",
+    "#기술뉴스"
+  ],
+  "keywords": [
+    "OpenAI",
+    "오픈AI 피소",
+    "챗GPT",
+    "AI 법적 책임",
+    "앤스로픽",
+    "클로드 API",
+    "엔비디아",
+    "물리적 AI",
+    "테크뉴스",
+    "인공지능"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-11.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-11.md",
+    "archive/2026-04-11-audio-script.md",
+    "archive/2026-04-11-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "메인 이슈인 OpenAI 피소 사태와 AI 안전망 붕괴 책임을 부각한 이슈형 패키징 적용",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

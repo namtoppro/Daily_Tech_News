@@ -1,0 +1,5 @@
+**[Scene Description]** A massive, high-tech artificial intelligence neural core inside a sleek, dark data center. Floating holographic interfaces surround the central core, flashing sharp, glowing red warning symbols, lock icons, and hazard signals. The red alerts appear to be fading, dissolving, or being swallowed by the cold, indifferent machinery, visually symbolizing ignored internal safety flags and technological negligence. 
+**[Atmosphere]** Tense, serious, ominous, high-tech legal thriller, corporate silence.
+**[Color Palette]** Cold cyber-blue and deep graphite shadows, sharply contrasted with urgent, glowing neon crimson-red for the warning lights.
+**[Composition]** Wide cinematic shot, extreme wide angle, rule of thirds, deep depth of field, dramatic chiaroscuro lighting, leaving ample dark negative space on the sides suitable for news broadcasting graphics and anchor placement.
+**[Negative Prompt]** text, words, letters, fonts, typography, watermark, logo, brand name, OpenAI, ChatGPT, violent, gory, explicit, sensational, NSFW, human faces, blood.

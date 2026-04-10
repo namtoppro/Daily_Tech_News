@@ -1,0 +1,9 @@
+**Scene Description:** A futuristic and abstract digital environment representing advanced software architecture and virtual robotics. On one side, multiple glowing, interconnected neural network nodes are dynamically shifting and reconfiguring, symbolizing a flexible, multi-model AI ecosystem. On the other side, a detailed holographic wireframe of a robotic arm is interacting with a precise virtual simulation grid. 
+
+**Atmosphere:** High-quality cinematic still image, professional tech news background, visionary, sleek, sophisticated. Illuminated by soft volumetric lighting, digital particle effects, and a subtle glowing matrix. 
+
+**Color Palette:** Deep cyber-blue and neon teal base, accented with contrasting soft amber and orange highlights, set against a deep dark studio background. 
+
+**Composition:** Wide-angle shot, 16:9 aspect ratio, expansive central negative space designed for news framing and anchor placement, balanced technological elements on the edges, shallow depth of field with elegant bokeh, 8k resolution, photorealistic digital art style. 
+
+**Negative Prompt:** No text, no fonts, no letters, no numbers, no logos, no watermarks, no brand names, no typography, no user interface elements, no cluttered backgrounds, no explicit content, no NSFW. --ar 16:9 --v 6.0
