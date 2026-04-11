@@ -10,6 +10,7 @@ YouTube upload pipeline for Daily Tech News.
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 from datetime import datetime
@@ -24,9 +25,13 @@ from googleapiclient.http import MediaFileUpload
 
 load_dotenv()
 
-TODAY = datetime.now().strftime('%Y-%m-%d')
+DEFAULT_DATE = datetime.now().strftime('%Y-%m-%d')
 ARCHIVE_DIR = Path(os.getenv('ARCHIVE_DIR', 'archive'))
-SCOPES = ['https://www.googleapis.com/auth/youtube.upload']
+SCOPES = [
+    'https://www.googleapis.com/auth/youtube',
+    'https://www.googleapis.com/auth/youtube.force-ssl',
+    'https://www.googleapis.com/auth/youtube.upload',
+]
 YOUTUBE_CLIENT_SECRET_FILE = os.getenv('YOUTUBE_CLIENT_SECRET_FILE', 'youtube_client_secret.json')
 YOUTUBE_TOKEN_FILE = os.getenv('YOUTUBE_TOKEN_FILE', 'youtube_token.json')
 YOUTUBE_DEFAULT_PRIVACY = os.getenv('YOUTUBE_DEFAULT_PRIVACY', 'unlisted').strip().lower() or 'unlisted'
@@ -35,12 +40,19 @@ YOUTUBE_DEFAULT_LANGUAGE = os.getenv('YOUTUBE_DEFAULT_LANGUAGE', 'ko').strip() o
 YOUTUBE_DEFAULT_PLAYLIST = os.getenv('YOUTUBE_DEFAULT_PLAYLIST', 'Daily Tech News').strip() or 'Daily Tech News'
 
 
-def load_metadata() -> dict:
-    meta_path = ARCHIVE_DIR / f'{TODAY}-youtube-metadata.json'
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description='Upload Daily Tech News video to YouTube')
+    parser.add_argument('--date', default=DEFAULT_DATE, help='Target date in YYYY-MM-DD format')
+    return parser.parse_args()
+
+
+def load_metadata(target_date: str) -> dict:
+    meta_path = ARCHIVE_DIR / f'{target_date}-youtube-metadata.json'
     if not meta_path.exists():
         raise RuntimeError(f'메타데이터 파일이 없습니다: {meta_path}')
     data = json.loads(meta_path.read_text(encoding='utf-8'))
     data['_meta_path'] = str(meta_path)
+    data['_target_date'] = target_date
     return data
 
 
@@ -152,7 +164,7 @@ def upload_video(metadata: dict) -> dict:
     response = request.execute()
 
     return {
-        'date': TODAY,
+        'date': str(metadata.get('_target_date', DEFAULT_DATE)),
         'uploaded': True,
         'videoId': response.get('id'),
         'privacyStatus': privacy,
@@ -165,13 +177,15 @@ def upload_video(metadata: dict) -> dict:
 
 
 def save_receipt(receipt: dict) -> Path:
-    out = ARCHIVE_DIR / f'{TODAY}-youtube-upload.json'
+    target_date = str(receipt.get('date', DEFAULT_DATE))
+    out = ARCHIVE_DIR / f'{target_date}-youtube-upload.json'
     out.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return out
 
 
 def main():
-    metadata = load_metadata()
+    args = parse_args()
+    metadata = load_metadata(args.date)
     receipt = upload_video(metadata)
     receipt_path = save_receipt(receipt)
     print(f"YOUTUBE_UPLOAD_RECEIPT={receipt_path}")
