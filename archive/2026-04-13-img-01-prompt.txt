@@ -1,0 +1,9 @@
+**Scene Description:** A conceptual, high-tech 3D environment representing a divided assessment of an advanced artificial intelligence. In the center, a glowing, pristine futuristic AI core levitates above a sleek metallic podium. The scene is split into two contrasting conceptual sides. The left side reflects strict national security and defense, featuring heavy translucent shields, abstract barricades, and rigid technological structures. The right side represents booming financial markets and institutional banking, featuring ascending digital data charts, abstract neoclassical pillars, and flowing, expansive grid lines symbolizing economic growth. 
+
+**Atmosphere:** Cinematic, tense yet professional, thought-provoking, high-tech corporate, symbolizing an intersection of high-security risk and lucrative financial opportunity. Perfect for a serious news broadcast background.
+
+**Color Palette:** Striking dual-tone split lighting. Deep tactical navy blue and subtle alert crimson red on the left (defense/security side). Luxurious glowing gold, emerald green, and bright cyan on the right (financial/market side). The central AI core radiates a brilliant, pure white light that illuminates both sides.
+
+**Composition:** Symmetrical central perspective, wide-angle lens, 16:9 aspect ratio suitable for a news briefing backdrop. Shallow depth of field on the extreme edges with clean, dark, out-of-focus negative space in the upper half to allow for news graphic overlays. Volumetric lighting, photorealistic, 8k resolution, Unreal Engine 5 render style.
+
+**Negative Prompt:** text, words, letters, fonts, typography, logos, watermarks, brand names, signatures, symbols, flags, human figures, faces, explicit content, violence, weapons, messy composition, cluttered, overexposed.

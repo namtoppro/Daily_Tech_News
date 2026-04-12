@@ -1,0 +1,40 @@
+{
+  "date": "2026-04-13",
+  "title": "국방부 경고에도 은행권에 투입된 앤스로픽, 지금 이 상황이 중요한 이유",
+  "description": "오늘 가장 주목해야 할 기술 이슈는 미국 국방부의 안보 경고에도 불구하고 월스트리트 은행권에 도입되고 있는 앤스로픽(Anthropic)의 모순된 상황입니다. 정부 부처 간 상충된 지시가 나오는 배경과 이 현상이 B2B 기업용 AI 시장의 판도를 어떻게 바꿀지 집중적으로 분석합니다.\n\n본 영상은 해외 주요 테크 매체의 원문 기사 및 공식 발표 기반 요약 브리핑입니다.\n\n[오늘의 핵심 이슈]\n• 미 국방부의 '공급망 위험' 지정 vs 행정부의 '은행권 도입 권장'이라는 엇갈린 시그널\n• 대형 AI 컨퍼런스를 휩쓸며 시장의 신뢰를 입증한 앤스로픽의 클로드(Claude)\n• 애플, 무거운 혼합현실(MR) 기기 대신 가벼운 스마트 글래스 4종 테스트로 웨어러블 전략 수정\n• AI 대중화에 발맞춰 기업의 의사결정 오류를 줄이기 위한 필수 용어 표준화 움직임\n\n더 많은 정보는 아래 링크에서 확인하실 수 있습니다.\nhttps://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #TechNews #앤스로픽 #인공지능 #기술뉴스",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#앤스로픽",
+    "#인공지능",
+    "#기술뉴스"
+  ],
+  "keywords": [
+    "앤스로픽",
+    "클로드",
+    "미국 국방부 AI",
+    "월스트리트 AI",
+    "애플 스마트 글래스",
+    "기업용 인공지능",
+    "B2B AI",
+    "테크 브리핑",
+    "일일 테크 뉴스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-13.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-13.md",
+    "archive/2026-04-13-audio-script.md",
+    "archive/2026-04-13-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "메인 이슈인 앤스로픽을 둘러싼 미국 정부의 엇갈린 평가와 금융권 진입을 전면에 내세워 B2B AI 시장의 변화를 강조함",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

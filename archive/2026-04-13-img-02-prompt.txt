@@ -1,0 +1,9 @@
+**Scene:** A close-up of a single sleek, ultra-lightweight futuristic smart glasses resting on a minimalist glowing metallic pedestal in a high-tech design laboratory. Faint, abstract holographic augmented reality data streams are subtly reflecting on the clear lenses, symbolizing a seamless blend of technology and everyday life. In the softly blurred background, silhouettes of three subtly different eyewear frames are elegantly displayed, representing a phase of prototyping and design testing. The environment suggests a clear evolution from heavy, bulky hardware to refined, wearable daily accessories. 
+
+**Atmosphere:** Cinematic, highly sophisticated, professional tech-news style, futuristic yet realistic, clean, airy, and minimalist. 
+
+**Color Palette:** Matte dark silver and obsidian black frames, pristine translucent glass, illuminated by soft glowing cyan and warm amber accent lights, set against a deep slate gray and muted navy blue backdrop. 
+
+**Composition:** Off-center framing with ample negative space on the right side for news broadcasting overlays and presenters, shallow depth of field with beautiful bokeh, macro photography style, dramatic soft studio rim lighting, ultra-detailed 8k resolution. 
+
+**Negative Prompt:** text, fonts, letters, typography, watermarks, brand names, corporate logos, signature, heavy bulky VR headsets, messy, cluttered, provocative, poorly drawn, cartoonish, low resolution.
