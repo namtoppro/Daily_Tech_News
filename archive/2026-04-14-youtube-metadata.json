@@ -1,0 +1,36 @@
+{
+  "date": "2026-04-14",
+  "title": "더 이상 성능 경쟁은 없다, 빅테크가 AI 보안과 비용 통제에 집중하는 이유",
+  "description": "오늘의 기술 브리핑에서는 AI 시장의 룰이 단순 성능 경쟁에서 '보안과 비용 통제'로 바뀌는 거대한 패러다임 전환을 분석합니다.\n빅테크(AWS, 마이크로소프트)의 최신 발표를 통해 기업용 AI 도입의 진짜 장벽과 해결책이 무엇인지 짚어봅니다.\n\n■ 오늘의 핵심 이슈\n• AWS: 아마존 베드록 신규 업데이트, 프로덕션 전환 시 '운영 비용 가시성' 최우선 과제로 부상\n• 마이크로소프트: 오픈소스 대신 강력한 보안 제어(Security Controls)를 갖춘 상용 AI 에이전트 개발\n• Vercel: AI 애플리케이션 폭증으로 인한 인프라 플랫폼 사용량 확대 및 IPO 시사\n• 스탠퍼드 2026 AI 인덱스: AI 전문가와 대중 사이에 벌어지는 경제적·사회적 불안감 격차\n• 네이버: 진화하는 사이버 위협 방어 노하우 공유를 위한 첫 번째 보안 세미나 개최\n\n* 본 영상은 수집된 원문 기사와 공식 발표 기반 요약으로 제작되었습니다.\n* 주요 출처: AWS News, TechCrunch AI, MIT Technology Review AI, Naver D2\n\n🌐 https://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #클라우드 #TechNews",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#클라우드",
+    "#TechNews"
+  ],
+  "keywords": [
+    "엔터프라이즈 AI",
+    "AWS",
+    "마이크로소프트",
+    "인공지능 보안",
+    "AI 비용 관리",
+    "Vercel IPO",
+    "스탠퍼드 AI 인덱스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-14.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-14.md",
+    "archive/2026-04-14-audio-script.md",
+    "archive/2026-04-14-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "메인 이슈인 '엔터프라이즈 AI의 보안 및 비용 통제' 앵글을 전면에 내세운 이슈형 패키징 적용",
+  "generatorModel": "gemini-3.1-pro-preview"
+}

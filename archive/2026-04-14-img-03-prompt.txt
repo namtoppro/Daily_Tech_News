@@ -1,0 +1,11 @@
+A cinematic, high-quality still image for a tech news background representing AI infrastructure and financial growth. 
+
+Scene: A futuristic, abstract digital foundation made of sleek, dark geometric blocks and glowing fiber-optic pathways. These glowing structural lines converge upwards to securely support a massive, luminous, abstract neural network sphere, symbolizing artificial intelligence applications being hosted and elevated by a strong underlying platform. Subtle, elegant upward-trending light beams are seamlessly integrated into the architecture to represent an IPO, market scalability, and financial success. 
+
+Atmosphere: Visionary, highly professional, cutting-edge, stable yet dynamic, perfect for a modern technology news briefing. 
+
+Color Palette: Deep cyber blue and dark slate for the foundation, contrasting with vibrant neon cyan data streams and striking accents of luminous gold to represent capital market value and financial achievement. 
+
+Composition: Wide-angle shot, ultra-detailed 3D render, deep depth of field with slightly blurred foreground particles for a cinematic feel, soft volumetric lighting. The central glowing structure is balanced with ample clean negative space on the left and right sides to comfortably accommodate news anchors or graphics. 
+
+Negative Prompt: text, fonts, letters, words, typography, logos, watermarks, brand names, human figures, messy clutter, chaotic composition, provocative elements, NSFW, UI elements, signature. --ar 16:9 --style raw --v 6.0

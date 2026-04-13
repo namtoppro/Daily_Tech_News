@@ -1,0 +1,14 @@
+**[Scene Description]**
+A high-tech, abstract representation of an enterprise AI system. A sophisticated, glowing digital intelligence core suspended in the center, firmly enclosed by a translucent, interlocking hexagonal security shield. Smooth, elegant holographic data streams and sleek geometric charts orbit the core, symbolizing financial visibility, data governance, and cost monitoring. The background features a vast, pristine, out-of-focus futuristic data center.
+
+**[Atmosphere]**
+Cinematic, professional, highly secure, trustworthy, and cutting-edge corporate technology vibe. Volumetric lighting and soft studio reflections.
+
+**[Color Palette]**
+Deep corporate navy and cyber cyan dominating the scene, accented with glowing emerald green for financial efficiency, and soft amber rim lighting.
+
+**[Composition]**
+16:9 wide-angle shot, center-weighted composition. Generous dark negative space on the left and right sides for news anchor placement or graphics. Shallow depth of field with smooth bokeh, 8k resolution, photorealistic, broadcast-quality.
+
+**[Negative Prompt]**
+text, letters, words, numbers, typography, font, logos, watermarks, brand names, signatures, humanoid robots, human faces, messy, cluttered, provocative, NSFW.
