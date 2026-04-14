@@ -1,0 +1,9 @@
+**Scene Description:** A grand, dimly lit negotiation room visually divided into two contrasting themes. The left side features classical marble columns and rich wood paneling, symbolizing government and law. The right side is composed of sleek, futuristic metallic surfaces and flowing digital data streams, representing advanced AI technology. In the center, on a large reflective dark glass table, a complex, glowing abstract holographic sphere of artificial neural networks floats, acting as a symbolic bridge. Two unidentifiable, shadowy silhouettes in business attire sit across from each other, engaged in a high-stakes dialogue representing a 'two-track' strategy of conflict and cooperation. 
+
+**Atmosphere:** Tense, diplomatic, serious, mysterious, high-stakes corporate-political suspense, cinematic and professional. 
+
+**Color Palette:** A dramatic and stark contrast between traditional warm amber and gold lighting on one side, and cold, futuristic cyan and deep neon blue illumination on the other. 
+
+**Composition:** Symmetrical wide-angle shot, 16:9 aspect ratio, eye-level cinematic framing, shallow depth of field with the sharpest focus on the glowing AI hologram in the center, subtly blurred background silhouettes, volumetric lighting, ray tracing, 8k resolution, highly detailed photorealistic masterpiece. 
+
+**Negative Prompt:** text, words, letters, typography, fonts, watermark, signature, logo, brand name, specific human faces, explicit content, messy, chaotic, cartoon, illustration, weapons, violence.

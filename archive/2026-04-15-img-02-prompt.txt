@@ -1,0 +1,9 @@
+**Scene Description:** Extreme macro shot of an ultra-thin, futuristic medical micro-chip sensor gently interfacing with a translucent, glowing human neural network. The sensor is emitting delicate, radiant electrical pulses that illuminate the surrounding brain cells and synapses, visually symbolizing cellular regeneration, neurological healing, and deep-tech medical intervention.
+
+**Atmosphere:** Cinematic, highly professional, cutting-edge medical science, profound, calm, and hopeful. 
+
+**Color Palette:** A sophisticated deep midnight blue and bioluminescent cyan background, creating a sharp, dramatic contrast with the warm, glowing amber and vibrant gold of the healing electrical pathways and revitalized neurons.
+
+**Composition:** Extreme close-up with a shallow depth of field and beautiful bokeh. The complex intersection of biology and advanced technology is placed slightly off-center (rule of thirds) to provide clean negative space on one side for news broadcasting overlays. Enhanced with soft, volumetric lighting.
+
+**Negative Prompt (Forbidden Elements):** Text, fonts, letters, numbers, logos, watermarks, brand names, gore, blood, realistic surgery, explicit content, typography, messy background, cluttered elements.

@@ -1,0 +1,11 @@
+A cinematic, high-quality news background image representing the convergence of advanced artificial intelligence, brain-computer interfaces, and the future of software engineering. 
+
+Scene: On the right side of the frame, an abstract, translucent glowing silhouette of a human mind seamlessly intertwining with delicate micro-sensors, glowing fiber-optic threads, and flowing digital structures. The neural energy radiates outward, transforming into a vast, expansive network of geometric light nodes and floating data streams that represent global connectivity and automated workflows. 
+
+Atmosphere: Highly advanced, intellectual, mysterious yet optimistic, featuring a clean and sophisticated technological vibe suitable for a professional news briefing. 
+
+Color Palette: Deep cyber-blue and midnight purple background, illuminated by vibrant neon teal, glowing gold, and soft white luminous accents. 
+
+Composition: Asymmetrical layout with the main subject focused on the right side, leaving elegant, softly blurred negative space on the left side for news broadcast overlays. Shot with an anamorphic lens, 8k resolution, volumetric lighting, and shallow depth of field with beautiful digital bokeh. 
+
+Negative prompt: Text, letters, numbers, fonts, typography, logos, watermarks, brand names, realistic anatomical gore, messy wires, cluttered background, explicit content, NSFW.

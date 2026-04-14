@@ -1,0 +1,13 @@
+[Korean Prompt]
+장면 설명: 인공지능 코딩 기술을 상징하는 역동적인 디지털 데이터 스트림이 기존 앱 생태계의 굳건한 규제를 의미하는 거대하고 견고한 투명 장벽과 강렬하게 충돌하는 장면. 빛나는 AI 에너지가 장벽을 우회하여 미래적인 데스크톱 플랫폼과 딥테크 하드웨어를 뜻하는 거대한 네트워크 노드들로 유연하게 뻗어나가는 모습.
+분위기: 기술 뉴스 브리핑 스튜디오 배경에 완벽하게 어울리는 고품질 시네마틱 이미지, 진중하고 긴장감 넘치는 첨단 미래지향적 무드.
+색감: 차가운 네온 블루(AI 데이터 흐름)와 따뜻한 앰버 및 오렌지(물리적 장벽과 하드웨어 조명)의 강렬하고 세련된 색채 대비.
+구도: 16:9 비율의 와이드 앵글 샷, 충돌 및 우회 지점에 선명한 초점을 맞추고 배경으로 확장되는 네트워크는 얕은 피사계 심도로 부드럽게 블러 처리하여 시각적 깊이감을 극대화한 구도.
+금지 요소: 텍스트, 글자, 단어, 워터마크, 특정 기업 로고, 브랜드명, 시판 중인 스마트폰 형상, 과도한 UI 그래픽, 선정적이거나 부적절한 표현 절대 금지.
+
+[English Prompt]
+Scene Description: A dynamic, glowing stream of digital data representing AI coding technology fiercely colliding with a massive, rigid, transparent glass barrier symbolizing existing app ecosystem regulations. Instead of breaking it, the brilliant AI energy bypasses the barrier, flexibly expanding toward a futuristic desktop computing platform and branching out into immense deep-tech hardware network nodes.
+Mood: A high-quality cinematic still image perfect for a tech news briefing studio background, conveying a serious, tense, and highly advanced futuristic atmosphere.
+Color Palette: A striking and sophisticated contrast between cold neon blue (AI data streams) and warm amber and orange (the physical barrier and hardware lighting).
+Composition: 16:9 wide-angle shot. Sharp focus on the collision and bypass point, with a shallow depth of field gently blurring the distant network nodes to maximize visual depth and cinematic feel.
+Negative Prompts: No text, no letters, no words, no watermarks, no corporate logos, no brand names, no literal smartphone shapes, no excessive UI graphics, no inappropriate or explicit content.

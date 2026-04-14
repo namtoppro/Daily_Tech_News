@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-15",
+  "title": "구글 크롬의 이번 변화, 사용자에게 당장 달라지는 점",
+  "description": "오늘의 Daily Tech News에서는 단순한 검색창을 넘어 통합 AI 비서로 진화하고 있는 구글 크롬의 변화를 집중 분석합니다.\nAI 모델이 개별 앱을 벗어나 매일 쓰는 브라우저의 기본 인프라로 스며들면서 우리의 웹 워크플로우가 어떻게 달라질지 확인해보세요.\n\n[오늘의 핵심 이슈]\n• 구글 크롬 '스킬' 기능 도입: 모든 웹사이트에서 AI 프롬프트 저장 및 재사용\n• 구글 제미나이 개인 지능 확장: 지메일·사진첩 등 개인 데이터 연동 맞춤형 답변\n• 앱 마켓 규제와 충돌하는 AI 코딩: 바이브 코딩 앱 '애니띵' 데스크톱 선회\n• 앤스로픽의 투 트랙 전략: 미국 정부 소송 중 트럼프 행정부 대상 '미토스' 브리핑\n• 사이언스 코프: 신경학적 손상 치료를 위한 첫 인체 뇌 센서 이식 임상 준비\n\n본 영상은 주요 테크 외신의 원문 기사 및 공식 발표 기반 요약으로 제작되었습니다.\n단순한 기술 업데이트를 넘어 시장과 사용자의 패러다임 변화를 짚어냅니다.\n\nhttps://lowprice.koreall.site/\n#로프리 #청담랩",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#인공지능",
+    "#기술뉴스"
+  ],
+  "keywords": [
+    "구글 크롬",
+    "구글 AI",
+    "제미나이",
+    "AI 비서",
+    "인공지능 트렌드",
+    "앤스로픽",
+    "사이언스 코프",
+    "바이브 코딩",
+    "테크 브리핑"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-15.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-15.md",
+    "archive/2026-04-15-audio-script.md",
+    "archive/2026-04-15-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "구글 크롬 AI 스킬 업데이트를 메인 이슈로 선정하여, 검색 기반에서 브라우저 자동화 기반으로 변화하는 사용자 체감 요소를 강조함",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
