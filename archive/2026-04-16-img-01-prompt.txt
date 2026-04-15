@@ -1,0 +1,9 @@
+**Scene Description:** A futuristic and abstract digital enterprise environment. At the center, a highly advanced, glowing AI energy sphere is securely enclosed within a pristine, transparent high-tech glass cube, symbolizing a secure sandbox environment. Luminous fiber-optic threads and dynamic data streams elegantly branch out from the core, seamlessly connecting multiple floating, sleek geometric glass panels that represent cross-app integration and autonomous workflows. Subtle, glowing hexagonal shield patterns encompass the outer layers of the scene, representing automated cybersecurity, red-teaming, and solid enterprise defense. 
+
+**Atmosphere:** Cinematic, highly professional, sophisticated, and cutting-edge technology vibe. Clean, expansive, and structured, perfect for a high-end news briefing video background. Soft volumetric lighting highlighting the intricate details of the glass and energy.
+
+**Color Palette:** Deep cyber-blue and dark sleek slate gray for the corporate background, brilliant neon cyan for the flowing data streams, and elegant glowing amber and gold accents to emphasize the security layers and business revenue growth. 
+
+**Composition:** Wide-angle shot, 16:9 aspect ratio. Centered focal point on the glowing core with dynamic, expanding digital lines creating a sense of workflow automation. Shallow depth of field with a smoothly blurred, dark background to ensure news anchors or graphical overlays can be easily placed on the sides. Studio-quality ray-traced reflections.
+
+**Negative Prompt:** text, font, letters, words, typography, watermarks, logos, corporate brand names, UI elements, messy cables, human figures, faces, crowds, NSFW, violent, suggestive elements, signature. --ar 16:9 --v 6.0 --style raw

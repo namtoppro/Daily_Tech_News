@@ -1,0 +1,14 @@
+**[Scene Description]**
+A cinematic and abstract representation of corporate transformation and labor market shift. On the left side, subtle silhouettes of mechanical gears, traditional office architecture, and abstract physical products dissolving into shadows. On the right side, towering, glowing AI server racks, futuristic data nodes, and luminous optical fibers emerging. In the center, a flowing river of glowing digital data and golden particles, representing the massive flow of capital, seamlessly connects and transforms the physical world into digital infrastructure. Above the central flow, a soft, translucent abstract digital lens or glowing geometric eye hovers, symbolizing AI observing, analyzing, and verifying information. 
+
+**[Atmosphere]**
+Sophisticated, professional, technological, subtly tense yet objective, futuristic corporate, perfect for a high-end tech news broadcast background.
+
+**[Color Palette]**
+Deep navy blue and dark slate gray foundation for a serious news tone, contrasted with vibrant glowing cyan and neon blue for the AI/tech elements, accented with subtle metallic gold and amber to represent finance and capital.
+
+**[Composition]**
+Ultra-wide angle (16:9), asymmetrical balance. Left side is slightly muted, right side is brilliantly illuminated. Smooth depth of field with cinematic bokeh in the background to provide clean negative space for news presentation. Volumetric lighting casting soft digital glows, 8k resolution, photorealistic cinematic render.
+
+**[Negative Prompt (금지 요소)]**
+text, letters, words, numbers, fonts, typography, logos, watermarks, brand names, LinkedIn, Allbirds, Objection, speech bubbles, messy, cluttered, cluttered background, cartoon, anime, illustration, explicit content, sexual imagery, violence, gore, overly complex human faces.
