@@ -1,0 +1,9 @@
+Scene: A futuristic, glowing artificial intelligence core seamlessly manipulating and assembling floating holographic blueprints, abstract digital nodes, and 3D architectural wireframes. The AI acts as a master conductor, autonomously connecting complex digital infrastructures to represent a universal operating layer overseeing various software tools. The boundaries between data streams, structural shapes, and artistic design elements are seamlessly blending together in mid-air.
+
+Mood/Atmosphere: High-tech, cinematic, professional, awe-inspiring, advanced, sophisticated, clean, and highly organized.
+
+Color Palette: Deep cyber-blue and glowing neon cyan, with subtle warm amber accents for energetic contrast, set against a dark, sleek obsidian glass and metallic environment.
+
+Composition: Wide-angle, 16:9 aspect ratio, asymmetrical balance leaving one side slightly open for news graphics or anchors. Shallow depth of field with the central AI node in sharp 8k focus, while distant digital structures softly blur into the background. Dramatic volumetric lighting with soft glowing reflections.
+
+Negative Prompt: No text, no letters, no words, no numbers, no typography, no watermarks, no logos, no brand names, no human figures, no messy UI screens, no NSFW, no chaotic composition.

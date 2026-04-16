@@ -1,0 +1,73 @@
+{
+  "date": "2026-04-17",
+  "main_issue": {
+    "title": "에이전틱 AI의 진화: 개별 앱을 넘어 '데스크톱 운영 계층'을 제어하다",
+    "angle": "단순 코딩 보조를 넘어 PC 환경과 다수 소프트웨어를 직접 제어하는 AI 에이전트의 등장. 이는 기존 SaaS 생태계의 비즈니스 해자(Moat)를 근본적으로 위협하는 시스템 구조적 변화다.",
+    "why_it_matters": "AI가 채팅창을 벗어나 사용자의 데스크톱 권한을 쥐기 시작했습니다. 이는 소프트웨어를 개발하고 사용하는 방식을 완전히 뒤바꾸며, 단일 기능 중심의 기존 IT 기업들에게 심각한 위협이자 새로운 기회가 됩니다.",
+    "key_facts": [
+      "OpenAI가 컴퓨터 제어와 앱 내 브라우징이 가능한 macOS 및 Windows용 'Codex' 업데이트를 발표했습니다.",
+      "AWS는 장기 실행 에이전트 성능을 극대화한 'Claude Opus 4.7'을 출시하며 자율형 AI 인프라를 강화했습니다.",
+      "경쟁 AI 에이전트 툴 출시 가능성으로 인해 Anthropic CPO가 Figma 이사회에서 사임하며 기존 SaaS 업계와의 긴장감이 가시화되었습니다."
+    ],
+    "key_numbers": [
+      "1억 5,000만 달러 (AI 코딩 스타트업 Factory 투자 유치액)",
+      "4.7 (에이전트 성능 높인 Claude Opus 새 버전)"
+    ],
+    "source_articles": [
+      "OpenAI (Codex)",
+      "AWS News",
+      "TechCrunch AI (Anthropic CPO / Figma)"
+    ]
+  },
+  "supporting_issues": [
+    {
+      "title": "물리적 AI의 진화: 가르치지 않은 일도 해내는 로봇",
+      "role": "supporting",
+      "key_fact": "소프트웨어 에이전트화와 맞물려, Physical Intelligence가 사전에 학습하지 않은 작업까지 파악해 수행하는 새로운 로봇 제어 모델 'π0.7'을 발표했습니다.",
+      "source_articles": [
+        "TechCrunch AI (Physical Intelligence)"
+      ]
+    },
+    {
+      "title": "수익화 성공하는 AI 트래픽과 부품 공급망의 딜레마",
+      "role": "supporting",
+      "key_fact": "1분기 미 소매업체의 AI 유입 트래픽이 393% 증가하며 실제 매출을 견인했으나, 수요 폭발로 인한 RAM 부족으로 Meta가 Quest 기기 가격을 최대 100달러 인상했습니다.",
+      "source_articles": [
+        "TechCrunch AI (AI Retail Traffic)",
+        "TechCrunch AI (Meta Quest Price)"
+      ]
+    }
+  ],
+  "hook_candidates": [
+    "단순히 코드를 짜주거나 텍스트를 써주는 AI의 시대는 끝났습니다. 이제 AI는 당신의 PC를 직접 움직입니다.",
+    "Anthropic 임원은 왜 돌연 Figma 이사회에서 사임했을까요? AI가 개별 앱을 넘어 데스크톱 생태계를 집어삼키기 시작했습니다.",
+    "채팅창에 갇혀있던 AI가 마우스와 키보드 권한을 얻었습니다. 오늘 OpenAI와 AWS의 발표가 기존 IT 기업들을 긴장하게 만드는 이유를 짚어봅니다."
+  ],
+  "title_candidates": [
+    "OpenAI의 PC 직접 제어, 지금 SaaS 생태계가 긴장하는 이유",
+    "코딩 넘어선 AI 에이전트의 진화, 개발자와 기획자에게 달라지는 점",
+    "오늘 AI 업계 핵심: 앱을 넘어 운영체제 위로 올라선 AI",
+    "Claude 4.7과 Codex 업데이트, 진짜 중요한 건 '제어 권한'입니다",
+    "오늘의 테크 브리핑 | 데스크톱 제어 AI, 로봇 자율학습, 퀘스트 가격 인상"
+  ],
+  "thumbnail_copy_candidates": [
+    "내 PC 움직이는 AI",
+    "코딩 넘어선 에이전트",
+    "SaaS 생태계 위협"
+  ],
+  "narrative": {
+    "hook": "단순히 코드를 짜주거나 텍스트를 써주는 AI의 시대는 빠르게 저물고 있습니다. 이제 AI는 여러분의 마우스와 키보드를 직접 쥐기 시작했습니다.",
+    "setup": "오늘 OpenAI와 AWS가 일제히 발표한 업데이트의 핵심은 단 하나입니다. 바로 AI 에이전트가 내 PC 환경과 여러 소프트웨어를 직접 제어하기 시작했다는 겁니다.",
+    "fact_1": "먼저 OpenAI는 macOS와 Windows 환경에서 컴퓨터를 직접 제어하고 다른 앱 안에서 정보를 찾을 수 있는 강력한 Codex 업데이트를 내놓았습니다.",
+    "fact_2": "AWS 역시 복잡한 작업을 장기간 자율적으로 실행하는 데 특화된 모델, Claude Opus 4.7을 출시하며 에이전트 인프라 경쟁에 불을 붙였습니다.",
+    "fact_3": "이러한 에이전트의 확장은 기존 소프트웨어 시장의 경계를 허물고 있습니다. 실제로 Anthropic의 CPO가 경쟁 툴 출시 이슈로 디자인 툴 선두주자인 Figma 이사회에서 사임하는 일까지 발생했습니다.",
+    "takeaway": "이제 AI는 개별 앱의 보조 도구가 아니라, 모든 툴을 아우르는 '운영 계층'으로 올라오고 있습니다. 기업과 개발자들은 단일 기능 제공을 넘어, AI 주도의 워크플로우 안에서 어떻게 생존할지 근본적인 해자를 재점검해야 할 시점입니다."
+  },
+  "packaging_notes": "포커스: 'AI가 코드를 잘 짠다'는 기능적 접근이 아니라, 'AI가 사용자의 PC 운영 환경을 장악하기 시작했다'는 산업의 구조적 변화에 맞춥니다. B-roll 사용 시 단순 텍스트 프롬프트 창보다는, AI가 마우스를 제어해 여러 창과 앱을 오가며 조작하는 동적 화면을 썸네일과 영상 초반에 배치하여 시청자가 변화를 즉각 체감할 수 있게 구성하세요.",
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-17.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "generatorModel": "gemini-3.1-pro-preview"
+}
