@@ -1,0 +1,9 @@
+**Scene Description:** A cinematic wide shot of a dimly lit, modern developer workspace. A lone, exhausted software engineer sits in front of multiple monitors. A massive, chaotic waterfall of glowing digital data blocks and abstract geometric tokens pours out from the screens, physically piling up and cluttering the desk like an overwhelming avalanche. The human is rubbing their eyes, looking stressed while trying to organize the tangled, excessive digital mess of glowing cubes. 
+
+**Mood:** Intense, high-tech, slightly dystopian, overwhelming, and paradoxical, conveying the heavy burden of technological overproduction.
+
+**Color Palette:** A striking contrast between cold, highly luminous neon cyan and cyber-blue for the endless AI data stream, clashing with warm, dim amber and orange desk lighting that highlights the fatigue of the human element.
+
+**Composition:** Ultra-wide 16:9 aspect ratio suitable for a news briefing background. The overwhelmed developer and the glowing avalanche are placed slightly off-center (rule of thirds) to leave breathing room for invisible news graphics on the side. Volumetric lighting, cinematic deep depth of field with softly blurred glowing tokens in the extreme foreground, photorealistic, 8k resolution, highly detailed texture.
+
+**Negative Prompt (Forbidden Elements):** text, font, letters, typography, words, numbers, logo, watermark, brand names, signature, explicit content, NSFW, graphic violence, overly crowded background, cartoon, 2D illustration, flat shading.

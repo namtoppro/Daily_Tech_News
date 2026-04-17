@@ -1,0 +1,41 @@
+{
+  "date": "2026-04-18",
+  "title": "소라(Sora) 포기한 OpenAI, AI 시장 돈의 흐름이 바뀌었다",
+  "description": "오늘 다룰 핵심은 OpenAI의 예상치 못한 '소라(Sora)' 프로젝트 종료와 69조 원의 몸값을 찍은 코딩 도구 '커서(Cursor)'의 상반된 행보입니다. 화려한 실험용 AI에서 확실하게 실무를 돕는 B2B 도구로 AI 시장의 자본이 급격히 이동하고 있습니다.\n\n오늘의 핵심 이슈:\n- OpenAI, 수익성 검증 어려운 동영상 AI '소라' 프로젝트 전격 종료 및 팀 해체\n- AI 코딩 에디터 '커서', B2B 수요 폭발로 69조 원(500억 달러) 규모 기업가치 평가\n- 코딩 AI가 부른 '토큰맥싱(Tokenmaxxing)'의 역설과 클라우드 유지보수 비용 문제\n- 앤스로픽, 비전문가용 실무 시각화 도구 '클로드 디자인' 출시\n- 샘 알트먼의 '월드(World)', 일상 인프라 확장을 위해 데이팅 앱 틴더와 협력 논의\n\n본 영상은 TechCrunch 등 해외 주요 IT 매체의 수집된 원문 기사와 공식 발표를 기반으로 핵심만 요약한 내용입니다. 변화하는 인공지능 비즈니스의 진짜 흐름을 가장 빠르게 파악해 보세요.\n\n더 많은 정보와 인사이트는 아래 링크에서 확인하실 수 있습니다.\nhttps://lowprice.koreall.site/\n#로프리\n#청담랩",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#오픈AI",
+    "#스타트업"
+  ],
+  "keywords": [
+    "OpenAI",
+    "오픈AI",
+    "소라",
+    "Sora",
+    "커서",
+    "Cursor",
+    "AI 코딩",
+    "토큰맥싱",
+    "B2B AI",
+    "인공지능",
+    "테크브리핑"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-18.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-18.md",
+    "archive/2026-04-18-audio-script.md",
+    "archive/2026-04-18-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "메인 앵글인 B2C(Sora)에서 B2B(Cursor)로의 AI 시장 자본 이동을 강조하며, 과장 없이 핵심 정보를 패키징함",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
