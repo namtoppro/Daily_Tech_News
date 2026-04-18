@@ -1,0 +1,9 @@
+**Scene:** A sleek, borderless smartphone resting on a dark, reflective high-tech surface. A massive, dynamic, upward-soaring digital fountain erupts from the screen, consisting of countless glowing, abstract 3D square blocks representing a boom in mobile apps, seamlessly intertwined with luminous neural network nodes and flowing data streams symbolizing artificial intelligence integration.
+
+**Atmosphere:** Cinematic, highly professional, futuristic, innovative, and deeply energetic, giving the feeling of a sudden technological breakthrough.
+
+**Color Palette:** Deep cyber-navy and sleek dark graphite for the background, intensely contrasted by vibrant neon cyan, electric purple, and glowing amber accents illuminating the flying digital elements and data streams.
+
+**Composition:** 16:9 wide cinematic shot, extreme high quality. Asymmetrical composition with the glowing smartphone and digital eruption positioned on the right side, leaving clean, elegant, deeply shadowed negative space with soft bokeh on the left side, perfectly optimized for a news briefing text overlay or presenter. Volumetric lighting, sharp focus on the digital eruption, 8k resolution, photorealistic masterpiece.
+
+**Negative Prompt:** text, words, letters, typography, fonts, watermarks, logos, brand names, corporate symbols, messy user interface, screen text, explicit content, nudity, violence, human figures, faces, hands, signature.
