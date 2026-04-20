@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-21",
+  "main_issue": {
+    "title": "기업들의 본격적인 에이전트 AI 도입 러시와 인프라 고도화",
+    "angle": "생성형 AI가 단순 답변을 넘어 '스스로 판단하고 일하는' 에이전트 단계로 산업 전반(코딩, 마케팅, 제조)에 실전 배치되고 있다.",
+    "why_it_matters": "클라우드와 하드웨어의 양대 산맥인 AWS와 NVIDIA가 동시다발적으로 에이전트 AI 환경을 지원하고 나섰습니다. 이는 실험 단계였던 AI 에이전트가 이제 100만 토큰의 컨텍스트를 바탕으로 실무 자율 작업에 투입될 만큼 성숙했음을 의미하며, 일하는 방식의 근본적인 변화를 예고합니다.",
+    "key_facts": [
+      "AWS는 최대 100만 토큰 컨텍스트와 에이전트 기반 코딩 기능이 탑재된 'Claude Opus 4.7'을 Amazon Bedrock에 정식 출시했다.",
+      "NVIDIA는 하노버 메세 2026에서 제조 산업용 자율 AI 파트너십을 전시하고, Adobe 및 WPP와 협력해 마케팅 분야에 에이전트 AI를 도입한다고 발표했다.",
+      "거대 모델의 안정적인 분산 운용을 지원하기 위해, 멀티클라우드 프라이빗 연결을 제공하는 'AWS Interconnect'가 공식 출시(GA)되었다."
+    ],
+    "key_numbers": [
+      "100만 (Claude Opus 4.7의 최대 토큰 컨텍스트 윈도우)",
+      "2대 핵심 산업 (NVIDIA가 에이전트 AI 도입을 가속화하는 마케팅과 제조 분야)"
+    ],
+    "source_articles": [
+      "AWS News: AWS Weekly Roundup: Claude Opus 4.7 in Amazon Bedrock, AWS Interconnect GA, and more",
+      "NVIDIA Blog: Autonomous AI at Scale / NVIDIA and Partners Showcase the Future of AI-Driven Manufacturing"
+    ]
+  },
+  "supporting_issues": [
+    {
+      "title": "기술 복제 AI 에이전트 도입을 둘러싼 중국 IT 근로자의 반발",
+      "role": "에이전트 AI 보급에 따른 노동 시장의 현실적 마찰 사례 조명",
+      "key_fact": "중국 IT 기업들이 직원들에게 자신의 기술과 성향을 복제하여 대체할 목적의 AI 에이전트를 직접 학습시키라고 지시하면서 극심한 내부 반발이 일어나고 있다.",
+      "source_articles": [
+        "MIT Technology Review AI: Chinese tech workers are starting to train their AI doubles–and pushing back"
+      ]
+    },
+    {
+      "title": "전력망 구축의 난관, AI 원자력 스타트업 Fermi 경영진 동반 사퇴",
+      "role": "AI 인프라 확장을 가로막는 에너지 확보의 물리적/규제적 리스크 확인",
+      "key_fact": "텍사스 AI 캠퍼스 구축을 추진하던 원자력 에너지 스타트업 Fermi의 CEO와 CFO가 돌연 사임하며 대규모 데이터센터 프로젝트의 운영상 난항이 우려되고 있다.",
+      "source_articles": [
+        "TechCrunch AI: CEO and CFO suddenly depart AI nuclear power upstart Fermi"
+      ]
+    },
+    {
+      "title": "구글 크롬 브라우저 Gemini 탑재 7개국 확대",
+      "role": "소비자 일상 소프트웨어로의 AI 접근성 확대 동향",
+      "key_fact": "구글이 크롬 브라우저 내에 기본 탑재되는 Gemini 기능을 한국을 포함한 7개국으로 확대 배포하며 소비자 도달률을 한층 높였다.",
+      "source_articles": [
+        "TechCrunch AI: Google rolls out Gemini in Chrome in seven new countries"
+      ]
+    }
+  ],
+  "hook_candidates": [
+    "AI가 텍스트를 써주던 시대를 지나, 이제는 코딩과 마케팅 전략을 스스로 판단해 실행하는 단계로 진입했습니다.",
+    "지금 글로벌 빅테크들이 앞다투어 인프라를 갈아엎고 있는 진짜 이유, 바로 '스스로 일하는 AI' 때문입니다.",
+    "단순한 모델 업데이트가 아닙니다. 100만 토큰을 한 번에 처리하는 AI가 실무에 배치되면 우리 회사의 일하는 방식은 어떻게 바뀔까요?"
+  ],
+  "title_candidates": [
+    "AWS와 NVIDIA의 동시 발표, 스스로 일하는 AI 시대가 열렸습니다",
+    "Claude 업데이트, 단순 모델보다 중요한 건 에이전트의 확산입니다",
+    "오늘 AI 업계 핵심: 챗봇에서 에이전트로, 완전히 달라진 산업 현장",
+    "코딩부터 마케팅까지, 글로벌 기업들이 에이전트 AI에 사활을 거는 이유",
+    "테크브리핑 | Claude 100만 토큰 출시와 에이전트 AI의 실전 배치"
+  ],
+  "thumbnail_copy_candidates": [
+    "스스로 일하는 AI 시대",
+    "100만 토큰의 파급력",
+    "챗봇 다음은 에이전트"
+  ],
+  "narrative": {
+    "hook": "AI가 내 질문에 대답해주는 것을 넘어, 나를 대신해 코딩하고 마케팅 전략을 스스로 기획해 실행한다면 어떨까요? 오늘 AWS와 NVIDIA의 발표는 이 '에이전트 AI'가 본격적인 실전 배치 단계에 들어섰음을 보여줍니다.",
+    "setup": "그동안 에이전트 AI는 잠재력은 크지만 실무에 적용하기에는 정보 처리 용량과 안정성에 한계가 있었습니다. 하지만 오늘 클라우드와 하드웨어의 양대 산맥인 AWS와 NVIDIA가 이를 단숨에 해결할 인프라와 대형 파트너십을 동시에 꺼내들었습니다.",
+    "fact_1": "먼저 AWS는 오늘 Amazon Bedrock에 최대 100만 토큰을 한 번에 처리하는 Claude Opus 4.7을 출시했습니다. 이 모델은 에이전트 코딩 기능이 대폭 향상되어 방대한 레거시 코드를 분석하고 자율적인 리팩토링에 즉시 투입될 수 있습니다.",
+    "fact_2": "NVIDIA 역시 발 빠르게 움직였습니다. 마케팅 업계 거물인 Adobe, WPP와 손잡고 기업 크리에이티브 환경 전반에 자율형 에이전트 AI를 도입하겠다고 밝혔고, 하노버 메세에서는 제조업을 AI 주도 생산으로 바꾸는 청사진을 대거 공개했습니다.",
+    "fact_3": "이러한 에이전트 AI의 실전 배치는 노동 시장에 이미 현실적인 마찰을 빚고 있습니다. 실제로 중국의 IT 기업들에서는 근로자의 업무 스킬을 그대로 복제하는 AI 에이전트를 직원 본인들에게 직접 학습시키라고 지시하면서 내부 반발이 거세게 일어나고 있습니다.",
+    "takeaway": "에이전트 AI의 도입은 단순한 툴의 추가가 아니라 노동과 생산 방식의 근본적인 전환입니다. 글로벌 인프라가 준비되고 기업들이 빠르게 움직이는 지금, 이 기술이 내 직무를 어떻게 보조할지 혹은 대체할지 가장 냉정하게 고민해야 할 시점입니다."
+  },
+  "packaging_notes": "포커스는 '에이전트 AI(자율형 AI)의 실전 배치'입니다. AWS의 Claude Opus 4.7 출시와 NVIDIA의 산업별 도입 발표를 하나로 묶어, 모델의 기술적 성취보다는 실제 현장과 비즈니스에 미치는 파급력을 강조합니다. 중국의 사례를 내러티브 상의 Fact 3으로 자연스럽게 연결해, 단순히 좋은 기술을 소개하는 것을 넘어 현실적인 노동 문제(직무 대체 우려)까지 터치함으로써 시청자의 몰입과 위기감을 동시에 자극합니다. 썸네일은 과도한 텍스트를 배제하고 직관적으로 변화를 나타낼 수 있는 강렬한 키워드 위주로 배치해야 합니다.",
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-21.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "generatorModel": "gemini-3.1-pro-preview"
+}
