@@ -10,3 +10,6 @@ youtube_token.json
 archive/.render/
 archive/*-thumbnail-*.png
 archive/*-thumbcopy-*.txt
+youtube_token.json.bak*
+youtube_client_secret.json.bak*
+*.oauth.bak

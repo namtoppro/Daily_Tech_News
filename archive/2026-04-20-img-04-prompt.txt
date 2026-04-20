@@ -1,0 +1,9 @@
+**Scene:** A futuristic smart city transportation hub at twilight, featuring massive fleets of sleek, unmarked, high-tech vehicles moving efficiently along a multi-layered highway system. The solid, physical roads and cars are intricately enveloped in glowing digital grids, luminous data nodes, and dynamic AI routing pathways, visualizing the seamless fusion of heavy physical mobility assets and artificial intelligence optimization. 
+
+**Atmosphere:** Sophisticated, cutting-edge, highly efficient, and professional. A cinematic corporate tech vibe that feels expansive and forward-looking.
+
+**Color Palette:** Deep navy blue and dark slate background tones, illuminated by vibrant cyan data streams and warm amber-gold accents representing the physical vehicles and maximized value.
+
+**Composition:** Wide aerial perspective, ultra-wide landscape shot with ample negative space at the top and sides for news graphics overlay. Sharp focus on the central data-infused intersection with a subtle cinematic blur in the distant skyline. 8k resolution, photorealistic, Unreal Engine 5 render style.
+
+**Negative Prompt:** text, letters, font, words, typography, logo, watermark, brand name, Uber, UI elements, signature, messy, chaotic, explicit, provocative, NSFW, humans.

@@ -262,12 +262,12 @@ record_step_result "Step 9: Git 변경사항 확인" "SUCCESS"
 printf '%s\n' "$GIT_STATUS" | tee -a "$LOG_FILE"
 
 ensure_secret_files_untracked() {
-  git rm --cached --ignore-unmatch youtube_client_secret.json youtube_token.json >/dev/null 2>&1 || true
+  git rm --cached --ignore-unmatch youtube_client_secret.json youtube_token.json youtube_client_secret.json.bak* youtube_token.json.bak* '*.oauth.bak' >/dev/null 2>&1 || true
 }
 
 log "Step 10: Git add"
 ensure_secret_files_untracked
-if git add -A . && git reset -- youtube_client_secret.json youtube_token.json >/dev/null 2>&1 || git add -A .; then
+if git add -A . && git reset -- youtube_client_secret.json youtube_token.json youtube_client_secret.json.bak* youtube_token.json.bak* '*.oauth.bak' >/dev/null 2>&1 || git add -A .; then
   record_step_result "Step 10: Git add" "SUCCESS"
 else
   record_step_result "Step 10: Git add" "FAILED"
