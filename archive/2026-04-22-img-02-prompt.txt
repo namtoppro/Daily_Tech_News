@@ -1,0 +1,14 @@
+**장면 설명 (Scene Description)**
+A futuristic, glowing central AI core orchestrating multiple floating, semi-transparent spheres. Inside the spheres, abstract representations of visual geometry and flowing data streams are seamlessly merging together, symbolizing the convergence of different modalities and the evolution of autonomous AI agents. Luminous, neural-network-like digital threads connect the spheres in a complex but orderly web, representing independent agent orchestration without human intervention.
+
+**분위기 (Atmosphere)**
+Cinematic, highly advanced, professional, sophisticated, cutting-edge technology, sleek, profound, suitable for a premium tech news briefing video background.
+
+**색감 (Color Palette)**
+Deep cyber-blue and dark void violet background, accented with glowing teal, warm neon orange, and crisp brilliant white light emissions to highlight data processing.
+
+**구도 (Composition)**
+16:9 aspect ratio, wide shot, central symmetrical focus, shallow depth of field with gently blurred background nodes, leaving clean and smooth negative space on the outer edges for news overlays and anchors.
+
+**금지 요소 (Negative Prompt)**
+text, words, letters, typography, fonts, logos, watermarks, brand names, signatures, UI elements, human figures, faces, provocative content, NSFW, violence, messy, cluttered, chaotic.

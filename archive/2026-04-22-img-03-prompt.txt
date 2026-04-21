@@ -1,0 +1,9 @@
+**Scene Description:** A glowing holographic wireframe of a human face shattering and dissolving into digital data particles, firmly locked and suppressed by heavy, dark, metallic geometric vault structures. In the blurred background, two massive, contrasting futuristic abstract energy cores pulse in tense opposition, symbolizing corporate conflict. 
+
+**Atmosphere:** Serious, tense, authoritative, high-tech, cinematic, professional corporate thriller vibe. 
+
+**Color Palette:** Deep cyber-blue and neon teal contrasting sharply with heavy industrial gunmetal grey and striking amber warning lights. 
+
+**Composition:** Symmetrical wide-angle shot suitable for a news broadcast background, central focus on the dissolving digital face, smooth bokeh in the background to allow space for virtual presenters, dramatic volumetric lighting, 8k resolution, photorealistic masterpiece. 
+
+**Negative Prompt:** text, letters, fonts, typography, watermark, signature, logo, brand name, UI elements, explicit, violence, gore, blood.
