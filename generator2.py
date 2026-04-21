@@ -43,6 +43,7 @@ RSS_FEEDS = [
     {"name": "Line (LY Corp)", "url": "https://techblog.lycorp.co.jp/ko/feed/index.xml", "enabled": True, "category": "Tech"},
     {"name": "Woowa Bros", "url": "https://techblog.woowahan.com/feed/", "enabled": True, "category": "Tech"},
     {"name": "Toss Tech", "url": "https://toss.tech/rss.xml", "enabled": True, "category": "Fintech"},
+    {"name": "Google Blog", "url": "https://blog.google/rss/", "enabled": True, "category": "Tech"},
     {"name": "Google Korea Blog", "url": "https://blog.google/intl/ko-kr/rss/", "enabled": True, "category": "Tech"},
 ]
 
