@@ -1,0 +1,14 @@
+**[Scene Description]** 
+A cinematic high-tech aerospace engineering laboratory where monumental spacecraft hardware seamlessly merges with glowing holographic AI neural networks and abstract digital data streams. Radiant golden energy flows through the cyan data nodes, symbolizing massive financial acquisition and algorithmic curation.
+
+**[Atmosphere]** 
+Visionary, cutting-edge, professional, grand, and highly technological. A sleek and premium corporate mood suitable for a news briefing background.
+
+**[Color Palette]** 
+Deep space navy blue, sleek titanium silver, luminous neon cyan (representing AI), and glowing metallic gold (representing massive capital).
+
+**[Composition]** 
+Wide-angle shot, 16:9 aspect ratio, asymmetric balance with ample clean negative space on the left or right for a news presenter and graphics. Shallow depth of field with ultra-sharp glowing digital holograms in the foreground and softly blurred massive rocket engine structures in the background. Volumetric lighting, 8k resolution, photorealistic.
+
+**[Negative Prompt]** 
+text, letters, words, typography, fonts, watermark, logo, brand name, corporate identity, signature, explicit content, provocative, messy, cluttered, human faces, UI elements.

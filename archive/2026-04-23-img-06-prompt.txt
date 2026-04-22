@@ -1,0 +1,9 @@
+**Scene Description:** A silhouette of a visionary corporate executive standing in a high-tech boardroom, looking outward through a massive panoramic smart-glass window. On the glass, a complex, glowing holographic network of digital pipelines and interconnected automation nodes is rapidly expanding. Through the window, a futuristic mega-city is visible, sharply divided into two distinct zones: one side pulsing with hyper-speed glowing light trails and advanced energy, and the other side dim and stagnant, symbolizing an insurmountable technological gap. 
+
+**Atmosphere:** Cinematic, highly strategic, serious, futuristic, professional tech-news style, thought-provoking, and monumental.
+
+**Color Palette:** Deep navy blue, dark charcoal, and sleek obsidian backgrounds, strongly contrasted with vibrant glowing neon cyan, electric blue, and warm amber data streams representing AI energy and automation.
+
+**Composition:** Wide-angle shot, ultra-wide 16:9 aspect ratio. Rule of thirds applied, with the executive's silhouette positioned on the far left, looking towards the right. Ample dark negative space on the right side and top area to perfectly accommodate news lower-thirds and typography. Shallow depth of field with the holographic pipelines in sharp focus.
+
+**Negative Prompt (Forbidden Elements):** No text, no words, no letters, no typography, no logos, no watermarks, no brand names, no SpaceX/Google/OpenAI symbols, no UI buttons, no excessive clutter, no explicit content, no NSFW.

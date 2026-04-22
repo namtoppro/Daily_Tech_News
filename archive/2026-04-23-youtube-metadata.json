@@ -1,0 +1,36 @@
+{
+  "date": "2026-04-23",
+  "title": "구글과 OpenAI의 이번 변화, 대화형 AI를 넘어선 '실무형 에이전트'의 등장",
+  "description": "오늘 영상에서는 구글과 OpenAI가 동시에 발표한 '실무형 AI 에이전트'의 등장과 이것이 일하는 방식을 어떻게 근본적으로 바꾸고 있는지 짚어봅니다. 대화형 챗봇을 넘어 스스로 소프트웨어를 제어하고 실무를 대신하는 에이전트 시대의 개막을 확인해 보세요.\n\n[오늘의 핵심 이슈]\n• 구글, 크롬 및 워크스페이스 전반에 제미나이 기반 자동화 에이전트 전면 도입\n• OpenAI, 코덱스 기반 워크스페이스 에이전트 도입 및 웹소켓 적용으로 지연 시간 단축\n• 스페이스X, AI 코딩 생산성 확보를 위해 도구 '커서(Cursor)'에 600억 달러 인수 제안\n• 구글 클라우드, 비용 효율을 높인 8세대 TPU 및 엔비디아 투트랙 인프라 전략 발표\n\n본 영상은 글로벌 IT 매체 및 기업의 원문 기사/공식 발표 기반 요약을 통해 가장 정확한 기술 동향과 인사이트를 전달합니다.\n\n더 많은 정보는 아래 링크에서 확인하실 수 있습니다.\n👉 https://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #인공지능 #테크브리핑",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#인공지능",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "구글 제미나이",
+    "OpenAI 워크스페이스",
+    "AI 에이전트",
+    "제미나이 엔터프라이즈",
+    "스페이스X 커서",
+    "8세대 TPU",
+    "업무 자동화"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-23.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-23.md",
+    "archive/2026-04-23-audio-script.md",
+    "archive/2026-04-23-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "구글과 OpenAI의 실무형 에이전트 도입을 메인 이슈로 강조하고, 스페이스X의 천문학적인 커서 인수 제안을 통해 에이전트 자동화의 시장 가치를 입증하는 내러티브로 구성함.",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
