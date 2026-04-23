@@ -1,0 +1,9 @@
+**Scene Description:** An abstract, futuristic representation of AI software ecosystems merging seamlessly with physical hardware form factors. Glowing, fluid digital neural pathways intertwine and connect to sleek, minimalist, translucent silhouettes of smart glasses, a smart ring, and a modern wearable device. In the center, two bright energy cores smoothly merge into one massive, luminous digital hub, symbolizing corporate M&A, investment, and platform integration. 
+
+**Atmosphere:** Cinematic, visionary, highly sophisticated, and clean. It exudes a professional, high-tech news briefing ambiance with a sense of future innovation.
+
+**Color Palette:** A deep space navy blue and dark sleek charcoal background, illuminated by vibrant neon cyan data streams, contrasted with energetic warm gold and amber glowing accents to represent synergy and financial investment.
+
+**Composition:** 16:9 wide-angle shot, macro-photography style with a shallow depth of field (bokeh effect in the background). Soft volumetric lighting with elegant negative space on the left and right sides to accommodate news presenters or graphics. 8k resolution, highly detailed photorealistic rendering.
+
+**Negative Prompt:** Text, typography, letters, numbers, words, logos, watermarks, signatures, brand names, messy wires, cluttered background, human faces, bodies, explicit content, recognizable commercial products.

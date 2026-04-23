@@ -1,0 +1,73 @@
+{
+  "date": "2026-04-24",
+  "main_issue": {
+    "title": "OpenAI GPT-5.5와 Codex 출시, 그리고 NVIDIA 인프라 동맹",
+    "angle": "대화형 챗봇을 넘어 실제 워크플로우를 관장하는 'AI 에이전트(슈퍼 앱)'의 본격화와, 이를 뒷받침하는 필수 인프라 권력의 부상",
+    "why_it_matters": "AI가 단순히 질문에 답하는 것을 넘어, 문서를 만들고 여러 도구를 연결해 복잡한 지식 노동을 직접 수행하는 단계로 진입했습니다. 단순한 모델 업데이트가 아닌 업무 방식의 근본적 변화이며, 이 거대한 연산을 감당하기 위한 맞춤형 하드웨어(NVIDIA) 확보가 AI 서비스의 핵심 경쟁력이 되었음을 보여줍니다.",
+    "key_facts": [
+      "OpenAI가 복잡한 작업 처리에 특화된 새로운 모델 'GPT-5.5'를 공식 출시했습니다.",
+      "단순 챗봇이 아닌, 여러 도구를 플러그인으로 연결해 산출물을 직접 만들고 작업을 자동화하는 에이전트 애플리케이션 'Codex'를 함께 공개했습니다.",
+      "NVIDIA는 이 Codex가 자사의 최신 GB200 NVL72 랙 스케일 시스템에서 구동되며, 이미 1만 명 이상의 개발자가 활용 중이라고 발표했습니다."
+    ],
+    "key_numbers": [
+      "GPT-5.5",
+      "10,000명 이상의 개발자"
+    ],
+    "source_articles": [
+      "TechCrunch AI: OpenAI releases GPT-5.5, bringing company one step closer to an AI ‘super app’",
+      "NVIDIA Blog: OpenAI’s New GPT-5.5 Powers Codex on NVIDIA Infrastructure"
+    ]
+  },
+  "supporting_issues": [
+    {
+      "title": "AI 에이전트 및 하드웨어 폼팩터 생태계 선점 경쟁",
+      "role": "supporting",
+      "key_fact": "Sierra의 스타트업 Fragment 인수와 Era의 1,100만 달러 투자 유치 등, 시장의 자금이 모델 개발을 넘어 실사용자 접점을 장악하는 에이전트와 전용 기기 플랫폼으로 이동하고 있습니다.",
+      "source_articles": [
+        "TechCrunch AI: Bret Taylor’s Sierra buys YC-backed AI startup Fragment",
+        "TechCrunch AI: Era raises $11M to build a software platform for AI gadgets"
+      ]
+    },
+    {
+      "title": "에이전트 시대, 심화되는 컴퓨팅 자원 확보전",
+      "role": "supporting",
+      "key_fact": "급증하는 AI 워크로드를 감당하기 위해 Google이 오스트리아에 첫 TPU 데이터센터 투자를 발표했으며, 이종 산업의 수요까지 겹쳐 글로벌 컴퓨팅 자원(GPU) 품귀 현상이 심화되고 있습니다.",
+      "source_articles": [
+        "Google Blog: Elevating Austria: Google invests in its first data center in the Alps.",
+        "TechCrunch AI: AI galaxy hunters are adding to the global GPU crunch"
+      ]
+    }
+  ],
+  "hook_candidates": [
+    "단순히 말만 잘하는 AI의 시대는 끝났습니다. OpenAI가 여러 도구를 직접 다루며 업무를 대신하는 진짜 '에이전트'를 내놓았습니다.",
+    "OpenAI의 GPT-5.5 발표 현장, 정작 시장이 주목한 건 AI 모델이 아니라 그 뒤를 받치고 있는 NVIDIA의 거대한 인프라였습니다.",
+    "이제 AI는 챗봇이 아니라 여러분의 워크플로우를 통째로 관리하는 '슈퍼 앱'으로 진화하고 있습니다."
+  ],
+  "title_candidates": [
+    "OpenAI GPT-5.5 출시, 모델 성능보다 더 중요한 변화",
+    "챗봇 넘어선 OpenAI Codex, 개발자와 사용자에게 달라지는 점",
+    "오늘 AI 업계 핵심: 모델은 OpenAI, 인프라는 NVIDIA가 장악하다",
+    "GPT-5.5와 NVIDIA의 결합, AI 에이전트 시대가 진짜 중요한 이유",
+    "앱 생태계를 묶어버린 AI, OpenAI의 이번 발표가 의미하는 것"
+  ],
+  "thumbnail_copy_candidates": [
+    "챗봇 시대 끝",
+    "진짜 AI 에이전트 등장",
+    "오픈AI와 엔비디아의 결합"
+  ],
+  "narrative": {
+    "hook": "단순히 대화만 나누는 AI 시대는 지났습니다. OpenAI가 여러 소프트웨어를 직접 다루며 업무를 대신하는 진짜 에이전트를 내놓았습니다.",
+    "setup": "오늘 가장 주목해야 할 핵심 이슈는 OpenAI의 GPT-5.5 출시와, 이를 뒷받침하는 NVIDIA의 거대한 인프라 동맹입니다. AI 기술의 중심이 '말하는 챗봇'에서 '행동하는 슈퍼 앱'으로 완전히 이동하고 있습니다.",
+    "fact_1": "OpenAI는 복잡한 작업에 특화된 모델 GPT-5.5를 출시하며, 플러그인을 통해 여러 도구를 연결하고 산출물을 직접 만들어내는 'Codex'를 공개했습니다.",
+    "fact_2": "중요한 점은 이 거대한 에이전트 시스템이 NVIDIA의 최신 GB200 NVL72 랙 스케일 인프라 위에서 돌아가며, 이미 1만 명 넘는 개발자가 생태계에 합류했다는 사실입니다.",
+    "fact_3": "이에 발맞춰 시장에서는 AI 에이전트 기업 간의 인수합병이 활발해지고 있으며, Google 같은 빅테크는 폭증하는 연산량을 감당하기 위해 새로운 데이터센터 확장에 천문학적인 돈을 쏟아붓고 있습니다.",
+    "takeaway": "AI 모델이 똑똑해져 실제 행동을 수행할수록 이를 구동할 컴퓨팅 비용과 인프라 장벽은 기하급수적으로 높아집니다. 기업과 개발자라면 단일 AI 툴 도입을 넘어, 거대한 에이전트 생태계로의 프로세스 전환을 지금 바로 준비해야 합니다."
+  },
+  "packaging_notes": "오늘 영상은 GPT-5.5라는 '새로운 모델의 스펙' 자체보다, 그것이 'Codex'라는 에이전트 형태로 어떻게 작동하며, 왜 NVIDIA의 거대 인프라 위에서만 가능한지에 초점을 맞춥니다. 시청자에게 텍스트 생성의 시대를 넘어 워크플로우 자동화의 시대로 넘어왔음을 분명히 인지시키는 것이 핵심입니다. M&A 및 데이터센터 확충 소식은 이 거대한 패러다임 전환을 증명하는 생태계의 연쇄 반응으로 자연스럽게 뒷받침해 주세요.",
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-24.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "generatorModel": "gemini-3.1-pro-preview"
+}
