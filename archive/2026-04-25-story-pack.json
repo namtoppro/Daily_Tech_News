@@ -1,0 +1,82 @@
+{
+  "date": "2026-04-25",
+  "main_issue": {
+    "title": "빅테크 AI 인프라 지각변동: 구글 400억 달러 투자와 메타의 탈엔비디아 행보",
+    "angle": "AI 모델 경쟁을 넘어선 인프라 다변화: 특정 워크로드(에이전트)에 최적화된 맞춤형 칩셋 생태계의 부상",
+    "why_it_matters": "기업들이 향후 AI를 도입하고 유지할 때 막대한 컴퓨팅 및 하드웨어 비용이 핵심 과제가 되고 있습니다. 엔비디아 중심의 범용 GPU 의존도를 낮추고 사내 워크로드에 맞는 맞춤형 컴퓨팅 자원 조달을 서둘러야 할 시점임을 보여줍니다.",
+    "key_facts": [
+      "구글, 앤스로픽에 현금 및 컴퓨팅 자원 형태로 최대 400억 달러 규모의 대규모 투자 발표",
+      "메타, AI 에이전트 워크로드 처리를 위해 아마존의 자체 개발 CPU 수백만 개를 확보하는 계약 체결",
+      "빅테크의 AI 인프라 투자가 단순 GPU 확보를 넘어, 추론 및 에이전트 구동을 위한 다변화 전략으로 전환 중"
+    ],
+    "key_numbers": [
+      "400억 달러",
+      "수백만 개"
+    ],
+    "source_articles": [
+      "TechCrunch AI: Google to invest up to $40B in Anthropic in cash and compute",
+      "TechCrunch AI: In another wild turn for AI chips, Meta signs deal for millions of Amazon AI CPUs"
+    ]
+  },
+  "supporting_issues": [
+    {
+      "title": "애플 리더십 교체와 일론 머스크의 커서 인수 추진",
+      "role": "supporting",
+      "key_fact": "애플 팀 쿡 CEO가 2026년 9월 사임하고 존 터너스가 내정된 가운데, 일론 머스크가 AI 코드 편집기 커서(Cursor)를 600억 달러에 인수 추진 중입니다.",
+      "source_articles": [
+        "TechCrunch AI: Apple’s new CEO, and why Elon Musk wants to buy Cursor for $60B",
+        "TechCrunch AI: Tim Cook is stepping down. What happens to Apple now?"
+      ]
+    },
+    {
+      "title": "딥시크 V4 프리뷰 및 로컬 하드웨어 품절 대란",
+      "role": "supporting",
+      "key_fact": "긴 프롬프트를 효율적으로 처리하는 딥시크 V4 프리뷰가 공개되며, 클라우드 대신 로컬에서 AI를 구동하려는 수요가 폭발해 애플 맥미니가 품절되고 웃돈 거래가 발생하고 있습니다.",
+      "source_articles": [
+        "MIT Technology Review AI: Three reasons why DeepSeek’s new model V4 matters",
+        "TechCrunch AI: Marked-up Mac minis flood eBay amid shortages driven by AI"
+      ]
+    },
+    {
+      "title": "빅테크 생태계 결속 강화 및 핵심 AI 인재 영입전",
+      "role": "supporting",
+      "key_fact": "구글은 제미나이 4월 업데이트를 통해 활용성을 증명하고 있으며, 메타는 하드웨어 확보와 동시에 씽킹 머신 랩스 등에서 핵심 연구 인력을 적극 영입 중입니다.",
+      "source_articles": [
+        "Google Blog: 7 highlights from Google Cloud Next ‘26",
+        "TechCrunch AI: Meta’s loss is Thinking Machines’ gain"
+      ]
+    }
+  ],
+  "hook_candidates": [
+    "구글이 앤스로픽에 무려 400억 달러를 투자하고, 메타가 아마존 칩을 수백만 개 사들였습니다. 지금 AI 시장에서 진짜 중요한 변화는 인프라에서 일어나고 있습니다.",
+    "엔비디아만 바라보던 빅테크들의 전략이 완전히 바뀌고 있습니다. 메타의 맞춤형 칩 선택과 구글의 역대급 투자가 말해주는 AI 인프라 다변화의 새로운 국면을 짚어봅니다.",
+    "막대한 클라우드 비용을 감당하기 위해 빅테크들이 움직이기 시작했습니다. 400억 달러 규모의 투자부터 로컬 환경 구동을 위한 맥미니 품절 사태까지, 오늘 반드시 알아야 할 흐름을 정리했습니다."
+  ],
+  "title_candidates": [
+    "메타의 아마존 칩 선택과 구글의 400억 달러 투자, 인프라 전략이 바뀐다",
+    "엔비디아 벗어나는 빅테크들, AI 인프라 다변화가 진짜 중요한 이유",
+    "오늘 AI 업계 핵심: 모델 성능보다 더 중요한 맞춤형 인프라 변화",
+    "구글과 메타의 이번 결정, AI 하드웨어 생태계가 달라집니다",
+    "오늘의 AI·테크 브리핑 | 앤스로픽 대규모 투자, 팀 쿡 사임, 맥미니 품절"
+  ],
+  "thumbnail_copy_candidates": [
+    "인프라 전략이 바뀐다",
+    "메타의 아마존 칩 선택",
+    "구글 400억불 베팅"
+  ],
+  "narrative": {
+    "hook": "구글이 앤스로픽에 무려 400억 달러를 투자하고, 메타는 AI 처리를 위해 아마존의 CPU 수백만 개를 구매했습니다. 지금 가장 주목해야 할 건 모델의 성능이 아니라, 이들이 인프라를 다루는 방식의 근본적인 변화입니다.",
+    "setup": "그동안 AI 훈련과 추론의 핵심은 엔비디아의 범용 GPU였습니다. 하지만 워크로드가 복잡해지고 에이전트 구동이 폭발적으로 늘어나면서, 빅테크들은 막대한 비용을 감당하기 위해 특정 작업에 특화된 맞춤형 칩셋과 대형 자본 연합으로 돌파구를 찾고 있습니다.",
+    "fact_1": "먼저 구글은 사이버 보안 등에 강점을 보이는 앤스로픽에 현금과 컴퓨팅 자원을 합쳐 최대 400억 달러를 투자하기로 했습니다. 이는 파트너사의 신규 모델 개발 속도를 직접적으로 끌어올리기 위한 파격적인 지원입니다.",
+    "fact_2": "같은 날 메타는 엔비디아 GPU가 아닌, 아마존이 자체 개발한 CPU 수백만 개를 조달하는 계약을 맺었습니다. 이는 AI 에이전트라는 특정 작업에 최적화된 맞춤형 인프라 생태계가 본격적으로 다변화되고 있음을 뜻합니다.",
+    "fact_3": "이와 함께 AI 시장의 다른 축에서는 일론 머스크의 600억 달러 커서(Cursor) 인수 추진, 팀 쿡 애플 CEO의 내년 사임 발표, 그리고 로컬 AI 수요 폭발로 인한 맥미니 품절 사태 등 업계 판도를 흔들 굵직한 소식들이 이어졌습니다.",
+    "takeaway": "결국 AI 시대의 진짜 경쟁력은 모델의 크기를 넘어, 비용 효율적인 컴퓨팅 자원의 확보와 데이터 통제권으로 이동하고 있습니다. 사내 워크로드의 특성에 맞춰 하드웨어 조달과 하이브리드 운영 전략을 새롭게 점검해볼 때입니다."
+  },
+  "packaging_notes": "메인 이슈는 구글과 메타의 대규모 AI 인프라 동향으로 잡고, '엔비디아 중심에서 맞춤형 칩셋으로의 다변화'라는 거시적 관점을 전달하는 데 집중합니다. 일론 머스크의 Cursor 인수나 팀 쿡 사임 같은 화제성 높은 기사는 개별 뉴스의 파급력은 크지만 내러티브 분산을 막기 위해 supporting issue로 배치했습니다. 썸네일과 제목에서는 메인 이슈인 인프라 변화의 무게감을 살려 산업적 맥락을 찾는 시청자의 클릭을 유도하도록 구성했습니다.",
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-25.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "generatorModel": "gemini-3.1-pro-preview"
+}
