@@ -1,0 +1,9 @@
+**Scene Description:** A wide-angle view of a futuristic, monumental data center seamlessly nestled within a dense, misty evergreen pine forest. The massive facility features sleek, modern architectural lines with giant transparent glass walls revealing endless rows of glowing AI server racks inside. A bright, high-tech energy pathway flows through the forest and leads toward the wide-open gates of the facility, symbolizing the unhindered expansion of technology and policy approval. 
+
+**Atmosphere:** Cinematic, majestic, and thought-provoking. A striking visual balance and slight dramatic tension between pristine, quiet nature and the immense, humming power of cutting-edge artificial intelligence infrastructure. 
+
+**Color Palette:** Deep forest greens, misty slate grays, and earthy tones, sharply contrasted with vibrant electric blues, glowing neon green accents representing energy and the 'green light' of approval, and a soft golden sunrise in the background.
+
+**Composition:** 16:9 aspect ratio, wide establishing shot suitable for a news briefing background. Extreme depth of field with leading lines drawing the viewer's eye toward the glowing technological hub. Ample empty negative space in the sky and upper corners to naturally accommodate news graphics and presenter overlays.
+
+**Negative Prompt:** No text, no words, no letters, no fonts, no watermarks, no logos, no brand names, no signatures, no UI elements, no human figures, no explicitly suggestive content, no cluttered foregrounds.

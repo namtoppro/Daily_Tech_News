@@ -1,0 +1,9 @@
+**Scene Description:** A futuristic and highly advanced conceptual cityscape of Tokyo serving as a massive global deep-tech and AI hub. Sleek, hyper-modern skyscrapers seamlessly intertwining with glowing abstract digital network lines, floating interconnected data nodes, and fiber-optic streams that symbolize global investment and technological transactions. A very subtle, elegant silhouette of Tokyo's iconic landmarks in the distant background, covered in a soft, cinematic atmospheric mist. 
+
+**Mood:** Professional, visionary, cutting-edge, dynamic, and inspiring high-end corporate tech atmosphere.
+
+**Color Palette:** Deep navy blue and dark slate base, vibrant neon cyan and cyber purple glowing data lines, contrasted with rich, sophisticated gold accents symbolizing global capital and innovation.
+
+**Composition:** Wide-angle 16:9 cinematic shot, asymmetrical framing with a dynamic focal point of glowing tech nodes on the right side, leaving smooth, dark negative space on the left side for news anchor and graphic placement. Shallow depth of field, volumetric lighting, ray tracing, 8k resolution, photorealistic masterpiece.
+
+**Negative Prompt:** No text, no letters, no words, no typography, no fonts, no logos, no watermarks, no brand names, no explicit content, no messy UI, no interface elements, no humans.

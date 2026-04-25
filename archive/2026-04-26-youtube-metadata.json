@@ -1,0 +1,37 @@
+{
+  "date": "2026-04-26",
+  "title": "사람 대신 돈 쓰는 AI, 핀테크와 쇼핑의 룰이 바뀐다",
+  "description": "오늘 테크 업계에서 가장 주목해야 할 변화는 '기계 간(M2M) 상거래'의 등장입니다.\n앤스로픽이 사용자의 개입 없이 AI가 스스로 실제 화폐를 사용해 상품을 결제하는 테스트에 성공하며 본격적인 에이전트 경제의 시작을 알렸습니다.\n\n[오늘의 핵심 테크 이슈]\n• 앤스로픽: AI 에이전트 간 실제 화폐를 사용한 실물 상품 거래 테스트 성공\n• 오픈AI: CEO 샘 알트먼, 치안 위협 관련 사전 경고 누락에 대해 지역 사회 공개 사과\n• 소버린 AI: 미국 빅테크 독점 견제를 위한 코히어와 알레프 알파(캐나다·독일) 전격 합병\n• 애플: 하드웨어 전문가 중심 차기 리더십 조명 및 온디바이스 AI 전략 회귀 전망\n\n* 본 영상은 글로벌 테크 매체의 원문 기사 및 공식 발표 기반 요약으로 제작되었습니다.\n\n[출처 목록]\n- TechCrunch AI (Anthropic / OpenAI / Cohere / Apple 관련 보도)\n\n🔗 청담랩 브랜드 바로가기: https://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #인공지능 #테크브리핑",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#인공지능",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "앤스로픽",
+    "AI 상거래",
+    "에이전트 경제",
+    "인공지능 결제",
+    "오픈AI",
+    "소버린 AI",
+    "애플 온디바이스",
+    "테크뉴스"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-26.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-26.md",
+    "archive/2026-04-26-audio-script.md",
+    "archive/2026-04-26-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "앤스로픽의 에이전트 실물 화폐 결제 테스트 성공을 메인 이슈로 전면 배치하여 AI가 금융과 커머스 시장에 미칠 영향을 직관적인 이슈형 제목으로 설계함.",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
