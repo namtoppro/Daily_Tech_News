@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-27",
+  "title": "현금 대신 Anthropic 지분 요구한 샌프란시스코 부동산, 지금 중요한 이유는 이것",
+  "description": "수집된 원문 기사 및 공식 발표를 기반으로 요약해 드리는 데일리 테크 뉴스입니다.\n오늘은 샌프란시스코에서 달러 대신 'Anthropic(앤스로픽)' 비상장 지분으로만 저택을 팔겠다고 나선 이례적인 부동산 매물과 그 시장의 신호를 분석합니다.\n\n📌 오늘 영상의 핵심 포인트\n- 샌프란시스코 밀 밸리에 등장한 13에이커(약 1만 5,900평) 규모의 대형 부동산 매물\n- 매도자가 현금이나 은행 대출을 거절하고 'Anthropic 지분'만을 매수 조건으로 명시\n- 비상장 딥테크 기업의 주식이 단순 투자 자산을 넘어, 실물 자산을 직접 구매하는 대안 화폐로 대우받기 시작\n- 핵심 개발자들의 주식 보상(스톡옵션) 실질 가치와 AI 기업 밸류에이션 산정에 미치는 거시적 의미\n\n[출처 안내]\n- TechCrunch AI: To buy this Bay Area home, you’ll need Anthropic equity\n\n[로프리 공식 홈페이지]\nhttps://lowprice.koreall.site/\n\n#로프리 #청담랩 #AI #TechNews #스타트업 #테크브리핑",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#TechNews",
+    "#스타트업",
+    "#테크브리핑"
+  ],
+  "keywords": [
+    "Anthropic",
+    "앤스로픽",
+    "인공지능",
+    "실리콘밸리 부동산",
+    "비상장 주식",
+    "스톡옵션",
+    "기술뉴스",
+    "AI 기업가치",
+    "딥테크"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-27.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-27.md",
+    "archive/2026-04-27-audio-script.md",
+    "archive/2026-04-27-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "Anthropic 지분이 실물 부동산 결제 수단으로 등장한 메인 이슈 1개에 집중하여, '이슈+의미' 권장 포맷(형식 A)의 제목으로 패키징함.",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
