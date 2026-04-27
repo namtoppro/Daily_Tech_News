@@ -1,0 +1,9 @@
+**Scene Description:** A sleek, futuristic, completely unbranded glass smartphone floating in mid-air within a vast, high-tech void. Instead of a traditional grid of app icons, the screen projects a mesmerizing, fluid, holographic energy core representing a centralized, autonomous AI agent. Bright, self-generating geometric data particles and intricate neural network lines swirl directly out of the core, expanding independently without any human interaction. In the distant, blurred background, subtle abstract digital strings are visually breaking away from faint, shadowy human silhouettes, symbolizing the departure from human data dependency.
+
+**Atmosphere:** Cinematic, visionary, premium technology, highly professional news broadcast background, hyper-realistic, futuristic, sleek, 8k resolution, Unreal Engine 5 render style, volumetric lighting.
+
+**Color Palette:** Deep midnight blue and obsidian black backdrop, strongly contrasted and illuminated by striking electric cyan, glowing neon violet, and metallic silver accents.
+
+**Composition:** Center-focused, perfectly balanced wide shot (16:9 aspect ratio), shallow depth of field, ultra-sharp focus on the holographic smartphone and the glowing energy core, smooth cinematic bokeh in the background, generous dark negative space on the left and right sides to accommodate news graphics.
+
+**Negative Prompt:** Text, font, letters, typography, numbers, watermark, signature, logos, brand names, corporate symbols, Apple, Android, UI/UX overlays, traditional square app icons, recognizable human faces, messy lines, suggestive content, explicit content, nudity, cartoon, 2D illustration, low resolution, cluttered background.

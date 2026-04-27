@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-28",
+  "main_issue": {
+    "title": "OpenAI의 클라우드 독립 선언, MS 독점 깨고 AWS 진출",
+    "angle": "클라우드 시장 종속성을 흔드는 OpenAI의 홀로서기",
+    "why_it_matters": "기업들이 AI를 도입할 때 특정 클라우드(Azure)에 종속될 필요가 없어지며, 글로벌 AI 도입의 진입 장벽과 인프라 판도가 완전히 뒤바뀌기 때문입니다.",
+    "key_facts": [
+      "OpenAI가 500억 달러 규모의 아마존 거래를 둘러싼 MS와의 법적 분쟁을 수익 배분 조정 조건으로 공식 종료했습니다.",
+      "이번 합의를 통해 OpenAI는 자사 AI 제품군을 세계 1위 클라우드인 AWS에서 직접 판매할 수 있는 권리를 확보했습니다.",
+      "동시에 미국 연방 기관의 AI 도입을 가능하게 하는 높은 보안 등급인 'FedRAMP Moderate' 인증을 획득하며 공공 시장 진출을 본격화했습니다."
+    ],
+    "key_numbers": [
+      "$50B",
+      "FedRAMP Moderate"
+    ],
+    "source_articles": [
+      "TechCrunch AI: OpenAI ends Microsoft legal peril over its $50B Amazon deal",
+      "OpenAI: OpenAI available at FedRAMP Moderate"
+    ]
+  },
+  "supporting_issues": [
+    {
+      "title": "인간 데이터 없는 AI 개발에 11억 달러 투입",
+      "role": "supporting",
+      "key_fact": "전 딥마인드 연구원이 설립한 Ineffable Intelligence가 인간 데이터 고갈 문제를 해결할 차세대 AI 구축을 위해 11억 달러를 조달했습니다.",
+      "source_articles": [
+        "TechCrunch AI: DeepMind’s David Silver just raised $1.1B to build an AI that learns without human data"
+      ]
+    },
+    {
+      "title": "OpenAI 자체 스마트폰 개발 루머",
+      "role": "supporting",
+      "key_fact": "기존 앱스토어를 대체하고 AI 에이전트를 중심으로 구동되는 자체 스마트폰을 OpenAI가 퀄컴 등과 협력해 개발 중이라는 분석이 제기되었습니다.",
+      "source_articles": [
+        "TechCrunch AI: OpenAI could be making a phone with AI agents replacing apps"
+      ]
+    },
+    {
+      "title": "야간 AI 전력을 위한 메타의 우주 태양광 계약",
+      "role": "supporting",
+      "key_fact": "거대 AI 구동에 필요한 막대한 에너지를 확보하기 위해, 메타가 데이터센터 야간 전력을 우주에서 쏘아 보내는 태양광 발전 계약을 체결했습니다.",
+      "source_articles": [
+        "TechCrunch AI: Meta inks deal for solar power at night, beamed from space"
+      ]
+    }
+  ],
+  "hook_candidates": [
+    "OpenAI를 쓰려면 무조건 MS 애저를 써야 한다고 생각하셨나요? 오늘 그 공식이 완전히 깨졌습니다.",
+    "오랜 갈등 끝에 MS와의 독점 구조를 깬 OpenAI가 AWS 진출을 선언했습니다. 기업 AI 생태계가 통째로 흔들리고 있습니다.",
+    "클라우드는 AWS로, 스마트폰은 자체 개발로. 오늘 밝혀진 OpenAI의 거침없는 홀로서기 행보를 정리했습니다."
+  ],
+  "title_candidates": [
+    "OpenAI의 이번 결정, 클라우드 시장 판도를 뒤집습니다",
+    "MS 독점 깬 OpenAI, AWS 진출이 중요한 진짜 이유",
+    "오늘 AI 업계 핵심: OpenAI의 홀로서기와 인프라 확장",
+    "OpenAI의 AWS 진입, 기업 AI 도입에 달라지는 점",
+    "오늘의 AI 테크 브리핑 | OpenAI 독립, 우주 태양광, 데이터 고갈"
+  ],
+  "thumbnail_copy_candidates": [
+    "MS 독점 깨졌다",
+    "OpenAI의 클라우드 독립",
+    "AWS로 간 OpenAI"
+  ],
+  "narrative": {
+    "hook": "OpenAI의 최고 성능 모델을 쓰려면 MS 애저에 종속되어야 한다는 공식, 오늘부로 완전히 깨졌습니다.",
+    "setup": "OpenAI가 마이크로소프트와의 오랜 법적 갈등을 끝내고, 마침내 경쟁사인 AWS에 자사 제품을 출시합니다. 이는 단순한 플랫폼 추가가 아니라, 글로벌 AI 생태계의 패러다임이 바뀌는 거대한 신호입니다.",
+    "fact_1": "OpenAI는 500억 달러 규모의 아마존 거래를 둘러싼 MS와의 분쟁을 수익 배분 조정으로 마무리하며, AWS에서 직접 제품을 판매할 수 있는 양보를 얻어냈습니다.",
+    "fact_2": "동시에 미국 정부 기관이 도입할 수 있는 핵심 보안 인증인 'FedRAMP Moderate'까지 획득하며 엔터프라이즈와 공공 시장의 진입로를 활짝 열었습니다.",
+    "fact_3": "여기에 인간 데이터 없이 학습하는 차세대 AI 모델에 대한 11억 달러 규모의 대규모 투자와, 앱을 대체할 OpenAI의 자체 스마트폰 개발 루머까지 겹치며 AI 업계의 하드웨어·소프트웨어 지형이 요동치고 있습니다.",
+    "takeaway": "클라우드 종속을 벗어난 OpenAI의 강력한 홀로서기가 시작되었습니다. 기업들의 AI 도입 문턱이 대폭 낮아지는 가운데, 기존 앱 생태계와 클라우드 인프라를 재편하려는 빅테크들의 생존 경쟁은 이제 새로운 국면을 맞이했습니다."
+  },
+  "packaging_notes": "이 영상은 단순한 기업 간 분쟁 종료 뉴스가 아니라 'AI 모델과 클라우드 플랫폼의 분리'라는 거시적 관점에서 접근해야 합니다. B2B 시청자와 개발자에게는 실질적인 변화인 AWS 진출을 메인으로 강조하고, 일반 시청자의 흥미를 끌 수 있는 자체 폰 루머와 우주 태양광 뉴스를 서브 훅으로 묶어 시청 유지율을 높이는 전략을 권장합니다.",
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-28.md",
+    "YOUTUBE_RULES.md"
+  ],
+  "generatorModel": "gemini-3.1-pro-preview"
+}
