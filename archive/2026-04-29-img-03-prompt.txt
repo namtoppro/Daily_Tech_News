@@ -1,0 +1,9 @@
+**Scene description:** A cinematic still-life composition of next-generation technology. A sleek, translucent smartphone projecting abstract, floating holographic UI/UX elements and glowing digital nodes, representing mobile AI coding. Next to it, minimalist futuristic consumer wearables, such as wireless earbuds and a sleek smartwatch, emitting soft, luminous neural network patterns and brainwave-like light trails, symbolizing non-invasive brain-computer interfaces. The devices rest on a dark, highly reflective glass surface. 
+
+**Atmosphere:** High-tech, visionary, professional, sophisticated, and futuristic. Perfectly suited for a premium tech news briefing background. 
+
+**Color palette:** Deep cyber-blue, neon cyan, soft ethereal violet, and sleek metallic silver accents against a dark, moody, and elegant background. 
+
+**Composition:** Wide-angle 16:9 aspect ratio, dramatic rim lighting, shallow depth of field with cinematic glowing bokeh in the background. Sharp focus on the holographic projections and wearable devices, leaving clean and uncluttered negative space on the edges for news graphics and presenter overlay. 
+
+**Negative prompt:** No text, no letters, no typography, no logos, no watermarks, no brand names, no messy wires, no explicit content, no human faces, no chaotic or cluttered background.

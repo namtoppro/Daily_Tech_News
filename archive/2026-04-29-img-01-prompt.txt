@@ -1,0 +1,9 @@
+A sprawling, futuristic digital landscape visualizing next-generation cloud infrastructure and autonomous AI agents. At the center, a glowing, unified multi-modal energy core projects a hyper-realistic 3D holographic simulation of a complex mechanical structure, symbolizing a simulation-first era. Surrounding the core are highly structured, glowing translucent containment units floating in perfect synchronization, representing organized fleet management. Massive ethereal data streams flow seamlessly between various glowing neural network nodes, illustrating ultra-fast, interconnected AI models. 
+
+Mood: Cinematic, cutting-edge, highly professional, awe-inspiring, clean and stable atmosphere suitable for a premium tech news video background. 
+
+Color: Deep cyber-blue and dark slate foundational tones, illuminated by vibrant neon green, amber-orange, energetic deep purple, and sleek crimson-red volumetric lights. 
+
+Composition: 16:9 wide-angle shot, rule of thirds, sharp focus on the central holographic core with a smooth depth of field blurring the distant infinite server-like architecture. Generous clean negative space on the sides for broadcast graphics overlay. 
+
+Negative Prompt: Text, letters, typography, numbers, watermarks, signatures, logos, corporate brand names, human figures, faces, messy cables, chaotic composition, noise, low resolution, violent, explicit, inappropriate content. --ar 16:9 --style raw --v 6.0

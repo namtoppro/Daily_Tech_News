@@ -1,0 +1,41 @@
+{
+  "date": "2026-04-29",
+  "title": "AWS의 GPT-5.5 전격 도입, 클라우드 판도가 뒤집힌 이유",
+  "description": "마이크로소프트의 오픈AI 독점권이 종료되자마자 AWS가 최신 모델을 전격 도입하며 클라우드 시장의 지각변동이 시작되었습니다. 단순 챗봇을 넘어 기업의 업무를 알아서 처리하는 '자율형 AI 에이전트' 인프라 경쟁의 핵심을 알아봅니다.\n\n오늘의 핵심 이슈:\n• MS 독점 종료 단 하루 만에, AWS 베드록에 GPT-5.5 전격 도입\n• 엔비디아, 에이전트 구동 효율을 9배 높인 멀티모달 '네모트론 3' 발표\n• 레드햇, 수많은 기업용 AI 에이전트 통합 관리를 위한 'Tank OS' 공개\n• 구글, 앤스로픽이 거부한 미 국방부 계약 수주 및 자율 결제 프로토콜(AP2) 기증\n\n본 영상은 글로벌 IT 매체의 원문 기사와 빅테크 공식 발표 기반 요약을 통해 신뢰할 수 있는 정보와 기술 변화의 맥락을 전달합니다.\n\nhttps://lowprice.koreall.site/\n#로프리 #청담랩 #AI #클라우드 #기술뉴스",
+  "hashtags": [
+    "https://lowprice.koreall.site/",
+    "#로프리",
+    "#청담랩",
+    "#AI",
+    "#클라우드",
+    "#인공지능",
+    "#기술뉴스",
+    "#TechNews"
+  ],
+  "keywords": [
+    "AWS",
+    "오픈AI",
+    "GPT-5.5",
+    "마이크로소프트 독점",
+    "클라우드 인프라",
+    "엔비디아 네모트론",
+    "구글 국방부",
+    "AI 에이전트",
+    "레드햇",
+    "인공지능 도입"
+  ],
+  "privacyStatus": "public",
+  "category": "Science & Technology",
+  "playlistSuggestion": "Daily Tech News",
+  "videoFile": "archive/2026-04-29.mp4",
+  "videoExists": true,
+  "sourceFiles": [
+    "post.md",
+    "archive/2026-04-29.md",
+    "archive/2026-04-29-audio-script.md",
+    "archive/2026-04-29-story-pack.json",
+    "YOUTUBE_RULES.md"
+  ],
+  "notes": "AWS의 오픈AI 최신 모델 전격 도입과 MS 독점권 종료라는 중대한 인프라 변화를 메인 이슈로 설정해 패키징 완료",
+  "generatorModel": "gemini-3.1-pro-preview"
+}
