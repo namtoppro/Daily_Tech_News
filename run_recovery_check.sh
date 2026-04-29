@@ -12,6 +12,7 @@ REPORT_FILE="$LOG_DIR/${TODAY}-report.txt"
 UPLOAD_RECEIPT="$ARCHIVE_DIR/${TODAY}-youtube-upload.json"
 META_FILE="$ARCHIVE_DIR/${TODAY}-youtube-metadata.json"
 MP4_FILE="$ARCHIVE_DIR/${TODAY}.mp4"
+YOUTUBE_REAUTH_REQUIRED=0
 mkdir -p "$LOG_DIR"
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
@@ -141,7 +142,11 @@ else
 
   if [ ! -f "$UPLOAD_RECEIPT" ] || [ "$CURRENT_PRIVACY" != "public" ] || [ -z "$CURRENT_URL" ]; then
     log "유튜브 업로드 재실행"
-    zsh "$SCRIPT_DIR/run_youtube_upload.sh" 2>&1 | tee -a "$LOG_FILE" || true
+    UPLOAD_OUTPUT="$(zsh "$SCRIPT_DIR/run_youtube_upload.sh" 2>&1 | tee -a "$LOG_FILE" || true)"
+    if printf '%s' "$UPLOAD_OUTPUT" | grep -q 'YOUTUBE_REAUTH_REQUIRED=1'; then
+      YOUTUBE_REAUTH_REQUIRED=1
+      repair_reason+=("유튜브 OAuth 재인증 필요")
+    fi
   fi
 fi
 
@@ -162,5 +167,9 @@ if [ -f "$MP4_FILE" ] && [ "$POST_PRIVACY" = "public" ] && [ -n "$POST_URL" ]; t
 fi
 
 log "복구 미완료"
-send_message "[Daily Tech News 8:30 복구]\n- 상태: 미완료\n- 원인: ${repair_reason[*]}\n- mp4 존재: $( [ -f "$MP4_FILE" ] && echo yes || echo no )\n- 업로드 공개상태: ${POST_PRIVACY:-none}\n- 링크: ${POST_URL:-none}\n- 수동 확인 필요"
+if [ "$YOUTUBE_REAUTH_REQUIRED" -eq 1 ]; then
+  send_message "[Daily Tech News 8:30 복구]\n- 상태: 미완료\n- 원인: ${repair_reason[*]}\n- 조치: 유튜브 OAuth 재인증 필요\n- mp4 존재: $( [ -f "$MP4_FILE" ] && echo yes || echo no )\n- 업로드 공개상태: ${POST_PRIVACY:-none}\n- 링크: ${POST_URL:-none}"
+else
+  send_message "[Daily Tech News 8:30 복구]\n- 상태: 미완료\n- 원인: ${repair_reason[*]}\n- mp4 존재: $( [ -f "$MP4_FILE" ] && echo yes || echo no )\n- 업로드 공개상태: ${POST_PRIVACY:-none}\n- 링크: ${POST_URL:-none}\n- 수동 확인 필요"
+fi
 exit 1

@@ -17,6 +17,7 @@ from datetime import datetime
 from pathlib import Path
 
 from dotenv import load_dotenv
+from google.auth.exceptions import RefreshError
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -38,6 +39,10 @@ YOUTUBE_DEFAULT_PRIVACY = os.getenv('YOUTUBE_DEFAULT_PRIVACY', 'unlisted').strip
 YOUTUBE_DEFAULT_CATEGORY_ID = os.getenv('YOUTUBE_DEFAULT_CATEGORY_ID', '28').strip() or '28'
 YOUTUBE_DEFAULT_LANGUAGE = os.getenv('YOUTUBE_DEFAULT_LANGUAGE', 'ko').strip() or 'ko'
 YOUTUBE_DEFAULT_PLAYLIST = os.getenv('YOUTUBE_DEFAULT_PLAYLIST', 'Daily Tech News').strip() or 'Daily Tech News'
+
+
+class YouTubeReauthRequired(RuntimeError):
+    pass
 
 
 def parse_args() -> argparse.Namespace:
@@ -84,7 +89,16 @@ def get_credentials() -> Credentials:
         return creds
 
     if creds and creds.expired and creds.refresh_token:
-        creds.refresh(Request())
+        try:
+            creds.refresh(Request())
+        except RefreshError as e:
+            msg = str(e)
+            if 'invalid_grant' in msg or 'expired or revoked' in msg or 'Bad Request' in msg:
+                raise YouTubeReauthRequired(
+                    'YouTube OAuth 토큰이 만료되었거나 철회되었습니다. '
+                    'youtube_token.json을 repo 밖으로 백업 이동한 뒤 다시 OAuth 재인증이 필요합니다.'
+                ) from e
+            raise
     else:
         flow = InstalledAppFlow.from_client_secrets_file(str(secret_path), SCOPES)
         creds = flow.run_local_server(port=0)
@@ -186,7 +200,12 @@ def save_receipt(receipt: dict) -> Path:
 def main():
     args = parse_args()
     metadata = load_metadata(args.date)
-    receipt = upload_video(metadata)
+    try:
+        receipt = upload_video(metadata)
+    except YouTubeReauthRequired as e:
+        print('YOUTUBE_REAUTH_REQUIRED=1')
+        print(f'YOUTUBE_ERROR={e}')
+        raise
     receipt_path = save_receipt(receipt)
     print(f"YOUTUBE_UPLOAD_RECEIPT={receipt_path}")
     print(f"YOUTUBE_VIDEO_ID={receipt.get('videoId', '')}")

@@ -17,6 +17,7 @@ YOUTUBE_UPLOAD_URL=""
 YOUTUBE_UPLOAD_VIDEO_ID=""
 YOUTUBE_UPLOAD_PRIVACY=""
 OPTIONAL_FAILURES=0
+YOUTUBE_REAUTH_REQUIRED=0
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
 log() {
@@ -86,6 +87,8 @@ PY
     printf -- '- 최종 상태: %s\n' "$FINAL_STATUS"
     if [ -n "$FINAL_NOTE" ]; then
       printf -- '- 메모: %s\n' "$FINAL_NOTE"
+    elif [ "$YOUTUBE_REAUTH_REQUIRED" -eq 1 ]; then
+      printf -- '- 메모: 유튜브 OAuth 재인증 필요\n'
     fi
     if [ -n "$COLLECTED_COUNT" ]; then
       printf -- '- 수집 기사 수: %s건\n' "$COLLECTED_COUNT"
@@ -174,13 +177,20 @@ run_optional_step() {
   shift
 
   log "$step_name"
-  if "$@" 2>&1 | tee -a "$LOG_FILE"; then
+  local output
+  if output="$($@ 2>&1 | tee -a "$LOG_FILE")"; then
     record_step_result "$step_name" "SUCCESS"
     log "$step_name 성공"
   else
     record_step_result "$step_name" "FAILED"
     OPTIONAL_FAILURES=1
-    log "$step_name 실패 - 텍스트 발행은 유지하고 다음 단계로 진행"
+    if printf '%s' "$output" | grep -q 'YOUTUBE_REAUTH_REQUIRED=1'; then
+      YOUTUBE_REAUTH_REQUIRED=1
+      FINAL_NOTE="유튜브 OAuth 재인증 필요"
+      log "$step_name 실패 - 유튜브 OAuth 재인증 필요"
+    else
+      log "$step_name 실패 - 텍스트 발행은 유지하고 다음 단계로 진행"
+    fi
   fi
 }
 
